@@ -60,7 +60,7 @@ const page = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-8 col-lg-12">
-              {/* Main Heading */}
+              {/* Main Heading exxxx */}
               <h1 className="mil-mb-30 mil-up" style={{
                 fontSize: 'clamp(2.5rem, 4vw, 4rem)',
                 fontWeight: 'bold',
