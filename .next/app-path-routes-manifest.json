@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/about/page": "/about",
+  "/career-details/page": "/career-details",
+  "/blog/page": "/blog",
+  "/career/page": "/career",
+  "/coming-soon/page": "/coming-soon",
+  "/home-2/page": "/home-2",
+  "/contact/page": "/contact",
+  "/home-3/page": "/home-3",
+  "/home-4/page": "/home-4",
+  "/home-5/page": "/home-5",
+  "/price/page": "/price",
+  "/publication/page": "/publication",
+  "/register/page": "/register",
+  "/page": "/",
+  "/services/page": "/services"
+}

@@ -1,5 +1,19 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/about/page": "app/about/page.js",
+  "/career-details/page": "app/career-details/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/career/page": "app/career/page.js",
+  "/coming-soon/page": "app/coming-soon/page.js",
+  "/home-2/page": "app/home-2/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/home-3/page": "app/home-3/page.js",
+  "/home-4/page": "app/home-4/page.js",
+  "/home-5/page": "app/home-5/page.js",
+  "/price/page": "app/price/page.js",
+  "/publication/page": "app/publication/page.js",
+  "/register/page": "app/register/page.js",
   "/page": "app/page.js",
-  "/register/page": "app/register/page.js"
+  "/services/page": "app/services/page.js"
 }
