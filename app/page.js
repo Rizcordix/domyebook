@@ -73,7 +73,7 @@ const page = () => {
                 bring their business to life
               </h1>
               
-              {/* Description */}
+              {/* Descriptionexx */}
               <p className="mil-text-m mil-soft mil-mb-60 mil-up" style={{
                 color: 'rgba(255, 255, 255, 0.8)',
                 fontSize: '1.2rem',
