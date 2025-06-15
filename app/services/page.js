@@ -2,6 +2,8 @@ import { PageBanner } from "@/components/Banner";
 import { CallToAction2 } from "@/components/CallToAction";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+import Hero4Slider from "@/components/Hero4";
+
 const page = () => {
   return (
     <PlaxLayout bg={false}>
@@ -9,7 +11,7 @@ const page = () => {
         title="Adapted to your needs, discover what we have"
         pageName="Services"
       />
-
+      <Hero4Slider />
       {/* banner end */}
       {/* service */}
       <div className="mil-features mil-p-0-80">

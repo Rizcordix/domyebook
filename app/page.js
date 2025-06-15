@@ -68,9 +68,11 @@ const page = () => {
                 lineHeight: '1.2',
                 animationDelay: '0.2s'
               }}>
-                We help innovators to successfully
+                Your Story,
                 <br />
-                bring their business to life
+                 Our Words,
+                <br />
+                Professionally Published.
               </h1>
               
               {/* Descriptionexx */}
@@ -80,8 +82,7 @@ const page = () => {
                 maxWidth: '600px',
                 animationDelay: '0.4s'
               }}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto beatae doloribus odio nulla
-                vero impedit quam omnis amet est! Ex ratione
+                From idea to bestseller — DoMyEbook turns your vision into a professionally crafted and published eBook with end-to-end solutions
               </p>
               
               {/* Mobile: Client Section + Play Button Combined */}
@@ -510,27 +511,27 @@ const page = () => {
       <div className="mil-brands mil-p-160-160">
         <div className="container">
           <h5 className="mil-text-center mil-soft mil-mb-60 mil-up">
-            Join over 7,000 satisfied customers who enjoy our service!
+            Trusted by authors across major platforms!
           </h5>
           <div className="row justify-content-center">
             <div className="col-3 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/1.svg" alt="brand" className="mil-up" />
+                <img src="img/brands/kindle.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-3 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/2.svg" alt="brand" className="mil-up" />
+                <img src="img/brands/kobo.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-3 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/3.svg" alt="brand" className="mil-up" />
+                <img src="img/brands/ibooks.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-3 col-md-2">
               <div className="mil-brand mil-text-center">
-                <img src="img/brands/4.svg" alt="brand" className="mil-up" />
+                <img src="img/brands/scribd.svg" alt="brand" className="mil-up" />
               </div>
             </div>
           </div>

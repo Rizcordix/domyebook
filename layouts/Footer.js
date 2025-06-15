@@ -65,7 +65,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               Subscribe to get the latest news form us
             </p>
             <form id="subscribeForm" className="mil-subscripe-form-footer">
-              <input className="mil-input" name="EMAIL" type="email" placeholder="Email" autocomplete="off" />
+              <input className="mil-input" name="EMAIL" type="email" placeholder="Email" autoComplete="off" />
               <button type="submit">
                 <i className="far fa-envelope-open mil-dark" />
               </button>
