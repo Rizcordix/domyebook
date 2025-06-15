@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
+      "@common/*": ["common/*"],
       "@/*": ["./*"],
       "@css/*": ["./public/css/*"],
       "@fonts/*": ["./public/fonts/*"]
