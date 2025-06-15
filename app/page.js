@@ -529,11 +529,17 @@ const page = () => {
                 <img src="img/brands/ibooks.svg" alt="brand" className="mil-up" />
               </div>
             </div>
-            <div className="col-3 col-md-2">
-              <div className="mil-brand mil-text-center">
+            <div className="col-3 col-md-2 mil-text-center">
+              <div className="mil-brand">
                 <img src="img/brands/scribd.svg" alt="brand" className="mil-up" />
               </div>
             </div>
+            <div className="col-3 col-md-2 mil-text-center">
+              <div className="mil-brand">
+                <img src="img/brands/GooglePlayBooks.svg" alt="brand" className="mil-up" />
+              </div>
+            </div>
+  
           </div>
         </div>
       </div>
