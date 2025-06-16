@@ -1,6 +1,7 @@
 import { PageBanner } from "@/components/Banner";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+import Image from "next/image";
 const page = () => {
   return (
     <PlaxLayout>
@@ -42,8 +43,10 @@ const page = () => {
             </div>
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
-                <img
-                  src="img/inner-pages/6.png"
+                <Image
+                  width={500}
+                  height={500}
+                  src="/img/inner-pages/6.png"
                   alt="image"
                   className="mil-scale-img"
                   data-value-1={1}

@@ -21,7 +21,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
         <div className="row">
           <div className="col-xl-3">
             <a href="#." className="mil-footer-logo mil-mb-60">
-              <img src="img/logo-2.png" alt="Plax" width={28} height={32} />
+              <img src="/img/logo-2.png" alt="Plax" width={28} height={32} />
             </a>
           </div>
           <div className="col-xl-3 mil-mb-60">
@@ -109,7 +109,7 @@ const Footer3 = ({ bg = true, margin = 160 }) => {
         <div className="row">
           <div className="col-xl-3">
             <a href="#." className="mil-footer-logo mil-mb-60">
-              <img src="img/logo-2.png" alt="Plax" width={28} height={32} />
+              <img src="/img/logo-2.png" alt="Plax" width={28} height={32} />
             </a>
           </div>
           <div className="col-xl-3 mil-mb-60">
@@ -198,7 +198,7 @@ const Footer2 = () => {
         <div className="row">
           <div className="col-xl-9 mil-mb-60 mil-footer-space-fix">
             <a href="#." className="mil-footer-logo mil-logo-2 mil-mb-60">
-              <img src="img/logo-light.png" alt="Plax" width={83} height={32} />
+              <img src="/img/logo-light.png" alt="Plax" width={83} height={32} />
             </a>
             <ul className="mil-footer-list mil-footer-list-2">
               <li className="mil-text-m mil-dark-soft mil-mb-15">

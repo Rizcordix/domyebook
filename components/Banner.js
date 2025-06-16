@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 const Banner = ({
   title = "Unleash your Ebook vision today!",
   subTitle = "Your Story, Our Words — Professionally Published",
-  img = "img/home-2/1.png",
+  img = "/img/home-2/1.png",
   style = { maxWidth: "135%", transform: "translateX(5%)" },
   dark = false,
 }) => {
@@ -31,7 +32,10 @@ const Banner = ({
           </div>
           <div className="col-xl-6">
             <div className="mil-banner-img">
-              <img src={img} alt="banner" style={style} />
+              <img
+                src={img} 
+                alt="banner" 
+                style={style} />
             </div>
           </div>
         </div>
