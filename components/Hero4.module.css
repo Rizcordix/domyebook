@@ -765,6 +765,7 @@
   width: 80px;
   height: 80px;
   background-color: #D8FF36;
+  max-width: 80px;
   background-image: url(../public/images/quote.svg);
   background-repeat: no-repeat;
   background-position: center center;
