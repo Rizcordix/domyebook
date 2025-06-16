@@ -1530,6 +1530,9 @@ brands
 }
 .mil-brand img {
   display: inline-block;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 .mil-brand:hover {
   opacity: 1;
@@ -2710,6 +2713,8 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
 .mil-subscripe-form-footer button i.mil-dark {
   color: rgb(13, 81, 82);
 }/*# sourceMappingURL=style.css.map */
+
+
 
 
 

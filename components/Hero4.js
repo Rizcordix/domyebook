@@ -51,24 +51,11 @@ const Hero4Slider = () => {
   const totalSlides = heroData.items.length;
   const intervalRef = useRef(null);
 
-  useEffect(() => {
-    // Auto-advance slides
-    intervalRef.current = setInterval(() => {
-      nextSlide();
-    }, 6000);
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
-
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setContentVisible(false);
-    
+
     setTimeout(() => {
       setCurrentSlide(prev => (prev + 1) % totalSlides);
       setContentVisible(true);
@@ -80,7 +67,7 @@ const Hero4Slider = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setContentVisible(false);
-    
+
     setTimeout(() => {
       setCurrentSlide(prev => prev === 0 ? totalSlides - 1 : prev - 1);
       setContentVisible(true);
@@ -92,7 +79,7 @@ const Hero4Slider = () => {
     if (isAnimating || index === currentSlide) return;
     setIsAnimating(true);
     setContentVisible(false);
-    
+
     setTimeout(() => {
       setCurrentSlide(index);
       setContentVisible(true);
@@ -115,7 +102,10 @@ const Hero4Slider = () => {
       height: '100vh',
       overflow: 'hidden',
       backgroundColor: '#1f2937',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      '@media (max-width: 768px)': {
+        height: 'auto',
+      },
     },
     logo: {
       position: 'absolute',
@@ -131,35 +121,13 @@ const Hero4Slider = () => {
       justifyContent: 'center',
       cursor: 'pointer',
       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-      animation: 'logoFloat 3s ease-in-out infinite'
-    },
-    logoInner: {
-      width: '32px',
-      height: '32px',
-      backgroundColor: '#65a30d',
-      borderRadius: '50%',
-      position: 'relative',
-      transition: 'all 0.3s ease'
-    },
-    logoDot1: {
-      position: 'absolute',
-      top: '-4px',
-      right: '-4px',
-      width: '12px',
-      height: '12px',
-      backgroundColor: '#bef264',
-      borderRadius: '50%',
-      animation: 'pulse 2s ease-in-out infinite'
-    },
-    logoDot2: {
-      position: 'absolute',
-      top: '4px',
-      left: '-4px',
-      width: '8px',
-      height: '8px',
-      backgroundColor: '#bef264',
-      borderRadius: '50%',
-      animation: 'pulse 2s ease-in-out infinite 0.5s'
+      animation: 'logoFloat 3s ease-in-out infinite',
+      '@media (max-width: 768px)': {
+        top: '16px',
+        left: '16px',
+        width: '36px',
+        height: '36px',
+      },
     },
     showcaseBtn: {
       position: 'absolute',
@@ -177,37 +145,35 @@ const Hero4Slider = () => {
       alignItems: 'center',
       gap: '8px',
       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-      overflow: 'hidden'
-    },
-    showcaseBtnIcon: {
-      width: '24px',
-      height: '24px',
-      backgroundColor: 'white',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#1f2937',
-      fontSize: '14px',
-      fontWeight: 'bold',
-      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+      overflow: 'hidden',
+      '@media (max-width: 768px)': {
+        top: '12px',
+        right: '12px',
+        padding: '8px 16px',
+      },
     },
     sliderContainer: {
       position: 'relative',
       width: '100%',
-      height: '100%'
+      height: '100%',
     },
     sliderWrapper: {
       width: '100%',
       height: '100%',
-      transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+      transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+      '@media (max-width: 768px)': {
+        height: 'auto',
+      },
     },
     slide: {
       position: 'absolute',
       top: 0,
       left: 0,
       width: '100%',
-      height: '100%'
+      height: '100%',
+      '@media (max-width: 768px)': {
+        height: 'auto',
+      },
     },
     slideImage: {
       position: 'absolute',
@@ -219,14 +185,22 @@ const Hero4Slider = () => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       filter: 'brightness(0.7)',
-      transition: 'all 0.8s ease-out'
+      transition: 'all 0.8s ease-out',
+      '@media (max-width: 768px)': {
+        height: 'auto',
+        filter: 'brightness(0.5)',
+      },
     },
     slideContent: {
       position: 'relative',
       zIndex: 10,
       display: 'flex',
       alignItems: 'center',
-      height: '100%'
+      height: '100%',
+      '@media (max-width: 768px)': {
+        flexDirection: 'column',
+        justifyContent: 'center',
+      },
     },
     container: {
       maxWidth: '1200px',
@@ -235,10 +209,20 @@ const Hero4Slider = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      width: '100%'
+      width: '100%',
+      '@media (max-width: 768px)': {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '0 16px',
+      },
     },
     contentLeft: {
-      maxWidth: '600px'
+      maxWidth: '600px',
+      '@media (max-width: 768px)': {
+        maxWidth: '100%',
+        textAlign: 'center',
+        padding: '0 16px',
+      },
     },
     subtitle: {
       color: '#84cc16',
@@ -250,23 +234,27 @@ const Hero4Slider = () => {
       opacity: contentVisible ? 1 : 0,
       transform: contentVisible ? 'translateY(0)' : 'translateY(30px)',
       transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-      transitionDelay: contentVisible ? '0.2s' : '0s'
+      transitionDelay: contentVisible ? '0.2s' : '0s',
+      '@media (max-width: 768px)': {
+        fontSize: '12px',
+        marginBottom: '8px',
+      },
     },
     title: {
       fontSize: '5rem',
       fontWeight: 'bold',
       color: 'white',
-      lineHeight: '0.9',
+      lineHeight: '1.1',
       marginBottom: '32px',
       opacity: contentVisible ? 1 : 0,
       transform: contentVisible ? 'translateY(0)' : 'translateY(50px)',
       transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
-      transitionDelay: contentVisible ? '0.4s' : '0s'
-    },
-    titleResponsive: {
+      transitionDelay: contentVisible ? '0.4s' : '0s',
       '@media (max-width: 768px)': {
-        fontSize: '3rem'
-      }
+        fontSize: '3rem',
+        lineHeight: '1.2',
+        marginBottom: '16px',
+      },
     },
     button: {
       display: 'flex',
@@ -284,7 +272,10 @@ const Hero4Slider = () => {
       overflow: 'hidden',
       opacity: contentVisible ? 1 : 0,
       transform: contentVisible ? 'translateY(0)' : 'translateY(30px)',
-      transitionDelay: contentVisible ? '0.6s' : '0s'
+      transitionDelay: contentVisible ? '0.6s' : '0s',
+      '@media (max-width: 768px)': {
+        padding: '12px 24px',
+      },
     },
     buttonIcon: {
       width: '32px',
@@ -296,125 +287,63 @@ const Hero4Slider = () => {
       justifyContent: 'center',
       fontSize: '20px',
       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-      transform: 'rotate(0deg)'
-    },
-    buttonText: {
-      fontWeight: '600',
-      position: 'relative',
-      zIndex: 2
-    },
-    visualElement: {
-      display: 'none',
-      position: 'relative',
-      opacity: contentVisible ? 1 : 0,
-      transform: contentVisible ? 'scale(1) rotate(0deg)' : 'scale(0.8) rotate(10deg)',
-      transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
-      transitionDelay: contentVisible ? '0.8s' : '0s',
-      '@media (minWidth: 1024px)': {
-        display: 'block'
-      }
-    },
-    visualContainer: {
-      width: '384px',
-      height: '384px',
-      position: 'relative'
-    },
-    visualLayer1: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2))',
-      borderRadius: '24px',
-      transform: 'rotate(12deg)',
-      animation: 'float1 4s ease-in-out infinite'
-    },
-    visualLayer2: {
-      position: 'absolute',
-      top: '16px',
-      left: '16px',
-      right: '16px',
-      bottom: '16px',
-      background: 'linear-gradient(135deg, rgba(45, 212, 191, 0.3), rgba(59, 130, 246, 0.3))',
-      borderRadius: '16px',
-      transform: 'rotate(-6deg)',
-      animation: 'float2 4s ease-in-out infinite 1s'
-    },
-    visualLayer3: {
-      position: 'absolute',
-      top: '32px',
-      left: '32px',
-      right: '32px',
-      bottom: '32px',
-      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-      backdropFilter: 'blur(8px)',
-      borderRadius: '12px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      animation: 'float3 4s ease-in-out infinite 2s'
-    },
-    visualCircle: {
-      width: '128px',
-      height: '128px',
-      background: 'linear-gradient(135deg, #84cc16, #16a34a)',
-      borderRadius: '50%',
-      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-      animation: 'spin 8s linear infinite'
+      transform: 'rotate(0deg)',
+      '@media (max-width: 768px)': {
+        width: '24px',
+        height: '24px',
+        fontSize: '16px',
+      },
     },
     navigation: {
       position: 'absolute',
-      left: '24px',
-      bottom: '24px',
+      left: '50%',
+      bottom: '40px',
+      transform: 'translateX(-50%)',
       zIndex: 50,
       display: 'flex',
       alignItems: 'center',
-      gap: '16px'
+      gap: '24px',
+      '@media (max-width: 768px)': {
+        bottom: '20px',
+        gap: '16px',
+      },
     },
     navButton: {
-      width: '48px',
-      height: '48px',
-      border: '1px solid rgba(255, 255, 255, 0.3)',
+      width: '64px',
+      height: '64px',
+      border: '2px solid rgba(255, 255, 255, 0.4)',
       borderRadius: '50%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       color: 'white',
-      backgroundColor: 'transparent',
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(8px)',
       cursor: 'pointer',
       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      fontSize: '24px',
+      fontWeight: 'bold',
+      '@media (max-width: 768px)': {
+        width: '48px',
+        height: '48px',
+        fontSize: '18px',
+      },
     },
     pagination: {
       position: 'absolute',
       right: '24px',
       top: '50%',
       transform: 'translateY(-50%)',
-      zIndex: 50
-    },
-    paginationContainer: {
-      position: 'relative'
-    },
-    activeIndicator: {
-      position: 'absolute',
-      left: '-10px',
-      width: '32px',
-      height: '32px',
-      border: '1px solid rgba(255, 255, 255, 0.5)',
-      borderRadius: '50%',
-      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-      top: currentSlide * 48 + 'px',
-      background: 'rgba(132, 204, 22, 0.1)',
-      backdropFilter: 'blur(4px)'
+      zIndex: 50,
     },
     paginationBullets: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       gap: '24px',
-      padding: '16px'
+      padding: '16px',
     },
     bullet: {
       width: '12px',
@@ -423,62 +352,18 @@ const Hero4Slider = () => {
       cursor: 'pointer',
       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
       border: 'none',
-      position: 'relative'
+      position: 'relative',
     },
     bulletActive: {
       backgroundColor: 'white',
       transform: 'scale(1.2)',
-      boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)'
+      boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)',
     },
     bulletInactive: {
       backgroundColor: 'rgba(255, 255, 255, 0.4)',
-      transform: 'scale(1)'
-    }
+      transform: 'scale(1)',
+    },
   };
-
-  // Create style element for keyframes
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes logoFloat {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-      }
-      
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.7; transform: scale(1.1); }
-      }
-      
-      @keyframes float1 {
-        0%, 100% { transform: rotate(12deg) translateY(0px); }
-        50% { transform: rotate(12deg) translateY(-8px); }
-      }
-      
-      @keyframes float2 {
-        0%, 100% { transform: rotate(-6deg) translateY(0px); }
-        50% { transform: rotate(-6deg) translateY(6px); }
-      }
-      
-      @keyframes float3 {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-4px); }
-      }
-      
-      @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-      
-      @keyframes shimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => document.head.removeChild(style);
-  }, []);
 
   return (
     <section style={styles.heroSection}>
@@ -575,66 +460,10 @@ const Hero4Slider = () => {
                       <a 
                         href={item.button.link} 
                         style={styles.button}
-                        onMouseEnter={(e) => {
-                          e.target.style.backgroundColor = 'rgba(132, 204, 22, 0.1)';
-                          e.target.style.borderColor = '#84cc16';
-                          e.target.style.color = '#84cc16';
-                          e.target.style.transform = 'translateY(-3px)';
-                          e.target.style.boxShadow = '0 15px 40px rgba(132, 204, 22, 0.3)';
-                          
-                          // Add shimmer effect
-                          e.target.style.position = 'relative';
-                          const shimmer = document.createElement('div');
-                          shimmer.style.position = 'absolute';
-                          shimmer.style.top = '0';
-                          shimmer.style.left = '-100%';
-                          shimmer.style.width = '100%';
-                          shimmer.style.height = '100%';
-                          shimmer.style.background = 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)';
-                          shimmer.style.animation = 'shimmer 0.6s ease-out';
-                          shimmer.style.pointerEvents = 'none';
-                          e.target.appendChild(shimmer);
-                          
-                          setTimeout(() => {
-                            if (e.target.contains(shimmer)) {
-                              e.target.removeChild(shimmer);
-                            }
-                          }, 600);
-                          
-                          const icon = e.target.querySelector('div');
-                          if (icon) {
-                            icon.style.transform = 'rotate(180deg) scale(1.1)';
-                            icon.style.borderColor = '#84cc16';
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.backgroundColor = 'transparent';
-                          e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                          e.target.style.color = 'white';
-                          e.target.style.transform = 'translateY(0)';
-                          e.target.style.boxShadow = 'none';
-                          
-                          const icon = e.target.querySelector('div');
-                          if (icon) {
-                            icon.style.transform = 'rotate(0deg) scale(1)';
-                            icon.style.borderColor = 'currentColor';
-                          }
-                        }}
                       >
                         <div style={styles.buttonIcon}>+</div>
                         <span style={styles.buttonText}>{item.button.label}</span>
                       </a>
-                    </div>
-                  </div>
-
-                  {/* 3D Visual Element */}
-                  <div style={styles.visualElement}>
-                    <div style={styles.visualContainer}>
-                      <div style={styles.visualLayer1}></div>
-                      <div style={styles.visualLayer2}></div>
-                      <div style={styles.visualLayer3}>
-                        <div style={styles.visualCircle}></div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -649,52 +478,21 @@ const Hero4Slider = () => {
         <button 
           onClick={prevSlide} 
           style={styles.navButton}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = 'rgba(132, 204, 22, 0.2)';
-            e.target.style.borderColor = '#84cc16';
-            e.target.style.color = '#84cc16';
-            e.target.style.transform = 'scale(1.1) translateX(-3px)';
-            e.target.style.boxShadow = '0 8px 25px rgba(132, 204, 22, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = 'transparent';
-            e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-            e.target.style.color = 'white';
-            e.target.style.transform = 'scale(1) translateX(0)';
-            e.target.style.boxShadow = 'none';
-          }}
         >
           ←
         </button>
         <button 
           onClick={nextSlide} 
           style={styles.navButton}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = 'rgba(132, 204, 22, 0.2)';
-            e.target.style.borderColor = '#84cc16';
-            e.target.style.color = '#84cc16';
-            e.target.style.transform = 'scale(1.1) translateX(3px)';
-            e.target.style.boxShadow = '0 8px 25px rgba(132, 204, 22, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = 'transparent';
-            e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-            e.target.style.color = 'white';
-            e.target.style.transform = 'scale(1) translateX(0)';
-            e.target.style.boxShadow = 'none';
-          }}
         >
           →
         </button>
       </div>
 
-      {/* Pagination */}
+      {/* Pagination Bullets */}
       <div style={styles.pagination}>
         <div style={styles.paginationContainer}>
-          {/* Active indicator */}
-          <div style={styles.activeIndicator}></div>
-          
-          {/* Pagination bullets */}
+          {/* Pagination Bullets */}
           <div style={styles.paginationBullets}>
             {heroData.items.map((_, index) => (
               <button
@@ -703,18 +501,6 @@ const Hero4Slider = () => {
                 style={{
                   ...styles.bullet,
                   ...(index === currentSlide ? styles.bulletActive : styles.bulletInactive)
-                }}
-                onMouseEnter={(e) => {
-                  if (index !== currentSlide) {
-                    e.target.style.backgroundColor = 'rgba(132, 204, 22, 0.7)';
-                    e.target.style.transform = 'scale(1.3)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (index !== currentSlide) {
-                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
-                    e.target.style.transform = 'scale(1)';
-                  }
                 }}
               />
             ))}
