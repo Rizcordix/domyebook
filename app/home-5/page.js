@@ -5,13 +5,13 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 const page = () => {
-  useEffect(() => {
-    document.querySelector("#smooth-wrapper").style.backgroundColor = "#192626";
-  }, []);
+  // useEffect(() => {
+  //   document.querySelector("#smooth-wrapper").style.backgroundColor = "#192626";
+  // }, []);
   return (
     <PlaxLayout dark footer={3}>
       {/* banner */}
-      <div className="mil-banner mil-dark-2">
+      {/* <div className="mil-banner mil-dark-2">
         <div className="mil-radial-g-2" />
         <div className="mil-radial-g-3" />
         <div className="container">
@@ -43,7 +43,7 @@ const page = () => {
             <div className="col-xl-7">
               <div className="mil-banner-img mil-banner-img-out">
                 <img
-                  src="img/home-5/1.png"
+                  src="/img/home-5/1.png"
                   alt="banner"
                   style={{ maxWidth: "150%" }}
                 />
@@ -52,8 +52,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* banner end */}
-      {/* about */}
+
       <div className="mil-cta">
         <div className="container">
           <div className="mil-out-frame mil-out-top mil-visible">
@@ -76,8 +75,8 @@ const page = () => {
               </div>
               <div className="col-xl-6">
                 <img
-                  src="img/home-5/2.png"
-                  alt="img"
+                  src="/img/home-5/2.png"
+                  alt="/img"
                   style={{ width: "100%" }}
                   className="mil-up"
                 />
@@ -86,8 +85,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* about end */}
-      {/* icon boxes */}
+
       <div className="icon-boxes mil-p-160-130">
         <div className="container">
           <div className="mil-text-center">
@@ -104,7 +102,7 @@ const page = () => {
             <div className="col-xl-4 mil-mb-30">
               <div className="mil-icon-box mil-with-bg mil-dark-2 mil-center mil-up">
                 <img
-                  src="img/home-5/icons/1.svg"
+                  src="/img/home-5/icons/1.svg"
                   alt="icon"
                   className="mil-mb-30 mil-up"
                 />
@@ -120,7 +118,7 @@ const page = () => {
             <div className="col-xl-4 mil-mb-30">
               <div className="mil-icon-box mil-with-bg mil-dark-2 mil-center mil-up">
                 <img
-                  src="img/home-5/icons/2.svg"
+                  src="/img/home-5/icons/2.svg"
                   alt="icon"
                   className="mil-mb-30 mil-up"
                 />
@@ -136,7 +134,7 @@ const page = () => {
             <div className="col-xl-4 mil-mb-30">
               <div className="mil-icon-box mil-with-bg mil-dark-2 mil-center mil-up">
                 <img
-                  src="img/home-5/icons/3.svg"
+                  src="/img/home-5/icons/3.svg"
                   alt="icon"
                   className="mil-mb-30 mil-up"
                 />
@@ -152,8 +150,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* icon boxes end */}
-      {/* facts */}
+
       <div className="mil-p-0-80">
         <div className="container">
           <div className="row justify-content-between">
@@ -231,8 +228,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* facts end */}
-      {/* call to action */}
+
       <div className="mil-cta mil-p-0-160 mil-up">
         <div className="container">
           <div className="mil-out-frame mil-bg-2">
@@ -256,8 +252,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* call to action end */}
-      {/* features */}
+
       <div className="mil-features mil-p-0-80">
         <div className="container">
           <div className="row justify-content-between align-items-center">
@@ -316,7 +311,7 @@ const page = () => {
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-5/3.png"
+                  src="/img/home-5/3.png"
                   alt="image"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -327,8 +322,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* features */}
+
       <div className="mil-features mil-p-0-80">
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
@@ -351,7 +345,7 @@ const page = () => {
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-5/4.png"
+                  src="/img/home-5/4.png"
                   alt="image"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -362,8 +356,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* testimonials */}
+
       <div className="mil-cta mil-up">
         <div className="container">
           <div className="mil-out-frame mil-bg-4 mil-p-160-160">
@@ -406,7 +399,7 @@ const page = () => {
                           Etiam ultricies is around.
                         </p>
                         <img
-                          src="img/faces/2.jpg"
+                          src="/img/faces/2.jpg"
                           alt="Customer"
                           className="mil-mb-15 mil-up"
                         />
@@ -445,7 +438,7 @@ const page = () => {
                           Etiam ultricies is around.
                         </p>
                         <img
-                          src="img/faces/1.jpg"
+                          src="/img/faces/1.jpg"
                           alt="Customer"
                           className="mil-mb-15 mil-up"
                         />
@@ -484,7 +477,7 @@ const page = () => {
                           Etiam ultricies is around.
                         </p>
                         <img
-                          src="img/faces/3.jpg"
+                          src="/img/faces/3.jpg"
                           alt="Customer"
                           className="mil-mb-15 mil-up"
                         />
@@ -503,8 +496,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* testimonials end */}
-      {/* brands */}
+
       <div className="mil-p-160-130">
         <div className="container">
           <div className="row justify-content-between">
@@ -525,7 +517,7 @@ const page = () => {
             </div>
             <div className="col-xl-6">
               <div className="mil-brand-card mil-mb-30 mil-up">
-                <img src="img/brands/1.svg" alt="brand" className="mil-mb-30" />
+                <img src="/img/brands/1.svg" alt="brand" className="mil-mb-30" />
                 <h5 className="mil-light mil-light mil-mb-20">Amper Pay</h5>
                 <p className="mil-text-s mil-pale-2">
                   Make fast and secure payments directly from your Amper device
@@ -533,7 +525,7 @@ const page = () => {
                 </p>
               </div>
               <div className="mil-brand-card mil-mb-30 mil-up">
-                <img src="img/brands/2.svg" alt="brand" className="mil-mb-30" />
+                <img src="/img/brands/2.svg" alt="brand" className="mil-mb-30" />
                 <h5 className="mil-light mil-light mil-mb-20">Yelii Pay</h5>
                 <p className="mil-text-s mil-pale-2">
                   Pay with a touch using Yeli Pay and maintain full control of
@@ -543,7 +535,7 @@ const page = () => {
             </div>
             <div className="col-xl-6">
               <div className="mil-brand-card mil-mb-30 mil-up">
-                <img src="img/brands/3.svg" alt="brand" className="mil-mb-30" />
+                <img src="/img/brands/3.svg" alt="brand" className="mil-mb-30" />
                 <h5 className="mil-light mil-light mil-mb-20">Booster</h5>
                 <p className="mil-text-s mil-pale-2">
                   Send money instantly and securely through Booster, integrating
@@ -553,7 +545,7 @@ const page = () => {
             </div>
             <div className="col-xl-6">
               <div className="mil-brand-card mil-mb-30 mil-up">
-                <img src="img/brands/4.svg" alt="brand" className="mil-mb-30" />
+                <img src="/img/brands/4.svg" alt="brand" className="mil-mb-30" />
                 <h5 className="mil-light mil-light mil-mb-20">Amerill</h5>
                 <p className="mil-text-s mil-pale-2">
                   Connect your Plax account with Amerill to simplify splitting
@@ -564,8 +556,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* brands end */}
-      {/* call to action */}
+
       <div className="mil-cta mil-up mil-p-0-160">
         <div className="container">
           <div className="mil-out-frame mil-image-2 mil-bg-2">
@@ -589,13 +580,13 @@ const page = () => {
                 </div>
               </div>
               <div className="mil-illustration-absolute mil-type-3 mil-up">
-                <img src="img/home-4/5.png" alt="illustration" />
+                <img src="/img/home-4/5.png" alt="illustration" />
               </div>
               ®
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* call to action end */}
     </PlaxLayout>
   );

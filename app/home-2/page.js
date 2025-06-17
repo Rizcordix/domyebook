@@ -9,13 +9,11 @@ import Link from "next/link";
 const page = () => {
   return (
     <PlaxLayout bg={false}>
-      <Banner
+      {/* <Banner
         title="Shop with Confidence, Protected"
-        img="img/home-1/1.png"
+        img="/img/home-1/1.png"
         style={{ maxWidth: "125%", transform: "translateX(10%)" }}
       />
-      {/* banner end */}
-      {/* features */}
       <div className="mil-features mil-p-160-80">
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
@@ -59,7 +57,7 @@ const page = () => {
             </div>
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-visible-overflow">
-                <img src="img/home-1/2.png" alt="image" className="mil-up" />
+                <img src="/img/home-1/2.png" alt="image" className="mil-up" />
                 <div className="mil-img-box mil-accent-box mil-up">
                   <div>
                     <h2 className="mil-light mil-mb-15">100%</h2>
@@ -74,8 +72,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* facts */}
       <div className="mil-facts mil-p-0-80">
         <div className="container">
           <div className="row justify-content-between align-items-center">
@@ -112,8 +108,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* facts end */}
-      {/* call to action */}
       <div className="mil-cta mil-up">
         <div className="container">
           <div className="mil-out-frame mil-p-160-100">
@@ -136,7 +130,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="img/home-1/icons/1.svg"
+                    src="/img/home-1/icons/1.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -150,7 +144,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="img/home-1/icons/2.svg"
+                    src="/img/home-1/icons/2.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -165,7 +159,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="img/home-1/icons/3.svg"
+                    src="/img/home-1/icons/3.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -181,8 +175,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* call to action end */}
-      {/* features */}
       <div className="mil-features mil-p-160-80">
         <div className="container">
           <div className="row justify-content-between align-items-center">
@@ -220,17 +212,15 @@ const page = () => {
             </div>
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-visible-overflow">
-                <img src="img/home-1/3.png" alt="image" className="mil-up" />
+                <img src="/img/home-1/3.png" alt="image" className="mil-up" />
                 <div className="mil-img-box mil-right-max mil-soft-box mil-up">
-                  <img src="img/home-1/icons/4.svg" alt="icon" />
+                  <img src="/img/home-1/icons/4.svg" alt="icon" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* testimonials */}
       <div className="mil-testimonials mil-p-0-160">
         <div className="container">
           <div className="row justify-content-center">
@@ -240,8 +230,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* testimonials end */}
-      {/* brands */}
       <div className="mil-brands mil-p-0-160">
         <div className="container">
           <h5 className="mil-text-center mil-soft mil-mb-60 mil-up">
@@ -250,29 +238,27 @@ const page = () => {
           <div className="row justify-content-center">
             <div className="col-6 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/1.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/1.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-6 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/2.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/2.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-6 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/3.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/3.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-6 col-md-2">
               <div className="mil-brand mil-text-center">
-                <img src="img/brands/4.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/4.svg" alt="brand" className="mil-up" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* brands end */}
-      {/* call to action */}
       <div className="mil-cta mil-up">
         <div className="container">
           <div className="mil-out-frame mil-bg-1">
@@ -297,8 +283,8 @@ const page = () => {
               </div>
               <div className="col-xl-5 mil-mt-60">
                 <img
-                  src="img/home-1/5.png"
-                  alt="img"
+                  src="/img/home-1/5.png"
+                  alt="/img"
                   style={{ width: "100%" }}
                   className="mil-up"
                 />
@@ -307,8 +293,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* call to action end */}
-      {/* faq */}
       <div className="mil-faq mil-p-160-130">
         <div className="container">
           <div className="row justify-content-center">
@@ -328,10 +312,8 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* faq end */}
-      {/* call to action */}
       <CallToAction2 />
-      {/* call to action end */}
+      call to action end */}
     </PlaxLayout>
   );
 };

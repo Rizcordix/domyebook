@@ -1,6 +1,7 @@
 import { PageBanner } from "@/components/Banner";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+import Image from "next/image";
 const page = () => {
   return (
     <PlaxLayout>
@@ -20,8 +21,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/1.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/1.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -42,8 +45,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/2.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/2.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -64,8 +69,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/3.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/3.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -86,8 +93,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/4.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/4.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -108,8 +117,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/5.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/5.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -130,8 +141,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/6.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/6.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -152,8 +165,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/7.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/7.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -174,8 +189,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/8.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/8.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -196,8 +213,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/9.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/9.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -218,8 +237,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/10.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/10.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -240,8 +261,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/11.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/11.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}
@@ -262,8 +285,10 @@ const page = () => {
                 className="mil-blog-card mil-mb-30 mil-up"
               >
                 <div className="mil-card-cover">
-                  <img
-                    src="img/inner-pages/blog/12.png"
+                  <Image
+                    width={600}
+                    height={400}
+                    src="/img/inner-pages/blog/12.png"
                     alt="cover"
                     className="mil-scale-img"
                     data-value-1={1}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const CallToAction1 = () => {
   return (
@@ -26,7 +27,7 @@ export const CallToAction1 = () => {
             </div>
           </div>
           <div className="mil-illustration-absolute mil-type-2 mil-up">
-            <img src="img/home-2/6.png" alt="illustration" />
+            <Image width={500} height={500} src="/img/home-2/6.png" alt="illustration" />
           </div>
         </div>
       </div>
