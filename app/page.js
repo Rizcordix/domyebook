@@ -694,7 +694,7 @@ const page = () => {
                   <h5 className="mil-mb-30 mil-up">Unmatched Speed</h5>
                   <p className="mil-text-m mil-soft mil-up">
                     Make instant transfers and experience <br />
-                    Plax's unparalleled speed with every transaction.
+                    Plax&apos;s unparalleled speed with every transaction.
                   </p>
                 </div>
               </div>
