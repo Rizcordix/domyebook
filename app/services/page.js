@@ -56,7 +56,7 @@ const page = () => {
               <p className="mil-text-m mil-soft mil-mb-30 mil-up">
                 From instant and secure transactions to the flexibility to adapt
                 to global needs, Plax Enterprise offers a reliable platform to
-                drive your company's financial growth.
+                drive your company&apos;s financial growth.
               </p>
               <div className="mil-up">
                 <Link href="/price" className="mil-btn mil-m mil-add-arrow">

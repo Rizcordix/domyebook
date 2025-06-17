@@ -222,7 +222,7 @@ export const Testimonials2 = () => {
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
               The detailed notification history in the App gives me a complete
-              view of my financial activity. It's like having a personal
+              view of my financial activity. It&apos;s like having a personal
               security assistant always.
             </p>
             <div className="mil-customer">
@@ -252,7 +252,7 @@ export const Testimonials2 = () => {
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
               The detailed notification history in the App gives me a complete
-              view of my financial activity. It's like having a personal
+              view of my financial activity. It&apos;s like having a personal
               security assistant always.
             </p>
             <div className="mil-customer">
