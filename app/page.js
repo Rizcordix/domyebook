@@ -2,8 +2,10 @@
 import Banner from "@/components/Banner";
 import { CallToAction1 } from "@/components/CallToAction";
 import { Testimonials2 } from "@/components/Testimonials";
+import Special from "@/components/services2";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+import Portfolio from "@/components/Portfolio";
 
 const page = () => {
   // CSS for play button animations
@@ -547,70 +549,7 @@ const page = () => {
       {/* features */}
       <div className="mil-features mil-p-0-80">
         <div className="container">
-          <div className="row flex-sm-row-reverse justify-content-between align-items-center">
-            <div className="col-xl-6 mil-mb-80">
-              <h2 className="mil-mb-30 mil-up">Our essence, your experience</h2>
-              <p className="mil-text-m mil-soft mil-mb-60 mil-up">
-                Visualize your financial progress with detailed reports and
-                graphs <br />
-                that give you visual insights into your spending and saving
-                habits.
-              </p>
-              <ul className="mil-list-2 mil-type-2">
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Plax® Global Service</h5>
-                    <p className="mil-text-m mil-soft">
-                      Experience exceptional service around the world. <br />
-                      With our Plax® Global Service, we provide assistance{" "}
-                      <br />
-                      and support, wherever you are, to ensure your peace.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Personalized Rewards Program</h5>
-                    <p className="mil-text-m mil-soft">
-                      Enjoy a rewards program that fits your lifestyle. Earn{" "}
-                      <br />
-                      points with every purchase and access exclusive <br />
-                      rewards, from trips to high-quality products.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="col-xl-6 mil-mb-80">
-              <div className="mil-image-frame">
-                <img src="img/home-2/2.png" alt="image" className="mil-up" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* features end */}
-      {/* call to action */}
-      <div className="mil-cta mil-up">
-        <div className="container">
-          <div className="mil-out-frame mil-visible mil-illustration-fix mil-p-160-0">
-            <div className="row align-items-end">
-              <div className="mil-text-center">
-                <h2 className="mil-mb-30 mil-up">
-                  Protected coverage on your <br />
-                  purchases with Plax Standard
-                </h2>
-                <p className="mil-text-m mil-soft mil-mb-60 mil-up">
-                  Enjoy instant coverage against theft or accidental damage{" "}
-                  <br />
-                  for the first forty-five (45) days from the date of purchase.
-                </p>
-              </div>
-            </div>
-            <div className="mil-illustration-absolute mil-up">
-              <img src="img/home-2/3.png" alt="illustration" />
-            </div>
-          </div>
+          <Special />
         </div>
       </div>
       {/* call to action end */}
@@ -664,75 +603,9 @@ const page = () => {
         </div>
       </div>
       {/* icon boxes end */}
-      {/* call to action */}
-      <div className="mil-cta mil-up">
-        <div className="container">
-          <div className="mil-out-frame mil-p-160-100">
-            <div className="row align-items-end">
-              <div className="col-xl-8 mil-mb-80-adaptive-30">
-                <h2 className="mil-up">
-                  Innovation and Efficiency in Every Transaction
-                </h2>
-              </div>
-              <div className="col-xl-4 mil-mb-80 mil-up">
-                <Link
-                  href="register"
-                  className="mil-btn mil-m mil-add-arrow mil-adaptive-right"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="img/home-1/icons/1.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-30 mil-up">Unmatched Speed</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Make instant transfers and experience <br />
-                    Plax&apos;s unparalleled speed with every transaction.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="img/home-1/icons/2.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-30 mil-up">Extensive Global Network</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Connect with the world through our <br />
-                    global network that spans more than <br />
-                    170 countries.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="img/home-1/icons/3.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-30 mil-up">Advanced Security</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Protect your assets with our robust <br />
-                    security protocols and cutting-edge <br />
-                    technologies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* call to action end */}
+      {/* Portfolio */}
+            <Portfolio />
+      {/* Portfolio end */}
       {/* features */}
       <div className="mil-features mil-p-160-80">
         <div className="container">
