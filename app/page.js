@@ -2,6 +2,7 @@
 import Banner from "@/components/Banner";
 import { CallToAction1 } from "@/components/CallToAction";
 import { Testimonials2 } from "@/components/Testimonials";
+import Special from "@/components/services2";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
 
@@ -547,70 +548,7 @@ const page = () => {
       {/* features */}
       <div className="mil-features mil-p-0-80">
         <div className="container">
-          <div className="row flex-sm-row-reverse justify-content-between align-items-center">
-            <div className="col-xl-6 mil-mb-80">
-              <h2 className="mil-mb-30 mil-up">Our essence, your experience</h2>
-              <p className="mil-text-m mil-soft mil-mb-60 mil-up">
-                Visualize your financial progress with detailed reports and
-                graphs <br />
-                that give you visual insights into your spending and saving
-                habits.
-              </p>
-              <ul className="mil-list-2 mil-type-2">
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Plax® Global Service</h5>
-                    <p className="mil-text-m mil-soft">
-                      Experience exceptional service around the world. <br />
-                      With our Plax® Global Service, we provide assistance{" "}
-                      <br />
-                      and support, wherever you are, to ensure your peace.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Personalized Rewards Program</h5>
-                    <p className="mil-text-m mil-soft">
-                      Enjoy a rewards program that fits your lifestyle. Earn{" "}
-                      <br />
-                      points with every purchase and access exclusive <br />
-                      rewards, from trips to high-quality products.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="col-xl-6 mil-mb-80">
-              <div className="mil-image-frame">
-                <img src="img/home-2/2.png" alt="image" className="mil-up" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* features end */}
-      {/* call to action */}
-      <div className="mil-cta mil-up">
-        <div className="container">
-          <div className="mil-out-frame mil-visible mil-illustration-fix mil-p-160-0">
-            <div className="row align-items-end">
-              <div className="mil-text-center">
-                <h2 className="mil-mb-30 mil-up">
-                  Protected coverage on your <br />
-                  purchases with Plax Standard
-                </h2>
-                <p className="mil-text-m mil-soft mil-mb-60 mil-up">
-                  Enjoy instant coverage against theft or accidental damage{" "}
-                  <br />
-                  for the first forty-five (45) days from the date of purchase.
-                </p>
-              </div>
-            </div>
-            <div className="mil-illustration-absolute mil-up">
-              <img src="img/home-2/3.png" alt="illustration" />
-            </div>
-          </div>
+          <Special />
         </div>
       </div>
       {/* call to action end */}
