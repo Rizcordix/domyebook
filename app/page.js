@@ -5,6 +5,7 @@ import { Testimonials2 } from "@/components/Testimonials";
 import Special from "@/components/services2";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+import Portfolio from "@/components/Portfolio";
 
 const page = () => {
   // CSS for play button animations
@@ -602,75 +603,9 @@ const page = () => {
         </div>
       </div>
       {/* icon boxes end */}
-      {/* call to action */}
-      <div className="mil-cta mil-up">
-        <div className="container">
-          <div className="mil-out-frame mil-p-160-100">
-            <div className="row align-items-end">
-              <div className="col-xl-8 mil-mb-80-adaptive-30">
-                <h2 className="mil-up">
-                  Innovation and Efficiency in Every Transaction
-                </h2>
-              </div>
-              <div className="col-xl-4 mil-mb-80 mil-up">
-                <Link
-                  href="register"
-                  className="mil-btn mil-m mil-add-arrow mil-adaptive-right"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="img/home-1/icons/1.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-30 mil-up">Unmatched Speed</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Make instant transfers and experience <br />
-                    Plax&apos;s unparalleled speed with every transaction.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="img/home-1/icons/2.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-30 mil-up">Extensive Global Network</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Connect with the world through our <br />
-                    global network that spans more than <br />
-                    170 countries.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="img/home-1/icons/3.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-30 mil-up">Advanced Security</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Protect your assets with our robust <br />
-                    security protocols and cutting-edge <br />
-                    technologies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* call to action end */}
+      {/* Portfolio */}
+            <Portfolio />
+      {/* Portfolio end */}
       {/* features */}
       <div className="mil-features mil-p-160-80">
         <div className="container">
