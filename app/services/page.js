@@ -3,6 +3,7 @@ import { CallToAction2 } from "@/components/CallToAction";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
 import Hero4Slider from "@/components/Hero4";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -34,8 +35,10 @@ const page = () => {
             </div>
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
-                <img
-                  src="img/inner-pages/3.png"
+                <Image
+                  width={500}
+                  height={500}
+                  src="/img/inner-pages/3.png"
                   alt="image"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -58,7 +61,7 @@ const page = () => {
               <p className="mil-text-m mil-soft mil-mb-30 mil-up">
                 From instant and secure transactions to the flexibility to adapt
                 to global needs, Plax Enterprise offers a reliable platform to
-                drive your company's financial growth.
+                drive your company&apos;s financial growth.
               </p>
               <div className="mil-up">
                 <Link href="/price" className="mil-btn mil-m mil-add-arrow">
@@ -68,12 +71,14 @@ const page = () => {
             </div>
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame ml-up">
-                <img
-                  src="img/inner-pages/4.png"
+                <Image
+                  src="/img/inner-pages/4.png"
                   alt="image"
                   className="mil-scale-img"
                   data-value-1={1}
                   data-value-2="1.2"
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
@@ -102,8 +107,10 @@ const page = () => {
             </div>
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
-                <img
-                  src="img/inner-pages/5.png"
+                <Image
+                  width={500}
+                  height={500}
+                  src="/img/inner-pages/5.png"
                   alt="image"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -130,7 +137,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="img/inner-pages/icons/4.svg"
+                    src="/img/inner-pages/icons/4.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -143,8 +150,10 @@ const page = () => {
               </div>
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
-                  <img
-                    src="img/inner-pages/icons/5.svg"
+                  <Image
+                    width={500}
+                    height={500}
+                    src="/img/inner-pages/icons/5.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -159,8 +168,10 @@ const page = () => {
               </div>
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
-                  <img
-                    src="img/inner-pages/icons/6.svg"
+                  <Image
+                    width={500}
+                    height={500}
+                    src="/img/inner-pages/icons/6.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -182,9 +193,9 @@ const page = () => {
           <div className="row justify-content-center">
             <div className="col-xl-10">
               <h2 className="mil-mb-30">
-                "At Plax, transparency is not just a promise; It is the
+                &quot;At Plax, transparency is not just a promise; It is the
                 cornerstone of our relationship with you. We believe that trust
-                is built with clear policies and coherent actions."
+                is built with clear policies and coherent actions.&quot;
               </h2>
               <p className="mil-text-m mil-soft mil-mb-60">- Plax Team</p>
               <div className="row">

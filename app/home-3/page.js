@@ -7,13 +7,11 @@ import Link from "next/link";
 const page = () => {
   return (
     <PlaxLayout bg={false} margin={0}>
-      <Banner
+      {/* <Banner
         title="Simplified International Payments"
-        img="img/home-3/1.png"
+        img="/img/home-3/1.png"
         style={{ maxWidth: "140%", transform: "translateX(20%)" }}
       />
-      {/* banner end */}
-      {/* brands */}
       <div className="mil-brands mil-p-160-160">
         <div className="container">
           <h5 className="mil-text-center mil-soft mil-mb-60 mil-up">
@@ -22,39 +20,37 @@ const page = () => {
           <div className="row justify-content-center">
             <div className="col-4 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/1.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/1.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-4 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/2.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/2.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-4 col-md-2 mil-text-center">
               <div className="mil-brand">
-                <img src="img/brands/3.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/3.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-4 col-md-2">
               <div className="mil-brand mil-text-center">
-                <img src="img/brands/4.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/4.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-4 col-md-2">
               <div className="mil-brand mil-text-center">
-                <img src="img/brands/5.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/5.svg" alt="brand" className="mil-up" />
               </div>
             </div>
             <div className="col-4 col-md-2">
               <div className="mil-brand mil-text-center">
-                <img src="img/brands/6.svg" alt="brand" className="mil-up" />
+                <img src="/img/brands/6.svg" alt="brand" className="mil-up" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* brands end */}
-      {/* features */}
       <div className="mil-features mil-p-0-80">
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
@@ -104,17 +100,15 @@ const page = () => {
             </div>
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-visible-overflow">
-                <img src="img/home-3/2.png" alt="image" className="mil-up" />
+                <img src="/img/home-3/2.png" alt="image" className="mil-up" />
                 <div className="mil-img-box mil-accent-box mil-up">
-                  <img src="img/home-3/icons/1.svg" alt="icon" />
+                  <img src="/img/home-3/icons/1.svg" alt="icon" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* features */}
       <div className="mil-features mil-p-0-80">
         <div className="container">
           <div className="row justify-content-between align-items-center">
@@ -164,17 +158,15 @@ const page = () => {
             </div>
             <div className="col-xl-4 mil-mb-80">
               <div className="mil-image-frame mil-image-frame-2 mil-visible-overflow">
-                <img src="img/home-3/3.png" alt="image" className="mil-up" />
+                <img src="/img/home-3/3.png" alt="image" className="mil-up" />
                 <div className="mil-img-box mil-left-box mil-left-max mil-soft-box mil-up">
-                  <img src="img/home-3/icons/2.svg" alt="icon" />
+                  <img src="/img/home-3/icons/2.svg" alt="icon" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* call to action */}
       <div className="mil-cta mil-up">
         <div className="container">
           <div className="mil-out-frame mil-visible mil-image mil-p-160-130">
@@ -197,7 +189,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-30">
                 <Link href="/about" className="mil-icon-box mil-center mil-hover">
                   <img
-                    src="img/home-3/icons/3.svg"
+                    src="/img/home-3/icons/3.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -216,7 +208,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-30">
                 <Link href="/career" className="mil-icon-box mil-center mil-hover">
                   <img
-                    src="img/home-3/icons/4.svg"
+                    src="/img/home-3/icons/4.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -235,7 +227,7 @@ const page = () => {
               <div className="col-xl-4 mil-mb-30">
                 <Link href="/pricing" className="mil-icon-box mil-center mil-hover">
                   <img
-                    src="img/home-3/icons/5.svg"
+                    src="/img/home-3/icons/5.svg"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -255,8 +247,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* call to action end */}
-      {/* features */}
       <div className="mil-features mil-p-160-80">
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
@@ -296,17 +286,15 @@ const page = () => {
             </div>
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-visible-overflow">
-                <img src="img/home-3/4.png" alt="image" className="mil-up" />
+                <img src="/img/home-3/4.png" alt="image" className="mil-up" />
                 <div className="mil-img-box mil-soft-box mil-up">
-                  <img src="img/home-3/icons/6.svg" alt="icon" />
+                  <img src="/img/home-3/icons/6.svg" alt="icon" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* features end */}
-      {/* testimonials */}
       <div className="mil-cta mil-up">
         <div className="container">
           <div className="mil-out-frame mil-bg-1 mil-p-160-160">
@@ -318,8 +306,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* testimonials end */}
-      {/* facts */}
       <div className="mil-facts mil-p-160-80">
         <div className="container">
           <div className="row justify-content-between align-items-center">
@@ -356,9 +342,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* facts end */}
-      {/* call to action */}
-      <CallToAction1 />
+      <CallToAction1 /> */}
       {/* call to action end */}
     </PlaxLayout>
   );
