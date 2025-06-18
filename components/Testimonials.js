@@ -2,6 +2,11 @@
 import { sliderProps } from "@/utility/sliderProps";
 import { Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+// ONLY import modules that are actually exported in your index.mjs
+// Based on your index.mjs, Autoplay and FreeMode are exported.
+// Loop is a Swiper prop, not a separate module to import here.
+import { Autoplay, FreeMode } from 'swiper/modules';
+
 const Testimonials1 = () => {
   return (
     <Fragment>
@@ -134,11 +139,23 @@ const Testimonials1 = () => {
 };
 export default Testimonials1;
 
+
+
 export const Testimonials2 = () => {
   return (
     <Fragment>
       <Swiper
         {...sliderProps.testimonials2}
+        // Add or adjust autoplay configuration
+        autoplay={{
+          delay: 0, // Set delay to 0 for continuous scroll
+          disableOnInteraction: false, // Keep autoplaying even after user interaction
+          pauseOnMouseEnter: false, // Don't pause on mouse hover
+        }}
+        loop={true} // <--- This is how you enable looping in Swiper
+        speed={3000} // Adjust speed to control how fast it scrolls
+        freeMode={true} // <--- This is how you enable freeMode in Swiper
+        modules={[Autoplay, FreeMode]} // ONLY include modules imported above
         className="swiper-container mil-testimonials-2 mil-up"
       >
         <SwiperSlide className="swiper-slide">

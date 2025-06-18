@@ -196,16 +196,14 @@ return (
                             )}
 
                             <div className="cta_section">
-                                <Link href="/services" legacyBehavior>
-                                    <a className="btn btn-primary">
-                                        <span className="btn_text">Get Started</span>
-                                        <div className="btn_icon">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                </Link>
+                               <div>
+                                    <Link
+                                    href="/services"
+                                    className="mil-btn mil-button-transform mil-md mil-add-arrow"
+                                    >
+                                    get started
+                                    </Link>
+                                </div>
                                 
                                 <div className="stats_mini">
                                     <div className="stat_item">
