@@ -141,7 +141,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
                 +001 (808) 555-0111
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                support@plax.network
+                info@domyebook.com
               </li>
             </ul>
           </div>
@@ -229,7 +229,7 @@ const Footer3 = ({ bg = true, margin = 160 }) => {
                 +001 (808) 555-0111
               </li>
               <li className="mil-text-m mil-pale mil-mb-15">
-                support@plax.network
+                info@domyebook.com
               </li>
             </ul>
           </div>
@@ -314,7 +314,7 @@ const Footer2 = () => {
                 +001 (808) 555-0111
               </li>
               <li className="mil-text-m mil-dark-soft mil-mb-15">
-                support@plax.network
+                info@domyebook.com
               </li>
             </ul>
           </div>
