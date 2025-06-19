@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 const Banner = ({
-  title = "Unleash your Ebook vision today!",
-  subTitle = "Your Story, Our Words — Professionally Published",
+  title = "Bring Your Ebook Vision to Life!",
+  subTitle = "Your Story, Our Expertise, Professionally Published",
   img = "/img/home-2/1.png",
   style = { maxWidth: "135%", transform: "translateX(5%)" },
   dark = false,
