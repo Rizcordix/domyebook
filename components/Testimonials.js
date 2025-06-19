@@ -14,7 +14,7 @@ const Testimonials1 = () => {
         {...sliderProps.testimonials}
         className="mil-testimonials-1 mil-up"
       >
-        <SwiperSlide className="swiper-slide">
+        {/* <SwiperSlide className="swiper-slide">
           <blockquote
             className="mil-center"
             data-swiper-parallax={-400}
@@ -51,7 +51,7 @@ const Testimonials1 = () => {
             />
             <h5 className="mil-up">Bett Nilsen</h5>
           </blockquote>
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide className="swiper-slide">
           <blockquote
             className="mil-center"
@@ -178,9 +178,8 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              I had never felt so connected to my finances. The instant alerts
-              from Plax keep me informed in real time, giving me a feeling of
-              total control. But the result, the lion needs to drink members.
+              I had never felt so connected to my writing process.
+              The support from Do My Ebook has kept me informed every step of the way, giving me confidence that my ebook is in great hands.
             </p>
             <div className="mil-customer">
               <img src="img/faces/1.jpg" alt="Customer" className="mil-up" />
@@ -208,9 +207,9 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              Plax Standard has proven to be more than a card; it is my
-              financial defender. Proactive alerts give me confidence that my
-              security is in good hands.
+              The team at Do My Ebook truly goes above and beyond. 
+              They&apos;ve helped me transform my manuscript into a professional, polished ebook. 
+              Their personalized service and attention to detail are unmatched.
             </p>
             <div className="mil-customer">
               <img src="img/faces/2.jpg" alt="Customer" className="mil-up" />
@@ -238,9 +237,9 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              The detailed notification history in the App gives me a complete
-              view of my financial activity. It&apos;s like having a personal
-              security assistant always.
+              From formatting to publishing, Do My Ebook has been a lifesaver. 
+              I&apos;m so grateful for their efficient service and excellent communication throughout the process. 
+              It feels like having a personal assistant for my ebook journey.
             </p>
             <div className="mil-customer">
               <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
@@ -248,7 +247,7 @@ export const Testimonials2 = () => {
             </div>
           </blockquote>
         </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
+        {/* <SwiperSlide className="swiper-slide">
           <blockquote className="mil-with-bg">
             <svg
               width={50}
@@ -277,7 +276,7 @@ export const Testimonials2 = () => {
               <h6 className="mil-up">Bett Nilsen</h6>
             </div>
           </blockquote>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
       <div className="mil-testi-pagination mil-up" />
     </Fragment>

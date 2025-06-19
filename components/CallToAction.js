@@ -13,9 +13,12 @@ export const CallToAction1 = () => {
                 Protection for your purchases
               </h2>
               <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up">
-                Discover how we make each purchase a safe and reliable <br />
-                experience for you.
+                Let&apos;s Make Sure Your Ebook Is Safe
               </p>
+              <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up">  
+                Click below to get started, and we&apos;ll take care of the rest.
+              </p>
+
               <div className="mil-up mil-mb-60">
                 <Link
                   href="/register"
