@@ -2666,11 +2666,13 @@ footer .mil-footer-list.mil-footer-list-2 li a:hover {
 footer .mil-footer-bottom {
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
   border-top: solid 1px rgba(137, 141, 150, 0.2);
   background-color: rgba(242, 250, 250, 0);
 }
 footer.mil-footer-with-bg {
-  background-color: rgb(242, 250, 250);
+  background-color: rgba(242, 250, 250, 0);
 }
 footer.mil-footer-with-bg .mil-footer-bottom {
   border-top: solid 1px rgba(137, 141, 150, 0.2);

@@ -88,7 +88,7 @@ const page = () => {
                   Fax: +001 (808) 555-0112
                 </p>
                 <p className="mil-text-m mil-soft mil-up">
-                  Email: support@plax.network
+                  Email: info@domyebook.com
                 </p>
               </div>
             </div>
