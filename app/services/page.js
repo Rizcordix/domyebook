@@ -5,6 +5,19 @@ import Link from "next/link";
 const page = () => {
   return (
     <PlaxLayout bg={false}>
+
+      <head>
+        <title>Our Services | DoMyEbook</title>
+        <meta name="description" content="Explore DoMyEbook's full range of professional services including ghostwriting, editing, formatting, publishing, book design, marketing, and audiobook creation." />
+        <meta name="keywords" content="ebook services, ghostwriting, editing, proofreading, ebook formatting, publishing, illustration, book cover design, ebook marketing, promo video, audiobook, audio ebook" />
+        <meta property="og:title" content="DoMyEbook Services" />
+        <meta property="og:description" content="Discover premium ebook services from DoMyEbook — including writing, editing, publishing, design, and marketing solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://domyebook.com/services" />
+        <meta property="og:image" content="https://domyebook.com/public/img/logo.png" />
+        <link rel="canonical" href="https://domyebook.com/services" />
+      </head>
+
       <PageBanner
         title="Adapted to your needs, discover what we have"
         pageName="Services"

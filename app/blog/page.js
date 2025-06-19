@@ -5,6 +5,18 @@ import Image from "next/image";
 const page = () => {
   return (
     <PlaxLayout>
+      <head>
+        <title>Blog | DoMyEbook</title>
+        <meta name="description" content="Stay updated with the latest ebook publishing trends, writing tips, marketing strategies, and expert insights from the DoMyEbook team." />
+        <meta name="keywords" content="ebook blog, writing tips, publishing advice, ebook marketing, self-publishing tips, ghostwriting, book cover design, audiobook tips, DoMyEbook blog" />
+        <meta property="og:title" content="DoMyEbook Blog" />
+        <meta property="og:description" content="Explore expert advice, guides, and industry updates on ebook creation, publishing, and promotion — brought to you by DoMyEbook." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://domyebook.com/blogs" />
+        <meta property="og:image" content="https://domyebook.com/public/img/logo.png" />
+        <link rel="canonical" href="https://domyebook.com/blogs" />
+      </head>
+
       <PageBanner
         pageName="Blog"
         title="Your Source of Financial Information"

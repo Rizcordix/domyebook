@@ -44,6 +44,18 @@ const page = () => {
 
   return (
     <PlaxLayout>
+      <head>
+        <title>DoMyEbook</title>
+        <meta name="description" content="DoMyEbook offers professional ebook services including ghostwriting, editing, formatting, publishing, book cover design, marketing, promo videos, and audiobook creation." />
+        <meta name="keywords" content="DoMyEbook, ebook services, ghostwriting, editing, proofreading, formatting, publishing, book design, book cover, illustration, ebook marketing, promo video, audiobook, audio ebook" />
+        <meta property="og:title" content="DoMyEbook | Full-Service eBook Publishing Solutions" />
+        <meta property="og:description" content="From ghostwriting and editing to book cover design, promo videos, and audiobooks — DoMyEbook is your one-stop solution for all ebook needs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://domyebook.com" />
+        <meta property="og:image" content="https://domyebook.com/public/img/logo.png" />
+        <link rel="canonical" href="https://domyebook.com" />
+      </head>
+
       {/* Add keyframe animations */}
       <style>{playButtonStyles}</style>
       
