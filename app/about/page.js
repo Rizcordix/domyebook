@@ -207,7 +207,7 @@ const page = () => {
           <div className="row justify-content-center">
             <div className="col-xl-10">
               <h2 className="mil-mb-30">
-                "At DoMyEbook, transparency is not just a promise; it's the cornerstone of our relationship with you. We believe that trust is built with clear policies and coherent actions."
+                &quot;At DoMyEbook, transparency is not just a promise; it&apos;s the cornerstone of our relationship with you. We believe that trust is built with clear policies and coherent actions.&quot;
               </h2>
               <p className="mil-text-m mil-soft mil-mb-60">- DoMyEbook Team</p>
             </div>
