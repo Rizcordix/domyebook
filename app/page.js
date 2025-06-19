@@ -86,7 +86,7 @@ const page = () => {
                 maxWidth: '600px',
                 animationDelay: '0.4s'
               }}>
-                From idea to bestseller — DoMyEbook turns your vision into a professionally crafted and published eBook with end-to-end solutions
+                We believe your story deserves to be shared with the world. Let us help you turn your manuscript into a stunning ebook, whether it&apos;s formatting, design, or distribution, we&apos;ve got you covered every step of the way.
               </p>
               
               {/* Mobile: Client Section + Play Button Combined */}
