@@ -1,4 +1,7 @@
 import Link from "next/link";
+// Assuming you have Font Awesome or similar CSS imported globally
+// For example, in your _app.js or a dedicated CSS file.
+
 const Footer = ({ bg = true, margin = 160, footer }) => {
   switch (footer) {
     case 1:
@@ -15,14 +18,97 @@ const Footer = ({ bg = true, margin = 160, footer }) => {
 export default Footer;
 
 const Footer1 = ({ bg = true, margin = 160 }) => {
+  const iconBaseStyle = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '45px',
+    height: '45px',
+    backgroundColor: '#f2fafa',
+    color: '#004c4f', // Teal or dark green for consistency
+    borderRadius: '50%',
+    textDecoration: 'none',
+    fontSize: '18px',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+  };
+
+  const iconHoverEffects = {
+    instagram: '0 4px 15px rgba(131, 58, 180, 0.4)',
+    facebook: '0 4px 15px rgba(59, 89, 152, 0.4)',
+    linkedin: '0 4px 15px rgba(0, 119, 181, 0.4)',
+    whatsapp: '0 4px 15px rgba(37, 211, 102, 0.4)',
+  };
+
+  const socialLinks = [
+    {
+      href: 'https://www.instagram.com/',
+      icon: 'fab fa-instagram',
+      hoverShadow: iconHoverEffects.instagram,
+    },
+    {
+      href: 'https://www.facebook.com/digital53/',
+      icon: 'fab fa-facebook-f',
+      hoverShadow: iconHoverEffects.facebook,
+    },
+    {
+      href: 'https://www.linkedin.com/in/joharmandav/',
+      icon: 'fab fa-linkedin-in',
+      hoverShadow: iconHoverEffects.linkedin,
+    },
+    {
+      href: 'https://wa.me/96599144152',
+      icon: 'fab fa-whatsapp',
+      hoverShadow: iconHoverEffects.whatsapp,
+    },
+  ];
+
   return (
-    <footer className={`${bg ? "mil-footer-with-bg" : ""} mil-p-${margin}-0 `}>
+    <footer className={`${bg ? "mil-footer-with-bg" : ""} mil-p-120-0`}>
       <div className="container">
         <div className="row">
           <div className="col-xl-3">
-            <a href="#." className="mil-footer-logo mil-mb-60">
-              <img src="/img/logo-2.png" alt="Plax" width={28} height={32} />
+            <a href="#." className="mil-footer-logo mil-mb-30">
+              <img src="/img/logo.png" alt="Plax" width={90} height={32} />
             </a>
+
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                gap: '15px',
+                alignItems: 'center',
+              }}
+            >
+              {socialLinks.map(({ href, icon, hoverShadow }, index) => (
+                <li
+                  key={index}
+                  style={{
+                    transition: 'transform 0.3s ease',
+                  }}
+                >
+                  <Link
+                    href={href}
+                    target="_blank"
+                    style={iconBaseStyle}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'translateY(-3px)';
+                      e.target.style.boxShadow = hoverShadow;
+                      e.target.style.backgroundColor = '#f2fafd';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                      e.target.style.backgroundColor = '#f2fafa';
+                    }}
+                  >
+                    <i className={icon}></i>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="col-xl-3 mil-mb-60">
             <h6 className="mil-mb-60">Usefull Links</h6>
@@ -40,7 +126,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
                 <Link href="services">Services</Link>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                <Link href="price">Pricing</Link>
+                <Link href="blog">Blogs</Link>
               </li>
             </ul>
           </div>
@@ -80,25 +166,25 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               </div>
             </form>
           </div>
+          </div>
         </div>
-        <div className="mil-footer-bottom">
+        <div className="mil-footer-bottom" >
           <div className="row">
             <div className="col-xl-6">
               <p className="mil-text-s mil-soft">
-                © 2024 Plax Finance &amp; Fintech Design
+                © 2025 DoMyEbook. All Rights Reserved.
               </p>
             </div>
             <div className="col-xl-6">
               <p className="mil-text-s mil-text-right mil-sm-text-left mil-soft">
                 Developed by{" "}
-                <a href="https://bslthemes.com" target="blank">
-                  bslthemes
+                <a href="https://Rizcordixglobal.com" target="blank">
+                  Rizcordix Global
                 </a>
               </p>
             </div>
           </div>
         </div>
-      </div>
     </footer>
   );
 };
