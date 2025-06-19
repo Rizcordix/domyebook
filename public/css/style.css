@@ -729,6 +729,11 @@ space
   padding-top: 160px;
   padding-bottom: 160px;
 }
+
+.mil-p-120-0 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
 @media (max-width: 1200px) {
   .mil-p-160-160 {
     padding-top: 80px;
@@ -2659,9 +2664,10 @@ footer .mil-footer-list.mil-footer-list-2 li a:hover {
   }
 }
 footer .mil-footer-bottom {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-top: solid 1px rgba(137, 141, 150, 0.2);
+  background-color: rgba(242, 250, 250, 0);
 }
 footer.mil-footer-with-bg {
   background-color: rgb(242, 250, 250);
@@ -2713,6 +2719,256 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
 .mil-subscripe-form-footer button i.mil-dark {
   color: rgb(13, 81, 82);
 }/*# sourceMappingURL=style.css.map */
+
+
+/* Enhanced hover effects for mil-icon-box */
+.mil-hover-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.mil-hover-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 197, 253, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.mil-hover-card:hover::before {
+  opacity: 1;
+}
+
+.mil-hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon wrapper enhancements */
+.mil-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.mil-hover-card:hover .mil-icon-wrapper {
+  transform: scale(1.1) rotate(6deg);
+}
+
+.mil-hover-card:nth-child(2):hover .mil-icon-wrapper {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.mil-hover-card:nth-child(3):hover .mil-icon-wrapper {
+  transform: scale(1.1) rotate(12deg);
+}
+
+.mil-icon-img {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.mil-hover-card:hover .mil-icon-img {
+  filter: drop-shadow(0 8px 16px rgba(239, 68, 68, 0.2));
+}
+
+/* Title and description enhancements */
+.mil-title {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.mil-hover-card:hover .mil-title {
+  color: #1e293b;
+}
+
+.mil-description {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.mil-hover-card:hover .mil-description {
+  color: #475569;
+}
+
+/* Animated underline */
+.mil-hover-line {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  transition: width 0.5s ease;
+  z-index: 2;
+}
+
+.mil-hover-card:hover .mil-hover-line {
+  width: 60%;
+}
+
+.mil-hover-card:nth-child(2):hover .mil-hover-line {
+  transition-delay: 0.1s;
+}
+
+.mil-hover-card:nth-child(3):hover .mil-hover-line {
+  transition-delay: 0.2s;
+}
+
+/* Floating particles */
+.mil-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mil-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.mil-particle-1 {
+  top: 16px;
+  right: 16px;
+  background: #3b82f6;
+}
+
+.mil-particle-2 {
+  top: 32px;
+  right: 32px;
+  width: 4px;
+  height: 4px;
+  background: #60a5fa;
+}
+
+.mil-particle-3 {
+  top: 24px;
+  left: 16px;
+  background: #10b981;
+}
+
+.mil-particle-4 {
+  bottom: 32px;
+  left: 32px;
+  width: 4px;
+  height: 4px;
+  background: #34d399;
+}
+
+.mil-particle-5 {
+  top: 16px;
+  left: 24px;
+  background: #8b5cf6;
+}
+
+.mil-particle-6 {
+  bottom: 24px;
+  right: 16px;
+  width: 4px;
+  height: 4px;
+  background: #a78bfa;
+}
+
+.mil-hover-card:hover .mil-particle {
+  opacity: 1;
+}
+
+.mil-hover-card:hover .mil-particle-1,
+.mil-hover-card:hover .mil-particle-3,
+.mil-hover-card:hover .mil-particle-5 {
+  animation: bounce 2s infinite;
+}
+
+.mil-hover-card:hover .mil-particle-2,
+.mil-hover-card:hover .mil-particle-4,
+.mil-hover-card:hover .mil-particle-6 {
+  animation: pulse 2s infinite;
+}
+
+/* Particle animations */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Staggered animation delays for different cards */
+.mil-hover-card:nth-child(1) .mil-particle {
+  transition-delay: 0.1s;
+}
+
+.mil-hover-card:nth-child(2) .mil-particle {
+  transition-delay: 0.2s;
+}
+
+.mil-hover-card:nth-child(3) .mil-particle {
+  transition-delay: 0.15s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mil-hover-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .mil-hover-card:hover .mil-icon-wrapper {
+    transform: scale(1.05) rotate(3deg);
+  }
+  
+  .mil-particle {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .mil-particle-2,
+  .mil-particle-4,
+  .mil-particle-6 {
+    width: 3px;
+    height: 3px;
+  }
+}
 
 
 
