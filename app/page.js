@@ -7,6 +7,7 @@ import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
 import Portfolio from "@/components/Portfolio";
 import BrandCarousel from "@/components/BrandCarousel";
+import BenefitsSection from "@/components/IconBoxes";
 
 const page = () => {
   // CSS for play button animations
@@ -540,59 +541,12 @@ const page = () => {
       </div>
       {/* call to action end */}
       {/* icon boxes */}
-      <div className="icon-boxes mil-p-80-80">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-4 mil-mb-30">
-              <div className="mil-icon-box mil-with-bg mil-center mil-up">
-                <img
-                  src="img/home-2/icons/1.svg"
-                  alt="icon"
-                  className="mil-mb-30 mil-up"
-                />
-                <h5 className="mil-mb-20 mil-up">Make your Purchase</h5>
-                <p className="mil-text-s mil-soft mil-up">
-                  Enjoy instant coverage against theft or accidental damage for
-                  the first forty-five (45) days from the date of purchase.
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-4 mil-mb-30">
-              <div className="mil-icon-box mil-with-bg mil-center mil-up">
-                <img
-                  src="img/home-2/icons/2.svg"
-                  alt="icon"
-                  className="mil-mb-30 mil-up"
-                />
-                <h5 className="mil-mb-20 mil-up">Manage your Rewards</h5>
-                <p className="mil-text-s mil-soft mil-up">
-                  Rewards easily, Access a personalized rewards program that
-                  fits your lifestyle and preferences.
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-4 mil-mb-30">
-              <div className="mil-icon-box mil-with-bg mil-center mil-up">
-                <img
-                  src="img/home-2/icons/3.svg"
-                  alt="icon"
-                  className="mil-mb-30 mil-up"
-                />
-                <h5 className="mil-mb-20 mil-up">Access Exclusive Benefits</h5>
-                <p className="mil-text-s mil-soft mil-up">
-                  From special offers to added security, every transaction is
-                  not just a purchase, but an open door to a range.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BenefitsSection />
       {/* icon boxes end */}
       {/* Portfolio */}
             <Portfolio />
       {/* Portfolio end */}
-      <div className="mil-features mil-p-80-80">
+      {/* <div className="mil-features mil-p-80-80">
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
             <div className="col-xl-6 mil-mb-80">
@@ -638,10 +592,10 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* features end */}
       {/* testimonials */}
-      <div className="mil-testimonials mil-p-0-160">
+      <div className="mil-testimonials mil-p-80-160">
         <div className="container">
           <Testimonials2 />
         </div>
