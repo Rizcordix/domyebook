@@ -300,7 +300,7 @@ export const Testimonials2 = () => {
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
               As a first-time ebook author, I was overwhelmed. Do My Ebook made the entire process seamless.
-              Their guidance on formatting and publishing was invaluable, and I'm thrilled with the final product.
+              Their guidance on formatting and publishing was invaluable, and I&apos;m thrilled with the final product.
               A truly stress-free experience!
             </p>
             <div className="mil-customer">
@@ -329,7 +329,7 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              I'm incredibly impressed with the quality of work from Do My Ebook.
+              I&apos;m incredibly impressed with the quality of work from Do My Ebook.
               They took my raw manuscript and turned it into a beautifully formatted and professional ebook.
               The communication was excellent, and they delivered on time!
             </p>
