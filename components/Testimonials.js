@@ -180,6 +180,7 @@ export const Testimonials2 = () => {
             <p className="mil-text-m mil-mb-30 mil-up">
               I had never felt so connected to my writing process.
               The support from Do My Ebook has kept me informed every step of the way, giving me confidence that my ebook is in great hands.
+              They truly care about their clients and their work.
             </p>
             <div className="mil-customer">
               <img src="img/faces/1.jpg" alt="Customer" className="mil-up" />
@@ -207,8 +208,8 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              The team at Do My Ebook truly goes above and beyond. 
-              They&apos;ve helped me transform my manuscript into a professional, polished ebook. 
+              The team at Do My Ebook truly goes above and beyond.
+              They&apos;ve helped me transform my manuscript into a professional, polished ebook.
               Their personalized service and attention to detail are unmatched.
             </p>
             <div className="mil-customer">
@@ -237,8 +238,8 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              From formatting to publishing, Do My Ebook has been a lifesaver. 
-              I&apos;m so grateful for their efficient service and excellent communication throughout the process. 
+              From formatting to publishing, Do My Ebook has been a lifesaver.
+              I&apos;m so grateful for their efficient service and excellent communication throughout the process.
               It feels like having a personal assistant for my ebook journey.
             </p>
             <div className="mil-customer">
@@ -247,7 +248,8 @@ export const Testimonials2 = () => {
             </div>
           </blockquote>
         </SwiperSlide>
-        {/* <SwiperSlide className="swiper-slide">
+        {/* New Testimonials Added Below */}
+        <SwiperSlide className="swiper-slide">
           <blockquote className="mil-with-bg">
             <svg
               width={50}
@@ -267,16 +269,76 @@ export const Testimonials2 = () => {
               />
             </svg>
             <p className="mil-text-m mil-mb-30 mil-up">
-              The detailed notification history in the App gives me a complete
-              view of my financial activity. It&apos;s like having a personal
-              security assistant always.
+              Do My Ebook provided exceptional design services! My ebook looks incredibly professional and engaging.
+              They understood my vision perfectly and brought it to life with their creative expertise.
+              Highly recommend for anyone seeking top-tier ebook design.
             </p>
             <div className="mil-customer">
-              <img src="img/faces/2.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">Bett Nilsen</h6>
+              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
+              <h6 className="mil-up">Sarah Chen</h6>
             </div>
           </blockquote>
-        </SwiperSlide> */}
+        </SwiperSlide>
+        <SwiperSlide className="swiper-slide">
+          <blockquote className="mil-with-bg">
+            <svg
+              width={50}
+              height={32}
+              viewBox="0 0 50 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="mil-mb-30 mil-up mil-accent"
+            >
+              <path
+                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
+                fill="#03A6A6"
+              />
+              <path
+                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
+                fill="#03A6A6"
+              />
+            </svg>
+            <p className="mil-text-m mil-mb-30 mil-up">
+              As a first-time ebook author, I was overwhelmed. Do My Ebook made the entire process seamless.
+              Their guidance on formatting and publishing was invaluable, and I'm thrilled with the final product.
+              A truly stress-free experience!
+            </p>
+            <div className="mil-customer">
+              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
+              <h6 className="mil-up">David Miller</h6>
+            </div>
+          </blockquote>
+        </SwiperSlide>
+        <SwiperSlide className="swiper-slide">
+          <blockquote className="mil-with-bg">
+            <svg
+              width={50}
+              height={32}
+              viewBox="0 0 50 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="mil-mb-30 mil-up mil-accent"
+            >
+              <path
+                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
+                fill="#03A6A6"
+              />
+              <path
+                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
+                fill="#03A6A6"
+              />
+            </svg>
+            <p className="mil-text-m mil-mb-30 mil-up">
+              I'm incredibly impressed with the quality of work from Do My Ebook.
+              They took my raw manuscript and turned it into a beautifully formatted and professional ebook.
+              The communication was excellent, and they delivered on time!
+            </p>
+            <div className="mil-customer">
+              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
+              <h6 className="mil-up">Jessica Lee</h6>
+            </div>
+          </blockquote>
+        </SwiperSlide>
       </Swiper>
       <div className="mil-testi-pagination mil-up" />
     </Fragment>
