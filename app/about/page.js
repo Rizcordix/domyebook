@@ -173,7 +173,7 @@ const page = () => {
       {/* call to action end */}
 
       {/* features */}
-      <div className="mil-features mil-p-160-80">
+      <div className="mil-features mil-p-160-0">
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
             <div className="col-xl-6 mil-mb-80">
@@ -217,13 +217,13 @@ const page = () => {
       {/* features end */}
 
       {/* quote */}
-      <div className="mil-quote mil-p-160-0">
+      <div className="mil-quote mil-p-60-0">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-10">
-              <h2 className="mil-mb-30">
+              <h4 className="mil-mb-30">
                 &quot;At DoMyEbook, transparency is not just a promise; it&apos;s the cornerstone of our relationship with you. We believe that trust is built with clear policies and coherent actions.&quot;
-              </h2>
+              </h4>
               <p className="mil-text-m mil-soft mil-mb-60">- DoMyEbook Team</p>
             </div>
           </div>
