@@ -35,7 +35,7 @@ const page = () => {
                   Ready to Transform Your Ideas into a Bestselling Ebook?
                 </h3>
                 <p className="mil-text-l mil-soft mil-mb-60 mil-up" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                  Whether you're a first-time author or looking to expand your publishing portfolio, our expert team is here to guide you through every step of your ebook journey. From initial concept to final publication, we make your publishing dreams a reality.
+                  Whether you&apos;re a first-time author or looking to expand your publishing portfolio, our expert team is here to guide you through every step of your ebook journey. From initial concept to final publication, we make your publishing dreams a reality.
                 </p>
               </div>
 
@@ -358,7 +358,7 @@ const page = () => {
                   Ready to Get Started?
                 </h4>
                 <p className="mil-text-l mil-soft mil-mb-40">
-                  Don't let your story remain untold. Contact us today and let's discuss how we can help you publish your next bestseller.
+                  Don&apos;t let your story remain untold. Contact us today and let&apos;s discuss how we can help you publish your next bestseller.
                 </p>
                 <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <a 
