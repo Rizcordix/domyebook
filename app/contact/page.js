@@ -1,9 +1,25 @@
 import { PageBanner } from "@/components/Banner";
 import { CallToAction2 } from "@/components/CallToAction";
 import PlaxLayout from "@/layouts/PlaxLayout";
+
+export const metadata = {
+  title: "Contact Us | DoMyEbook",
+  description: "Get in touch with DoMyEbook for professional ebook services including writing, editing, publishing, and marketing. We're here to help you every step of the way.",
+  keywords: "contact DoMyEbook, ebook help, ebook services support, ghostwriting contact, publishing assistance, editing services, book cover inquiry",
+  openGraph: {
+    title: "Contact DoMyEbook | Get in Touch",
+    description: "Have questions about ebook writing or publishing? Contact the DoMyEbook team for expert support and guidance.",
+    type: "website",
+    url: "https://domyebook.com/contact",
+    images: ["https://domyebook.com/images/contact/contact-banner.png"], // Replace with actual contact page image
+  },
+};
+
+
 const page = () => {
   return (
     <PlaxLayout bg={false}>
+
       <PageBanner
         pageName="Contact us"
         title="Connect with Us: We are Here to Help You"

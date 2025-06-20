@@ -2,21 +2,24 @@ import { PageBanner } from "@/components/Banner";
 import { CallToAction2 } from "@/components/CallToAction";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Our Services | DoMyEbook",
+  description: "Explore DoMyEbook's full range of professional services including ghostwriting, editing, formatting, publishing, book design, marketing, and audiobook creation.",
+  keywords: "ebook services, ghostwriting, editing, proofreading, ebook formatting, publishing, illustration, book cover design, ebook marketing, promo video, audiobook, audio ebook",
+  openGraph: {
+    title: "DoMyEbook Services",
+    description: "Discover premium ebook services from DoMyEbook — including writing, editing, publishing, design, and marketing solutions.",
+    type: "website",
+    url: "https://domyebook.com/services",
+    images: ["https://domyebook.com/images/services/ebook-services-banner.png"], // Replace if you have a better banner
+  },
+};
+
+
 const page = () => {
   return (
     <PlaxLayout bg={false}>
-
-      <head>
-        <title>Our Services | DoMyEbook</title>
-        <meta name="description" content="Explore DoMyEbook's full range of professional services including ghostwriting, editing, formatting, publishing, book design, marketing, and audiobook creation." />
-        <meta name="keywords" content="ebook services, ghostwriting, editing, proofreading, ebook formatting, publishing, illustration, book cover design, ebook marketing, promo video, audiobook, audio ebook" />
-        <meta property="og:title" content="DoMyEbook Services" />
-        <meta property="og:description" content="Discover premium ebook services from DoMyEbook — including writing, editing, publishing, design, and marketing solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://domyebook.com/services" />
-        <meta property="og:image" content="https://domyebook.com/public/img/logo.png" />
-        <link rel="canonical" href="https://domyebook.com/services" />
-      </head>
 
       <PageBanner
         title="Adapted to your needs, discover what we have"

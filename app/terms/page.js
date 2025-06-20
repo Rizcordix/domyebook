@@ -1,6 +1,20 @@
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Terms | DoMyEbook",
+  description: "Read the Terms and Conditions of DoMyEbook to understand your rights, responsibilities, and our policies when using our ebook services.",
+  keywords: "DoMyEbook terms, terms and conditions, ebook service policies, DoMyEbook legal, terms of service, usage agreement, service agreement",
+  openGraph: {
+    title: "DoMyEbook Terms & Conditions",
+    description: "Review the full Terms and Conditions for using DoMyEbook's ebook writing, editing, publishing, and marketing services.",
+    type: "website",
+    url: "https://domyebook.com/terms",
+    images: ["https://domyebook.com/images/legal/terms-banner.png"], // Replace with the actual image path
+  },
+};
+
+
 const page = () => (
     <PlaxLayout bg={false}>
         <div className="mil-banner mil-banner-inner mil-dissolve">
