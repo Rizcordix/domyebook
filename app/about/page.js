@@ -1,17 +1,242 @@
+'use client'
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
+import { useState, useEffect } from 'react';
 
-export const metadata = {
-  title: "About Us | DoMyEbook",
-  description: "Learn more about DoMyEbook, our mission, vision, and values that drive our commitment to deliver expert ebook writing, editing, publishing, and marketing services.",
-  keywords: "About DoMyEbook, ebook writing services, ghostwriting, ebook publishing, editing, proofreading, book cover design, promo video, audiobook",
-  openGraph: {
-    title: "About DoMyEbook | Trusted eBook Experts",
-    description: "DoMyEbook provides comprehensive ebook services with a team of experienced writers and editors. Discover our story, values, and what sets us apart.",
-    type: "website",
-    url: "https://domyebook.com/about",
-    images: ["https://domyebook.com/public/img/logo.png"], // Replace with your actual image if needed
-  },
+// Enhanced Rotating Vision List Component with True Circular Rolling Effect
+const RotatingVisionList = () => {
+  const visionItems = [
+    {
+      title: "Vision for Quality",
+      description: "Our vision is to provide high-quality eBook writing services that simplify the publishing process and empower authors."
+    },
+    {
+      title: "Innovation Excellence", 
+      description: "We continuously innovate our writing and publishing techniques to deliver cutting-edge solutions for modern authors."
+    },
+    {
+      title: "Global Impact",
+      description: "Our mission extends globally, helping authors from around the world bring their stories to life with professional expertise."
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      
+      setTimeout(() => {
+        setCurrentIndex(nextIndex);
+        setNextIndex((nextIndex + 1) % visionItems.length);
+        setIsAnimating(false);
+      }, 800); // Match the CSS transition duration
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [nextIndex, visionItems.length]);
+
+  return (
+    <>
+      <ul className="mil-list-2 mil-type-2">
+        <li>
+          <div className="mil-up">
+            <div className="rolling-container">
+              {/* Current Item */}
+              <div 
+                className={`rolling-item ${isAnimating ? 'rolling-out' : 'current'}`}
+                key={`item-${currentIndex}`}
+              >
+                <h5 className="mil-mb-15">
+                  {visionItems[currentIndex].title}
+                </h5>
+                <p className="mil-text-m mil-soft">
+                  {visionItems[currentIndex].description}
+                </p>
+              </div>
+              
+              {/* Next Item - Only visible during animation */}
+              {isAnimating && (
+                <div 
+                  className="rolling-item rolling-in"
+                  key={`item-${nextIndex}`}
+                >
+                  <h5 className="mil-mb-15">
+                    {visionItems[nextIndex].title}
+                  </h5>
+                  <p className="mil-text-m mil-soft">
+                    {visionItems[nextIndex].description}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <style jsx>{`
+        .rolling-container {
+          position: relative;
+          min-height: 140px;
+          overflow: hidden;
+          perspective: 1500px;
+          perspective-origin: center center;
+        }
+        
+        .rolling-item {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                     opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+          will-change: transform, opacity;
+        }
+        
+        /* Default visible state */
+        .rolling-item.current {
+          transform: translateY(0%) rotateX(0deg);
+          opacity: 1;
+          z-index: 2;
+        }
+        
+        /* Rolling out animation */
+        .rolling-item.rolling-out {
+          transform: translateY(-100%) rotateX(90deg);
+          opacity: 0;
+          z-index: 1;
+        }
+        
+        /* Rolling in animation */
+        .rolling-item.rolling-in {
+          transform: translateY(0%) rotateX(0deg);
+          opacity: 1;
+          z-index: 3;
+          animation: rollInFromBottom 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+        
+        @keyframes rollInFromBottom {
+          0% {
+            transform: translateY(100%) rotateX(-90deg);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0%) rotateX(0deg);
+            opacity: 1;
+          }
+        }
+        
+        /* Text elements with 3D depth */
+        .rolling-item h5 {
+          transform: translateZ(20px);
+          transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                     opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+          backface-visibility: hidden;
+        }
+        
+        .rolling-item p {
+          transform: translateZ(15px);
+          transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.05s,
+                     opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.05s;
+          backface-visibility: hidden;
+        }
+        
+        /* Text animation during transitions */
+        .rolling-out h5 {
+          transform: translateZ(-20px) rotateX(30deg);
+          opacity: 0;
+        }
+        
+        .rolling-out p {
+          transform: translateZ(-15px) rotateX(30deg);
+          opacity: 0;
+        }
+        
+        /* Visual effects */
+        .rolling-item {
+          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+        }
+        
+        .rolling-in {
+          filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
+        }
+        
+        .rolling-out {
+          filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+          .rolling-container {
+            min-height: 160px;
+            perspective: 1200px;
+          }
+          
+          .rolling-item {
+            transition-duration: 0.7s;
+          }
+          
+          .rolling-item h5,
+          .rolling-item p {
+            transition-duration: 0.7s;
+          }
+          
+          .rolling-in {
+            animation-duration: 0.7s;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .rolling-container {
+            min-height: 180px;
+            perspective: 1000px;
+          }
+          
+          .rolling-item {
+            transition-duration: 0.6s;
+          }
+          
+          .rolling-item h5,
+          .rolling-item p {
+            transition-duration: 0.6s;
+          }
+          
+          .rolling-in {
+            animation-duration: 0.6s;
+          }
+        }
+        
+        /* Initial page load animation */
+        @keyframes rollIn {
+          from {
+            opacity: 0;
+            transform: translateY(50px) rotateX(-30deg);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0%) rotateX(0deg);
+          }
+        }
+        
+        .rolling-container {
+          animation: rollIn 1.2s ease-out;
+        }
+        
+        /* Hardware acceleration optimization */
+        .rolling-item,
+        .rolling-item h5,
+        .rolling-item p {
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+        }
+      `}</style>
+    </>
+  );
 };
 
 const page = () => {
@@ -53,16 +278,7 @@ const page = () => {
               <p className="mil-text-m mil-soft mil-mb-60 mil-up">
                 At DoMyEbook, we are on a mission to simplify the process of creating and publishing eBooks. We aim to provide authors with high-quality writing, editing, and publishing services to help them bring their ideas to life. From ghostwriting to final publication, our expert team ensures that each project is treated with precision and care.
               </p>
-              <ul className="mil-list-2 mil-type-2">
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Vision for Quality</h5>
-                    <p className="mil-text-m mil-soft">
-                      Our vision is to provide high-quality eBook writing services that simplify the publishing process and empower authors.
-                    </p>
-                  </div>
-                </li>
-              </ul>
+              <RotatingVisionList />
             </div>
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
@@ -84,7 +300,7 @@ const page = () => {
           <div className="row">
             <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
               <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number={10}>
+                <span className="mil-accent mil-counter" data-number={7}>
                   10
                 </span>
                 <span className="mil-pale">+</span>
@@ -93,7 +309,7 @@ const page = () => {
             </div>
             <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
               <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number="500">
+                <span className="mil-accent mil-counter" data-number="371">
                   500
                 </span>
                 <span className="mil-pale">+</span>
@@ -102,7 +318,7 @@ const page = () => {
             </div>
             <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
               <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number={50}>
+                <span className="mil-accent mil-counter" data-number={13}>
                   50
                 </span>
                 <span className="mil-pale">+</span>
