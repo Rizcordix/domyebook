@@ -134,11 +134,11 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             <h6 className="mil-mb-60">Help</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
-                999 Rue du Cherche-Midi, 7755500666 Paris, <br />
-                France
+                5900 Balcones Drive STE ,<br />10544 Austin,
+                 Texas 78731
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                +001 (808) 555-0111
+                +1 (727) 405-3480
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
                 info@domyebook.com
@@ -222,11 +222,11 @@ const Footer3 = ({ bg = true, margin = 160 }) => {
             <h6 className="mil-mb-60 mil-soft">Help</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-pale mil-mb-15">
-                999 Rue du Cherche-Midi, 7755500666 Paris, <br />
-                France
+                5900 Balcones Drive STE 10544 Austin,
+                 Texas 78731
               </li>
               <li className="mil-text-m mil-pale mil-mb-15">
-                +001 (808) 555-0111
+                +1 (727) 405-3480
               </li>
               <li className="mil-text-m mil-pale mil-mb-15">
                 info@domyebook.com
@@ -311,7 +311,7 @@ const Footer2 = () => {
                 France
               </li>
               <li className="mil-text-m mil-dark-soft mil-mb-15">
-                +001 (808) 555-0111
+                +1 (727) 405-3480
               </li>
               <li className="mil-text-m mil-dark-soft mil-mb-15">
                 info@domyebook.com
