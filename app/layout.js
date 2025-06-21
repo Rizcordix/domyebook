@@ -11,7 +11,7 @@ import "@css/plugins/swiper.min.css";
 
 import "@css/plugins/magnific-popup.css";
 
-import Preloader from "@/layouts/Preloader";
+// import Preloader from "@/layouts/Preloader";
 import "@css/style.css";
 
 
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${secondary_font.variable}`}>
       <body>
-        <Preloader />
+        {/* <Preloader /> */}
         {children}
       </body>
     </html>

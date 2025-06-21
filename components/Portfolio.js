@@ -1,298 +1,472 @@
-'use client';
-import Link from 'next/link';
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import testimonial_data from '@/data/TestimonialData';
+import React, { useEffect, useState, useCallback, useMemo, useRef } from 'react';
+import testimonial_data from '../data/TestimonialData'; // Adjust the path as necessary
+import testimonial_data1 from '../data/TestimonialData1';
 
-const Portfolio = () => {
-  const [activeIndex, setActiveIndex] = useState(2);
-  const [isHovered, setIsHovered] = useState(-1);
 
-  // Memoized handlers to prevent unnecessary re-renders
-  const handlePrevSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev > 0 ? prev - 1 : testimonial_data.length - 1));
+const DualPortfolioCarousel = () => {
+  const [leftActiveIndex, setLeftActiveIndex] = useState(0);
+  const [rightActiveIndex, setRightActiveIndex] = useState(3);
+  const [isLeftHovered, setIsLeftHovered] = useState(-1);
+  const [isRightHovered, setIsRightHovered] = useState(-1);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  const intervalRef = useRef(null);
+  const timeoutRef = useRef(null);
+
+  // Check for mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const handleNextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev < testimonial_data.length - 1 ? prev + 1 : 0));
-  }, []);
+  // Auto-rotation effect - always enabled
+  useEffect(() => {
+    if (isTransitioning) return;
+    
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      // Left carousel moves forward (to the right)
+      setLeftActiveIndex(prev => (prev + 1) % testimonial_data.length);
+      
+      // Right carousel moves backward (to the left) - opposite direction
+      setRightActiveIndex(prev => prev === 0 ? testimonial_data.length - 1 : prev - 1);
+      
+      // Reset transition flag after animation completes
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 900); // Slightly longer than the CSS transition duration
+      
+    }, 4000); // Increased interval for smoother experience
+    
+    return () => clearInterval(interval);
+  }, [isTransitioning]);
 
+  // Optimized navigation handlers
+  const createNavigationHandler = useCallback((setActiveIndex, direction, isRight = false) => {
+    return () => {
+      if (isTransitioning) return;
+      
+      setIsAutoPlaying(false);
+      setIsTransitioning(true);
+      
+      if (isRight) {
+        // Right carousel logic (opposite direction)
+        if (direction === 'next') {
+          setActiveIndex(prev => prev === 0 ? testimonial_data.length - 1 : prev - 1);
+        } else {
+          setActiveIndex(prev => (prev + 1) % testimonial_data.length);
+        }
+      } else {
+        // Left carousel logic
+        if (direction === 'next') {
+          setActiveIndex(prev => (prev + 1) % testimonial_data.length);
+        } else {
+          setActiveIndex(prev => prev === 0 ? testimonial_data.length - 1 : prev - 1);
+        }
+      }
+      
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setIsAutoPlaying(true);
+      }, 1000);
+    };
+  }, [isTransitioning]);
+
+  const handleLeftPrev = useMemo(() => createNavigationHandler(setLeftActiveIndex, 'prev'), [createNavigationHandler]);
+  const handleLeftNext = useMemo(() => createNavigationHandler(setLeftActiveIndex, 'next'), [createNavigationHandler]);
+  const handleRightPrev = useMemo(() => createNavigationHandler(setRightActiveIndex, 'prev', true), [createNavigationHandler]);
+  const handleRightNext = useMemo(() => createNavigationHandler(setRightActiveIndex, 'next', true), [createNavigationHandler]);
+
+  // Keyboard navigation
   const handleKeyDown = useCallback((event) => {
     if (event.key === 'ArrowLeft') {
-      handlePrevSlide();
+      handleLeftPrev();
     } else if (event.key === 'ArrowRight') {
-      handleNextSlide();
+      handleLeftNext();
+    } else if (event.key === ' ') {
+      event.preventDefault();
+      setIsAutoPlaying(prev => !prev);
     }
-  }, [handlePrevSlide, handleNextSlide]);
+  }, [handleLeftPrev, handleLeftNext]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  // Optimized slide style calculation with memoization
+  // Memoized slide style calculation
   const getSlideStyle = useMemo(() => {
-    return (index) => {
+    return (index, activeIndex, isLeft = true) => {
       const diff = index - activeIndex;
       let transform = '';
       let zIndex = 1;
-      let opacity = 0.3;
-      let scale = 0.8;
+      let opacity = 0.2;
+      let scale = 0.7;
+      let blur = 3;
+      let pointerEvents = 'none'; // Default: not clickable
 
       if (diff === 0) {
         transform = 'translateX(0px) translateZ(0px) rotateY(0deg)';
         zIndex = 10;
         opacity = 1;
         scale = 1;
+        blur = 0;
+        pointerEvents = 'auto'; // Active slide is clickable
       } else if (diff === 1) {
-        transform = 'translateX(300px) translateZ(-200px) rotateY(-25deg)';
-        zIndex = 5;
-        opacity = 0.7;
+        transform = isLeft 
+          ? 'translateX(200px) translateZ(-300px) rotateY(-35deg)'
+          : 'translateX(-200px) translateZ(-300px) rotateY(35deg)';
+        zIndex = 8;
+        opacity = 0.8;
         scale = 0.85;
+        blur = 1;
+        pointerEvents = 'auto'; // Adjacent slides are clickable
       } else if (diff === -1) {
-        transform = 'translateX(-300px) translateZ(-200px) rotateY(25deg)';
-        zIndex = 5;
-        opacity = 0.7;
+        transform = isLeft 
+          ? 'translateX(-200px) translateZ(-300px) rotateY(35deg)'
+          : 'translateX(200px) translateZ(-300px) rotateY(-35deg)';
+        zIndex = 8;
+        opacity = 0.8;
         scale = 0.85;
-      } else if (diff === 2) {
-        transform = 'translateX(500px) translateZ(-400px) rotateY(-45deg)';
-        zIndex = 2;
-        opacity = 0.4;
-        scale = 0.7;
-      } else if (diff === -2) {
-        transform = 'translateX(-500px) translateZ(-400px) rotateY(45deg)';
-        zIndex = 2;
-        opacity = 0.4;
-        scale = 0.7;
+        blur = 1;
+        pointerEvents = 'auto'; // Adjacent slides are clickable
+      } else if (diff === 2 || diff === -(testimonial_data.length - 2)) {
+        transform = isLeft 
+          ? 'translateX(350px) translateZ(-500px) rotateY(-50deg)'
+          : 'translateX(-350px) translateZ(-500px) rotateY(50deg)';
+        zIndex = 5;
+        opacity = 0.5;
+        scale = 0.75;
+        blur = 2;
+      } else if (diff === -2 || diff === (testimonial_data.length - 2)) {
+        transform = isLeft 
+          ? 'translateX(-350px) translateZ(-500px) rotateY(50deg)'
+          : 'translateX(350px) translateZ(-500px) rotateY(-50deg)';
+        zIndex = 5;
+        opacity = 0.5;
+        scale = 0.75;
+        blur = 2;
       } else {
-        transform = diff > 0 
-          ? 'translateX(700px) translateZ(-600px) rotateY(-60deg)'
-          : 'translateX(-700px) translateZ(-600px) rotateY(60deg)';
+        const normalizedDiff = diff > testimonial_data.length / 2 ? diff - testimonial_data.length : diff;
+        transform = normalizedDiff > 0 
+          ? (isLeft 
+              ? 'translateX(500px) translateZ(-700px) rotateY(-65deg)'
+              : 'translateX(-500px) translateZ(-700px) rotateY(65deg)')
+          : (isLeft 
+              ? 'translateX(-500px) translateZ(-700px) rotateY(65deg)'
+              : 'translateX(500px) translateZ(-700px) rotateY(-65deg)');
         zIndex = 1;
-        opacity = 0;
+        opacity = 0.1;
         scale = 0.6;
+        blur = 4;
       }
 
       return {
         position: 'absolute',
         top: '50%',
         left: '50%',
-        width: '750px',
-        height: '500px',
-        marginLeft: '-375px',
-        marginTop: '-200px',
+        width: isMobile ? '300px' : '400px',
+        height: isMobile ? '210px' : '280px',
+        marginLeft: isMobile ? '-150px' : '-200px',
+        marginTop: isMobile ? '-105px' : '-140px',
         transform: `${transform} scale(${scale})`,
         transformStyle: 'preserve-3d',
-        transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         zIndex: zIndex,
         opacity: opacity,
-        cursor: 'pointer',
+        cursor: pointerEvents === 'auto' ? 'pointer' : 'default',
         willChange: 'transform, opacity',
+        filter: `blur(${blur}px)`,
+        pointerEvents: pointerEvents,
       };
     };
-  }, [activeIndex]);
+  }, [isMobile]);
 
-  // Static styles to prevent recalculation
-  const containerStyle = useMemo(() => ({
-    position: 'relative',
-    width: '100%',
-    height: '100vh',
-    background: '#f2fafa',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    perspective: '1000px',
-    perspectiveOrigin: 'center center',
-  }), []);
+  // Optimized Portfolio item component
+  const PortfolioItem = React.memo(({ item, index, activeIndex, isLeft, isHovered, onMouseEnter, onMouseLeave }) => {
+    const slideStyle = getSlideStyle(index, activeIndex, isLeft);
+    const isActive = index === activeIndex;
+    const isVisible = Math.abs(index - activeIndex) <= 2 || Math.abs(index - activeIndex) >= testimonial_data.length - 2;
+    
+    // Don't render invisible items to improve performance
+    if (!isVisible) return null;
 
-  const slideWrapperStyle = useMemo(() => ({
-    position: 'relative',
-    width: '100%',
-    height: '500px',
-    transformStyle: 'preserve-3d',
-  }), []);
+    const itemStyle = {
+      width: '100%',
+      height: '100%',
+      borderRadius: '20px',
+      overflow: 'hidden',
+      position: 'relative',
+      backgroundImage: `url(${item.brand_img?.src})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      boxShadow: isActive 
+        ? '0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 255, 255, 0.1)'
+        : '0 15px 30px rgba(0, 0, 0, 0.2)',
+      transition: 'all 0.3s ease',
+      transform: isHovered === index && slideStyle.pointerEvents === 'auto' ? 'scale(1.05)' : 'scale(1)',
+    };
 
-  const navigationStyle = useMemo(() => ({
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '50px',
-    height: '50px',
-    background: 'rgba(0, 0, 0, 0.1)',
-    border: '1px solid rgba(0, 0, 0, 0.2)',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    zIndex: 100,
-    transition: 'background 0.2s ease, transform 0.2s ease',
-    backdropFilter: 'blur(10px)',
-  }), []);
+    const overlayStyle = {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: isHovered === index && slideStyle.pointerEvents === 'auto'
+        ? 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%)'
+        : 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%)',
+      transition: 'all 0.3s ease',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      padding: isMobile ? '15px' : '20px',
+    };
 
-  const portfolioItemStyle = useCallback((index) => ({
-    width: '100%',
-    height: '100%',
-    borderRadius: '20px',
-    overflow: 'hidden',
-    position: 'relative',
-    backgroundImage: `url(${testimonial_data[index]?.brand_img?.src || '/placeholder.jpg'})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
-    transition: 'transform 0.2s ease',
-    transform: isHovered === index ? 'scale(1.02)' : 'scale(1)',
-    willChange: 'transform',
-  }), [isHovered]);
-
-  const overlayStyle = useCallback((index) => ({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: isHovered === index 
-      ? 'linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%)'
-      : 'linear-gradient(45deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%)',
-    transition: 'background 0.2s ease',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    padding: '20px',
-  }), [isHovered]);
-
-  const viewWorkStyle = useCallback((index) => ({
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    background: 'white',
-    color: '#333',
-    padding: '15px 25px',
-    borderRadius: '50px',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    opacity: isHovered === index ? 1 : 0,
-    transition: 'opacity 0.2s ease',
-    cursor: 'pointer',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
-    zIndex: 10,
-    pointerEvents: isHovered === index ? 'auto' : 'none',
-  }), [isHovered]);
-
-  // Throttled hover handlers
-  const handleMouseEnter = useCallback((index) => {
-    setIsHovered(index);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(-1);
-  }, []);
-
-  // Render only visible slides to improve performance
-  const renderSlide = useCallback((item, index) => {
-    const diff = Math.abs(index - activeIndex);
-    if (diff > 2) return null; // Don't render slides that are too far away
+    const viewWorkStyle = {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      background: 'linear-gradient(135deg, #f2fafa 0%, #7eb947 100%)',
+      color: 'white',
+      padding: isMobile ? '10px 20px' : '12px 24px',
+      borderRadius: '30px',
+      fontSize: isMobile ? '11px' : '12px',
+      fontWeight: '600',
+      textAlign: 'center',
+      opacity: isHovered === index && slideStyle.pointerEvents === 'auto' ? 1 : 0,
+      transition: 'all 0.3s ease',
+      cursor: 'pointer',
+      boxShadow: '0 10px 25px rgba(102, 126, 234, 0.3)',
+      zIndex: 10,
+      pointerEvents: isHovered === index && slideStyle.pointerEvents === 'auto' ? 'auto' : 'none',
+      textTransform: 'uppercase',
+      letterSpacing: '1px',
+    };
 
     return (
       <div
-        key={item.id}
-        style={getSlideStyle(index)}
-        onMouseEnter={() => handleMouseEnter(index)}
-        onMouseLeave={handleMouseLeave}
+        style={slideStyle}
+        onMouseEnter={() => slideStyle.pointerEvents === 'auto' && onMouseEnter(index)}
+        onMouseLeave={() => slideStyle.pointerEvents === 'auto' && onMouseLeave()}
       >
-        <Link href="/portfolio-details" style={{ textDecoration: 'none' }}>
-          <div style={portfolioItemStyle(index)}>
-            <div style={overlayStyle(index)}>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '10px',
+        <div style={itemStyle}>
+          <div style={overlayStyle}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{
+                background: 'rgba(255, 255, 255, 0.15)',
+                padding: '6px 12px',
+                borderRadius: '20px',
+                fontSize: isMobile ? '10px' : '11px',
+                color: 'white',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                fontWeight: '500',
               }}>
-                <span style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  padding: '5px 12px',
-                  borderRadius: '15px',
-                  fontSize: '12px',
-                  color: 'white',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                }}>
-                  {item.brand_tag}
-                </span>
-                <span style={{ color: 'white', fontSize: '14px' }}>{item.time}</span>
-              </div>
+                {item.brand_tag}
+              </span>
+              <span style={{ 
+                color: 'rgba(255, 255, 255, 0.8)', 
+                fontSize: isMobile ? '11px' : '12px',
+                fontWeight: '500',
+              }}>
+                {item.time}
+              </span>
+            </div>
 
-              <div>
-                <h3 style={{
-                  color: 'white',
-                  fontSize: '24px',
-                  fontWeight: 'bold',
-                  margin: '10px 0',
-                  textShadow: '0 2px 4px rgba(0,0,0,0.5)',
-                }}>
-                  {item.brand_name}
-                </h3>
-              </div>
+            <div>
+              <h3 style={{
+                color: 'white',
+                fontSize: isMobile ? '16px' : '18px',
+                fontWeight: '700',
+                margin: '0',
+                textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                lineHeight: '1.2',
+              }}>
+                {item.brand_name}
+              </h3>
+            </div>
 
-              <div style={viewWorkStyle(index)}>
-                VIEW WORK
-              </div>
+            <div style={viewWorkStyle}>
+              View Work
             </div>
           </div>
-        </Link>
+        </div>
       </div>
     );
-  }, [activeIndex, getSlideStyle, handleMouseEnter, handleMouseLeave, portfolioItemStyle, overlayStyle, viewWorkStyle]);
+  });
+  PortfolioItem.displayName = "PortfolioItem";
+
+  // Navigation button component
+  const NavButton = React.memo(({ direction, onClick}) => {
+    const buttonStyle = {
+      position: 'absolute',
+      top: '50%',
+      [direction === 'prev' ? 'left' : 'right']: isMobile ? '10px' : '20px',
+      transform: 'translateY(-50%)',
+      width: isMobile ? '40px' : '50px',
+      height: isMobile ? '40px' : '50px',
+      background: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(20px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+      zIndex: 1000,
+      transition: 'all 0.3s ease',
+      color: 'white',
+      opacity: isTransitioning ? 0.5 : 1,
+      pointerEvents: isTransitioning ? 'none' : 'auto',
+    };
+
+    return (
+      <div 
+        style={buttonStyle}
+        onClick={onClick}
+        onMouseEnter={(e) => {
+          if (!isTransitioning) {
+            e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+          }
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+        }}
+      >
+        <svg width={isMobile ? "16" : "20"} height={isMobile ? "16" : "20"} viewBox="0 0 24 24" fill="none">
+          {direction === 'prev' ? (
+            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          ) : (
+            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          )}
+        </svg>
+      </div>
+    );
+  });
+  NavButton.displayName = "NavButton";
+
+  const carouselStyle = {
+    position: 'relative',
+    width: isMobile ? '100%' : '50%',
+    height: isMobile ? '50vh' : '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    perspective: '1200px',
+    perspectiveOrigin: 'center center',
+  };
+
+  const carouselInnerStyle = {
+    position: 'relative',
+    width: '100%',
+    height: isMobile ? '250px' : '350px',
+    transformStyle: 'preserve-3d',
+  };
 
   return (
-    <div style={containerStyle}>
-      <style jsx>{`
-        .nav-arrow:hover {
-          background: rgba(0, 0, 0, 0.2) !important;
-          transform: translateY(-50%) scale(1.1) !important;
-        }
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100vh',
+      background: 'linear-gradient(135deg, #f2fafa 0%, #7eb947 100%)',
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: isMobile ? 'column' : 'row',
+    }}>
+      {/* Animated background elements */}
+      <div style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        background: `
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 40% 60%, rgba(102, 126, 234, 0.1) 0%, transparent 50%)
+        `,
+        animation: 'float 20s ease-in-out infinite',
+      }} />
+
+      {/* Left Carousel */}
+      <div style={carouselStyle}>
+        <div style={carouselInnerStyle}>
+          {testimonial_data1.map((item, index) => (
+            <PortfolioItem
+              key={`left-${item.id}`}
+              item={item}
+              index={index}
+              activeIndex={leftActiveIndex}
+              isLeft={true}
+              isHovered={isLeftHovered}
+              onMouseEnter={(i) => setIsLeftHovered(i)}
+              onMouseLeave={() => setIsLeftHovered(-1)}
+            />
+          ))}
+        </div>
         
-        .nav-arrow svg {
-          color: #333;
-          width: 20px;
-          height: 20px;
+        <NavButton direction="prev" onClick={handleLeftPrev} side="left" />
+        <NavButton direction="next" onClick={handleLeftNext} side="left" />
+      </div>
+
+      {/* Right Carousel */}
+      <div style={carouselStyle}>
+        <div style={carouselInnerStyle}>
+          {testimonial_data.map((item, index) => (
+            <PortfolioItem
+              key={`right-${item.id}`}
+              item={item}
+              index={index}
+              activeIndex={rightActiveIndex}
+              isLeft={false}
+              isHovered={isRightHovered}
+              onMouseEnter={(i) => setIsRightHovered(i)}
+              onMouseLeave={() => setIsRightHovered(-1)}
+            />
+          ))}
+        </div>
+        
+        <NavButton direction="prev" onClick={handleRightPrev} side="right" />
+        <NavButton direction="next" onClick={handleRightNext} side="right" />
+      </div>
+
+      {/* Control Instructions */}
+      <div style={{
+        position: 'absolute',
+        bottom: '30px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        display: 'flex',
+        gap: '20px',
+        color: 'rgba(255, 255, 255, 0.7)',
+        fontSize: isMobile ? '11px' : '12px',
+        fontWeight: '500',
+        zIndex: 100,
+      }}>
+        {/* <span>Auto-rotate: {isAutoPlaying ? 'ON' : 'OFF'}</span> */}
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-20px) rotate(2deg); }
+          66% { transform: translateY(-10px) rotate(-1deg); }
         }
       `}</style>
-
-      {/* Left Navigation Arrow */}
-      <div 
-        className="nav-arrow"
-        style={{...navigationStyle, left: '50px'}}
-        onClick={handlePrevSlide}
-      >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M15 8H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M8 1L1 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-
-      {/* Right Navigation Arrow */}
-      <div 
-        className="nav-arrow"
-        style={{...navigationStyle, right: '50px'}}
-        onClick={handleNextSlide}
-      >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M1 8H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M8 1L15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-
-      {/* Slides Container */}
-      <div style={slideWrapperStyle}>
-        {testimonial_data.map(renderSlide)}
-      </div>
     </div>
   );
 };
 
-export default Portfolio;
+export default DualPortfolioCarousel;
