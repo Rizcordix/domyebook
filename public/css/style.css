@@ -2977,6 +2977,181 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
   }
 }
 
+/* for header */
+
+/* General dropdown styles - apply to both desktop and mobile as a base */
+.mil-top-menu .mil-submenu {
+  background-color: #fff; /* White background as seen in the image */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 200px; /* Adjust as needed */
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  border-radius: 5px; /* Subtle rounded corners from the image */
+}
+
+/* Style for dropdown items - MAINTAINING ORIGINAL FONT/COLOR */
+.mil-top-menu .mil-submenu li a {
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.mil-top-menu .mil-submenu li a:hover {
+  background-color: #e6f7e6;
+  color: #3f9b45;
+}
+
+/* Active state for dropdown items */
+.mil-top-menu .mil-submenu li.mil-active {
+  background-color: #e6f7e6;
+}
+.mil-top-menu .mil-submenu li.mil-active a {
+  color: #3f9b45;
+}
+
+/* Dropdown arrow base style */
+.mil-has-children > a::after {
+  margin-left: 8px;
+  font-size: 0.7em;
+  float: right;
+  vertical-align: middle;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* ========================================= */
+/* DESKTOP STYLES (>= 992px) */
+/* ========================================= */
+@media (min-width: 992px) {
+  .mil-top-menu .mil-submenu {
+    display: none; /* Hidden by default on desktop */
+    position: absolute; /* Absolute positioning for desktop dropdowns */
+  }
+
+  .mil-top-menu li:hover > .mil-submenu {
+    display: block; /* Show on hover for first level */
+  }
+
+  /* Second level dropdown positioning on desktop */
+  .mil-top-menu .mil-submenu .mil-submenu {
+    left: 100%; /* Position to the right of the parent */
+    top: 0; /* Align with the top of the parent */
+  }
+
+  /* Arrow for all .mil-has-children on desktop */
+  .mil-has-children > a::after {
+    content: '►'; /* Right-pointing triangle */
+  }
+
+  /* Rotate arrow for top-level "Services" on hover on desktop */
+  .mil-top-menu > ul > li.mil-has-children:hover > a::after {
+      content: '▼'; /* Down arrow for the top-level "Services" when hovered */
+      transform: rotate(0deg);
+  }
+
+  /* Ensure nested dropdowns keep right arrow on desktop hover */
+  .mil-top-menu .mil-submenu li.mil-has-children:hover > a::after {
+      content: '►'; /* Right arrow for nested dropdowns */
+  }
+}
+
+/* ========================================= */
+/* MOBILE STYLES (< 992px) */
+/* ========================================= */
+@media (max-width: 991.98px) {
+  .mil-top-menu {
+    /* Assuming this is your mobile menu container that slides in/out */
+    /* Add styles here to make it full width, background, etc. if not already */
+    width: 100%;
+    position: absolute; /* or fixed, depending on your mobile menu implementation */
+    top: 100%; /* Below the header */
+    left: 0;
+    background: #fff; /* Match header background or provide distinct mobile menu background */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* Initially hidden or transformed off-screen */
+    display: none; /* Will be toggled by JS on .mil-active */
+  }
+
+  .mil-top-menu.mil-active {
+    display: block; /* Show main mobile menu when toggled */
+  }
+
+  .mil-top-menu ul {
+    width: 100%;
+    padding: 15px 0; /* Add some padding for mobile list */
+  }
+
+  .mil-top-menu li {
+    width: 100%; /* Full width for mobile list items */
+    position: relative; /* Essential for positioning submenus below */
+    padding-left: 20px; /* Indent main menu items */
+    border-bottom: 1px solid #eee; /* Visual separator */
+  }
+
+  .mil-top-menu li:last-child {
+      border-bottom: none;
+  }
+
+  .mil-top-menu li a {
+    padding: 10px 20px; /* Adjust padding for mobile links */
+    display: block; /* Make links fill the whole width */
+    color: #333; /* A standard dark color for mobile links */
+    /* Inherit font and weight */
+  }
+
+  /* Hide submenus by default on mobile */
+  .mil-top-menu .mil-submenu {
+    display: none;
+    position: static; /* Stack submenus vertically */
+    width: 100%;
+    padding-left: 20px; /* Indent submenus further */
+    box-shadow: none; /* Remove box shadow for stacked submenus */
+    border-radius: 0;
+  }
+
+  /* Show submenu when parent has 'mil-active' class (toggled by JS) */
+  .mil-top-menu li.mil-active > .mil-submenu {
+    display: block;
+  }
+
+  /* Arrow for mobile dropdowns (toggle button) */
+  .mil-has-children > a::after {
+    content: '▼'; /* Down arrow for all toggles on mobile */
+    float: right;
+    margin-right: 20px; /* Push arrow to the right edge */
+    transition: transform 0.3s ease; /* Smooth rotation */
+  }
+
+  /* Rotate arrow when submenu is open on mobile */
+  .mil-has-children.mil-active > a::after {
+    transform: rotate(-90deg); /* Rotate to point left (or up for ^) */
+    content: '▲'; /* Change to up arrow when open */
+  }
+
+  /* Adjust padding for nested items on mobile to create hierarchy */
+  .mil-top-menu .mil-submenu li {
+    padding-left: 0px; /* Reset padding for submenu li, use padding on link */
+    border-bottom: none; /* No border for submenu items */
+  }
+
+  .mil-top-menu .mil-submenu li a {
+    padding-left: 20px; /* Add padding to the submenu links for indentation */
+    background-color: #f8f8f8; /* Slightly different background for sub-items */
+    border-bottom: 1px solid #eee;
+  }
+
+  .mil-top-menu .mil-submenu .mil-submenu li a {
+    padding-left: 40px; /* Further indentation for third level */
+  }
+}
+/* end header */
+
 
 
 
