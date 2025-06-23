@@ -285,7 +285,7 @@ const page = () => {
                 <img
                   src="/img/inner-pages/1.png"
                   alt="image"
-                  className="mil-scale-img"
+                  // className="mil-scale-img"
                 />
               </div>
             </div>
@@ -423,7 +423,7 @@ const page = () => {
                 <img
                   src="/img/inner-pages/2.png"
                   alt="image"
-                  className="mil-scale-img"
+                  // className="mil-scale-img"
                 />
               </div>
             </div>
