@@ -38,7 +38,7 @@ const ServicesPage = () => {
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
                   <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
-                  Children's Book Magic
+                  Children&apos;s Book Magic
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
                   <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
@@ -249,7 +249,7 @@ const ServicesPage = () => {
               <p className="mil-text-m mil-soft mil-mb-30 mil-up" style={{ color: '#666' }}>
                 Beyond writing and publishing, we provide comprehensive support to ensure
                 your author journey is smooth and successful. From project management to
-                global reach, we're your dedicated publishing partner.
+                global reach, we&apos;re your dedicated publishing partner.
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
                 <li className="mil-up" style={{ color: '#000' }}>
@@ -304,8 +304,8 @@ const ServicesPage = () => {
                   Ready to Transform Your Ideas Into Bestsellers?
                 </h2>
                 <p className="mil-text-m mil-soft mil-mb-30 mil-up" style={{ color: '#666' }}>
-                  Join thousands of successful authors who've trusted DoMyEbook with their
-                  publishing journey. Let's turn your manuscript into a marketplace success story.
+                  Join thousands of successful authors who&apos;ve trusted DoMyEbook with their
+                  publishing journey. Let&apos;s turn your manuscript into a marketplace success story.
                 </p>
               </div>
             </div>
