@@ -4,11 +4,13 @@ import { CallToAction2 } from "@/components/CallToAction";
 import PlaxAccordion from "@/components/PlaxAccordion";
 import Testimonials1 from "@/components/Testimonials";
 import PlaxLayout from "@/layouts/PlaxLayout";
+import EbookServicesComponent from "@/components/genericservices";
 import Link from "next/link";
 
 const page = () => {
   return (
     <PlaxLayout bg={false}>
+      <EbookServicesComponent />
       {/* <Banner
         title="Shop with Confidence, Protected"
         img="/img/home-1/1.png"

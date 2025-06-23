@@ -187,7 +187,7 @@ const   TermsSection = () => {
                 color: #1a202c;
                 margin-bottom: 24px;
                 padding-bottom: 12px;
-                border-bottom: 3px solid #3182ce;
+                border-bottom: 3px solid #7eb947;
                 position: relative;
             }
 
@@ -198,7 +198,7 @@ const   TermsSection = () => {
                 left: 0;
                 width: 60px;
                 height: 3px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #7eb947 0%,rgb(174, 215, 193) 100%);
                 border-radius: 2px;
             }
 
@@ -222,7 +222,7 @@ const   TermsSection = () => {
                 background: #f7fafc;
                 border-radius: 8px;
                 padding: 24px;
-                border-left: 4px solid #3182ce;
+                border-left: 4px solid #7eb947;
             }
 
             .service-item {
@@ -238,14 +238,14 @@ const   TermsSection = () => {
             }
 
             .service-bullet {
-                color: #3182ce;
+                color: #7eb947;
                 font-weight: bold;
                 margin-right: 12px;
                 font-size: 18px;
             }
 
             .contact-email {
-                color: #3182ce;
+                color: #7eb947;
                 text-decoration: none;
                 font-weight: 600;
                 border-bottom: 1px solid transparent;
@@ -253,8 +253,8 @@ const   TermsSection = () => {
             }
 
             .contact-email:hover {
-                color: #2c5aa0;
-                border-bottom-color: #3182ce;
+                color:rgb(125, 154, 98);
+                border-bottom-color: #7eb947;
             }
 
             @media (max-width: 768px) {

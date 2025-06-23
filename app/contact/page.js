@@ -226,7 +226,22 @@ const page = () => {
                           onMouseOver={(e) => e.currentTarget.style.color = '#6aa83a'}
                           onMouseOut={(e) => e.currentTarget.style.color = '#7eb947'}
                         >
-                          +1 (727) 405-3480
+                          +1 (512) 3259725
+                        </a>
+                        <br />
+                        <a 
+                          href="tel:+0018085550111"
+                          style={{ 
+                            color: '#7eb947', 
+                            fontWeight: '700',
+                            fontSize: '18px',
+                            textDecoration: 'none',
+                            transition: 'color 0.3s ease'
+                          }}
+                          onMouseOver={(e) => e.currentTarget.style.color = '#6aa83a'}
+                          onMouseOut={(e) => e.currentTarget.style.color = '#7eb947'}
+                        >
+                          +61480810531
                         </a>
                       </div>
                       
@@ -346,7 +361,7 @@ const page = () => {
                   </div>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '10px', paddingBottom: '10px' , marginTop: '20px' }}>
                     <p className="mil-text-s" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                      Fax: +1 (727) 405-3480
+                      Fax: +1 (512) 3259725
                     </p>
                   </div>
                 </div>
@@ -385,7 +400,7 @@ const page = () => {
                     Send us an Email
                   </a>
                   <a 
-                    href="tel:+0018085550111"
+                    href="tel:+1 (512) 3259725"
                     style={{
                       display: 'inline-block',
                       padding: '15px 30px',
