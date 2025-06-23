@@ -1,7 +1,7 @@
 "use client";
 import Banner from "@/components/Banner";
 import { CallToAction1 } from "@/components/CallToAction";
-import { Testimonials2 } from "@/components/Testimonials";
+import Testimonials from "@/components/Testimonials";
 import Special from "@/components/services2";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
@@ -534,58 +534,9 @@ const page = () => {
       {/* Portfolio */}
             <Portfolio />
       {/* Portfolio end */}
-      {/* <div className="mil-features mil-p-80-80">
-        <div className="container">
-          <div className="row flex-sm-row-reverse justify-content-between align-items-center">
-            <div className="col-xl-6 mil-mb-80">
-              <h2 className="mil-mb-30 mil-up">
-                Instant Alerts &amp; Notifications with Plax
-              </h2>
-              <p className="mil-text-m mil-soft mil-mb-60 mil-up">
-                Visualize your financial progress with detailed reports and
-                graphs <br />
-                that give you visual insights into your spending and saving
-                habits.
-              </p>
-              <ul className="mil-list-2 mil-type-2">
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Security in real time</h5>
-                    <p className="mil-text-m mil-soft">
-                      Notifications allow you to take immediate action in <br />
-                      case of unauthorized transactions or unusual activities.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className="mil-up">
-                    <h5 className="mil-mb-15">Notification History</h5>
-                    <p className="mil-text-m mil-soft">
-                      Keep track of your financial activity and the response to
-                      alert. <br />
-                      Your security is our priority, are always one step
-                      forward.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="col-xl-5 mil-mb-80">
-              <img
-                src="img/home-2/5.png"
-                alt="image"
-                className="mil-up"
-                style={{ width: "100%" }}
-              />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* features end */}
-      {/* testimonials */}
       <div className="mil-testimonials mil-p-80-160">
         <div className="container">
-          <Testimonials2 />
+          <Testimonials />
         </div>
       </div>
       {/* testimonials end */}

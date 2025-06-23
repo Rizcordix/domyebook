@@ -1,346 +1,562 @@
 "use client";
-import { sliderProps } from "@/utility/sliderProps";
-import { Fragment } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-// ONLY import modules that are actually exported in your index.mjs
-// Based on your index.mjs, Autoplay and FreeMode are exported.
-// Loop is a Swiper prop, not a separate module to import here.
-import { Autoplay, FreeMode } from 'swiper/modules';
+import { useState, useEffect, useRef } from "react";
 
-const Testimonials1 = () => {
+const Testimonials = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [slidesToShow, setSlidesToShow] = useState(3);
+  const intervalRef = useRef(null);
+
+  const testimonials = [
+    {
+      text: "I had never felt so connected to my writing process. The support from Do My Ebook has kept me informed every step of the way, giving me confidence that my ebook is in great hands. They truly care about their clients and their work.",
+      name: "Rüdiger Karlsen",
+      image: "img/faces/1.jpg",
+      flag: "img/flags/germany.svg",
+      rating: 5,
+    },
+    {
+      text: "The team at Do My Ebook truly goes above and beyond. They've helped me transform my manuscript into a professional, polished ebook. Their personalized service and attention to detail are unmatched.",
+      name: "Branka Berg",
+      image: "img/faces/2.jpg",
+      flag: "img/flags/us.svg",
+      rating: 5,
+    },
+    {
+      text: "From formatting to publishing, Do My Ebook has been a lifesaver. I'm so grateful for their efficient service and excellent communication throughout the process. It feels like having a personal assistant for my ebook journey.",
+      name: "Karl Andreassen",
+      image: "img/faces/3.jpg",
+      flag: "img/flags/uk.svg",
+      rating: 5,
+    },
+    {
+      text: "Do My Ebook provided exceptional design services! My ebook looks incredibly professional and engaging. They understood my vision perfectly and brought it to life with their creative expertise. Highly recommend for anyone seeking top-tier ebook design.",
+      name: "Sarah Chen",
+      image: "img/faces/3.jpg",
+      flag: "img/flags/china.svg",
+      rating: 5,
+    },
+    {
+      text: "As a first-time ebook author, I was overwhelmed. Do My Ebook made the entire process seamless. Their guidance on formatting and publishing was invaluable, and I'm thrilled with the final product. A truly stress-free experience!",
+      name: "David Miller",
+      image: "img/faces/3.jpg",
+      flag: "img/flags/uk.svg",
+      rating: 5,
+    },
+    {
+      text: "I'm incredibly impressed with the quality of work from Do My Ebook. They took my raw manuscript and turned it into a beautifully formatted and professional ebook. The communication was excellent, and they delivered on time!",
+      name: "Jessica Lee",
+      image: "img/faces/3.jpg",
+      flag: "img/flags/us.svg",
+      rating: 5,
+    },
+  ];
+
+  // Handle responsive slides to show
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth <= 1024) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxSlides = Math.max(0, testimonials.length - slidesToShow);
+
+  // Auto-rotate functionality
+  useEffect(() => {
+    if (!isHovered && maxSlides > 0) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % (maxSlides + 1));
+      }, 2000);
+    } else {
+      clearInterval(intervalRef.current);
+    }
+
+    return () => clearInterval(intervalRef.current);
+  }, [isHovered, maxSlides]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % (maxSlides + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + maxSlides + 1) % (maxSlides + 1));
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const StarRating = ({ rating }) => {
+    return (
+      <div className="star-rating">
+        {[...Array(5)].map((_, i) => (
+          <svg
+            key={i}
+            className={`star ${i < rating ? "filled" : ""}`}
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+              fill={i < rating ? "#7eb947" : "#e0e0e0"}
+            />
+          </svg>
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <Fragment>
-      <Swiper
-        {...sliderProps.testimonials}
-        className="mil-testimonials-1 mil-up"
-      >
-        {/* <SwiperSlide className="swiper-slide">
-          <blockquote
-            className="mil-center"
-            data-swiper-parallax={-400}
-            data-swiper-parallax-opacity={0}
-            data-swiper-parallax-scale="0.8"
-          >
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-mb-60 mil-up">
-              Plax is not just a payments platform, it is a comprehensive
-              solution. The global network, security and variety of options make
-              Plax my number one option for all my quisque rutrum transactions.
-              Aenean lost. Etiam ultricies is around.
-            </p>
-            <img
-              src="img/faces/2.jpg"
-              alt="Customer"
-              className="mil-mb-15 mil-up"
-            />
-            <h5 className="mil-up">Bett Nilsen</h5>
-          </blockquote>
-        </SwiperSlide> */}
-        <SwiperSlide className="swiper-slide">
-          <blockquote
-            className="mil-center"
-            data-swiper-parallax={-400}
-            data-swiper-parallax-opacity={0}
-            data-swiper-parallax-scale="0.8"
-          >
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-mb-60 mil-up">
-              Plax is not just a payments platform, it is a comprehensive
-              solution. The global network, security and variety of options make
-              Plax my number one option for all my quisque rutrum transactions.
-              Aenean lost. Etiam ultricies is around.
-            </p>
-            <img
-              src="img/faces/1.jpg"
-              alt="Customer"
-              className="mil-mb-15 mil-up"
-            />
-            <h5 className="mil-up">Karl Andreassen</h5>
-          </blockquote>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <blockquote
-            className="mil-center"
-            data-swiper-parallax={-400}
-            data-swiper-parallax-opacity={0}
-            data-swiper-parallax-scale="0.8"
-          >
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-mb-60 mil-up">
-              Plax is not just a payments platform, it is a comprehensive
-              solution. The global network, security and variety of options make
-              Plax my number one option for all my quisque rutrum transactions.
-              Aenean lost. Etiam ultricies is around.
-            </p>
-            <img
-              src="img/faces/3.jpg"
-              alt="Customer"
-              className="mil-mb-15 mil-up"
-            />
-            <h5 className="mil-up">Rüdiger Karlsen</h5>
-          </blockquote>
-        </SwiperSlide>
-        <div className="mil-slider-nav-1">
-          <div className="mil-testi-prev" />
-          <div className="mil-testi-next" />
+    <div className="testimonials-container">
+      <style jsx>{`
+        .testimonials-container {
+          background: #ffffff;
+          padding: 80px 20px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .testimonials-wrapper {
+          max-width: 1400px;
+          margin: 0 auto;
+          position: relative;
+        }
+
+        .testimonials-header {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        .testimonials-title {
+          font-size: 2.5rem;
+          color: #000;
+          margin-bottom: 16px;
+          font-weight: 700;
+          position: relative;
+        }
+
+        .testimonials-title::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+          height: 3px;
+          background: linear-gradient(90deg, #7eb947, #5fa032);
+          border-radius: 2px;
+        }
+
+        .testimonials-subtitle {
+          font-size: 1.1rem;
+          color: #666;
+          max-width: 500px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .testimonials-slider {
+          position: relative;
+          overflow: hidden;
+          border-radius: 20px;
+        }
+
+        .testimonials-track {
+          display: flex;
+          transform: translateX(-${currentSlide * (100 / slidesToShow)}%);
+          transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+          min-width: ${100 / slidesToShow}%;
+          display: flex;
+          justify-content: center;
+          align-items: stretch;
+          padding: 0 15px;
+        }
+
+        .testimonial-card {
+          background: #f2fafa;
+          border-radius: 20px;
+          padding: 40px 30px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 10px 30px rgba(126, 185, 71, 0.1);
+          border: 2px solid transparent;
+          background-clip: padding-box;
+          position: relative;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        // .testimonial-card:hover {
+        //   transform: translateY(-5px);
+        //   box-shadow: 0 15px 40px rgba(126, 185, 71, 0.2);
+        // }
+
+        .testimonial-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 20px;
+          padding: 2px;
+          background: linear-gradient(135deg, #7eb947, #5fa032, #7eb947);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: exclude;
+          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+
+        .quote-icon {
+          width: 50px;
+          height: 35px;
+          margin: 0 auto 25px;
+          opacity: 0.8;
+        }
+
+        .quote-icon path {
+          fill: #7eb947;
+        }
+
+        .testimonial-text {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: #333;
+          margin-bottom: 25px;
+          font-style: italic;
+          position: relative;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          text-align: center;
+        }
+
+        .testimonial-footer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          margin-top: auto;
+        }
+
+        .customer-avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid #7eb947;
+          box-shadow: 0 4px 12px rgba(126, 185, 71, 0.2);
+        }
+
+        .customer-info {
+          text-align: left;
+        }
+
+        .customer-name {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #000;
+          margin: 0 0 8px 0;
+        }
+
+        .star-rating {
+          display: flex;
+          gap: 2px;
+        }
+
+        .star {
+          transition: all 0.2s ease;
+        }
+
+        .star.filled {
+          transform: scale(1.1);
+        }
+
+        .navigation-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 40px;
+        }
+
+        .nav-button {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: white;
+          border: 2px solid #7eb947;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(126, 185, 71, 0.1);
+        }
+
+        .nav-button:hover {
+          background: #7eb947;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(126, 185, 71, 0.3);
+        }
+
+        .nav-button:hover svg {
+          stroke: white;
+        }
+
+        .nav-button svg {
+          width: 20px;
+          height: 20px;
+          stroke: #7eb947;
+          transition: stroke 0.3s ease;
+        }
+
+        .dots-indicator {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 30px;
+        }
+
+        .dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #ddd;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .dot.active {
+          background: #7eb947;
+          transform: scale(1.2);
+        }
+
+        .floating-elements {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .floating-circle {
+          color: #7eb947;
+          position: absolute;
+          border-radius: 50%;
+          background: linear-gradient(
+            135deg,
+            rgba(126, 185, 71, 0.4),
+            rgba(126, 185, 71, 0.2)
+          );
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+          width: 100px;
+          height: 100px;
+          top: 10%;
+          left: 10%;
+          animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+          width: 60px;
+          height: 60px;
+          top: 20%;
+          right: 15%;
+          animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+          width: 80px;
+          height: 80px;
+          bottom: 15%;
+          left: 15%;
+          animation-delay: 4s;
+        }
+
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .testimonial-slide {
+            min-width: 50%;
+          }
+          
+          .testimonial-card {
+            padding: 35px 25px;
+          }
+          
+          .testimonial-text {
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .testimonials-container {
+            padding: 60px 15px;
+          }
+
+          .testimonials-title {
+            font-size: 2rem;
+          }
+
+          .testimonial-slide {
+            min-width: 100%;
+            padding: 0 10px;
+          }
+
+          .testimonial-card {
+            padding: 40px 30px;
+          }
+
+          .testimonial-text {
+            font-size: 1.1rem;
+          }
+
+          .customer-avatar {
+            width: 45px;
+            height: 45px;
+          }
+
+          .testimonial-footer {
+            flex-direction: column;
+            gap: 15px;
+          }
+
+          .customer-info {
+            text-align: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .testimonials-title {
+            font-size: 1.8rem;
+          }
+          .testimonials-subtitle {
+            font-size: 1rem;
+          }
+          .testimonial-card {
+            padding: 30px 20px;
+          }
+          .quote-icon {
+            width: 45px;
+            height: 30px;
+            margin-bottom: 20px;
+          }
+          .testimonial-text {
+            font-size: 1rem;
+            margin-bottom: 20px;
+          }
+          .customer-avatar {
+            width: 40px;
+            height: 40px;
+          }
+          .customer-name {
+            font-size: 0.95rem;
+          }
+        }
+      `}</style>
+
+      <div className="floating-elements">
+        <div className="floating-circle"></div>
+        <div className="floating-circle"></div>
+        <div className="floating-circle"></div>
+      </div>
+
+      <div className="testimonials-wrapper">
+        <div className="testimonials-header">
+          <h2 className="testimonials-title">What Our Clients Say</h2>
         </div>
-      </Swiper>
-      <div className="mil-testi-pagination mil-up" />
-    </Fragment>
+
+        <div
+          className="testimonials-slider"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="testimonials-track">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-slide">
+                <div className="testimonial-card">
+                  <img
+                    className="quote-icon"
+                    src={testimonial.flag}
+                    alt="flag"
+                  />
+
+                  <div className="testimonial-text">&quot;{testimonial.text}&quot;</div>
+
+                  <div className="testimonial-footer">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="customer-avatar"
+                    />
+                    <div className="customer-info">
+                      <h6 className="customer-name">{testimonial.name}</h6>
+                      <StarRating rating={testimonial.rating} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="navigation-buttons">
+          <button className="nav-button" onClick={prevSlide}>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button className="nav-button" onClick={nextSlide}>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div className="dots-indicator">
+          {Array.from({ length: maxSlides + 1 }).map((_, index) => (
+            <div
+              key={index}
+              className={`dot ${index === currentSlide ? "active" : ""}`}
+              onClick={() => goToSlide(index)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
-export default Testimonials1;
 
-
-
-export const Testimonials2 = () => {
-  return (
-    <Fragment>
-      <Swiper
-        {...sliderProps.testimonials2}
-        // Add or adjust autoplay configuration
-        autoplay={{
-          delay: 0, // Set delay to 0 for continuous scroll
-          disableOnInteraction: false, // Keep autoplaying even after user interaction
-          pauseOnMouseEnter: false, // Don't pause on mouse hover
-        }}
-        loop={true} // <--- This is how you enable looping in Swiper
-        speed={3000} // Adjust speed to control how fast it scrolls
-        freeMode={true} // <--- This is how you enable freeMode in Swiper
-        modules={[Autoplay, FreeMode]} // ONLY include modules imported above
-        className="swiper-container mil-testimonials-2 mil-up"
-      >
-        <SwiperSlide className="swiper-slide">
-          <blockquote className="mil-with-bg">
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up mil-accent"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-text-m mil-mb-30 mil-up">
-              I had never felt so connected to my writing process.
-              The support from Do My Ebook has kept me informed every step of the way, giving me confidence that my ebook is in great hands.
-              They truly care about their clients and their work.
-            </p>
-            <div className="mil-customer">
-              <img src="img/faces/1.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">Rüdiger Karlsen</h6>
-            </div>
-          </blockquote>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <blockquote className="mil-with-bg">
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up mil-accent"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-text-m mil-mb-30 mil-up">
-              The team at Do My Ebook truly goes above and beyond.
-              They&apos;ve helped me transform my manuscript into a professional, polished ebook.
-              Their personalized service and attention to detail are unmatched.
-            </p>
-            <div className="mil-customer">
-              <img src="img/faces/2.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">Branka Berg</h6>
-            </div>
-          </blockquote>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <blockquote className="mil-with-bg">
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up mil-accent"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-text-m mil-mb-30 mil-up">
-              From formatting to publishing, Do My Ebook has been a lifesaver.
-              I&apos;m so grateful for their efficient service and excellent communication throughout the process.
-              It feels like having a personal assistant for my ebook journey.
-            </p>
-            <div className="mil-customer">
-              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">Karl Andreassen</h6>
-            </div>
-          </blockquote>
-        </SwiperSlide>
-        {/* New Testimonials Added Below */}
-        <SwiperSlide className="swiper-slide">
-          <blockquote className="mil-with-bg">
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up mil-accent"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-text-m mil-mb-30 mil-up">
-              Do My Ebook provided exceptional design services! My ebook looks incredibly professional and engaging.
-              They understood my vision perfectly and brought it to life with their creative expertise.
-              Highly recommend for anyone seeking top-tier ebook design.
-            </p>
-            <div className="mil-customer">
-              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">Sarah Chen</h6>
-            </div>
-          </blockquote>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <blockquote className="mil-with-bg">
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up mil-accent"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-text-m mil-mb-30 mil-up">
-              As a first-time ebook author, I was overwhelmed. Do My Ebook made the entire process seamless.
-              Their guidance on formatting and publishing was invaluable, and I&apos;m thrilled with the final product.
-              A truly stress-free experience!
-            </p>
-            <div className="mil-customer">
-              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">David Miller</h6>
-            </div>
-          </blockquote>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <blockquote className="mil-with-bg">
-            <svg
-              width={50}
-              height={32}
-              viewBox="0 0 50 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mil-mb-30 mil-up mil-accent"
-            >
-              <path
-                d="M13.0425 9.59881C13.734 7.27646 15.0099 5.16456 16.7515 3.45982C17.0962 3.11455 17.2958 2.65336 17.31 2.16891C17.3243 1.68445 17.1523 1.2126 16.8285 0.848135L16.6225 0.619235C16.3552 0.313531 15.9908 0.106228 15.5887 0.0311485C15.1866 -0.0439312 14.7706 0.0176452 14.4085 0.205827C-0.299477 8.01918 -0.116489 18.6169 0.0295105 20.4165C0.0195105 20.6139 -0.000488281 20.8112 -0.000488281 21.0085C0.0518962 23.1543 0.724816 25.2405 1.93898 27.0214C3.15314 28.8023 4.85796 30.2037 6.85252 31.0604C8.84709 31.9171 11.0483 32.1935 13.1967 31.8569C15.3452 31.5203 17.3514 30.5848 18.9788 29.1606C20.6063 27.7364 21.7873 25.8829 22.3826 23.8185C22.9779 21.7541 22.9627 19.5648 22.3389 17.5086C21.715 15.4524 20.5085 13.615 18.8614 12.2129C17.2144 10.8108 15.1954 9.90246 13.0425 9.59487V9.59881Z"
-                fill="#03A6A6"
-              />
-              <path
-                d="M40.2255 9.59881C40.9171 7.27648 42.193 5.16459 43.9345 3.45982C44.2793 3.11455 44.4788 2.65336 44.4931 2.16891C44.5074 1.68445 44.3353 1.2126 44.0115 0.848135L43.8055 0.619235C43.5382 0.313531 43.1738 0.106228 42.7717 0.0311485C42.3696 -0.0439312 41.9536 0.0176452 41.5915 0.205827C26.8835 8.01918 27.0665 18.6169 27.2115 20.4165C27.2015 20.6139 27.1815 20.8112 27.1815 21.0085C27.2332 23.1544 27.9055 25.241 29.1191 27.0224C30.3328 28.8038 32.0373 30.2057 34.0318 31.063C36.0262 31.9203 38.2274 32.1972 40.3761 31.8611C42.5248 31.525 44.5313 30.5899 46.1591 29.166C47.787 27.742 48.9684 25.8887 49.5641 23.8242C50.1599 21.7598 50.1451 19.5704 49.5215 17.514C48.8979 15.4576 47.6915 13.6199 46.0445 12.2176C44.3975 10.8152 42.3785 9.90659 40.2255 9.59881Z"
-                fill="#03A6A6"
-              />
-            </svg>
-            <p className="mil-text-m mil-mb-30 mil-up">
-              I&apos;m incredibly impressed with the quality of work from Do My Ebook.
-              They took my raw manuscript and turned it into a beautifully formatted and professional ebook.
-              The communication was excellent, and they delivered on time!
-            </p>
-            <div className="mil-customer">
-              <img src="img/faces/3.jpg" alt="Customer" className="mil-up" />
-              <h6 className="mil-up">Jessica Lee</h6>
-            </div>
-          </blockquote>
-        </SwiperSlide>
-      </Swiper>
-      <div className="mil-testi-pagination mil-up" />
-    </Fragment>
-  );
-};
+export default Testimonials;
