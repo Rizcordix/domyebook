@@ -9,6 +9,19 @@ const EbookServices = () => {
 
   const services = [
     {
+      title: "Ghostwriting",
+      description: "Transform your ideas into a polished manuscript with our professional ghostwriting services. We help you articulate your vision and bring your story to life.",
+      features: [
+        "Collaborative writing process",
+        "Expert research and fact-checking",
+        "Customized writing style",
+        "Confidentiality and privacy",
+        "Revisions and editing included"
+      ],
+      image: "/img/home-2/4.png",
+      showBanner: true
+    },
+    {
       title: "Audio-Ebook",
       description: "Transform your written content into engaging audiobooks with professional narration and high-quality production. Reach a wider audience through multiple formats and platforms.",
       features: [
@@ -22,19 +35,6 @@ const EbookServices = () => {
       showBanner: true
     },
     {
-      title: "Proofreading", 
-      description: "Ensure your ebook is polished and professional with our comprehensive proofreading services. We catch errors, improve readability, and enhance overall quality.",
-      features: [
-        "Grammar and spelling correction",
-        "Style and consistency review",
-        "Structural improvements",
-        "Format optimization",
-        "Quality assurance checks"
-      ],
-      image: "/img/home-2/4.png",
-      showBanner: false
-    },
-    {
       title: "Promo-Video",
       description: "Create compelling promotional videos that showcase your ebook and attract readers. Professional video production to boost your marketing efforts and sales.",
       features: [
@@ -45,7 +45,7 @@ const EbookServices = () => {
         "Multiple format delivery"
       ],
       image: "/img/home-2/4.png",
-      showBanner: false
+      showBanner: true
     }
   ];
 

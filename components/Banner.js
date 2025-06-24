@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 const Banner = ({
-  title = "Bring Your Ebook Vision to Life!",
+  title = "Bring your ebook vision to life!",
   subTitle = "Your Story, Our Expertise, Professionally Published",
   img = "/img/home-2/1.png",
-  style = { maxWidth: "135%", transform: "translateX(5%)" },
+  style = { maxWidth: "135%", transform: "translateX(15%)" },
   dark = false,
 }) => {
   return (
@@ -19,7 +19,7 @@ const Banner = ({
               </h1>
               <div className="mil-buttons-frame">
                 <Link href="register" className="mil-btn mil-md mil-add-arrow">
-                  Try demo
+                  Get Quote
                 </Link>
                 <a
                   href="https://www.youtube.com/watch?v=gRhoYxy9Oss"
@@ -55,7 +55,6 @@ export const PageBanner = ({
         <div className="row align-items-center justify-content-center">
           <div className="col-xl-8">
             <div className="mil-banner-text mil-text-center">
-              <div className="mil-text-m mil-mb-20">{pageName}</div>
               <h1 className="mil-mb-60">{title}</h1>
               <ul className="mil-breadcrumbs mil-center">
                 <li>

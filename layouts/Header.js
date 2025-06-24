@@ -57,6 +57,39 @@ const Header = ({ dark }) => {
           transform: translateX(5px);
         }
 
+        /* --- MODIFIED RULES BELOW for color: #333 --- */
+
+        /* Target all links within the top menu for consistent font and color */
+        .mil-top-menu ul li a {
+          font-family: inherit; /* This will make it inherit from the body or html */
+          color: #333; /* Set to desired color */
+        }
+
+        /* Specifically target links within submenus to ensure consistency */
+        .mil-top-menu .mil-submenu li a {
+          font-family: inherit;
+          color: #333; /* Set to desired color */
+        }
+
+        /* You might need to be even more specific for nested submenus if issues persist */
+        .mil-top-menu .mil-submenu .mil-submenu li a {
+          font-family: inherit;
+          color: #333; /* Set to desired color */
+        }
+
+        /* Ensure active menu items also have the desired color if they have specific styles */
+        .mil-top-menu .mil-active > a {
+            font-family: inherit;
+            color: #333; /* Set to desired color */
+        }
+        .mil-top-menu .mil-submenu .mil-active > a {
+            font-family: inherit;
+            color: #333; /* Set to desired color */
+        }
+
+        /* --- END MODIFIED RULES --- */
+
+
         @media (max-width: 991px) {
           .mil-top-menu .mil-submenu {
             max-height: 0;
@@ -121,10 +154,10 @@ const Header = ({ dark }) => {
                       }
                     }}>Writing</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="#">Ghostwriting Excellence</Link></li>
-                      <li><Link href="#">Strategic Plot & Outline Development</Link></li>
-                      <li><Link href="#">Children's Book Magic</Link></li>
-                      <li><Link href="#">AI-Enhanced Human Editing</Link></li>
+                      <li><Link href="ghostwriting">Ghostwriting Excellence</Link></li>
+                      <li><Link href="strategicplot">Strategic Plot & Outline Development</Link></li>
+                      <li><Link href="childrens-book-writing">Children's Book Magic</Link></li>
+                      <li><Link href="AI-to-human-writing">AI-Enhanced Human Editing</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("editorial")}`}>
@@ -135,8 +168,8 @@ const Header = ({ dark }) => {
                       }
                     }}>Editorial</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="#">Precision Editing & Proofreading</Link></li>
-                      <li><Link href="#">Unwavering Quality & Plagiarism Checks</Link></li>
+                      <li><Link href="precision-editing">Precision Editing & Proofreading</Link></li>
+                      <li><Link href="unwavering-quality">Unwavering Quality & Plagiarism Checks</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("design")}`}>
@@ -147,9 +180,9 @@ const Header = ({ dark }) => {
                       }
                     }}>Design</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="#">Signature eBook Design</Link></li>
-                      <li><Link href="#">Impactful Cover Artistry</Link></li>
-                      <li><Link href="#">Custom Illustrations</Link></li>
+                      <li><Link href="signature-ebook-design">Signature eBook Design</Link></li>
+                      <li><Link href="impactful-cover">Impactful Cover Artistry</Link></li>
+                      <li><Link href="custom-illustrations">Custom Illustrations</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("publishing")}`}>
@@ -160,10 +193,10 @@ const Header = ({ dark }) => {
                       }
                     }}>Publishing</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="#">Professional Book Formatting</Link></li>
-                      <li><Link href="#">Compelling Book Descriptions</Link></li>
-                      <li><Link href="#">Audio Ebook Production</Link></li>
-                      <li><Link href="#">Dynamic Video Promos</Link></li>
+                      <li><Link href="professional-book-formatting">Professional Book Formatting</Link></li>
+                      <li><Link href="compelling-book-descriptions">Compelling Book Descriptions</Link></li>
+                      <li><Link href="audio-ebook">Audio Ebook Production</Link></li>
+                      <li><Link href="dynamic-video-promos">Dynamic Video Promos</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("authorSupport")}`}>
@@ -174,10 +207,10 @@ const Header = ({ dark }) => {
                       }
                     }}>Author Support</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="#">End-to-End Project Management</Link></li>
-                      <li><Link href="#">Global Content Translation</Link></li>
-                      <li><Link href="#">Book Launch Bundles</Link></li>
-                      <li><Link href="#">Bulk Order Solutions</Link></li>
+                      <li><Link href="end-to-end-project-management">End-to-End Project Management</Link></li>
+                      <li><Link href="global-content-translation">Global Content Translation</Link></li>
+                      <li><Link href="book-launch-bundles">Book Launch Bundles</Link></li>
+                      <li><Link href="bulk-order-solutions">Bulk Order Solutions</Link></li>
                     </ul>
                   </li>
                 </ul>
@@ -195,14 +228,14 @@ const Header = ({ dark }) => {
               {/* <li className={`${activeMenuFuntion(["features"])}`}>
                 <Link href="features">Features</Link>
               </li> */}
-               {/* <li className={`${activeMenuFuntion(["how-it-works"])}`}>
+                {/* <li className={`${activeMenuFuntion(["how-it-works"])}`}>
                 <Link href="how-it-works">How It Works</Link>
               </li> */}
             </ul>
           </nav>
           <div className="mil-menu-buttons">
-            <Link href="register" className="mil-btn mil-sm">
-              Get Quote
+            <Link href="calendly" className="mil-btn mil-sm">
+              Book a Demo
             </Link>
             <div
               className={`mil-menu-btn ${toggle ? "mil-active" : ""}`}
