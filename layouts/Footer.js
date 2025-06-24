@@ -145,9 +145,6 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             <h6 className="mil-mb-60">Useful Links</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="mil-text-m mil-soft mil-mb-15">
                 <Link href="about">About Us</Link>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
@@ -162,15 +159,12 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               <li className="mil-text-m mil-soft mil-mb-15">
                 <Link href="blog">Blogs</Link>
               </li>
-              <li className="mil-text-m mil-soft mil-mb-15">
-                <Link href="contact">Contact Us</Link>
-              </li>
             </ul>
           </div>
 
           {/* Help / Contact Info - Kept at col-xl-3 as it contains more text */}
           <div className="col-xl-3 mil-mb-60">
-            <h6 className="mil-mb-60">Help</h6>
+            <h6 className="mil-mb-60">Contact</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
                 5900 Balcones Drive STE ,<br />10544 Austin,
