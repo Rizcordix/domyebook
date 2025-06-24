@@ -77,10 +77,10 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
 
   const policyLinks = [
     { name: 'Terms of Service', href: '/terms' },
-    { name: 'Acceptable Uses of AI', href: '/acceptable-uses-AI' },
+    { name: 'Acceptable AI Usage', href: '/acceptable-uses-AI' },
     { name: 'Plagiarism Policy', href: '/plagiarism-disclaimer' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
-    { name: 'Refund and Revision Policy', href: '/refund-and-revision' },
+    { name: 'Refund and Revision', href: '/refund-and-revision' },
   ];
 
   return (
