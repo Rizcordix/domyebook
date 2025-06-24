@@ -56,7 +56,7 @@ const BenefitsSection = () => {
                   className="mil-icon-img"
                 />
               </div>
-              <h5 className="mil-mb-20 mil-up mil-title">Get More With Every Transaction</h5>
+              <h5 className="mil-mb-20 mil-up mil-title">More With Every Transaction</h5>
               <p className="mil-text-s mil-soft mil-up mil-description">
                 Every purchase is more than just a transaction. With exclusive benefits, 
                 like special offers and added security, we make sure you get the most out of every step of your journey with us.

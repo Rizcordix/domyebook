@@ -60,7 +60,6 @@ const FeaturesPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <div className="mil-text-m mil-mb-20">Our Platform</div>
                   <h1 className="mil-mb-60">
                     Platform Features
                   </h1>
@@ -305,7 +304,7 @@ const FeaturesPage = () => {
           }
 
           /* Professional styling enhancements */
-          .mil-features:nth-child(odd) {
+          .mil-features:nth-child(even) {
             background: #f2fafa;
           }
 

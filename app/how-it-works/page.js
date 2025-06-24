@@ -82,7 +82,6 @@ const HowItWorksPage = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <div className="mil-text-m mil-mb-20">Process</div>
                 <h1 className="mil-mb-60">
                   How It Works
                 </h1>

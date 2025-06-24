@@ -248,7 +248,7 @@ const page = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <div className="mil-text-m mil-mb-20">About Us</div>
+                {/* <div className="mil-text-m mil-mb-20">About Us</div> */}
                 <h1 className="mil-mb-60">
                   More than a Platform, Expert eBook Writing Services
                 </h1>
