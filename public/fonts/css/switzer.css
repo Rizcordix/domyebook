@@ -272,3 +272,28 @@
        font-style: italic;
 }
 
+@font-face {
+  font-family: 'Wagen';
+  src: url('../fonts/Amenti-Regular.otf') format('opentype'),
+       /* url('../fonts/Amenti-Regular.woff') format('woff'), */
+       url('../fonts/Amenti-Regular.ttf') format('truetype');
+       font-weight: 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'ViableLogic';
+  src: url('../fonts/ViableLogicThin.ttf') format('opentype'),
+       url('../fonts/ViableLogicThin.woff') format('woff'),
+       url('../fonts/ViableLogicThin.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+
+
+
+

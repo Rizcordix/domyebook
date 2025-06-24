@@ -20,7 +20,7 @@ const Page = () => {
     <PlaxLayout bg={false}>
       <div
         className="calendly-inline-widget mil-p-160-0"
-        data-url="https://calendly.com/domyebook?hide_gdpr_banner=1&primary_color=ffbf00"
+        data-url="https://calendly.com/domyebook?primary_color=7eb947"
         style={{ minWidth: "320px", height: "900px" }}
       ></div>
     </PlaxLayout>
@@ -28,4 +28,3 @@ const Page = () => {
 };
 
 export default Page;
-

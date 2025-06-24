@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 
 const EbookServicesComponent = () => {
@@ -91,7 +92,7 @@ const EbookServicesComponent = () => {
     <div className="ebook-services-container">
       <style jsx>{`
         .ebook-services-container {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-family: "Wagen", sans-serif;
           line-height: 1.6;
           color: #333;
         }
@@ -490,27 +491,11 @@ const EbookServicesComponent = () => {
         }
 
         .cta-icon {
-          width: 90px;
-          height: 90px;
-          margin: 0 auto 35px;
-          background: linear-gradient(135deg, #7eb947 0%, #90c955 100%);
-          border-radius: 50%;
           display: flex;
-          align-items: center;
           justify-content: center;
-          font-size: 3rem;
-          color: white;
-          box-shadow: 0 15px 35px rgba(126, 185, 71, 0.2);
-          position: relative;
-          overflow: hidden;
+          height: 100px;
         }
 
-        .cta-icon img {
-          width: 55px;
-          height: 55px;
-          object-fit: contain;
-          filter: brightness(0) invert(1);
-        }
 
         .cta-icon::before {
           content: '';
@@ -641,6 +626,29 @@ const EbookServicesComponent = () => {
         }
       `}</style>
 
+      {/* Section 2: Video Section */}
+      <section className="video-section">
+        <div className="container">
+          <div className="video-content">
+            <div className="video-wrapper">
+              <img src="/img/inner-pages/6.png" alt="Video Placeholder Graphic" />
+              <button className="play-button">
+                ▶
+              </button>
+            </div>
+            <div className="video-text">
+              <h2>What&apos;s in Our Ebook Writing Package?</h2>
+              <p>
+                Discover how our comprehensive ebook writing services can transform your ideas into a professionally published book. From initial concept to final publication, we guide you through every step of the process with expert support and industry-leading quality.
+              </p>
+              <p>
+                Watch this quick overview to learn more about our complete ebook package and find out how we can turn your vision into an epic page-turner that captivates readers and achieves your publishing goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 1: Services Slider */}
       <section className="services-slider-section mil-p-160-0">
         <div className="container">
@@ -678,28 +686,7 @@ const EbookServicesComponent = () => {
         </div>
       </section>
 
-      {/* Section 2: Video Section */}
-      <section className="video-section">
-        <div className="container">
-          <div className="video-content">
-            <div className="video-wrapper">
-              <img src="/img/inner-pages/6.png" alt="Video Placeholder Graphic" />
-              <button className="play-button">
-                ▶
-              </button>
-            </div>
-            <div className="video-text">
-              <h2>What&apos;s in Our Ebook Writing Package?</h2>
-              <p>
-                Discover how our comprehensive ebook writing services can transform your ideas into a professionally published book. From initial concept to final publication, we guide you through every step of the process with expert support and industry-leading quality.
-              </p>
-              <p>
-                Watch this quick overview to learn more about our complete ebook package and find out how we can turn your vision into an epic page-turner that captivates readers and achieves your publishing goals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 3: Stats Banner */}
       <section className="stats-banner">
@@ -744,7 +731,7 @@ const EbookServicesComponent = () => {
       <section className="testimonials-cta">
         <div className="container">
           <div className="cta-icon">
-            <img src="/img/brands/testimonial_icon.svg" alt="Testimonials Icon" />
+            <img src="/img/inner-pages/testimonial_icon.webp" alt="Testimonials Icon" />
           </div>
           <h2 className="cta-title">What Our Authors Are Saying</h2>
           <p className="cta-description">
