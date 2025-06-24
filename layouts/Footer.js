@@ -36,50 +36,75 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
   const iconHoverEffects = {
     instagram: '0 4px 15px rgba(131, 58, 180, 0.4)',
     facebook: '0 4px 15px rgba(59, 89, 152, 0.4)',
-    linkedin: '0 4px 15px rgba(0, 119, 181, 0.4)',
+    youtube: '0 4px 15px rgba(255, 0, 0, 0.4)',
     whatsapp: '0 4px 15px rgba(37, 211, 102, 0.4)',
+    pinterest: '0 4px 15px rgba(189, 8, 8, 0.4)',
+    twitter: '0 4px 15px rgba(29, 161, 242, 0.4)',
   };
 
   const socialLinks = [
     {
-      href: 'https://www.instagram.com/',
+      href: 'https://www.instagram.com/domyebook?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
       icon: 'fab fa-instagram',
       hoverShadow: iconHoverEffects.instagram,
     },
     {
-      href: 'https://www.facebook.com/digital53/',
+      href: 'https://www.facebook.com/profile.php?id=61576622832616',
       icon: 'fab fa-facebook-f',
       hoverShadow: iconHoverEffects.facebook,
     },
     {
-      href: 'https://www.linkedin.com/in/joharmandav/',
-      icon: 'fab fa-linkedin-in',
-      hoverShadow: iconHoverEffects.linkedin,
+      href: 'https://www.youtube.com/@domyebook',
+      icon: 'fab fa-youtube',
+      hoverShadow: iconHoverEffects.youtube,
     },
     {
-      href: 'https://wa.me/96599144152',
+      href: 'https://wa.me/+15123259725',
       icon: 'fab fa-whatsapp',
       hoverShadow: iconHoverEffects.whatsapp,
     },
+    {
+      href: 'https://au.pinterest.com/domyebook/',
+      icon: 'fab fa-pinterest',
+      hoverShadow: iconHoverEffects.pinterest,
+    },
+    {
+      href: 'https://x.com/Domyebook',
+      icon: 'fab fa-twitter',
+      hoverShadow: iconHoverEffects.twitter,
+    },
+  ];
+
+  const policyLinks = [
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Acceptable Uses of AI', href: '/acceptable-uses-AI' },
+    { name: 'Plagiarism Policy', href: '/plagiarism-disclaimer' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Refund and Revision Policy', href: '/refund-and-revision' },
   ];
 
   return (
     <footer className={`${bg ? "mil-footer-with-bg" : ""} mil-p-120-0`}>
       <div className="container">
         <div className="row">
+          {/* Logo and Social Links - Kept at col-xl-3 for more space for logo and icons */}
           <div className="col-xl-3">
             <a href="#." className="mil-footer-logo mil-mb-30">
               <img src="/img/logo.png" alt="Plax" width={90} height={32} />
             </a>
 
+            {/* Changed display to flex and added flexWrap for multi-row layout */}
             <ul
               style={{
                 listStyle: 'none',
                 padding: 0,
                 margin: 0,
                 display: 'flex',
+                flexWrap: 'wrap', // Added to allow items to wrap
                 gap: '15px',
                 alignItems: 'center',
+                // Optional: Adjust width or use max-width to control wrapping based on parent
+                maxWidth: '200px', // Example: adjust this value based on desired layout
               }}
             >
               {socialLinks.map(({ href, icon, hoverShadow }, index) => (
@@ -87,6 +112,10 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
                   key={index}
                   style={{
                     transition: 'transform 0.3s ease',
+                    // Flex basis to ensure 3 items per row, considering gap
+                    flexBasis: 'calc(33.33% - 10px)', // (10px is an example, adjust based on gap)
+                    // Added margin-bottom to create space between rows
+                    marginBottom: '15px',
                   }}
                 >
                   <Link
@@ -110,8 +139,10 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               ))}
             </ul>
           </div>
-          <div className="col-xl-3 mil-mb-60">
-            <h6 className="mil-mb-60">Usefull Links</h6>
+
+          {/* Useful Links - Adjusted to col-xl-2 */}
+          <div className="col-xl-2 mil-mb-60">
+            <h6 className="mil-mb-60">Useful Links</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
                 <Link href="/">Home</Link>
@@ -120,7 +151,10 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
                 <Link href="about">About Us</Link>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                <Link href="contact">Contact Us</Link>
+                <Link href="how-it-works">How it Works</Link>
+              </li>
+              <li className="mil-text-m mil-soft mil-mb-15">
+                <Link href="features">Features</Link>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
                 <Link href="services">Services</Link>
@@ -128,27 +162,49 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               <li className="mil-text-m mil-soft mil-mb-15">
                 <Link href="blog">Blogs</Link>
               </li>
+              <li className="mil-text-m mil-soft mil-mb-15">
+                <Link href="contact">Contact Us</Link>
+              </li>
             </ul>
           </div>
+
+          {/* Help / Contact Info - Kept at col-xl-3 as it contains more text */}
           <div className="col-xl-3 mil-mb-60">
             <h6 className="mil-mb-60">Help</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
                 5900 Balcones Drive STE ,<br />10544 Austin,
-                 Texas 78731
+                Texas 78731
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                +1 (727) 405-3480
+                +1 (512) 3259725
+              </li>
+              <li className="mil-text-m mil-soft mil-mb-15">
+                +61480810531
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
                 info@domyebook.com
               </li>
             </ul>
           </div>
-          <div className="col-xl-3 mil-mb-80">
+
+          {/* Policies - Moved to third position, adjusted to col-xl-2 */}
+          <div className="col-xl-2 mil-mb-60">
+            <h6 className="mil-mb-60">Policies</h6>
+            <ul className="mil-footer-list">
+              {policyLinks.map((link, index) => (
+                <li key={index} className="mil-text-m mil-soft mil-mb-15">
+                  <Link href={link.href}>{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter - Moved to last position, adjusted to col-xl-2 */}
+          <div className="col-xl-2 mil-mb-80">
             <h6 className="mil-mb-60">Newsletter</h6>
             <p className="mil-text-xs mil-soft mil-mb-15">
-              Subscribe to get the latest news form us
+              Subscribe to get the latest news from us
             </p>
             <form id="subscribeForm" className="mil-subscripe-form-footer">
               <input className="mil-input" name="EMAIL" type="email" placeholder="Email" autoComplete="off" />
@@ -166,9 +222,9 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               </div>
             </form>
           </div>
-          </div>
-        </div>
-        <div className="mil-footer-bottom" >
+        </div> {/* End of row for main footer content */}
+
+        <div className="mil-footer-bottom">
           <div className="row">
             <div className="col-xl-6">
               <p className="mil-text-s mil-soft">
@@ -185,9 +241,12 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             </div>
           </div>
         </div>
+      </div>
     </footer>
   );
 };
+
+
 const Footer3 = ({ bg = true, margin = 160 }) => {
   return (
     <footer className="mil-footer-dark-2 mil-p-160-0">
@@ -226,7 +285,7 @@ const Footer3 = ({ bg = true, margin = 160 }) => {
                  Texas 78731
               </li>
               <li className="mil-text-m mil-pale mil-mb-15">
-                +1 (727) 405-3480
+                +1 (512) 3259725
               </li>
               <li className="mil-text-m mil-pale mil-mb-15">
                 info@domyebook.com
@@ -311,7 +370,7 @@ const Footer2 = () => {
                 France
               </li>
               <li className="mil-text-m mil-dark-soft mil-mb-15">
-                +1 (727) 405-3480
+                +1 (512) 3259725
               </li>
               <li className="mil-text-m mil-dark-soft mil-mb-15">
                 info@domyebook.com
