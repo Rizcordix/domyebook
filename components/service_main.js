@@ -12,7 +12,7 @@ const ServicesPage = () => {
       />
 
       {/* Writing Services */}
-      <div className="mil-features" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-xl-5 mil-mb-80">
@@ -50,7 +50,7 @@ const ServicesPage = () => {
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
-                  Get Started
+                  Get Quote
                 </a>
               </div>
             </div>
@@ -71,7 +71,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Editorial Services */}
-      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-features" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
             <div className="col-xl-5 mil-mb-80">
@@ -101,7 +101,7 @@ const ServicesPage = () => {
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
-                  Get Started
+                  Get Quote
                 </a>
               </div>
             </div>
@@ -122,7 +122,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Design Services */}
-      <div className="mil-features" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-xl-5 mil-mb-80">
@@ -156,7 +156,7 @@ const ServicesPage = () => {
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
-                  Get Started
+                  Get Quote
                 </a>
               </div>
             </div>
@@ -177,7 +177,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Publishing Services */}
-      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-features" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
         <div className="container">
           <div className="row flex-sm-row-reverse justify-content-between align-items-center">
             <div className="col-xl-5 mil-mb-80">
@@ -215,7 +215,7 @@ const ServicesPage = () => {
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
-                  Get Started
+                  Get Quote
                 </a>
               </div>
             </div>
@@ -236,7 +236,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Author Support Services */}
-      <div className="mil-features" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-xl-5 mil-mb-80">
@@ -274,7 +274,7 @@ const ServicesPage = () => {
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
-                  Get Started
+                  Get Quote
                 </a>
               </div>
             </div>
@@ -295,7 +295,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="mil-cta mil-up" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-cta mil-up" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
         <div className="container">
           <div className="mil-out-frame mil-p-160-100">
             <div className="row justify-content-center mil-text-center">
