@@ -75,7 +75,7 @@ const page = () => {
                 height: "100%",
                 border: "none",
               }}
-              title="Register with Plax"
+              title="Get a Quote Form"
               allowFullScreen
             >
               Loading…

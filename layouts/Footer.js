@@ -54,7 +54,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
       hoverShadow: iconHoverEffects.facebook,
     },
     {
-      href: 'https://www.youtube.com/@domyebook',
+      href: 'https://youtube.com/@domyebook?si=EoT_b3isXnI2j_0O',
       icon: 'fab fa-youtube',
       hoverShadow: iconHoverEffects.youtube,
     },
@@ -229,7 +229,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
               <p className="mil-text-s mil-text-right mil-sm-text-left mil-soft">
                 Developed by{" "}
                 <a href="https://Rizcordixglobal.com" target="blank">
-                  Rizcordix Global
+                  Rizcordix Global Pvt Ltd
                 </a>
               </p>
             </div>

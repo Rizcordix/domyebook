@@ -1,19 +1,12 @@
-import { Questrial } from 'next/font/google'
-
-import "@fonts/css/switzer.css";
-import "./globals.css";
-
-import "@fonts/font-awesome.min.css";
-
-import "@css/plugins/bootstrap-grid.css";
-
-import "@css/plugins/swiper.min.css";
-
-import "@css/plugins/magnific-popup.css";
-
-// import Preloader from "@/layouts/Preloader";
-import "@css/style.css";
-
+import { Questrial } from 'next/font/google';
+import './globals.css';
+import '@fonts/css/switzer.css';
+import '@fonts/font-awesome.min.css';
+import '@css/plugins/bootstrap-grid.css';
+import '@css/plugins/swiper.min.css';
+import '@css/plugins/magnific-popup.css';
+import '@css/style.css';
+import ClientLayout from '@/components/ClientLayout';
 
 const secondary_font = Questrial({
   weight: ['400'],
@@ -22,32 +15,26 @@ const secondary_font = Questrial({
   variable: '--font-secondary',
   display: 'swap',
   adjustFontFallback: false,
-})
+});
 
 // export const metadata = {
-//   title: "DoMyEbook",
-//   description: "Ebook creation and publishing platform",
+//   title: "Your App Title",
+//   description: "Your app description",
 // };
-
-export const metadata = {
-        title: "DoMyEbook",
-        description: "DoMyEbook offers professional ebook services including ghostwriting, editing, formatting, publishing, book cover design, marketing, promo videos, and audiobook creation.",
-        keywords: "DoMyEbook, ebook services, ghostwriting, editing, proofreading, formatting, publishing, book design, book cover, illustration, ebook marketing, promo video, audiobook, audio ebook",
-        openGraph: {
-          title: "DoMyEbook | Full-Service eBook Publishing Solutions",
-          description: "From ghostwriting and editing to book cover design, promo videos, and audiobooks — DoMyEbook is your one-stop solution for all ebook needs.",
-          type: "website",
-          url: "https://domyebook.com",
-          images: ["https://domyebook.com/public/img/logo.png"],
-        },
-      };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${secondary_font.variable}`}>
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DoMyEbook</title>
+        <meta name="description" content="DoMyEbook offers professional ebook services including ghostwriting, editing, formatting, publishing, book cover design, marketing, promo videos, and audiobook creation." />
+        <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+        <meta name="theme-color" content="#7eb947" />
+      </head>
       <body>
-        {/* <Preloader /> */}
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
