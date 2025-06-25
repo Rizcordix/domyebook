@@ -172,7 +172,7 @@ const DualPortfolioCarousel = () => {
 
       return {
         position: 'absolute',
-        top: '50%',
+        top: '70%',
         left: '50%',
         width: isMobile ? '300px' : '400px',
         height: isMobile ? '210px' : '280px',
@@ -312,7 +312,7 @@ const DualPortfolioCarousel = () => {
   const NavButton = React.memo(({ direction, onClick}) => {
     const buttonStyle = {
       position: 'absolute',
-      top: '50%',
+      top: '60%',
       [direction === 'prev' ? 'left' : 'right']: isMobile ? '10px' : '20px',
       transform: 'translateY(-50%)',
       width: isMobile ? '40px' : '50px',
@@ -379,7 +379,7 @@ const DualPortfolioCarousel = () => {
     <div style={{
       position: 'relative',
       width: '100%',
-      height: '100vh',
+      height: '80vh',
       background: 'linear-gradient(135deg, #f2fafa 0%, #7eb947 100%)',
       overflow: 'hidden',
       display: 'flex',
@@ -399,6 +399,23 @@ const DualPortfolioCarousel = () => {
         `,
         animation: 'float 20s ease-in-out infinite',
       }} />
+      <div style={{
+        position: 'absolute',
+        top: '10%', 
+        left: '50%',
+        transform: 'translate(-50%, -50%)'
+      }}> <h1>Archive</h1>
+       
+      </div>
+      <div style={{
+        position: 'absolute',
+        top: '20%', 
+        left: '50%',
+        transform: 'translate(-50%, -50%)'
+      }}> <h5>Exploring imagination and reality, one page at a time</h5>
+
+      </div>
+
 
       {/* Left Carousel */}
       <div style={carouselStyle}>

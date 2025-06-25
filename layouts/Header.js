@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const Header = ({ dark }) => {
+const Header = ({ dark, topOffset = 0 }) => {
   const currentPath = usePathname();
   const activeMenuFuntion = (value) =>
     value.some((el) => currentPath.includes(el)) ? "mil-active" : "";
@@ -112,7 +112,17 @@ const Header = ({ dark }) => {
           }
         }
       `}</style>
-      <div className={`mil-top-panel ${dark ? "mil-dark-2" : ""}`}>
+      <div
+      className={`mil-top-panel ${dark ? "mil-dark-2" : ""}`}
+      style={{
+        position: 'relative', // if using fixed
+        top: `0px`,
+        width: '100%',
+        zIndex: 999,
+        transition: 'top 0.3s ease',
+        backgroundColor: "#f2fafa",
+      }}
+    >
         <div className="container">
           <Link href="/" className="mil-logo">
             <img
@@ -140,7 +150,7 @@ const Header = ({ dark }) => {
                 {/* On desktop, this is a hover item. On mobile, it's a clickable toggle */}
                 <Link href="services" onClick={(e) => {
                   // Prevent default link behavior only if it has submenus
-                  if (window.innerWidth < 992) { // Adjust breakpoint as needed
+                  if (window.innerWidth < 992) {
                     e.preventDefault();
                     handleSubmenuToggle("services");
                   }
@@ -225,12 +235,6 @@ const Header = ({ dark }) => {
               <li className={`${activeMenuFuntion(["contact"])}`}>
                 <Link href="contact">Contact</Link>
               </li>
-              {/* <li className={`${activeMenuFuntion(["features"])}`}>
-                <Link href="features">Features</Link>
-              </li> */}
-                {/* <li className={`${activeMenuFuntion(["how-it-works"])}`}>
-                <Link href="how-it-works">How It Works</Link>
-              </li> */}
             </ul>
           </nav>
           <div className="mil-menu-buttons">
