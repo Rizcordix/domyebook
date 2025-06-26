@@ -138,17 +138,17 @@ const Header = ({ dark, topOffset = 0 }) => {
                 <Link href="/">Home</Link>
               </li>
               <li className={`${activeMenuFuntion(["about"])}`}>
-                <Link href="about">About</Link>
+                <Link href="/about">About</Link>
               </li>
               <li className={`${activeMenuFuntion(["how-it-works"])}`}>
-                <Link href="how-it-works">How It Works</Link>
+                <Link href="/how-it-works">How It Works</Link>
               </li>
               <li className={`${activeMenuFuntion(["features"])}`}>
-                <Link href="features">Features</Link>
+                <Link href="/features">Features</Link>
               </li>
               <li className={`${activeMenuFuntion(["services"])} mil-has-children ${getSubmenuToggleClass("services")}`}>
                 {/* On desktop, this is a hover item. On mobile, it's a clickable toggle */}
-                <Link href="services" onClick={(e) => {
+                <Link href="/services" onClick={(e) => {
                   // Prevent default link behavior only if it has submenus
                   if (window.innerWidth < 992) {
                     e.preventDefault();
@@ -164,10 +164,10 @@ const Header = ({ dark, topOffset = 0 }) => {
                       }
                     }}>Writing</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="ghostwriting">Ghostwriting Excellence</Link></li>
-                      <li><Link href="strategicplot">Strategic Plot & Outline Development</Link></li>
-                      <li><Link href="childrens-book-writing">Children's Book Magic</Link></li>
-                      <li><Link href="AI-to-human-writing">AI-Enhanced Human Editing</Link></li>
+                      <li><Link href="/ghostwriting">Ghostwriting Excellence</Link></li>
+                      <li><Link href="/strategicplot">Strategic Plot & Outline Development</Link></li>
+                      <li><Link href="/childrens-book-writing">Children's Book Magic</Link></li>
+                      <li><Link href="/AI-to-human-writing">AI-Enhanced Human Editing</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("editorial")}`}>
@@ -178,8 +178,8 @@ const Header = ({ dark, topOffset = 0 }) => {
                       }
                     }}>Editorial</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="precision-editing">Precision Editing & Proofreading</Link></li>
-                      <li><Link href="unwavering-quality">Unwavering Quality & Plagiarism Checks</Link></li>
+                      <li><Link href="/precision-editing">Precision Editing & Proofreading</Link></li>
+                      <li><Link href="/unwavering-quality">Unwavering Quality & Plagiarism Checks</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("design")}`}>
@@ -190,9 +190,9 @@ const Header = ({ dark, topOffset = 0 }) => {
                       }
                     }}>Design</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="signature-ebook-design">Signature eBook Design</Link></li>
-                      <li><Link href="impactful-cover">Impactful Cover Artistry</Link></li>
-                      <li><Link href="custom-illustrations">Custom Illustrations</Link></li>
+                      <li><Link href="/signature-ebook-design">Signature eBook Design</Link></li>
+                      <li><Link href="/impactful-cover">Impactful Cover Artistry</Link></li>
+                      <li><Link href="/custom-illustrations">Custom Illustrations</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("publishing")}`}>
@@ -203,10 +203,10 @@ const Header = ({ dark, topOffset = 0 }) => {
                       }
                     }}>Publishing</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="professional-book-formatting">Professional Book Formatting</Link></li>
-                      <li><Link href="compelling-book-descriptions">Compelling Book Descriptions</Link></li>
-                      <li><Link href="audio-ebook">Audio Ebook Production</Link></li>
-                      <li><Link href="dynamic-video-promos">Dynamic Video Promos</Link></li>
+                      <li><Link href="/professional-book-formatting">Professional Book Formatting</Link></li>
+                      <li><Link href="/compelling-book-descriptions">Compelling Book Descriptions</Link></li>
+                      <li><Link href="/audio-ebook">Audio Ebook Production</Link></li>
+                      <li><Link href="/dynamic-video-promos">Dynamic Video Promos</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("authorSupport")}`}>
@@ -217,10 +217,10 @@ const Header = ({ dark, topOffset = 0 }) => {
                       }
                     }}>Author Support</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="end-to-end-project-management">End-to-End Project Management</Link></li>
-                      <li><Link href="global-content-translation">Global Content Translation</Link></li>
-                      <li><Link href="book-launch-bundles">Book Launch Bundles</Link></li>
-                      <li><Link href="bulk-order-solutions">Bulk Order Solutions</Link></li>
+                      <li><Link href="/end-to-end-project-management">End-to-End Project Management</Link></li>
+                      <li><Link href="/global-content-translation">Global Content Translation</Link></li>
+                      <li><Link href="/book-launch-bundles">Book Launch Bundles</Link></li>
+                      <li><Link href="/bulk-order-solutions">Bulk Order Solutions</Link></li>
                     </ul>
                   </li>
                 </ul>
@@ -230,15 +230,15 @@ const Header = ({ dark, topOffset = 0 }) => {
               </li> */}
               <li
                 className={`${activeMenuFuntion(["blog"])}`}>
-                <Link href="blog">Blogs</Link>
+                <Link href="/blog">Blogs</Link>
               </li>
               <li className={`${activeMenuFuntion(["contact"])}`}>
-                <Link href="contact">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
           <div className="mil-menu-buttons">
-            <Link href="calendly" className="mil-btn mil-sm">
+            <Link href="/calendly" className="mil-btn mil-sm">
               Book a Demo
             </Link>
             <div
