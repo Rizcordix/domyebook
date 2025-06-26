@@ -379,13 +379,18 @@ const DualPortfolioCarousel = () => {
     <div style={{
       position: 'relative',
       width: '100%',
-      height: '80vh',
+      height: 'auto',
+      minHeight: '80vh',
       background: 'linear-gradient(135deg, #f2fafa 0%, #7eb947 100%)',
       overflow: 'hidden',
       display: 'flex',
       flexDirection: isMobile ? 'column' : 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: isMobile ? '60px 10px' : '0',
+      boxSizing: 'border-box'
     }}>
-      {/* Animated background elements */}
+      {/* Background bubbles */}
       <div style={{
         position: 'absolute',
         top: '0',
@@ -398,28 +403,47 @@ const DualPortfolioCarousel = () => {
           radial-gradient(circle at 40% 60%, rgba(102, 126, 234, 0.1) 0%, transparent 50%)
         `,
         animation: 'float 20s ease-in-out infinite',
+        zIndex: 0,
       }} />
+
+      {/* Header */}
       <div style={{
         position: 'absolute',
-        top: '10%', 
+        top: isMobile ? '30px' : '10%',
         left: '50%',
-        transform: 'translate(-50%, -50%)'
-      }}> <h1>Archive</h1>
-       
+        transform: 'translate(-50%, -50%)',
+        textAlign: 'center',
+        zIndex: 1
+      }}>
+        <h1 style={{
+          fontSize: isMobile ? '28px' : '48px',
+          marginTop: isMobile ? '20px' : '0px'
+          // margin: 0
+        }}>Archive</h1>
+        <h5 style={{
+          fontSize: isMobile ? '14px' : '18px',
+          fontWeight: '400',
+          marginTop: isMobile ? '15px' : '15px'
+        }}>Exploring imagination and reality, one page at a time</h5>
       </div>
-      <div style={{
-        position: 'absolute',
-        top: '20%', 
-        left: '50%',
-        transform: 'translate(-50%, -50%)'
-      }}> <h5>Exploring imagination and reality, one page at a time</h5>
-
-      </div>
-
 
       {/* Left Carousel */}
-      <div style={carouselStyle}>
-        <div style={carouselInnerStyle}>
+      <div style={{
+        position: 'relative',
+        width: isMobile ? '100%' : '50%',
+        height: isMobile ? '50vh' : '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        perspective: '1200px',
+        marginTop: isMobile ? '180px' : '0'
+      }}>
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          height: isMobile ? '250px' : '350px',
+          transformStyle: 'preserve-3d',
+        }}>
           {testimonial_data1.map((item, index) => (
             <PortfolioItem
               key={`left-${item.id}`}
@@ -433,14 +457,27 @@ const DualPortfolioCarousel = () => {
             />
           ))}
         </div>
-        
         <NavButton direction="prev" onClick={handleLeftPrev} side="left" />
         <NavButton direction="next" onClick={handleLeftNext} side="left" />
       </div>
 
       {/* Right Carousel */}
-      <div style={carouselStyle}>
-        <div style={carouselInnerStyle}>
+      <div style={{
+        position: 'relative',
+        width: isMobile ? '100%' : '50%',
+        height: isMobile ? '50vh' : '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        perspective: '1200px',
+        marginBottom: isMobile ? '60px' : '0'
+      }}>
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          height: isMobile ? '250px' : '350px',
+          transformStyle: 'preserve-3d',
+        }}>
           {testimonial_data.map((item, index) => (
             <PortfolioItem
               key={`right-${item.id}`}
@@ -454,27 +491,24 @@ const DualPortfolioCarousel = () => {
             />
           ))}
         </div>
-        
         <NavButton direction="prev" onClick={handleRightPrev} side="right" />
         <NavButton direction="next" onClick={handleRightNext} side="right" />
       </div>
 
-      {/* Control Instructions */}
+      {/* Optional floating instructions */}
       <div style={{
         position: 'absolute',
-        bottom: '30px',
+        bottom: isMobile ? '15px' : '30px',
         left: '50%',
         transform: 'translateX(-50%)',
-        display: 'flex',
-        gap: '20px',
-        color: 'rgba(255, 255, 255, 0.7)',
         fontSize: isMobile ? '11px' : '12px',
-        fontWeight: '500',
-        zIndex: 100,
+        color: 'rgba(255, 255, 255, 0.6)',
+        zIndex: 10,
       }}>
-        {/* <span>Auto-rotate: {isAutoPlaying ? 'ON' : 'OFF'}</span> */}
+        {/* Optional content here */}
       </div>
 
+      {/* Float animation keyframe */}
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
