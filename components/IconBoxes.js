@@ -10,7 +10,7 @@ const BenefitsSection = () => {
             <div className="mil-icon-box mil-with-bg mil-center mil-up mil-hover-card">
               <div className="mil-icon-wrapper mil-mb-30 mil-up">
                 <img
-                  src="img/home-2/icons/1.svg"
+                  src="img/icons/stress-free-purchase.svg"
                   alt="icon"
                   className="mil-icon-img"
                 />
@@ -31,7 +31,7 @@ const BenefitsSection = () => {
             <div className="mil-icon-box mil-with-bg mil-center mil-up mil-hover-card">
               <div className="mil-icon-wrapper mil-mb-30 mil-up">
                 <img
-                  src="img/home-2/icons/2.svg"
+                  src="img/icons/rewards.svg"
                   alt="icon"
                   className="mil-icon-img"
                 />
@@ -51,7 +51,7 @@ const BenefitsSection = () => {
             <div className="mil-icon-box mil-with-bg mil-center mil-up mil-hover-card">
               <div className="mil-icon-wrapper mil-mb-30 mil-up">
                 <img
-                  src="img/home-2/icons/3.svg"
+                  src="img/icons/transactions.svg"
                   alt="icon"
                   className="mil-icon-img"
                 />
