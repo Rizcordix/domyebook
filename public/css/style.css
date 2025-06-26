@@ -579,13 +579,13 @@ frames
   width: calc(100% + 200px);
 }
 .mil-out-frame.mil-bg-1 {
-  background: linear-gradient(0deg, #B3D4D8 0%, #DEECE8 100%);
+  background: linear-gradient(0deg, #7eb947 0%, #cacdcd 100%);
 }
 .mil-out-frame.mil-bg-2 {
-  background: linear-gradient(180deg, #F27457 0%, #A08488 100%);
+  background: linear-gradient(0deg, #7eb947 0%, #cacdcd 100%);
 }
 .mil-out-frame.mil-bg-3 {
-  background: linear-gradient(0deg, #224D50 0%, #1C6360 100%);
+  background: linear-gradient(0deg, #7eb947 0%, #cacdcd 100%);
 }
 .mil-out-frame.mil-bg-4 {
   background-color: rgb(39, 38, 38);
@@ -599,7 +599,7 @@ frames
   }
 }
 .mil-out-frame.mil-image {
-  background-image: url(../img/home-2/bg.png);
+  background-image: url(../img/home-2/bg1.jpg);
   background-size: cover;
 }
 .mil-out-frame.mil-image-2 {
@@ -1938,7 +1938,7 @@ icon box
 }
 .mil-icon-box img {
   display: block;
-  width: 60px;
+  width: 120px;
 }
 .mil-icon-box.mil-with-bg {
   padding: 60px 30px;
@@ -2780,6 +2780,7 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
 }
 
 .mil-icon-img {
+  width: 120px;
   transition: all 0.3s ease;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
@@ -2817,7 +2818,7 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
   transform: translateX(-50%);
   height: 2px;
   width: 0;
-  background: linear-gradient(90deg, #ef4444, #dc2626);
+  background: linear-gradient(90deg, #7eb947, #107604);
   transition: width 0.5s ease;
   z-index: 2;
 }

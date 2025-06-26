@@ -8,32 +8,32 @@ const EbookServicesComponent = () => {
   const services = [
     {
       title: "Ghostwriting",
-      icon: "/img/icons/ghostwriting.svg", // Example icon path
+      icon: "/img/icons/ghostwriting.png", // Example icon path
       description: "Transform your ideas into compelling narratives with our professional ghostwriting services. Our experienced writers craft engaging content that captures your unique voice and vision, ensuring your story resonates with readers while maintaining complete confidentiality."
     },
     {
       title: "Editorial",
-      icon: "/img/icons/editorial.svg", // Example icon path
+      icon: "/img/icons/editorial.png", // Example icon path
       description: "Elevate your manuscript with our comprehensive editorial services. From developmental editing to copy editing and proofreading, we ensure your content is polished, coherent, and professionally presented to meet industry standards."
     },
     {
       title: "Design",
-      icon: "/img/icons/design.svg", // Example icon path
+      icon: "/img/icons/design.png", // Example icon path
       description: "Create visually stunning ebooks with our professional design services. We craft eye-catching covers, format your interior layout, and ensure your book looks professional across all digital platforms and devices."
     },
     {
       title: "Publishing",
-      icon: "/img/icons/publishing.svg", // Example icon path
+      icon: "/img/icons/publishing.png", // Example icon path
       description: "Navigate the publishing world with confidence. We handle the technical aspects of getting your book published across major platforms, including formatting, metadata optimization, and distribution strategy to maximize your reach."
     },
     {
       title: "Author Support",
-      icon: "/img/icons/support.svg", // Example icon path
+      icon: "/img/icons/support.png", // Example icon path
       description: "Receive ongoing support throughout your publishing journey. From marketing guidance to author branding and promotion strategies, we're here to help you succeed as a published author in today's competitive market."
     },
     {
       title: "Marketing",
-      icon: "/img/icons/marketing.svg", // Example icon path
+      icon: "/img/icons/marketing.png", // Example icon path
       description: "Boost your book's visibility with our tailored marketing strategies. We help you reach your target audience and maximize your sales potential through various promotional channels."
     }
   ];
@@ -695,7 +695,7 @@ const EbookServicesComponent = () => {
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/stats-icon-1.svg" alt="Satisfied Authors Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/customer_satisfaction.png" alt="Satisfied Authors Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 20,000</span>
               <div className="stat-label">Satisfied Customers</div>
@@ -705,7 +705,7 @@ const EbookServicesComponent = () => {
             </div>
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/stats-icon-2.svg" alt="Words Written Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/editor.png" alt="Words Written Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 1 Billion</span>
               <div className="stat-label">Words Written and Edited</div>
@@ -715,7 +715,7 @@ const EbookServicesComponent = () => {
             </div>
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/stats-icon-3.svg" alt="Content Creators Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/expectation.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 5000+</span>
               <div className="stat-label">Exceptional Content Creators</div>
