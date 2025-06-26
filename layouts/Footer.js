@@ -1,6 +1,7 @@
 import Link from "next/link";
 // Assuming you have Font Awesome or similar CSS imported globally
 // For example, in your _app.js or a dedicated CSS file.
+import { useState } from "react";
 
 const Footer = ({ bg = true, margin = 160, footer }) => {
   switch (footer) {
@@ -82,6 +83,9 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Refund and Revision', href: '/refund-and-revision' },
   ];
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+
 
   return (
     <footer className={`${bg ? "mil-footer-with-bg" : ""} mil-p-120-0`}>
@@ -194,29 +198,63 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             </ul>
           </div>
 
-          {/* Newsletter - Moved to last position, adjusted to col-xl-2 */}
           <div className="col-xl-2 mil-mb-80">
             <h6 className="mil-mb-60">Newsletter</h6>
             <p className="mil-text-xs mil-soft mil-mb-15">
               Subscribe to get the latest news from us
             </p>
-            <form id="subscribeForm" className="mil-subscripe-form-footer">
-              <input className="mil-input" name="EMAIL" type="email" placeholder="Email" autoComplete="off" />
-              <button type="submit">
-                <i className="far fa-envelope-open mil-dark" />
-              </button>
-              <div className="mil-checkbox-frame mil-mt-15">
-                <div className="mil-checkbox">
-                  <input type="checkbox" id="checkbox" defaultChecked="" />
-                  <label htmlFor="checkbox" />
-                </div>
-                <p className="mil-text-xs mil-soft">
-                  Subscribe to get the latest news
-                </p>
-              </div>
-            </form>
+            <form
+  className="mil-subscripe-form-footer"
+  onSubmit={async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbydaJ4SBOOl0pD98SiZLCS1BlDAt3sCWOR0FkWv0dIIgAn0v7OIqBMWYV4ZcG5FE1R6/exec",
+      {
+        method: "POST",
+        body: new URLSearchParams({ email }),
+      }
+    );
+
+    if (response.ok) {
+      setSuccess(true);
+      setMessage("Thanks for subscribing!");
+      e.target.reset();
+    } else {
+      setSuccess(false);
+      setMessage("Something went wrong. Try again.");
+    }
+  }}
+>
+  <input
+    className="mil-input"
+    name="email"
+    type="email"
+    placeholder="Email"
+    required
+    autoComplete="off"
+  />
+  <button type="submit">
+    <i className="far fa-envelope-open mil-dark" />
+  </button>
+
+  {message && (
+    <p
+      style={{
+        marginTop: "10px",
+        fontSize: "14px",
+        color: success ? "#7eb947" : "#d9534f",
+      }}
+    >
+      {message}
+    </p>
+  )}
+</form>
+
+
           </div>
-        </div> {/* End of row for main footer content */}
+        </div>
 
         <div className="mil-footer-bottom">
           <div className="row">

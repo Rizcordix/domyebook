@@ -299,7 +299,7 @@ const Contactpage = () => {
               <div 
                 className="mil-p-60-0"
                 style={{
-                  backgroundImage: "url(/img/buildings.jpg)",
+                  backgroundImage: "url(/img/buildings.png)",
                   backgroundSize: 'cover', 
                   backgroundPosition: 'bottom center',
                   // backgroundColor: '#7eb947',

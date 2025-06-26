@@ -19,7 +19,8 @@ const EbookServices = () => {
         "Revisions and editing included"
       ],
       image: "/img/home-2/4.png",
-      showBanner: true
+      showBanner: true,
+      extlink: "/ghostwriting"
     },
     {
       title: "Audio-Ebook",
@@ -32,7 +33,8 @@ const EbookServices = () => {
         "Cross-platform compatibility"
       ],
       image: "/img/home-2/4.png",
-      showBanner: true
+      showBanner: true,
+      extlink: "/audio-ebook"
     },
     {
       title: "Promo-Video",
@@ -45,7 +47,8 @@ const EbookServices = () => {
         "Multiple format delivery"
       ],
       image: "/img/home-2/4.png",
-      showBanner: true
+      showBanner: true,
+      extlink: "/dynamic-video-promos"
     }
   ];
 
@@ -53,13 +56,13 @@ const EbookServices = () => {
     {
       iconSrc: "/img/brands/1.svg",
       alt: "Happy Authors Icon",
-      number: "5000+",
+      number: "31+",
       label: "Published Authors"
     },
     {
       iconSrc: "/img/brands/2.svg",
       alt: "Books Icon",
-      number: "12K+",
+      number: "355+",
       label: "Ebooks Published"
     },
     {
@@ -71,7 +74,7 @@ const EbookServices = () => {
     {
       iconSrc: "/img/brands/4.svg",
       alt: "Downloads Icon",
-      number: "2M+",
+      number: "300K+",
       label: "Total Downloads"
     }
   ];
@@ -198,7 +201,8 @@ return (
                             <div className="cta_section">
                                <div>
                                     <Link
-                                    href="/services"
+                                    href={services[activeTab].extlink}
+                                    target="_blank"
                                     className="mil-btn mil-button-transform mil-md mil-add-arrow"
                                     >
                                     get started
