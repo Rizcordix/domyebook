@@ -18,7 +18,7 @@ const Banner = ({
                 {title}
               </h1>
               <div className="mil-buttons-frame">
-                <Link href="register" className="mil-btn mil-md mil-add-arrow">
+                <Link href="getquote" className="mil-btn mil-md mil-add-arrow">
                   Get Quote
                 </Link>
                 <a

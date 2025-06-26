@@ -21,10 +21,10 @@ export const CallToAction1 = () => {
 
               <div className="mil-up mil-mb-60">
                 <Link
-                  href="/register"
+                  href="/getquote"
                   className="mil-btn mil-button-transform mil-md mil-add-arrow"
                 >
-                  Protect My Purchases
+                  Get a Quote
                 </Link>
               </div>
             </div>
