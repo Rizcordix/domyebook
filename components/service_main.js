@@ -46,7 +46,7 @@ const ServicesPage = () => {
                 </li>
               </ul>
               <div className="mil-up">
-                <a href="/contact" className="mil-btn mil-m mil-add-arrow" style={{
+                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
@@ -97,7 +97,7 @@ const ServicesPage = () => {
                 </li>
               </ul>
               <div className="mil-up">
-                <a href="/contact" className="mil-btn mil-m mil-add-arrow" style={{
+                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
@@ -152,7 +152,7 @@ const ServicesPage = () => {
                 </li>
               </ul>
               <div className="mil-up">
-                <a href="/contact" className="mil-btn mil-m mil-add-arrow" style={{
+                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
@@ -211,7 +211,7 @@ const ServicesPage = () => {
                 </li>
               </ul>
               <div className="mil-up">
-                <a href="/contact" className="mil-btn mil-m mil-add-arrow" style={{
+                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
@@ -270,7 +270,7 @@ const ServicesPage = () => {
                 </li>
               </ul>
               <div className="mil-up">
-                <a href="/contact" className="mil-btn mil-m mil-add-arrow" style={{
+                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{
                   backgroundColor: '#7eb947',
                   borderColor: '#7eb947'
                 }}>
@@ -389,12 +389,12 @@ const ServicesPage = () => {
             <div className="row justify-content-center mil-text-center">
               <div className="col-xl-6 mil-mb-30">
                 <div className="mil-up">
-                  <a href="/contact" className="mil-btn mil-m mil-add-arrow mil-mr-15" style={{
+                  <a href="/calendly" className="mil-btn mil-m mil-add-arrow mil-mr-15" style={{
                     backgroundColor: '#7eb947',
                     borderColor: '#7eb947',
                     marginRight: '15px'
                   }}>
-                    Start Your Project
+                    Book a Free Consultation
                   </a>
                   <a href="/how-it-works" className="mil-btn mil-m mil-add-arrow mil-border" style={{
                     borderColor: '#7eb947',
