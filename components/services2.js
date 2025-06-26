@@ -18,7 +18,7 @@ const EbookServices = () => {
         "Confidentiality and privacy",
         "Revisions and editing included"
       ],
-      image: "/img/home-2/4.png",
+      image: "/img/home-2/Ghostwriting.png",
       showBanner: true,
       extlink: "/ghostwriting"
     },
@@ -32,7 +32,7 @@ const EbookServices = () => {
         "Background music integration",
         "Cross-platform compatibility"
       ],
-      image: "/img/home-2/4.png",
+      image: "/img/home-2/Audio-Ebook.png",
       showBanner: true,
       extlink: "/audio-ebook"
     },
@@ -46,7 +46,7 @@ const EbookServices = () => {
         "Social media optimization",
         "Multiple format delivery"
       ],
-      image: "/img/home-2/4.png",
+      image: "/img/home-2/promo_video.png",
       showBanner: true,
       extlink: "/dynamic-video-promos"
     }
@@ -104,7 +104,7 @@ return (
                                         src={services[activeTab].image}
                                         alt={`${services[activeTab].title} Service`}
                                         width={450}
-                                        height={300}
+                                        height={450}
                                         style={{ 
                                             objectFit: 'contain',
                                             borderRadius: '12px',

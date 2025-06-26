@@ -183,21 +183,27 @@ const page = () => {
                 <h6>Share:</h6>
                 <ul className="mil-pup-share">
                   <li>
-                    <a href="#.">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://domyebook.vercel.app" target="_blank">
                       <i className="fab fa-facebook-f" />
                       Facebook
                     </a>
                   </li>
                   <li>
-                    <a href="#.">
+                    <a href="https://twitter.com/intent/tweet?url=https://domyebook.vercel.app" target="_blank">
                       <i className="fab fa-twitter" />
                       Twitter
                     </a>
                   </li>
                   <li>
-                    <a href="#.">
+                    <a href="https://www.pinterest.com/pin/create/button/?url=https://domyebook.vercel.app" target="_blank">
+                      <i className="fab fa-pinterest" />
+                      Pinterest
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://domyebook.vercel.app" target="_blank">
                       <i className="fab fa-linkedin-in" />
-                      Linkedin
+                      LinkedIn
                     </a>
                   </li>
                 </ul>
