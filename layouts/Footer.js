@@ -259,18 +259,19 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
                   <i className="far fa-envelope-open mil-dark" />
                 )}
               </button>
-              {message && (
-                <p
-                  style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
-                    color: success ? "#7eb947" : "#d9534f",
-                  }}
-                >
-                  {message}
-                </p>
-              )}
             </form>
+
+            {message && (
+              <p
+                style={{
+                  marginTop: "10px",
+                  fontSize: "14px",
+                  color: success ? "#7eb947" : "#d9534f",
+                }}
+              >
+                {message}
+              </p>
+            )}
           </div>
         </div>
 
