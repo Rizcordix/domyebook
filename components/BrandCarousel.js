@@ -46,7 +46,7 @@ const BrandCarousel = () => {
     { src: "img/brands/scribd.svg", alt: "Scribd" },
     { src: "img/brands/GooglePlayBooks.svg", alt: "Google Play Books" },
     // Duplicate for more slides
-    { src: "img/brands/kindle.svg", alt: "Kindle" },
+    { src: "img/brands/amazon_kindle.svg", alt: "Kindle" },
     { src: "img/brands/kobologo.svg", alt: "kobologo" },
     { src: "img/brands/ibooks.svg", alt: "iBooks" },
     { src: "img/brands/scribd.svg", alt: "Scribd" },
