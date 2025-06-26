@@ -1,5 +1,4 @@
-// app/blogs/page.js
-"use client";
+'use client';
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -10,7 +9,6 @@ const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    // Fetch blog data from the API
     fetch('/api/blogs')
       .then(res => {
         if (!res.ok) {
@@ -29,35 +27,42 @@ const BlogPage = () => {
         pageName="Blog"
         title="Your Source of Financial Information"
       />
+
       <div className="mil-blog-list mil-p-0-160">
         <div className="container">
           <div className="row">
-            {/* Map through the blogs array to render each blog card */}
+            {/* Render blog cards */}
             {blogs.map((blog) => (
               <div key={blog.BlogID} className="col-xl-4 col-md-6">
                 <Link
-                  href={`/publication?id=${blog.BlogID}`}
+                  href={`/publication/${blog.BlogID}`} // ✅ Changed to use dynamic route
                   className="mil-blog-card mil-mb-30 mil-up"
                 >
                   <div className="mil-card-cover">
-                    {/* Display blog image or a placeholder if no image is available */}
                     {blog.Image1 ? (
                       <Image
                         width={600}
-                        height={600} // Changed height to 600 to make the image section square
+                        height={600} // Square image
                         src={blog.Image1}
                         alt="cover"
                         className="mil-scale-img"
-                        objectFit="cover" // Added objectFit to ensure image covers the square area
+                        style={{ objectFit: 'cover' }} // ✅ Updated syntax for Next 13+
                       />
                     ) : (
-                      <div style={{ width: 600, height: 600, backgroundColor: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <div style={{
+                        width: 600,
+                        height: 600,
+                        backgroundColor: '#eee',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
                         No Image
                       </div>
                     )}
                   </div>
+
                   <div className="mil-descr">
-                    {/* Display the blog date */}
                     {blog.date && (
                       <p className="mil-text-xs mil-mb-5">
                         {new Date(blog.date).toLocaleDateString('en-US', {
@@ -67,11 +72,9 @@ const BlogPage = () => {
                         })}
                       </p>
                     )}
-                    {/* Display blog subheading */}
                     <p className="mil-text-xs mil-accent mil-mb-15">
                       {blog.SubHeading1 || 'No Subheading'}
                     </p>
-                    {/* Display blog main title */}
                     <h4>{blog.MainTitle}</h4>
                   </div>
                 </Link>
