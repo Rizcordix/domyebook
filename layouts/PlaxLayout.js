@@ -25,7 +25,7 @@ const PlaxLayout = ({ children, bg, margin, noFooter, dark, footer }) => {
         {/* back to top */}
         <a href="#" className="progress-wrap active-progress" />
         {/* top panel end */}
-        <Header dark={dark} />
+        {/* <Header dark={dark} /> */}
         {/* top panel end */}
         {/* content */}
         <div id="smooth-content">

@@ -1,14 +1,14 @@
-import testimonial_img_1 from '../public/img/portfolio/2/portfolio-3.jpg';
-import testimonial_img_2 from '../public/img/portfolio/2/portfolio-2.jpg';
-import testimonial_img_3 from '../public/img/portfolio/2/portfolio-1.jpg';
-import testimonial_img_4 from '../public/img/portfolio/2/portfolio-4.jpg';
+import testimonial_img_1 from '../public/img/portfolio/2/archive_3.png';
+import testimonial_img_2 from '../public/img/portfolio/2/archive_2.png';
+import testimonial_img_3 from '../public/img/portfolio/2/archive_1.png';
+import testimonial_img_4 from '../public/img/portfolio/2/archive_4.png';
 import testimonial_img_5 from '../public/img/portfolio/2/portfolio-5.jpg';
-import testimonial_img_6 from '../public/img/portfolio/2/portfolio-1.jpg';
-import testimonial_img_7 from '../public/img/portfolio/2/portfolio-2.jpg';
-import testimonial_img_8 from '../public/img/portfolio/2/portfolio-3.jpg';
-import testimonial_img_9 from '../public/img/portfolio/2/portfolio-1.jpg';
-import testimonial_img_10 from '../public/img/portfolio/2/portfolio-2.jpg';
-import testimonial_img_11 from '../public/img/portfolio/2/portfolio-3.jpg';
+import testimonial_img_6 from '../public/img/portfolio/2/archive_1.png';
+import testimonial_img_7 from '../public/img/portfolio/2/archive_2.png';
+import testimonial_img_8 from '../public/img/portfolio/2/archive_3.png';
+import testimonial_img_9 from '../public/img/portfolio/2/archive_1.png';
+import testimonial_img_10 from '../public/img/portfolio/2/archive_2.png';
+import testimonial_img_11 from '../public/img/portfolio/2/archive_3.png';
 
 const testimonial_data = [
   {
@@ -16,7 +16,7 @@ const testimonial_data = [
     brand_img: testimonial_img_1,
     brand_tag: "Non-Fiction",
     brand_name: "Web Animation",
-    time: 2023,
+    time: 2020,
   },
   {
     id: 2,
@@ -30,14 +30,14 @@ const testimonial_data = [
     brand_img: testimonial_img_3,
     brand_tag: "Non-Fiction",
     brand_name: "Web Animation",
-    time: 2023,
+    time: 2024,
   },
   {
     id: 4,
     brand_img: testimonial_img_4,
     brand_tag: "Non-Fiction",
     brand_name: "Web Animation",
-    time: 2023,
+    time: 2019,
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const testimonial_data = [
     brand_img: testimonial_img_6,
     brand_tag: "Non-Fiction",
     brand_name: "Web Animation",
-    time: 2023,
+    time: 2019,
   },
   {
     id: 7,

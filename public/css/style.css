@@ -934,7 +934,7 @@ top panel
 
 ------------------------------------------- */
 .mil-top-panel {
-  position: fixed;
+  /* r */
   z-index: 998;
   top: 0;
   left: 0;
@@ -1305,7 +1305,7 @@ banner
   min-height: 900px;
   display: flex;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 0px;
 }
 .mil-banner .mil-banner-img {
   width: 100%;
@@ -3175,6 +3175,12 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
           }
+
+
+
+.banner-space{
+  height: 60px
+}          
 /*end*/
 
 
