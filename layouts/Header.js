@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const Header = ({ dark, topOffset = 0 }) => {
+const Header = ({ dark, offsetTop = 0 }) => {
   const currentPath = usePathname();
   const activeMenuFuntion = (value) =>
     value.some((el) => currentPath.includes(el)) ? "mil-active" : "";
@@ -115,12 +115,12 @@ const Header = ({ dark, topOffset = 0 }) => {
       <div
       className={`mil-top-panel ${dark ? "mil-dark-2" : ""}`}
       style={{
-        position: 'relative', // if using fixed
-        top: `0px`,
-        width: '100%',
-        zIndex: 999,
-        transition: 'top 0.3s ease',
-        backgroundColor: "#f2fafa",
+            position: 'fixed',
+            top: offsetTop, // dynamically from prop
+            zIndex: 998,
+            backgroundColor: "#f2fafa",
+            width: '100%',
+            transition: 'top 0.3s ease',
       }}
     >
         <div className="container">
@@ -225,9 +225,6 @@ const Header = ({ dark, topOffset = 0 }) => {
                   </li>
                 </ul>
               </li>
-              {/* <li className={`${activeMenuFuntion(["about"])}`}>
-                <Link href="about">About</Link>
-              </li> */}
               <li
                 className={`${activeMenuFuntion(["blog"])}`}>
                 <Link href="/blog">Blogs</Link>

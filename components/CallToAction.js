@@ -30,7 +30,7 @@ export const CallToAction1 = () => {
             </div>
           </div>
           <div className="mil-illustration-absolute mil-type-2 mil-up">
-            <img src="/img/home-2/6.png" alt="illustration" />
+            <img src="/img/home-2/call_to_action.png" alt="illustration" />
           </div>
         </div>
       </div>
