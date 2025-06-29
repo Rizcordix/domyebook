@@ -19,7 +19,7 @@ const EbookServices = () => {
         "Revisions and editing included"
       ],
       image: "/img/home-2/Ghostwriting.png",
-      showBanner: true,
+      showBanner: false,
       extlink: "/ghostwriting"
     },
     {
@@ -33,7 +33,7 @@ const EbookServices = () => {
         "Cross-platform compatibility"
       ],
       image: "/img/home-2/Audio-Ebook.png",
-      showBanner: true,
+      showBanner: false,
       extlink: "/audio-ebook"
     },
     {
@@ -47,7 +47,7 @@ const EbookServices = () => {
         "Multiple format delivery"
       ],
       image: "/img/home-2/promo_video.png",
-      showBanner: true,
+      showBanner: false,
       extlink: "/dynamic-video-promos"
     }
   ];
@@ -290,7 +290,7 @@ return (
                     0 20px 60px rgba(126, 185, 71, 0.15),
                     0 8px 25px rgba(0, 0, 0, 0.08),
                     inset 0 1px 0 rgba(255, 255, 255, 0.8);
-                padding: 50px 40px;
+                padding: 0px 0px;
                 width: 100%;
                 max-width: 540px;
                 position: relative;

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const EbookServicesComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -737,9 +738,14 @@ const EbookServicesComponent = () => {
           <p className="cta-description">
             Transparency and genuine feedback are important to us. Here&apos;s what some of our authors have to say about their experiences working with DomyEbook - The Premier Ebook Writing Service.
           </p>
-          <a href="#testimonials" className="cta-button">
-            Read Testimonials →
-          </a>
+          <div className="mil-up mil-mb-60">
+                <Link
+                  href="/getquote"
+                  className="mil-btn mil-button-transform mil-md mil-add-arrow"
+                >
+                  Testimonials
+                </Link>
+              </div>
         </div>
       </section>
     </div>

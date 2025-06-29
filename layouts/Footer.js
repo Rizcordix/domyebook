@@ -140,19 +140,19 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             <h6 className="mil-mb-60">Useful Links</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
-                <a href="about">About Us</a>
+                <a href="/about">About Us</a>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                <a href="how-it-works">How it Works</a>
+                <a href="/how-it-works">How it Works</a>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                <a href="features">Features</a>
+                <a href="/features">Features</a>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                <a href="services">Services</a>
+                <a href="/services">Services</a>
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
-                <a href="blog">Blogs</a>
+                <a href="/blog">Blogs</a>
               </li>
             </ul>
           </div>

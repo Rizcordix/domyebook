@@ -3,8 +3,8 @@ import PlaxLayout from "@/layouts/PlaxLayout";
 
 const bpage = () => {
   return (
-    <PlaxLayout>
-      <head>
+    <>
+    <head>
         <title>Blog | DoMyEbook</title>
         <meta name="description" content="Explore DoMyEbook's latest blogs and articles." />
         <meta name="keywords" content="blog, articles, DoMyEbook" />
@@ -16,8 +16,11 @@ const bpage = () => {
         <meta property="og:url" content="https://domyebook.com/blog" />
         <meta property="og:image" content="https://domyebook.com/public/img/logo.png" />
       </head>
+    <PlaxLayout>
+      
       <BlogPage></BlogPage>
     </PlaxLayout>
+    </>
   );
 };
 
