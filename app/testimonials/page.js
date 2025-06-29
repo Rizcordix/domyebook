@@ -142,12 +142,12 @@ const testimonials = [
 ];
 
 const TestimonialsPage = () => {
-  const [visibleCount, setVisibleCount] = useState(9);
+  const [visibleCount, setVisibleCount] = useState(8);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [expandedIds, setExpandedIds] = useState([]);
 
   const loadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 5, testimonials.length));
+    setVisibleCount((prev) => Math.min(prev + 4, testimonials.length));
   };
 
   const toggleReadMore = (id) => {
@@ -223,7 +223,7 @@ const TestimonialsPage = () => {
                   <p className={`testimonial-text ${expandedIds.includes(testimonial.id) ? 'expanded' : ''}`}>
                     &quot;{testimonial.content}&quot;
                   </p>
-                  {testimonial.content.length > 80 && (
+                  {testimonial.content.length > 180 && (
                     <button className="read-more" onClick={() => toggleReadMore(testimonial.id)}>
                       {expandedIds.includes(testimonial.id) ? 'Read Less' : 'Read More'}
                     </button>
