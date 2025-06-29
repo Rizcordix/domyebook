@@ -1,23 +1,24 @@
 "use client";
-import PlaxLayout from "@/layouts/PlaxLayout";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-// Sample testimonials data - replace with your actual data
 const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
     role: "Marketing Director",
-    content: "This service exceeded all our expectations. The team was professional, responsive, and delivered outstanding results that helped grow our business significantly.",
+    company: "TechCorp Solutions",
+    content: "This service exceeded all our expectations. The team was professional, responsive, and delivered outstanding results that helped grow our business significantly. Their attention to detail and commitment to excellence is truly remarkable.",
     image: "/img/avatar.webp",
     rating: 5
   },
   {
     id: 2,
     name: "Michael Chen",
-    role: "CEO, TechStart",
-    content: "Working with this team was a game-changer for our company. Their expertise and dedication helped us achieve our goals faster than we thought possible.",
+    role: "CEO",
+    company: "TechStart",
+    content: "Working with this team was a game-changer for our company. Their expertise and dedication helped us achieve our goals faster than we thought possible. I highly recommend their services.",
     image: "/img/avatar1.webp",
     rating: 5
   },
@@ -25,23 +26,26 @@ const testimonials = [
     id: 3,
     name: "Emily Rodriguez",
     role: "Product Manager",
-    content: "The quality of work and attention to detail is remarkable. They understood our vision perfectly and brought it to life better than we imagined.",
+    company: "InnovateHub",
+    content: "The quality of work and attention to detail is remarkable. They understood our vision perfectly and brought it to life better than we imagined. Outstanding collaboration throughout.",
     image: "/img/avatar2.webp",
     rating: 5
   },
   {
     id: 4,
     name: "David Thompson",
-    role: "Founder, InnovateCorp",
-    content: "Exceptional service from start to finish. The team's professionalism and expertise made the entire process smooth and stress-free.",
+    role: "Founder",
+    company: "InnovateCorp",
+    content: "Exceptional service from start to finish. The team's professionalism and expertise made the entire process smooth and stress-free. Delivered beyond expectations.",
     image: "/img/avatar3.webp",
-    rating: 5
+    rating: 4
   },
   {
     id: 5,
     name: "Lisa Wang",
     role: "Operations Director",
-    content: "Outstanding results and incredible support throughout the project. I would highly recommend their services to anyone looking for quality work.",
+    company: "GlobalTech",
+    content: "Outstanding results and incredible support throughout the project. I would highly recommend their services to anyone looking for quality work and reliable partnership.",
     image: "/img/avatar4.webp",
     rating: 5
   },
@@ -49,54 +53,114 @@ const testimonials = [
     id: 6,
     name: "James Wilson",
     role: "Creative Director",
-    content: "The creativity and innovation they brought to our project was impressive. They delivered beyond our expectations and on time.",
+    company: "DesignStudio",
+    content: "The creativity and innovation they brought to our project was impressive. They delivered beyond our expectations and on time. Truly professional team.",
+    image: "/img/avatar.webp",
+    rating: 5
+  },
+  {
+    id: 7,
+    name: "Amanda Foster",
+    role: "Marketing Manager",
+    company: "BrandMax",
+    content: "Their strategic approach and creative solutions helped us achieve remarkable growth. The team is incredibly talented and dedicated to client success.",
+    image: "/img/avatar1.webp",
+    rating: 4
+  },
+  {
+    id: 8,
+    name: "Robert Kim",
+    role: "CTO",
+    company: "DataFlow",
+    content: "Technical expertise combined with excellent communication. They solved complex challenges with elegant solutions and maintained high quality throughout the project.",
+    image: "/img/avatar2.webp",
+    rating: 5
+  },
+  {
+    id: 9,
+    name: "Jennifer Adams",
+    role: "VP of Sales",
+    company: "SalesForce Pro",
+    content: "Impressive results that directly impacted our bottom line. Their data-driven approach and strategic insights were exactly what we needed to scale our operations.",
+    image: "/img/avatar3.webp",
+    rating: 5
+  },
+  {
+    id: 10,
+    name: "Alex Martinez",
+    role: "Project Manager",
+    company: "BuildRight",
+    content: "Seamless project execution with clear communication at every step. They transformed our ideas into reality with precision and creativity.",
+    image: "/img/avatar4.webp",
+    rating: 4
+  },
+  {
+    id: 11,
+    name: "Rachel Green",
+    role: "Brand Manager",
+    company: "StyleHub",
+    content: "Their creative vision and attention to brand consistency was exceptional. They helped us establish a strong market presence with innovative solutions.",
+    image: "/img/avatar.webp",
+    rating: 5
+  },
+  {
+    id: 12,
+    name: "Kevin Brown",
+    role: "Operations Manager",
+    company: "LogiFlow",
+    content: "Streamlined our processes and improved efficiency dramatically. Their systematic approach and problem-solving skills are top-notch.",
+    image: "/img/avatar1.webp",
+    rating: 5
+  },
+  {
+    id: 13,
+    name: "Sophie Turner",
+    role: "Digital Director",
+    company: "MediaWorks",
+    content: "Revolutionary approach to digital transformation. They modernized our systems while ensuring zero downtime. Exceptional technical skills.",
+    image: "/img/avatar2.webp",
+    rating: 4
+  },
+  {
+    id: 14,
+    name: "Daniel Lee",
+    role: "Strategy Consultant",
+    company: "GrowthLab",
+    content: "Strategic insights that drove measurable results. Their analytical approach and market understanding helped us identify new opportunities.",
+    image: "/img/avatar3.webp",
+    rating: 5
+  },
+  {
+    id: 15,
+    name: "Maria Gonzalez",
+    role: "Content Manager",
+    company: "ContentPro",
+    content: "Content strategy that resonated with our audience perfectly. Their understanding of market trends and consumer behavior is outstanding.",
     image: "/img/avatar4.webp",
     rating: 5
   }
 ];
 
-const TestimonialCard = ({ testimonial }) => {
-  return (
-    <div className="col-lg-4 col-md-6 mil-mb-40">
-      <div className="mil-testimonial-card">
-        <div className="mil-testimonial-content">
-          <div className="mil-quote-icon">
-            <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 18V6.857C0 3.048 1.792 0 5.333 0v3.429c-1.419 0-2.666 1.372-2.666 3.428v.571H8V18H0zm13.333 0V6.857C13.333 3.048 15.125 0 18.667 0v3.429c-1.42 0-2.667 1.372-2.667 3.428v.571H21.33V18h-8z" fill="#7eb947"/>
-            </svg>
-          </div>
-          <p className="mil-testimonial-text">
-            {testimonial.content}
-          </p>
-          <div className="mil-testimonial-stars">
-            {[...Array(testimonial.rating)].map((_, index) => (
-              <span key={index} className="mil-star">★</span>
-            ))}
-          </div>
-        </div>
-        <div className="mil-testimonial-author">
-          <div className="mil-author-image">
-            <Image
-              src={testimonial.image}
-              alt={testimonial.name}
-              width={50}
-              height={50}
-              className="mil-author-img"
-            />
-          </div>
-          <div className="mil-author-info">
-            <h5 className="mil-author-name">{testimonial.name}</h5>
-            <p className="mil-author-role">{testimonial.role}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+const TestimonialsPage = () => {
+  const [visibleCount, setVisibleCount] = useState(9);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [expandedIds, setExpandedIds] = useState([]);
 
-const page = () => {
+  const loadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 5, testimonials.length));
+  };
+
+  const toggleReadMore = (id) => {
+    setExpandedIds((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
+  const visibleTestimonials = testimonials.slice(0, visibleCount);
+  const hasMore = visibleCount < testimonials.length;
+
   return (
-    <PlaxLayout bg={false}>
+    <div>
       {/* banner */}
       <div className="mil-banner mil-banner-inner mil-dissolve">
         <div className="container">
@@ -106,9 +170,9 @@ const page = () => {
                 <h1 className="mil-mb-60">
                   What Our Clients Say
                 </h1>
-                <ul className="mil-breadcrumbs mil-pub-info mil-center">
+                <ul className="mil-breadcrumbs mil-center">
                   <li>
-                    <Link href="home">Home</Link>
+                    <Link href="/">Home</Link>
                   </li>
                   <li>
                     <Link href="testimonials">Testimonials</Link>
@@ -120,226 +184,295 @@ const page = () => {
         </div>
       </div>
       {/* banner end */}
-      
-      {/* testimonials */}
-      <div className="mil-testimonials-section">
+
+      {/* Testimonials Section */}
+      <div className="testimonials-section">
         <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="mil-section-title mil-text-center mil-mb-80">
-                <h2 className="mil-section-heading">Recommended by leading experts in<br />writing and SEO</h2>
-              </div>
-            </div>
+          <div className="section-header">
+            <h2 className="section-title">
+              Recommended by leading experts in <br />
+              <span className="highlight">writing and SEO</span>
+            </h2>
+            <p className="section-subtitle">
+              Discover what our clients have to say about their experience working with us
+            </p>
           </div>
-          <div className="row">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+
+          <div className="testimonials-grid">
+            {visibleTestimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="testimonial-card"
+                onMouseEnter={() => setHoveredCard(testimonial.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className="card-header">
+                  <div className="quote-icon">
+                    <svg width="32" height="24" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 18V6.857C0 3.048 1.792 0 5.333 0v3.429c-1.419 0-2.666 1.372-2.666 3.428v.571H8V18H0zm13.333 0V6.857C13.333 3.048 15.125 0 18.667 0v3.429c-1.42 0-2.667 1.372-2.667 3.428v.571H21.33V18h-8z" fill="#7eb947" />
+                    </svg>
+                  </div>
+                  <div className={`rating-stars ${hoveredCard === testimonial.id ? 'show-rating' : ''}`}>
+                    {[...Array(5)].map((_, index) => (
+                      <span key={index} className={`star ${index < testimonial.rating ? 'filled' : 'empty'}`}>★</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="card-body">
+                  <p className={`testimonial-text ${expandedIds.includes(testimonial.id) ? 'expanded' : ''}`}>
+                    &quot;{testimonial.content}&quot;
+                  </p>
+                  {testimonial.content.length > 80 && (
+                    <button className="read-more" onClick={() => toggleReadMore(testimonial.id)}>
+                      {expandedIds.includes(testimonial.id) ? 'Read Less' : 'Read More'}
+                    </button>
+                  )}
+                </div>
+
+                <div className="card-footer">
+                  <div className="author-avatar">
+                    <Image src={testimonial.image} alt={testimonial.name} width={60} height={60} className="avatar-img" />
+                  </div>
+                  <div className="author-details">
+                    <h4 className="author-name">{testimonial.name}</h4>
+                    <p className="author-position">{testimonial.role}</p>
+                    <p className="author-company">{testimonial.company}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
+
+          {hasMore && (
+            <div className="load-more-section">
+              <button onClick={loadMore} className="load-more-button">
+                Load More ...
+              </button>
+            </div>
+          )}
         </div>
       </div>
-      {/* testimonials end */}
-      
+
+      {/* Styles */}
       <style jsx>{`
-        .mil-testimonials-section {
-          padding: 100px 0 120px;
-          background: #ffffff;
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 15px;
         }
-        
-        .mil-section-heading {
-          font-size: 48px;
-          color: #333333;
-          font-weight: 700;
-          line-height: 1.2;
-          margin: 0;
+
+        .banner {
+          background: linear-gradient(135deg, #ffffff 0%, #f2fafa 100%);
+          padding: 100px 0 60px;
           text-align: center;
         }
-        
-        .mil-testimonial-card {
-          background: #ffffff;
-          border-radius: 16px;
-          padding: 40px 30px 30px;
-          height: 100%;
+
+        .banner-title {
+          font-size: 48px;
+          font-weight: 700;
+          color: #000;
+        }
+
+        .breadcrumbs {
+          margin-top: 20px;
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .breadcrumb-link {
+          color: #7eb947;
+          text-decoration: none;
+        }
+
+        .breadcrumb-current {
+          color: #000;
+        }
+
+        .testimonials-section {
+          background: #f2fafa;
+          padding: 80px 0;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        .section-title {
+          font-size: 36px;
+          font-weight: 700;
+        }
+
+        .highlight {
+          color: #7eb947;
+        }
+
+        .section-subtitle {
+          font-size: 16px;
+          color: #555;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .testimonials-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 30px;
+        }
+
+        .testimonial-card {
+          background: #fff;
+          border-radius: 20px;
+          padding: 25px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-          border: 1px solid #f1f3f4;
+          aspect-ratio: 1 / 1;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+          border: 2px solid transparent;
           transition: all 0.3s ease;
-          position: relative;
+        }
+
+        .testimonial-card:hover {
+          transform: translateY(-10px);
+          border-color: #7eb94780;
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .quote-icon {
+          opacity: 0.7;
+        }
+
+        .rating-stars {
+          display: flex;
+          gap: 4px;
+          opacity: 0;
+          transform: translateY(-8px);
+          transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover .rating-stars {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .star {
+          font-size: 16px;
+        }
+
+        .star.filled {
+          color: #ffc107;
+        }
+
+        .star.empty {
+          color: #ddd;
+        }
+
+        .card-body {
+          margin: 20px 0;
+          flex: 1;
+        }
+
+        .testimonial-text {
+          font-style: italic;
+          font-size: 15px;
+          line-height: 1.6;
+          color: #333;
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        
-        .mil-testimonial-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 40px rgba(126, 185, 71, 0.15);
-          border-color: #7eb947;
+
+        .testimonial-text.expanded {
+          -webkit-line-clamp: unset;
+          overflow: visible;
         }
-        
-        .mil-testimonial-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #7eb947 0%, #6ba83a 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
+
+        .read-more {
+          background: none;
+          color: #7eb947;
+          border: none;
+          cursor: pointer;
+          margin-top: 8px;
+          font-weight: 500;
         }
-        
-        .mil-testimonial-card:hover::before {
-          opacity: 1;
-        }
-        
-        .mil-testimonial-content {
-          flex: 1;
-          margin-bottom: 25px;
-        }
-        
-        .mil-quote-icon {
-          margin-bottom: 20px;
-        }
-        
-        .mil-testimonial-text {
-          color: #4a5568;
-          font-size: 16px;
-          line-height: 1.7;
-          margin: 0 0 20px 0;
-          font-style: normal;
-          position: relative;
-        }
-        
-        .mil-testimonial-stars {
-          display: flex;
-          gap: 3px;
-          margin-bottom: 0;
-        }
-        
-        .mil-star {
-          color: #ffc107;
-          font-size: 16px;
-        }
-        
-        .mil-testimonial-author {
+
+        .card-footer {
           display: flex;
           align-items: center;
-          gap: 15px;
-          padding-top: 25px;
-          border-top: 1px solid #f1f3f4;
+          gap: 12px;
+          border-top: 1px solid #eee;
+          padding-top: 15px;
         }
-        
-        .mil-author-image {
-          flex-shrink: 0;
-        }
-        
-        .mil-author-img {
+
+        .avatar-img {
           border-radius: 50%;
-          object-fit: cover;
-          border: 2px solid #f1f3f4;
-          transition: border-color 0.3s ease;
+          border: 3px solid #f2fafa;
         }
-        
-        .mil-testimonial-card:hover .mil-author-img {
-          border-color: #7eb947;
-        }
-        
-        .mil-author-info {
-          flex: 1;
-        }
-        
-        .mil-author-name {
-          color: #1a202c;
+
+        .author-name {
           font-size: 16px;
           font-weight: 600;
-          margin: 0 0 4px 0;
-          line-height: 1.3;
         }
-        
-        .mil-author-role {
+
+        .author-position {
+          font-size: 13px;
           color: #7eb947;
-          font-size: 14px;
-          margin: 0;
-          font-weight: 500;
-          line-height: 1.3;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-          .mil-section-heading {
-            font-size: 40px;
-          }
+
+        .author-company {
+          font-size: 12px;
+          color: #888;
         }
-        
-        @media (max-width: 992px) {
-          .mil-section-heading {
+
+        .load-more-section {
+          text-align: center;
+          margin-top: 40px;
+        }
+
+        .load-more-button {
+          background: linear-gradient(135deg, #7eb947, #6ba83a);
+          color: #fff;
+          padding: 12px 30px;
+          border-radius: 30px;
+          border: none;
+          cursor: pointer;
+          font-weight: 600;
+        }
+
+        .load-more-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.4);
+        }
+
+        @media (max-width: 768px) {
+          .banner-title {
             font-size: 36px;
           }
-          
-          .mil-testimonials-section {
-            padding: 80px 0 100px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .mil-section-heading {
-            font-size: 32px;
-            line-height: 1.3;
-          }
-          
-          .mil-testimonial-card {
-            padding: 30px 25px 25px;
-            margin-bottom: 30px;
-          }
-          
-          .mil-testimonials-section {
-            padding: 60px 0 80px;
-          }
-          
-          .mil-section-title {
-            margin-bottom: 60px !important;
-          }
-        }
-        
-        @media (max-width: 576px) {
-          .mil-section-heading {
+          .section-title {
             font-size: 28px;
           }
-          
-          .mil-testimonial-card {
-            padding: 25px 20px;
-          }
-          
-          .mil-testimonial-text {
-            font-size: 15px;
-          }
-          
-          .mil-testimonials-section {
-            padding: 50px 0 70px;
-          }
         }
-        
-        /* Additional styling for better visual hierarchy */
-        .mil-mb-40 {
-          margin-bottom: 40px;
-        }
-        
-        .mil-mb-80 {
-          margin-bottom: 80px;
-        }
-        
-        @media (max-width: 768px) {
-          .mil-mb-40 {
-            margin-bottom: 30px;
+
+        @media (max-width: 480px) {
+          .banner-title {
+            font-size: 28px;
           }
-          
-          .mil-mb-80 {
-            margin-bottom: 60px;
+          .testimonial-card {
+            padding: 20px;
           }
         }
       `}</style>
-    </PlaxLayout>
+    </div>
   );
 };
 
-export default page;
+export default TestimonialsPage;
