@@ -221,7 +221,7 @@ const TestimonialsPage = () => {
 
                 <div className="card-body">
                   <p className={`testimonial-text ${expandedIds.includes(testimonial.id) ? 'expanded' : ''}`}>
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
                   {testimonial.content.length > 80 && (
                     <button className="read-more" onClick={() => toggleReadMore(testimonial.id)}>
