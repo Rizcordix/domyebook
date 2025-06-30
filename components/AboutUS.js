@@ -331,63 +331,63 @@ const Aboutpage = () => {
       </div>
       {/* facts end */}
 
-      {/* call to action */}
-      <div className="mil-cta mil-up">
-        <div className="container">
-          <div className="mil-out-frame mil-p-160-100">
-            <div className="row justify-content-center mil-text-center">
-              <div className="col-xl-8 mil-mb-80-adaptive-30">
-                <h2 className="mil-up">
-                  Our Strengths: Building Trust <br />
-                  with Every eBook Project
-                </h2>
+
+        <div className="mil-cta mil-up">
+          <div className="container">
+            <div className="mil-out-frame mil-p-160-100">
+          <div className="row justify-content-center mil-text-center">
+            <div className="col-xl-8 mil-mb-80-adaptive-30">
+              <h2 className="mil-up" style={{ textAlign: 'center' }}>
+            Our Strengths: Building Trust <br />
+            with Every eBook Project
+              </h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-xl-4 mil-mb-60">
+              <div className="mil-icon-box" style={{ textAlign: 'center' }}>
+            <img
+              src="/img/about/About_Us_Expert_Team_of_Writers_Icon.png"
+              alt="icon"
+              className="mil-mb-30 mil-up"
+            />
+            <h5 className="mil-mb-20 mil-up">Expert Team of Writers</h5>
+            <p className="mil-text-m mil-soft mil-up">
+              Our team is dedicated to providing you with professional ghostwriting services, ensuring that your ideas are conveyed perfectly.
+            </p>
               </div>
             </div>
-            <div className="row">
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="/img/about/About_Us_Expert_Team_of_Writers_Icon.png"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-20 mil-up">Expert Team of Writers</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Our team is dedicated to providing you with professional ghostwriting services, ensuring that your ideas are conveyed perfectly.
-                  </p>
-                </div>
+            <div className="col-xl-4 mil-mb-60">
+              <div className="mil-icon-box" style={{ textAlign: 'center' }}>
+            <img
+              src="/img/about/About_Us_Comprehensive_Services_Icon.png"
+              alt="icon"
+              className="mil-mb-30 mil-up"
+            />
+            <h5 className="mil-mb-20 mil-up">Comprehensive Services</h5>
+            <p className="mil-text-m mil-soft mil-up">
+              From writing to publishing, we offer a complete range of eBook services to support authors in their journey.
+            </p>
               </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="/img/about/About_Us_Comprehensive_Services_Icon.png"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-20 mil-up">Comprehensive Services</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    From writing to publishing, we offer a complete range of eBook services to support authors in their journey.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="/img/about/About_Us_Commitment_to_Quality_Icon.png"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-20 mil-up">Commitment to Quality</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    We take pride in delivering high-quality, error-free eBooks that meet your expectations every time.
-                  </p>
-                </div>
+            </div>
+            <div className="col-xl-4 mil-mb-60">
+              <div className="mil-icon-box" style={{ textAlign: 'center' }}>
+            <img
+              src="/img/about/commitment.png"
+              alt="icon"
+              className="mil-mb-30 mil-up"
+            />
+            <h5 className="mil-mb-20 mil-up">Commitment to Quality</h5>
+            <p className="mil-text-m mil-soft mil-up">
+              We take pride in delivering high-quality, error-free eBooks that meet your expectations every time.
+            </p>
               </div>
             </div>
           </div>
+            </div>
+          </div>
         </div>
-      </div>
-      {/* call to action end */}
+        {/* call to action end */}
 
       {/* features */}
       <div className="mil-features mil-p-160-0">

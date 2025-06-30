@@ -187,7 +187,7 @@ const HowItWorksPage = () => {
               </div>
               <div className="col-xl-5 mil-mb-60">
                 <div className="mil-image-frame mil-up">
-                  <Image src={step.image} alt={`Step ${step.number}`} width={400} height={360}/>
+                  <img src={step.image} alt={`Step ${step.number}`} />
                 </div>
               </div>
             </div>
