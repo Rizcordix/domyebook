@@ -284,7 +284,7 @@ const Aboutpage = () => {
                 <img
                   // width={500}
                   // height={500}
-                  src="/img/about/about-us-1.png"
+                  src="/img/about/about_us_1.png"
                   alt="image"
                   // className="mil-scale-img"
                 />
