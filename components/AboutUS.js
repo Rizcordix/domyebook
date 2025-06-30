@@ -282,7 +282,9 @@ const Aboutpage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="/img/inner-pages/1.png"
+                  // width={500}
+                  // height={500}
+                  src="/img/about/about-us-1.png"
                   alt="image"
                   // className="mil-scale-img"
                 />
@@ -345,7 +347,7 @@ const Aboutpage = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="/img/inner-pages/icons/1.svg"
+                    src="/img/about/About_Us_Expert_Team_of_Writers_Icon.png"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -358,7 +360,7 @@ const Aboutpage = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="/img/inner-pages/icons/2.svg"
+                    src="/img/about/About_Us_Comprehensive_Services_Icon.png"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -371,7 +373,7 @@ const Aboutpage = () => {
               <div className="col-xl-4 mil-mb-60">
                 <div className="mil-icon-box">
                   <img
-                    src="/img/inner-pages/icons/3.svg"
+                    src="/img/about/About_Us_Commitment_to_Quality_Icon.png"
                     alt="icon"
                     className="mil-mb-30 mil-up"
                   />
@@ -420,7 +422,7 @@ const Aboutpage = () => {
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="/img/inner-pages/2.png"
+                  src="/img/about/about-us-2.png"
                   alt="image"
                   // className="mil-scale-img"
                 />
