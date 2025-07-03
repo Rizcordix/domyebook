@@ -26,21 +26,21 @@ const HowItWorksPage = () => {
       title: "No Commitment Until You're Happy",
       description: "We believe in a completely stress-free experience from start to finish. That's why you're in control: you can pay upfront or wait until you've personally chosen the perfect freelancer for your project.",
       icon: "img/how_it_works/How_It_Work_No_Commitment_Until_You're_Happy_Icon.png",
-      image: "/img/how_it_works/How_It_Work_Book_A_Demo_Image1.png"
+      image: "/img/how_it_works/How_It_Work_No_Commitment_Until_You're_Happy_Image.png"
     },
     {
       number: "4",
       title: "Real-Time Project Updates", 
       description: "Keeping an eye on your project couldn't be simpler! You'll easily track progress and get updates as your project moves through different stages. We'll keep you in the loop with automated emails and notifications.",
       icon: '/img/how_it_works/How_It_Work_Real_Time_Project_Updates_Icon.png',
-      image: "/img/how_it_works/How_It_Work_Book_A_Demo_Image1.png"
+      image: "/img/how_it_works/How_It_Work_Real-Time_Project_Updates_Image.png"
     },
     {
       number: "5",
       title: "Quality You Can Trust",
       description: "Your peace of mind is our priority! Before anything comes back to you, our dedicated quality assurance team gives your content a thorough final review. We meticulously check everything to ensure it meets our high standards.",
       icon: "img/how_it_works/How_It_Work_Quality_You_Can_Trust_Icon.png",
-      image: "/img/how_it_works/How_It_Work_Book_A_Demo_Image1.png"
+      image: "/img/how_it_works/How_It_Work_Quality_You_Can_Trust_Image.png"
     },
     {
       number: "6",
