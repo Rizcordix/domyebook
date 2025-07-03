@@ -296,40 +296,82 @@ const Aboutpage = () => {
       {/* features end */}
 
       {/* facts */}
-      <div className="mil-facts mil-p-0-130">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
-              <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number={7}>
-                  10
-                </span>
-                <span className="mil-pale">+</span>
-              </p>
-              <h5>Years of Experience</h5>
-            </div>
-            <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
-              <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number="371">
-                  500
-                </span>
-                <span className="mil-pale">+</span>
-              </p>
-              <h5>Successful Projects</h5>
-            </div>
-            <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
-              <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number={13}>
-                  50
-                </span>
-                <span className="mil-pale">+</span>
-              </p>
-              <h5>Countries Served</h5>
+        <div
+          className="mil-facts mil-p-0-130"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            textAlign: 'center',
+          }}
+        >
+          <div className="container" style={{ width: '100%' }}>
+            <div
+          className="row"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            textAlign: 'center',
+          }}
+            >
+          <div
+            className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <p className="h1 mil-display mil-mb-15" style={{ textAlign: 'center' }}>
+              <span className="mil-accent mil-counter" data-number={7}>
+            10
+              </span>
+              <span className="mil-pale">+</span>
+            </p>
+            <h5 style={{ textAlign: 'center' }}>Years of Experience</h5>
+          </div>
+          <div
+            className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <p className="h1 mil-display mil-mb-15" style={{ textAlign: 'center' }}>
+              <span className="mil-accent mil-counter" data-number="371">
+            500
+              </span>
+              <span className="mil-pale">+</span>
+            </p>
+            <h5 style={{ textAlign: 'center' }}>Successful Projects</h5>
+          </div>
+          <div
+            className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <p className="h1 mil-display mil-mb-15" style={{ textAlign: 'center' }}>
+              <span className="mil-accent mil-counter" data-number={13}>
+            50
+              </span>
+              <span className="mil-pale">+</span>
+            </p>
+            <h5 style={{ textAlign: 'center' }}>Countries Served</h5>
+          </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* facts end */}
+        {/* facts end */}
 
 
         <div className="mil-cta mil-up">
@@ -338,7 +380,7 @@ const Aboutpage = () => {
           <div className="row justify-content-center mil-text-center">
             <div className="col-xl-8 mil-mb-80-adaptive-30">
               <h2 className="mil-up" style={{ textAlign: 'center' }}>
-            Our Strengths: Building Trust <br />
+            Our Strengths, Building Trust <br />
             with Every eBook Project
               </h2>
             </div>

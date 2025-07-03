@@ -698,7 +698,7 @@ const EbookServicesComponent = () => {
           <div className="stat-item">
             <div className="stat-icon">
               <img
-            src="/img/icons/customer-1.png"
+            src="/img/icons/customer-11.png"
             alt="Satisfied Authors Icon"
               />
               </div>
@@ -710,7 +710,7 @@ const EbookServicesComponent = () => {
             </div>
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/icons/editor-1.png" alt="Words Written Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/editor-11.png" alt="Words Written Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 1 Billion</span>
               <div className="stat-label">Words Written and Edited</div>
@@ -720,7 +720,7 @@ const EbookServicesComponent = () => {
             </div>
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/icons/content-1.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/content-11.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 5000+</span>
               <div className="stat-label">Exceptional Content Creators</div>

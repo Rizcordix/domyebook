@@ -2,7 +2,7 @@ import testimonial_img_1 from '../public/img/portfolio/2/archive_7.png';
 import testimonial_img_2 from '../public/img/portfolio/2/archive_6.png';
 import testimonial_img_3 from '../public/img/portfolio/2/archive_5.png';
 import testimonial_img_4 from '../public/img/portfolio/2/archive_8.png';
-import testimonial_img_5 from '../public/img/portfolio/2/portfolio-5.jpg';
+import testimonial_img_5 from '../public/img/portfolio/2/archive_7.png';
 import testimonial_img_6 from '../public/img/portfolio/2/archive_5.png';
 import testimonial_img_7 from '../public/img/portfolio/2/archive_6.png';
 import testimonial_img_8 from '../public/img/portfolio/2/archive_7.png';
