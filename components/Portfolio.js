@@ -285,7 +285,7 @@ const DualPortfolioCarousel = () => {
               </span>
             </div>
 
-            <div>
+            {/* <div>
               <h3 style={{
                 color: 'white',
                 fontSize: isMobile ? '16px' : '18px',
@@ -296,7 +296,7 @@ const DualPortfolioCarousel = () => {
               }}>
                 {item.brand_name}
               </h3>
-            </div>
+            </div> */}
 
             <div style={viewWorkStyle}>
               View Work
@@ -409,7 +409,7 @@ const DualPortfolioCarousel = () => {
       {/* Header */}
       <div style={{
         position: 'absolute',
-        top: isMobile ? '30px' : '10%',
+        top: isMobile ? '200px' : '10%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         textAlign: 'center',

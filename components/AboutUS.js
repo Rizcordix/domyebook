@@ -282,7 +282,9 @@ const Aboutpage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="/img/inner-pages/1.png"
+                  // width={500}
+                  // height={500}
+                  src="/img/about/about_us_1.png"
                   alt="image"
                   // className="mil-scale-img"
                 />
@@ -294,98 +296,140 @@ const Aboutpage = () => {
       {/* features end */}
 
       {/* facts */}
-      <div className="mil-facts mil-p-0-130">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
-              <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number={7}>
-                  10
-                </span>
-                <span className="mil-pale">+</span>
-              </p>
-              <h5>Years of Experience</h5>
-            </div>
-            <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
-              <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number="371">
-                  500
-                </span>
-                <span className="mil-pale">+</span>
-              </p>
-              <h5>Successful Projects</h5>
-            </div>
-            <div className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up">
-              <p className="h1 mil-display mil-mb-15">
-                <span className="mil-accent mil-counter" data-number={13}>
-                  50
-                </span>
-                <span className="mil-pale">+</span>
-              </p>
-              <h5>Countries Served</h5>
+        <div
+          className="mil-facts mil-p-0-130"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            textAlign: 'center',
+          }}
+        >
+          <div className="container" style={{ width: '100%' }}>
+            <div
+          className="row"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            textAlign: 'center',
+          }}
+            >
+          <div
+            className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <p className="h1 mil-display mil-mb-15" style={{ textAlign: 'center' }}>
+              <span className="mil-accent mil-counter" data-number={7}>
+            10
+              </span>
+              <span className="mil-pale">+</span>
+            </p>
+            <h5 style={{ textAlign: 'center' }}>Years of Experience</h5>
+          </div>
+          <div
+            className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <p className="h1 mil-display mil-mb-15" style={{ textAlign: 'center' }}>
+              <span className="mil-accent mil-counter" data-number="371">
+            500
+              </span>
+              <span className="mil-pale">+</span>
+            </p>
+            <h5 style={{ textAlign: 'center' }}>Successful Projects</h5>
+          </div>
+          <div
+            className="col-xl-4 mil-sm-text-center mil-mb-30 mil-up"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <p className="h1 mil-display mil-mb-15" style={{ textAlign: 'center' }}>
+              <span className="mil-accent mil-counter" data-number={13}>
+            50
+              </span>
+              <span className="mil-pale">+</span>
+            </p>
+            <h5 style={{ textAlign: 'center' }}>Countries Served</h5>
+          </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* facts end */}
+        {/* facts end */}
 
-      {/* call to action */}
-      <div className="mil-cta mil-up">
-        <div className="container">
-          <div className="mil-out-frame mil-p-160-100">
-            <div className="row justify-content-center mil-text-center">
-              <div className="col-xl-8 mil-mb-80-adaptive-30">
-                <h2 className="mil-up">
-                  Our Strengths: Building Trust <br />
-                  with Every eBook Project
-                </h2>
+
+        <div className="mil-cta mil-up">
+          <div className="container">
+            <div className="mil-out-frame mil-p-160-100">
+          <div className="row justify-content-center mil-text-center">
+            <div className="col-xl-8 mil-mb-80-adaptive-30">
+              <h2 className="mil-up" style={{ textAlign: 'center' }}>
+            Our Strengths, Building Trust <br />
+            with Every eBook Project
+              </h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-xl-4 mil-mb-60">
+              <div className="mil-icon-box" style={{ textAlign: 'center' }}>
+            <img
+              src="/img/about/About_Us_Expert_Team_of_Writers_Icon.png"
+              alt="icon"
+              className="mil-mb-30 mil-up"
+            />
+            <h5 className="mil-mb-20 mil-up">Expert Team of Writers</h5>
+            <p className="mil-text-m mil-soft mil-up">
+              Our team is dedicated to providing you with professional ghostwriting services, ensuring that your ideas are conveyed perfectly.
+            </p>
               </div>
             </div>
-            <div className="row">
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="/img/inner-pages/icons/1.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-20 mil-up">Expert Team of Writers</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    Our team is dedicated to providing you with professional ghostwriting services, ensuring that your ideas are conveyed perfectly.
-                  </p>
-                </div>
+            <div className="col-xl-4 mil-mb-60">
+              <div className="mil-icon-box" style={{ textAlign: 'center' }}>
+            <img
+              src="/img/about/About_Us_Comprehensive_Services_Icon.png"
+              alt="icon"
+              className="mil-mb-30 mil-up"
+            />
+            <h5 className="mil-mb-20 mil-up">Comprehensive Services</h5>
+            <p className="mil-text-m mil-soft mil-up">
+              From writing to publishing, we offer a complete range of eBook services to support authors in their journey.
+            </p>
               </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="/img/inner-pages/icons/2.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-20 mil-up">Comprehensive Services</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    From writing to publishing, we offer a complete range of eBook services to support authors in their journey.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <img
-                    src="/img/inner-pages/icons/3.svg"
-                    alt="icon"
-                    className="mil-mb-30 mil-up"
-                  />
-                  <h5 className="mil-mb-20 mil-up">Commitment to Quality</h5>
-                  <p className="mil-text-m mil-soft mil-up">
-                    We take pride in delivering high-quality, error-free eBooks that meet your expectations every time.
-                  </p>
-                </div>
+            </div>
+            <div className="col-xl-4 mil-mb-60">
+              <div className="mil-icon-box" style={{ textAlign: 'center' }}>
+            <img
+              src="/img/about/commitment.png"
+              alt="icon"
+              className="mil-mb-30 mil-up"
+            />
+            <h5 className="mil-mb-20 mil-up">Commitment to Quality</h5>
+            <p className="mil-text-m mil-soft mil-up">
+              We take pride in delivering high-quality, error-free eBooks that meet your expectations every time.
+            </p>
               </div>
             </div>
           </div>
+            </div>
+          </div>
         </div>
-      </div>
-      {/* call to action end */}
+        {/* call to action end */}
 
       {/* features */}
       <div className="mil-features mil-p-160-0">
@@ -420,7 +464,7 @@ const Aboutpage = () => {
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="/img/inner-pages/2.png"
+                  src="/img/about/about-us-2.png"
                   alt="image"
                   // className="mil-scale-img"
                 />

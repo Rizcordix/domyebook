@@ -13,9 +13,10 @@ export const CallToAction1 = () => {
                 Protection for your purchases
               </h2>
               <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up">
-                Let&apos;s Make Sure Your Ebook Is Safe
+                
               </p>
-              <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up">  
+              <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up" style={{ color: "#000" }}>  
+                Let&apos;s Make Sure Your Ebook Is Safe. <br /> 
                 Click below to get started, and we&apos;ll take care of the rest.
               </p>
 
@@ -30,7 +31,7 @@ export const CallToAction1 = () => {
             </div>
           </div>
           <div className="mil-illustration-absolute mil-type-2 mil-up">
-            <img src="/img/home-2/6.png" alt="illustration" />
+            <img src="/img/home-2/call_to_action.png" alt="illustration" />
           </div>
         </div>
       </div>

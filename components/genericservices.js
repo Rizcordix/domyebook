@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const EbookServicesComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -450,15 +451,18 @@ const EbookServicesComponent = () => {
           align-items: center;
           width: 50px;
           height: 50px;
-          background-color: rgba(255,255,255,0.2);
+          background: linear-gradient(135deg, #7eb947 0%, #90c955 100%);
           border-radius: 50%;
+          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.3);
+          position: relative;
+          overflow: hidden;
         }
 
         .stat-icon img {
           width: 35px; /* Smaller icons */
           height: 35px;
           object-fit: contain;
-          filter: brightness(0) invert(1); /* Make SVG icons white */
+          color: black; /* Ensure icons are visible */
         }
 
         .stat-number {
@@ -686,16 +690,17 @@ const EbookServicesComponent = () => {
         </div>
       </section>
 
-      
-
       {/* Section 3: Stats Banner */}
-      <section className="stats-banner">
-        <div className="container">
-          <h2 className="stats-title">What We Have Accomplished So Far</h2>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-icon">
-                <img src="/img/icons/customer_satisfaction.png" alt="Satisfied Authors Icon" /> {/* Placeholder icon */}
+        <section className="stats-banner">
+          <div className="container">
+            <h2 className="stats-title">What We Have Accomplished So Far</h2>
+            <div className="stats-grid">
+          <div className="stat-item">
+            <div className="stat-icon">
+              <img
+            src="/img/icons/customer-11.png"
+            alt="Satisfied Authors Icon"
+              />
               </div>
               <span className="stat-number">Over 20,000</span>
               <div className="stat-label">Satisfied Customers</div>
@@ -705,7 +710,7 @@ const EbookServicesComponent = () => {
             </div>
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/icons/editor.png" alt="Words Written Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/editor-11.png" alt="Words Written Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 1 Billion</span>
               <div className="stat-label">Words Written and Edited</div>
@@ -715,7 +720,7 @@ const EbookServicesComponent = () => {
             </div>
             <div className="stat-item">
               <div className="stat-icon">
-                <img src="/img/icons/expectation.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
+                <img src="/img/icons/content-11.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
               </div>
               <span className="stat-number">Over 5000+</span>
               <div className="stat-label">Exceptional Content Creators</div>
@@ -737,9 +742,14 @@ const EbookServicesComponent = () => {
           <p className="cta-description">
             Transparency and genuine feedback are important to us. Here&apos;s what some of our authors have to say about their experiences working with DomyEbook - The Premier Ebook Writing Service.
           </p>
-          <a href="#testimonials" className="cta-button">
-            Read Testimonials →
-          </a>
+          <div className="mil-up mil-mb-60">
+                <Link
+                  href="/getquote"
+                  className="mil-btn mil-button-transform mil-md mil-add-arrow"
+                >
+                  Testimonials
+                </Link>
+              </div>
         </div>
       </section>
     </div>

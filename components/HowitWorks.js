@@ -11,64 +11,76 @@ const HowItWorksPage = () => {
       number: "1",
       title: "Book a Demo",
       description: "Ready to bring your project to life? Book a quick call with Do My eBook through our calendar to get a clear overview of pricing, timelines, and how we can help. Whether you need writing, editing, design, or a full package, just click 'Post a Project,' choose your services, and we'll connect you with the right expert.",
-      icon: "📅"
+      icon: "img/how_it_works/How_It_Work_Book_A_Demo_Icon.png",
+      image: "/img/how_it_works/How_It_Work_Book_A_Demo_Image1.png"
     },
     {
       number: "2", 
       title: "Get a Free Quote",
       description: "Ready to turn your ebook idea into a stunning reality? Just tell us a little about your project using the form below. Once we hear from you, a friendly expert from Do My Ebook will personally get in touch to chat about pricing and all the exciting next steps.",
-      icon: "💬"
+      icon: "img/how_it_works/How_It_Work_Get_A_Free_Quote_Icon.png",
+      image: "/img/how_it_works/How_It_Work_Get_A_Free_Quote_image.png"
     },
     {
       number: "3",
       title: "No Commitment Until You're Happy",
       description: "We believe in a completely stress-free experience from start to finish. That's why you're in control: you can pay upfront or wait until you've personally chosen the perfect freelancer for your project.",
-      icon: "🤝"
+      icon: "img/how_it_works/How_It_Work_No_Commitment_Until_You're_Happy_Icon.png",
+      image: "/img/how_it_works/How_It_Work_No_Commitment_Until_You're_Happy_Image.png"
     },
     {
       number: "4",
       title: "Real-Time Project Updates", 
       description: "Keeping an eye on your project couldn't be simpler! You'll easily track progress and get updates as your project moves through different stages. We'll keep you in the loop with automated emails and notifications.",
-      icon: "📊"
+      icon: '/img/how_it_works/How_It_Work_Real_Time_Project_Updates_Icon.png',
+      image: "/img/how_it_works/How_It_Work_Real-Time_Project_Updates_Image.png"
     },
     {
       number: "5",
       title: "Quality You Can Trust",
       description: "Your peace of mind is our priority! Before anything comes back to you, our dedicated quality assurance team gives your content a thorough final review. We meticulously check everything to ensure it meets our high standards.",
-      icon: "✅"
+      icon: "img/how_it_works/How_It_Work_Quality_You_Can_Trust_Icon.png",
+      image: "/img/how_it_works/How_It_Work_Quality_You_Can_Trust_Image.png"
     },
     {
       number: "6",
       title: "Download Your Finished Project",
       description: "Ready to see your work? Simply log in to your Do My Ebook account or click the secure link we send you by email. You can then download your completed content directly from your dashboard.",
-      icon: "📥"
+      icon: "img/how_it_works/How_It_Work_Download_Your_Finished_Project_Icon.png",
+      image: "/img/how_it_works/How_It_Work_Book_A_Demo_Image1.png"
     }
   ];
 
   const controlFeatures = [
     {
       title: "Direct Communication",
-      description: "Chat directly with your writer, editor, designer, or illustrator on your dedicated project page. Got a question or an idea? They're just a message away!"
+      description: "Chat directly with your writer, editor, designer, or illustrator on your dedicated project page. Got a question or an idea? They're just a message away!",
+      image: "/img/how_it_works/How_It_Work_Direct_Communication_Icon.png"
     },
     {
       title: "Real-Time Progress Tracking", 
-      description: "Watch your project come alive! Our real-time document view lets you track your order's progress, so you're always in the loop."
+      description: "Watch your project come alive! Our real-time document view lets you track your order's progress, so you're always in the loop.",
+      image: "/img/how_it_works/How_It_Work_Real-Time_Progress_Tracking_Icon.png"
     },
     {
       title: "Collaborate on Your Content",
-      description: "Ensure your ebook perfectly matches your vision. Add comments directly to the document for your writer or editor to implement or discuss with you."
+      description: "Ensure your ebook perfectly matches your vision. Add comments directly to the document for your writer or editor to implement or discuss with you.",
+      image: "/img/how_it_works/How_It_Work_Collaborate_on_Your_Content_Icon.png"
     },
     {
       title: "Approve or Revise",
-      description: "You have the final say. Approve submissions when you're thrilled with the work, or request a revision if anything isn't aligned with your initial requirements."
+      description: "You have the final say. Approve submissions when you're thrilled with the work, or request a revision if anything isn't aligned with your initial requirements.",
+      image: "/img/how_it_works/How_It_Work_Approve_or_Revise_Icon.png"
     },
     {
       title: "Personalized Service",
-      description: "Your project is unique, and so is our approach. We tailor our services to fit your specific needs, ensuring a customized experience from start to finish."
+      description: "Your project is unique, and so is our approach. We tailor our services to fit your specific needs, ensuring a customized experience from start to finish.",
+      image: "/img/how_it_works/How_It_Work_Personalized_Service_Icon.png"
     },
     {
       title: "Transparent Process",
-      description: "No hidden surprises here! We keep you informed at every stage, from initial concept to final delivery, so you always know what to expect."
+      description: "No hidden surprises here! We keep you informed at every stage, from initial concept to final delivery, so you always know what to expect.",
+      image: "/img/how_it_works/How_It_Work_Transparent_Process_Icon.png"
     }
   ];
 
@@ -166,9 +178,12 @@ const HowItWorksPage = () => {
               <div className="col-xl-6 mil-mb-60">
                 <div className="step-content">
                   <div className="step-header mil-mb-30 mil-up">
-                    <span className="step-icon">{step.icon}</span>
-                    {/* <span className="step-number">{step.number}</span> */}
-                    {/* <span className="step-icon">{step.icon}</span>  */}
+                    <div className="step-icon">
+                    <img
+                        src={step.icon}
+                        alt="Satisfied Authors Icon"
+                    />
+                    </div>
                   </div>
                   <h3 className="mil-mb-30 mil-up">{step.title}</h3>
                   <p className="mil-text-m mil-soft mil-up">
@@ -178,7 +193,7 @@ const HowItWorksPage = () => {
               </div>
               <div className="col-xl-5 mil-mb-60">
                 <div className="mil-image-frame mil-up">
-                  <Image src={`/img/inner-pages/6.png`} alt={`Step ${step.number}`} width={500} height={400}/>
+                  <img src={step.image} alt={`Step ${step.number}`} />
                 </div>
               </div>
             </div>
@@ -203,7 +218,7 @@ const HowItWorksPage = () => {
                 <div key={index} className="col-xl-4 mil-mb-60">
                   <div className="mil-icon-box control-feature">
                     <div className="feature-icon mil-mb-30 mil-up">
-                      <span className="control-icon"><img src={`/img/brands/5.svg`} alt={`Feature ${index + 1}`} width={50} height={50}/></span>
+                      <span className="control-icon"><img src={feature.image} alt={`Feature ${index + 1}`} width={50} height={50}/></span>
                     </div>
                     <h5 className="mil-mb-20 mil-up">{feature.title}</h5>
                     <p className="mil-text-m mil-soft mil-up">
@@ -356,15 +371,24 @@ const HowItWorksPage = () => {
         }
 
         .step-icon {
-          font-size: 32px;
-          width: 60px;
-          height: 60px;
-          background: linear-gradient(135deg, #7eb947 0%,rgb(255, 255, 255) 100%);
-          border-radius: 50%;
+          margin-bottom: 15px; /* Reduced margin */
           display: flex;
-          align-items: center;
           justify-content: center;
-          color: white;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          background: #7eb947;
+          border-radius: 50%;
+          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.3);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .step-icon img {
+          width: 30px; /* Smaller icons */
+          height: 30px;
+          object-fit: contain;
+          color: black; /* Ensure icons are visible */
         }
 
         .step-number {
@@ -430,7 +454,7 @@ const HowItWorksPage = () => {
 
         .control-icon {
           font-size: 32px;
-          background: linear-gradient(135deg, #7eb947 0%, rgb(255, 255, 255) 100%);
+          background: #7eb947;
           color: white;
           width: 60px;
           height: 60px;
@@ -439,6 +463,13 @@ const HowItWorksPage = () => {
           align-items: center;
           justify-content: center;
           margin: 0 auto;
+        }
+        
+        .control-icon img {
+          width: 40px; /* Smaller icons */
+          height: 40px;
+          object-fit: contain;
+          color: black; /* Ensure icons are visible */
         }
 
         .cta-buttons {

@@ -22,7 +22,7 @@ const page = () => {
                     <Link href="/">Home</Link>
                   </li>
                   <li>
-                    <Link href="/how-it-works">Get Quote</Link>
+                    <Link href="/getquote">Get Quote</Link>
                   </li>
                 </ul>
               </div>

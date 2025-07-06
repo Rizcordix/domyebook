@@ -324,7 +324,7 @@ const ServicesPage = () => {
                     fontSize: '24px',
                     fontWeight: 'bold'
                   }}>
-                    ✓
+                    <img src="/img/service/Services_2,500+_Books_Published.png" alt="icon" style={{ width: '40px', height: '40px' }} />
                   </div>
                   <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
                     2,500+ Books Published
@@ -349,7 +349,7 @@ const ServicesPage = () => {
                     fontSize: '24px',
                     fontWeight: 'bold'
                   }}>
-                    ★
+                    <img src="/img/service/Services_Client_Satisfaction.png" alt="icon" style={{ width: '40px', height: '40px' }} />
                   </div>
                   <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
                     98% Client Satisfaction
@@ -374,7 +374,7 @@ const ServicesPage = () => {
                     fontSize: '24px',
                     fontWeight: 'bold'
                   }}>
-                    🌍
+                    <img src="/img/service/Services_Global_Reach.png" alt="icon" style={{ width: '40px', height: '40px' }} />
                   </div>
                   <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
                     Global Reach
