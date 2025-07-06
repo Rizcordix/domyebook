@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import PlaxLayout from "@/layouts/PlaxLayout";
 
 const testimonials = [
   {
@@ -160,6 +161,7 @@ const TestimonialsPage = () => {
   const hasMore = visibleCount < testimonials.length;
 
   return (
+    <PlaxLayout>
     <div>
       {/* banner */}
       <div className="mil-banner mil-banner-inner mil-dissolve">
@@ -472,6 +474,7 @@ const TestimonialsPage = () => {
         }
       `}</style>
     </div>
+      </PlaxLayout>
   );
 };
 
