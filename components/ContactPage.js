@@ -1,13 +1,31 @@
 "use client";
 import { PageBanner } from "@/components/Banner";
-
+import Link from "next/link";
 const Contactpage = () => {
   return (
     <>
-      <PageBanner
-        pageName="Contact us"
-        title="Connect With Us"
-      />
+      <div className="mil-banner mil-banner-inner mil-dissolve">
+            <div className="container">
+                <div className="row align-items-center justify-content-center">
+                    <div className="col-xl-8">
+                        <div className="mil-banner-text mil-text-center">
+                            
+                            <h1 className="mil-mb-60">
+                                Contact Us
+                            </h1>
+                            <ul className="mil-breadcrumbs mil-center">
+                                <li>
+                                    <Link href="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link href="/contact">Contact</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       
       {/* Enhanced Contact Section */}
       <div className="mil-blog-list mil-p-0-160">
@@ -17,7 +35,7 @@ const Contactpage = () => {
               
               {/* Introduction */}
               <div  style={{ textAlign: 'center' }}>
-                <h3 className="mil-mb-30 mil-up" style={{ color: '#7eb947', fontWeight: '600' }}>
+                <h3 className="mil-mb-30 mil-up" style={{ color: '#7eb947', fontWeight: '600' , fontSize: '50px' }}>
                   Ready to Transform Your Ideas into a Bestselling Ebook?
                 </h3>
                 <p className="mil-text-l mil-soft mil-mb-60 mil-up" style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -26,7 +44,7 @@ const Contactpage = () => {
               </div>
 
               {/* Enhanced Contact Methods Grid */}
-              <div className="row mil-mb-80 mil-p-60-0" style={{ padding: '0 20px' }}>
+              <div className="row mil-mb-80 mil-p-60-0" style={{ padding: '30px 20px' }}>
                 <div className="col-lg-6 mil-mb-40">
                   <div 
                     className="mil-p-60-0"
