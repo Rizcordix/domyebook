@@ -104,7 +104,7 @@ const page = () => {
                     {/* Client Section */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1', minWidth: '250px' }}>
                       {/* Client Avatars */}
-                      <div style={{ display: 'flex', marginLeft: '-10px' }}>
+                      <div style={{ display: 'flex', marginLeft: '10px' }}>
                         <img
                           src="img/avatar.webp"
                           alt="Client 1"
@@ -177,12 +177,12 @@ const page = () => {
                         />
                       </div>
                       
-                      {/* Client Text */}
+                     
+                    </div>
+                     
                       <div style={{ color: 'white' }}>
                         <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem', color: '#fff', }}>We have over 4,000 clients</p>
-                        <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.8rem' }}>around the world</p>
                       </div>
-                    </div>
                     
                     {/* Play Button - Mobile */}
                     <div style={{ animationDelay: '0.8s' }}>
