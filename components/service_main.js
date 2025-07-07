@@ -8,7 +8,7 @@ const ServicesPage = () => {
       {/* Page Banner */}
       <PageBanner
         pageName="Our Services"
-        title="Comprehensive eBook Solutions"
+        title="Extensive eBook Solutions"
       />
 
       {/* Writing Services */}
