@@ -37,7 +37,7 @@ const testimonials = [
     name: "David Thompson",
     role: "Founder",
     company: "InnovateCorp",
-    content: "Exceptional service from start to finish. The team's professionalism and expertise made the entire process smooth and stress-free. Delivered beyond expectations.",
+    content: "Exceptional service from start to finish. The team's professionalism and expertise made the entire process smooth and stress-free. Delivered beyond expectations. I would highly recommend it.",
     image: "/img/avatar3.webp",
     rating: 4
   },
@@ -55,7 +55,7 @@ const testimonials = [
     name: "James Wilson",
     role: "Creative Director",
     company: "DesignStudio",
-    content: "The creativity and innovation they brought to our project was impressive. They delivered beyond our expectations and on time. Truly professional team.",
+    content: "The creativity and innovation they brought to our project was impressive. They delivered beyond our expectations and on time. Truly professional and expert team.",
     image: "/img/avatar.webp",
     rating: 5
   },
@@ -91,7 +91,7 @@ const testimonials = [
     name: "Alex Martinez",
     role: "Project Manager",
     company: "BuildRight",
-    content: "Seamless project execution with clear communication at every step. They transformed our ideas into reality with precision and creativity.",
+    content: "Seamless project execution with clear communication at every step. They transformed our ideas into reality with precision, expertise, and creativity.",
     image: "/img/avatar4.webp",
     rating: 4
   },
@@ -109,7 +109,7 @@ const testimonials = [
     name: "Kevin Brown",
     role: "Operations Manager",
     company: "LogiFlow",
-    content: "Streamlined our processes and improved efficiency dramatically. Their systematic approach and problem-solving skills are top-notch.",
+    content: "Streamlined our processes and improved efficiency dramatically. Their systematic approach, precision, and problem-solving skills are top-notch.",
     image: "/img/avatar1.webp",
     rating: 5
   },
@@ -191,9 +191,9 @@ const TestimonialsPage = () => {
       <div className="testimonials-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">
+            <h2 className="section-title highlight">
               Recommended by leading experts in <br />
-              <span className="highlight">writing and SEO</span>
+              <span className="highlight">Writing and SEO</span>
             </h2>
             <p className="section-subtitle">
               Discover what our clients have to say about their experience working with us
@@ -233,9 +233,11 @@ const TestimonialsPage = () => {
                 </div>
 
                 <div className="card-footer">
-                  <div className="author-avatar">
-                    <Image src={testimonial.image} alt={testimonial.name} width={60} height={60} className="avatar-img" />
-                  </div>
+                  <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="customer-avatar"
+                    />
                   <div className="author-details">
                     <h4 className="author-name">{testimonial.name}</h4>
                     <p className="author-position">{testimonial.role}</p>
@@ -263,7 +265,15 @@ const TestimonialsPage = () => {
           margin: 0 auto;
           padding: 0 15px;
         }
-
+        
+        .customer-avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid #7eb947;
+          box-shadow: 0 4px 12px rgba(126, 185, 71, 0.2);
+        }
         .banner {
           background: linear-gradient(135deg, #ffffff 0%, #f2fafa 100%);
           padding: 100px 0 60px;
@@ -321,7 +331,7 @@ const TestimonialsPage = () => {
 
         .testimonials-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
           gap: 30px;
         }
 
@@ -332,10 +342,11 @@ const TestimonialsPage = () => {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          aspect-ratio: 1 / 1;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
           border: 2px solid transparent;
           transition: all 0.3s ease;
+          aspect-ratio: 1 / 1; /* Keeps it square */
+          height: auto;
         }
 
         .testimonial-card:hover {
@@ -379,8 +390,12 @@ const TestimonialsPage = () => {
 
         .card-body {
           margin: 20px 0;
-          flex: 1;
+          flex-grow: 1; /* Fills empty space */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
+
 
         .testimonial-text {
           font-style: italic;
@@ -391,12 +406,14 @@ const TestimonialsPage = () => {
           -webkit-line-clamp: 6;
           -webkit-box-orient: vertical;
           overflow: hidden;
+          min-height: 96px; /* Ensures consistent height */
         }
 
         .testimonial-text.expanded {
           -webkit-line-clamp: unset;
           overflow: visible;
         }
+
 
         .read-more {
           background: none;
@@ -416,9 +433,11 @@ const TestimonialsPage = () => {
         }
 
         .avatar-img {
-          border-radius: 50%;
+          border-radius: 50% !important;
           border: 3px solid #f2fafa;
+          object-fit: cover;
         }
+
 
         .author-name {
           font-size: 16px;

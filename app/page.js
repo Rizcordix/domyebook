@@ -52,12 +52,14 @@ const page = () => {
       <Banner />
       
       {/* New Animated Hero Section */}
-      <div className="mil-banner mil-p-160-160" style={{
+      <div className="mil-banner" style={{
         background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        minHeight: '100vh',
+        minHeight: '70vh',
+        maxHeight: '75vh',
+
         display: 'flex',
         alignItems: 'center'
       }}>
@@ -177,7 +179,7 @@ const page = () => {
                       
                       {/* Client Text */}
                       <div style={{ color: 'white' }}>
-                        <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem' }}>We have over 4,000 clients</p>
+                        <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem', color: '#fff', }}>We have over 4,000 clients</p>
                         <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.8rem' }}>around the world</p>
                       </div>
                     </div>
@@ -373,7 +375,7 @@ const page = () => {
                     
                     {/* Client Text */}
                     <div style={{ color: 'white' }}>
-                      <p style={{ margin: '0', fontWeight: '600', fontSize: '1rem' }}>We have over 4,000 clients</p>
+                      <p style={{ margin: '0', fontWeight: '600', fontSize: '1rem', color: '#fff', }}>We have over 4,000 clients</p>
                       <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>around the world</p>
                     </div>
                   </div>

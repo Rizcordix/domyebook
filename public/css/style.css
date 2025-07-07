@@ -569,14 +569,14 @@ frames
 ------------------------------------------- */
 .mil-out-frame {
   overflow: hidden;
-  border-radius: 40px;
+  border-radius: 60px;
   padding-left: 100px;
   padding-right: 100px;
-  transform: translateX(-100px);
+  transform: translateX(30px);
   background-color: rgb(242, 250, 250);
   background-size: cover;
-  background-position: left;
-  width: calc(100% + 200px);
+  background-position: center;
+  width: calc(80% + 200px);
 }
 .mil-out-frame.mil-bg-1 {
   background: linear-gradient(0deg, #7eb947 0%, #cacdcd 100%);

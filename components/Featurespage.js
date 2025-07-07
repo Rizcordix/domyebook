@@ -131,11 +131,13 @@ const FeaturesPage = () => {
                             Transparency and genuine feedback are important to us. Here&apos;s what some of our wonderful Do My Ebook customers have shared about their experiences working with us.
                             </p>
                             <div className="mil-mt-60 mil-up">
-                            <div className="mil-btn mil-button-transform mil-md mil-add-arrow">
                               <Link href="/testimonials" className="cta-btn primary">
+                            <div className="mil-btn mil-button-transform mil-md mil-add-arrow">
+                              
                         Testimonials <span className="mil-arrow"></span>
-                      </Link>
+                      
                     </div>
+                    </Link>
                   </div>
                 </div>
               </div>
