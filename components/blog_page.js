@@ -25,7 +25,7 @@ const BlogPage = () => {
       {/* Page banner for the blog section */}
       <PageBanner
         pageName="Blog"
-        title="Your Source of Financial Information"
+        title="Your Source for Curated eBooks"
       />
 
       <div className="mil-blog-list mil-p-0-160">
