@@ -57,8 +57,8 @@ const page = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        minHeight: '80vh',
-        maxHeight: '85vh',
+        minHeight: '70vh',
+        maxHeight: '75vh',
 
         display: 'flex',
         alignItems: 'center'
@@ -179,7 +179,7 @@ const page = () => {
                       
                       {/* Client Text */}
                       <div style={{ color: 'white' }}>
-                        <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem' }}>We have over 4,000 clients</p>
+                        <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem', color: '#fff', }}>We have over 4,000 clients</p>
                         <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.8rem' }}>around the world</p>
                       </div>
                     </div>
@@ -375,7 +375,7 @@ const page = () => {
                     
                     {/* Client Text */}
                     <div style={{ color: 'white' }}>
-                      <p style={{ margin: '0', fontWeight: '600', fontSize: '1rem' }}>We have over 4,000 clients</p>
+                      <p style={{ margin: '0', fontWeight: '600', fontSize: '1rem', color: '#fff', }}>We have over 4,000 clients</p>
                       <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>around the world</p>
                     </div>
                   </div>
