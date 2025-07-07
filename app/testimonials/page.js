@@ -191,9 +191,9 @@ const TestimonialsPage = () => {
       <div className="testimonials-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">
+            <h2 className="section-title highlight">
               Recommended by leading experts in <br />
-              <span className="highlight">writing and SEO</span>
+              <span className="highlight">Writing and SEO</span>
             </h2>
             <p className="section-subtitle">
               Discover what our clients have to say about their experience working with us
