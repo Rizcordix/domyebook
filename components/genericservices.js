@@ -744,7 +744,7 @@ const EbookServicesComponent = () => {
           </p>
           <div className="mil-up mil-mb-60">
                 <Link
-                  href="/getquote"
+                  href="/testimonials"
                   className="mil-btn mil-button-transform mil-md mil-add-arrow"
                 >
                   Testimonials
