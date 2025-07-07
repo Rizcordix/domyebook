@@ -100,11 +100,11 @@ return (
                                     className={`diagram_placeholder tab-${activeTab}`}
                                     key={activeTab}
                                 >
-                                    <Image 
+                                    <img
                                         src={services[activeTab].image}
                                         alt={`${services[activeTab].title} Service`}
-                                        width={450}
-                                        height={450}
+                                        // width={450}
+                                        // height={450}
                                         style={{ 
                                             objectFit: 'contain',
                                             borderRadius: '12px',

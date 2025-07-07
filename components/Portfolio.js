@@ -409,7 +409,7 @@ const DualPortfolioCarousel = () => {
       {/* Header */}
       <div style={{
         position: 'absolute',
-        top: isMobile ? '200px' : '10%',
+        top: isMobile ? '200px' : '18%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         textAlign: 'center',
