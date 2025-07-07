@@ -23,7 +23,7 @@ const page = () => (
                 <div className="row align-items-center justify-content-center">
                     <div className="col-xl-8">
                         <div className="mil-banner-text mil-text-center">
-                            <div className="mil-text-m mil-mb-20">Terms &amp; Conditions</div>
+                            
                             <h1 className="mil-mb-60">
                                 Refund and Revision Policy
                             </h1>
