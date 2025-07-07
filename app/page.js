@@ -52,12 +52,14 @@ const page = () => {
       <Banner />
       
       {/* New Animated Hero Section */}
-      <div className="mil-banner mil-p-160-160" style={{
+      <div className="mil-banner" style={{
         background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        minHeight: '100vh',
+        minHeight: '80vh',
+        maxHeight: '85vh',
+
         display: 'flex',
         alignItems: 'center'
       }}>
