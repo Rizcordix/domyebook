@@ -10,32 +10,37 @@ const FeaturesPage = () => {
       title: "Post Your Project",
       description: "Ready to create your ebook? On Do My Ebook, you'll find hundreds of vetted experts for writing, cover design, illustrations, narration, and more! The best part? You only pay once you've found your perfect freelancer and they're ready to start. No commitment until you're happy with your choice!",
       highlight: ["vetted experts", "writing, cover design, illustrations, narration", "No commitment"],
-      images: "/img/inner-pages/aboutus1.png"
+      images: "/img/features/features1.png"
     },
     {
       title: "Book a Call with Your Production Head",
       description: "Want to know exactly how your project is progressing? You can book a call directly with your dedicated Production Head! They'll walk you through the latest updates and discuss how your ebook is coming to life, whether it's being written, edited, designed, or illustrated. This is a great way to get a personalized overview and have all your questions answered.",
-      highlight: ["dedicated Production Head", "personalized overview"]
+      highlight: ["dedicated Production Head", "personalized overview"],
+      images: "/img/features/Book-a-Call-with-Your-Production-Head.png"
     },
     {
       title: "Live Order Tracking",
       description: "Stay in the loop every step of the way! With Do My Ebook's live order tracking, you'll never miss an update. Need to multitask? No problem! Our text-to-speech feature lets you listen to your content as it's being created, or catch up on recent additions right from your order page. Plus, you can chat directly with your creative team as they work on your project, ensuring your vision is perfectly realized.",
-      highlight: ["never miss an update", "text-to-speech feature", "listen to your content", "chat directly with your creative team"]
+      highlight: ["never miss an update", "text-to-speech feature", "listen to your content", "chat directly with your creative team"],
+      images: "/img/features/Live-Order-Tracking.png"
     },
     {
       title: "Expert Matching",
       description: "Tired of searching for the right person for your ebook? Don't worry, we've got you covered! At Do My Ebook, we take the hassle out of finding the perfect creative. Just tell us what you need, and we'll personally connect you with a highly skilled and thoroughly vetted writer, editor, designer, illustrator, translator, or narrator from our team. We'll make sure their unique talents are a perfect match for your vision, so you can focus on bringing your ebook to life!",
-      highlight: ["highly skilled and thoroughly vetted", "perfect match for your vision"]
+      highlight: ["highly skilled and thoroughly vetted", "perfect match for your vision"],
+      images: "/img/features/Expert-Matching.png"
     },
     {
       title: "Collaborate & Refine",
       description: "We believe in a truly collaborative process to get your ebook just right! You can easily leave comments and feedback directly within your project. We want your ebook to be perfect! That's why we make it easy for you to leave comments and reviews directly in your project's chat with the production team. Got a specific thought on the text, or a broader idea for your production head? Just share it in the dedicated chat on your order page. This ensures constant communication and that your vision is perfectly captured throughout the entire process.",
-      highlight: ["leave comments and feedback", "constant communication", "vision is perfectly captured"]
+      highlight: ["leave comments and feedback", "constant communication", "vision is perfectly captured"],
+      images: "/img/features/Collaborate-&-Refine.png"
     },
     {
       title: "Dedicated Platform Support",
       description: "Need a hand? Getting help is super easy with Do My Ebook! Our dedicated admin support is available right on the platform. Just use the chat feature or send us an email. Our team is always ready to assist with any questions or concerns you have about your project, making sure your experience is smooth and stress-free!",
-      highlight: ["dedicated admin support", "chat feature", "smooth and stress-free"]
+      highlight: ["dedicated admin support", "chat feature", "smooth and stress-free"],
+      images: "/img/features/Dedicated-Platform-Support.png"
     }
   ];
 
@@ -99,7 +104,7 @@ const FeaturesPage = () => {
                   <div className="mil-image-frame mil-up">
                     <div className="feature-image-placeholder">
                       <img
-                        src="/img/home-6/3.png" // Kept as requested
+                        src={feature.images} // Kept as requested
                         alt={feature.title}
                       />
                     </div>

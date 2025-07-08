@@ -57,7 +57,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-6/3.png"
+                  src="img/service/Transform-Your-Ideas-Into-Literary-Masterpieces.png"
                   alt="Writing Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -107,7 +107,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-6/3.png"
+                  src="img/service/Perfecting-Every-Word,-Sentence,-and-Story.png"
                   alt="Editorial Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -161,7 +161,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-6/3.png"
+                  src="img/service/Visual.png"
                   alt="Design Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -219,7 +219,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-6/3.png"
+                  src="img/service/Marketing_Business.png"
                   alt="Publishing Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -277,7 +277,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/home-6/3.png"
+                  src="img/service/Author-support.png"
                   alt="Author Support Services"
                   className="mil-scale-img"
                   data-value-1={1}
