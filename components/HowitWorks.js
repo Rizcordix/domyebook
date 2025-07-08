@@ -534,6 +534,26 @@ const HowItWorksPage = () => {
             width: 100%;
             justify-content: center;
           }
+          .mil-features .step-content {
+            text-align: center;
+            display: block;
+          }
+
+          .mil-features .step-header {
+            justify-content: center;
+            text-align: center;
+          }
+
+          /* Optional: Adjust the images to fit better on small screens */
+          .mil-features .step-content img {
+            max-width: 80%; /* Scale down images */
+            margin: 0 auto;
+          }
+
+          /* Optional: Adjusting the step text and icon */
+          .mil-features .step-header .step-icon {
+            margin: 0 auto;
+          }
         }
 
         /* Animation enhancements */
