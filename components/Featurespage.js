@@ -9,7 +9,8 @@ const FeaturesPage = () => {
     {
       title: "Post Your Project",
       description: "Ready to create your ebook? On Do My Ebook, you'll find hundreds of vetted experts for writing, cover design, illustrations, narration, and more! The best part? You only pay once you've found your perfect freelancer and they're ready to start. No commitment until you're happy with your choice!",
-      highlight: ["vetted experts", "writing, cover design, illustrations, narration", "No commitment"]
+      highlight: ["vetted experts", "writing, cover design, illustrations, narration", "No commitment"],
+      images: "/img/inner-pages/aboutus1.png"
     },
     {
       title: "Book a Call with Your Production Head",
@@ -97,12 +98,9 @@ const FeaturesPage = () => {
                 <div className="col-xl-5 mil-mb-80">
                   <div className="mil-image-frame mil-up">
                     <div className="feature-image-placeholder">
-                      <Image
-                        src="/img/inner-pages/6.png" // Kept as requested
+                      <img
+                        src="/img/home-6/3.png" // Kept as requested
                         alt={feature.title}
-                        width="500"
-                        height="500"
-                        // className="mil-scale-img"
                       />
                     </div>
                   </div>

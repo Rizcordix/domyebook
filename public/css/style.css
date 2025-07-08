@@ -623,13 +623,25 @@ frames
 @media screen and (max-width: 1000px) {
   .mil-out-frame {
     border-radius: 0;
-    transform: translateX(-60px);
+    transform: translateX(-20px);
   }
   .mil-out-frame.mil-out-image-fix {
     padding-bottom: 80px;
     margin-bottom: 80px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .mil-out-frame {
+    border-radius: 0;
+    transform: translateX(-65px);
+  }
+  .mil-out-frame.mil-out-image-fix {
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+  }
+}
+
 .mil-out-frame.mil-out-top {
   background-color: rgb(39, 38, 38);
   position: relative;
@@ -1831,6 +1843,14 @@ illustrations
   }
   .mil-illustration-absolute img {
     position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .mil-illustration-absolute img {
+    height: 160%; /* You can adjust this value to make it bigger */
+    max-width: 100%;
+    margin-top: 50px;
   }
 }
 .mil-illustration-absolute.mil-type-2 {

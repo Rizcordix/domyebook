@@ -57,10 +57,9 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/inner-pages/6.png"
+                  src="img/home-6/3.png"
                   alt="Writing Services"
                   className="mil-scale-img"
-                  style={{ width: '500px', height: '500px', objectFit: 'cover' }}
                   data-value-1={1}
                   data-value-2="1.2"
                 />
@@ -108,10 +107,9 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/inner-pages/6.png"
+                  src="img/home-6/3.png"
                   alt="Editorial Services"
                   className="mil-scale-img"
-                  style={{ width: '500px', height: '500px', objectFit: 'cover' }}
                   data-value-1={1}
                   data-value-2="1.2"
                 />
@@ -163,10 +161,9 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/inner-pages/6.png"
+                  src="img/home-6/3.png"
                   alt="Design Services"
                   className="mil-scale-img"
-                  style={{ width: '500px', height: '500px', objectFit: 'cover' }}
                   data-value-1={1}
                   data-value-2="1.2"
                 />
@@ -222,10 +219,9 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/inner-pages/6.png"
+                  src="img/home-6/3.png"
                   alt="Publishing Services"
                   className="mil-scale-img"
-                  style={{ width: '500px', height: '500px', objectFit: 'cover' }}
                   data-value-1={1}
                   data-value-2="1.2"
                 />
@@ -281,10 +277,9 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/inner-pages/6.png"
+                  src="img/home-6/3.png"
                   alt="Author Support Services"
                   className="mil-scale-img"
-                  style={{ width: '500px', height: '500px', objectFit: 'cover' }}
                   data-value-1={1}
                   data-value-2="1.2"
                 />
