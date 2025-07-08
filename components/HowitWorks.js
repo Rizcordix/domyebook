@@ -59,17 +59,17 @@ const HowItWorksPage = () => {
     },
     {
       title: "Real-Time Progress Tracking", 
-      description: "Watch your project come alive! Our real-time document view lets you track your order's progress, so you're always in the loop.",
+      description: "Watch your project come alive! Our real-time document view lets you track your order, so you're always in the loop.",
       image: "/img/how_it_works/How_It_Work_Real-Time_Progress_Tracking_Icon.png"
     },
     {
       title: "Collaborate on Your Content",
-      description: "Ensure your ebook perfectly matches your vision. Add comments directly to the document for your writer or editor to implement or discuss with you.",
+      description: "Add comments directly to the document for your writer or editor to implement or discuss with you.",
       image: "/img/how_it_works/How_It_Work_Collaborate_on_Your_Content_Icon.png"
     },
     {
       title: "Approve or Revise",
-      description: "You have the final say. Approve submissions when you're thrilled with the work, or request a revision if anything isn't aligned with your initial requirements.",
+      description: "Approve submissions when you're thrilled with the work, or request a revision if anything isn't aligned with your initial requirements.",
       image: "/img/how_it_works/How_It_Work_Approve_or_Revise_Icon.png"
     },
     {
