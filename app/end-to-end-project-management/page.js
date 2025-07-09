@@ -59,7 +59,7 @@ const EndToEndProjectManagementPage = () => {
                 <div className="mil-image-frame mil-up">
                   <div className="feature-image-placeholder">
                     <img
-                      src="/img/home-6/3.png"
+                      src="/img/services/end.png"
                       alt="service image"
                     />
                   </div>
