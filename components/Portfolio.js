@@ -416,12 +416,12 @@ const DualPortfolioCarousel = () => {
         zIndex: 1
       }}>
         <h1 style={{
-          fontSize: isMobile ? '28px' : '48px',
+          fontSize: isMobile ? '45px' : '48px',
           marginTop: isMobile ? '20px' : '0px'
           // margin: 0
         }}>Archive</h1>
         <h5 style={{
-          fontSize: isMobile ? '14px' : '18px',
+          fontSize: isMobile ? '24px' : '18px',
           fontWeight: '400',
           marginTop: isMobile ? '15px' : '15px'
         }}>Exploring imagination and reality, one page at a time</h5>

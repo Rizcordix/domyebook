@@ -102,6 +102,8 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
                 gap: "15px",
                 alignItems: "center",
                 maxWidth: "200px",
+                marginBottom: "60px",
+
               }}
             >
               {socialLinks.map(({ href, icon, hoverShadow }, index) => (

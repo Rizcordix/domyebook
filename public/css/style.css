@@ -611,11 +611,37 @@ frames
   margin-bottom: 300px;
 }
 @media screen and (max-width: 1200px) {
+  .mil-out-frame {
+    border-radius: 0;
+    transform: translateX(-0px);
+  }
   .mil-out-frame.mil-out-image-fix {
     padding-bottom: 80px;
     margin-bottom: 80px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .mil-out-frame {
+    border-radius: 0;
+    transform: translateX(-20px);
+  }
+  .mil-out-frame.mil-out-image-fix {
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mil-out-frame {
+    border-radius: 0;
+    transform: translateX(-65px);
+  }
+  .mil-out-frame.mil-out-image-fix {
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+  }
+}
+
 .mil-out-frame.mil-out-top {
   background-color: rgb(39, 38, 38);
   position: relative;
@@ -1819,6 +1845,14 @@ illustrations
     position: static;
   }
 }
+
+@media (max-width: 768px) {
+  .mil-illustration-absolute img {
+    height: 160%; /* You can adjust this value to make it bigger */
+    max-width: 100%;
+    margin-top: 50px;
+  }
+}
 .mil-illustration-absolute.mil-type-2 {
   height: 250px;
 }
@@ -2728,6 +2762,32 @@ footer.mil-footer-dark-2 .mil-footer-bottom {
 .mil-subscripe-form-footer button i.mil-dark {
   color: rgb(0, 0, 0);
 }/*# sourceMappingURL=style.css.map */
+
+@media (max-width: 768px) {
+  footer .mil-footer-logo {
+    margin-bottom: 20px;
+    margin-inline-end: 20px;
+  }
+
+  footer h6.mil-mb-60 {
+    margin-bottom: 20px !important;
+  }
+
+  .mil-mb-60,
+  .mil-mb-80 {
+    margin-bottom: 30px !important;
+  }
+
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
 
 
 /* Enhanced hover effects for mil-icon-box */

@@ -58,11 +58,9 @@ const UnwaveringQualityPage = () => {
               <div className="col-xl-5 mil-mb-80">
                 <div className="mil-image-frame mil-up">
                   <div className="feature-image-placeholder">
-                    <Image
-                      src="/img/inner-pages/6.png"
+                    <img
+                      src="/img/home-6/3.png"
                       alt="service image"
-                      width="500"
-                      height="500"
                     />
                   </div>
                 </div>

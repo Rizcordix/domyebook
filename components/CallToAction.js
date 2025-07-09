@@ -25,9 +25,7 @@ export const CallToAction1 = () => {
                 Buy with Confidence, Guaranteed <br />
                 Protection for your purchases
               </h2>
-              <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up">
-
-              </p>
+              <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up"></p>
               <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up" style={{ color: "#fff" }}>
                 Let&apos;s Make Sure Your Ebook Is Safe. <br />
                 Click below to get started, and we&apos;ll take care of the rest.
@@ -42,7 +40,17 @@ export const CallToAction1 = () => {
                 </Link>
               </div>
               <div className="mil-illustration-absolute mil-type-2 mil-up">
-                <img src="/img/home-2/call_to_action.png" alt="illustration" />
+                <Image 
+                  src="/img/home-2/Buy_with_Confidence,_Guaranteed.png" 
+                  alt="illustration" 
+                  layout="responsive"
+                  width={2000} 
+                  height={708}
+                  style={{ 
+                    maxWidth: "100%", 
+                    height: "auto" 
+                  }} // Ensures the image scales down on smaller screens
+                />
               </div>
             </div>
           </div>
@@ -51,6 +59,8 @@ export const CallToAction1 = () => {
     </div>
   );
 };
+
+
 
 export const CallToAction2 = () => {
   return (
