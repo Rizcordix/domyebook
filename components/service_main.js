@@ -1,8 +1,25 @@
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 import { PageBanner } from "@/components/Banner"; // Assuming PageBanner is in this path
 import PlaxLayout from "@/layouts/PlaxLayout"; // Assuming PlaxLayout is in this path
 
 const ServicesPage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideImages = [
+    'img/service/Transform-Your-Ideas-Into-Literary-Masterpieces1.png',
+    'img/service/Author-support1.png',
+    'img/service/visual1.png',
+    'img/service/Marketing _Business2.png'
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideImages.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [slideImages.length]);
+
   return (
     <>
       {/* Page Banner */}
@@ -55,14 +72,27 @@ const ServicesPage = () => {
               </div>
             </div>
             <div className="col-xl-6 mil-mb-80">
-              <div className="mil-image-frame mil-up">
-                <img
-                  src="img/service/Transform-Your-Ideas-Into-Literary-Masterpieces.png"
-                  alt="Writing Services"
-                  className="mil-scale-img"
-                  data-value-1={1}
-                  data-value-2="1.2"
-                />
+              <div className="mil-image-frame mil-up" style={{ position: 'relative', overflow: 'hidden' }}>
+                {slideImages.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`Writing Services ${index + 1}`}
+                    className="mil-scale-img"
+                    data-value-1={1}
+                    data-value-2="1.2"
+                    style={{
+                      position: index === 0 ? 'relative' : 'absolute',
+                      top: index === 0 ? 'auto' : '0',
+                      left: index === 0 ? 'auto' : '0',
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      opacity: currentSlide === index ? 1 : 0,
+                      transition: 'opacity 0.8s ease-in-out'
+                    }}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -107,7 +137,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/service/Perfecting-Every-Word,-Sentence,-and-Story.png"
+                  src="img/service/Perfecting-Every-Word,-Sentence,-and-Story1.png"
                   alt="Editorial Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -161,7 +191,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/service/Visual.png"
+                  src="img/service/Visual1.png"
                   alt="Design Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -219,7 +249,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/service/Marketing_Business.png"
+                  src="img/service/Marketing _Business2.png"
                   alt="Publishing Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -277,7 +307,7 @@ const ServicesPage = () => {
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
                 <img
-                  src="img/service/Author-support.png"
+                  src="img/service/Author-support1.png"
                   alt="Author Support Services"
                   className="mil-scale-img"
                   data-value-1={1}
@@ -382,24 +412,43 @@ const ServicesPage = () => {
               </div>
             </div>
             <div className="row justify-content-center mil-text-center">
-              <div className="col-xl-6 mil-mb-30">
-                <div className="mil-up">
-                  <a href="/calendly" className="mil-btn mil-m mil-add-arrow mil-mr-15" style={{
-                    backgroundColor: '#7eb947',
-                    borderColor: '#7eb947',
-                    marginRight: '15px'
-                  }}>
-                    Book a Free Consultation
-                  </a>
-                  <a href="/how-it-works" className="mil-btn mil-m mil-add-arrow mil-border" style={{
-                    borderColor: '#7eb947',
-                    color: '#7eb947'
-                  }}>
-                    How It Works
-                  </a>
-                </div>
-              </div>
-            </div>
+  <div className="col-xl-6 mil-mb-30">
+    <div className="mil-up">
+      <a
+        href="/calendly"
+        className="mil-btn mil-m mil-add-arrow mil-mr-15"
+        style={{
+          backgroundColor: '#7eb947',
+          borderColor: '#7eb947',
+          marginRight: '15px',
+          display: 'inline-block',
+          marginBottom: window.innerWidth <= 768 ? '10px' : '0px',
+          justifyContent: 'center',
+          alignContent: 'center',
+          textAlign: 'center',
+          
+        }}
+      >
+        Book a Free Consultation
+      </a>
+      <a
+        href="/how-it-works"
+        className="mil-btn mil-m mil-add-arrow mil-border"
+        style={{
+          borderColor: '#7eb947',
+          color: '#7eb947',
+          display: 'inline-block',
+          justifyContent: 'center',
+          alignContent: 'center',
+          textAlign: 'center',
+        }}
+      >
+        How It Works
+      </a>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </div>

@@ -48,13 +48,13 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="mil-features mil-p-80-80" style={{ backgroundColor: '#f2fafa' }}>
+        <div className="mil-features mil-p-60-0" style={{ backgroundColor: '#f2fafa' }}>
                     <div className="container">
                       <div className="row justify-content-between align-items-center">
                         <div className="col-xl-6 mil-mb-80">
                           <div className="feature-content">
                             <h2 className="mil-mb-30 mil-up">
-                                Strategic Plot and Outline Development
+                                AI-Enhanced Human Writing
                             </h2>
                             <p className="mil-text-m mil-soft mil-up" style={{ color: '#666' }}>
                              For those utilizing AI in their writing process, our specialized editors humanize and polish your AI-generated content, ensuring it reads authentically and meets professional publishing standards
@@ -65,7 +65,7 @@ const Page = () => {
                           <div className="mil-image-frame mil-up">
                             <div className="feature-image-placeholder">
                               <img
-                      src="/img/home-6/3.png"
+                      src="/img/services/AI-Enhanced.png"
                       alt="service image"
                     />
                             </div>
