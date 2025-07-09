@@ -702,7 +702,7 @@ const EbookServicesComponent = () => {
             alt="Satisfied Authors Icon"
               />
               </div>
-              <span className="stat-number">Over 20,000</span>
+              <span className="stat-number">Over 120</span>
               <div className="stat-label">Satisfied Customers</div>
               <div className="stat-description">
                 Trusting us with their projects, satisfied with our quality and dedication.
@@ -712,7 +712,7 @@ const EbookServicesComponent = () => {
               <div className="stat-icon">
                 <img src="/img/icons/editor-11.png" alt="Words Written Icon" /> {/* Placeholder icon */}
               </div>
-              <span className="stat-number">Over 1 Billion</span>
+              <span className="stat-number">Over 1 Million</span>
               <div className="stat-label">Words Written and Edited</div>
               <div className="stat-description">
                 Professional content created and refined by our amazing freelancers.
@@ -722,7 +722,7 @@ const EbookServicesComponent = () => {
               <div className="stat-icon">
                 <img src="/img/icons/content-11.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
               </div>
-              <span className="stat-number">Over 5000+</span>
+              <span className="stat-number">Over 50+</span>
               <div className="stat-label">Exceptional Content Creators</div>
               <div className="stat-description">
                 Writers, Editors, Designers, Illustrators, Formatters, Narrators.
