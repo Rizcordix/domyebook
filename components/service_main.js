@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { PageBanner } from "@/components/Banner"; // Assuming PageBanner is in this path
-import PlaxLayout from "@/layouts/PlaxLayout"; // Assuming PlaxLayout is in this path
+import { PageBanner } from "@/components/Banner";
+import PlaxLayout from "@/layouts/PlaxLayout";
 
 const ServicesPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
   const slideImages = [
     'img/service/Transform-Your-Ideas-Into-Literary-Masterpieces1.png',
     'img/service/Author-support1.png',
@@ -13,62 +15,48 @@ const ServicesPage = () => {
   ];
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideImages.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [slideImages.length]);
 
   return (
     <>
-      {/* Page Banner */}
-      <PageBanner
-        pageName="Our Services"
-        title="Extensive eBook Solutions"
-      />
+      <PageBanner pageName="Our Services" title="Extensive eBook Solutions" />
 
       {/* Writing Services */}
-      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}
+      <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}>
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-xl-5 mil-mb-80">
-              <span className="mil-suptitle mil-upper mil-mb-30" style={{ color: '#7eb947', fontSize: '1.5em' }}> {/* Adjusted font size */}
-                Writing
-              </span>
+              <span className="mil-suptitle mil-upper mil-mb-30" style={{ color: '#7eb947', fontSize: '1.5em' }}>Writing</span>
               <h2 className="mil-mb-30 mil-up" style={{ color: '#000' }}>
                 Transform Your Ideas Into Literary Masterpieces
               </h2>
               <p className="mil-text-m mil-soft mil-mb-30 mil-up" style={{ color: '#666' }}>
                 Our expert team of professional writers brings your vision to life with
-                compelling narratives, engaging plots, and authentic voices. From concept
-                to completion, we deliver exceptional writing that captivates readers.
+                compelling narratives, engaging plots, and authentic voices...
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
-                <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
-                  Ghostwriting Excellence
-                </li>
-                <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
-                  Strategic Plot & Outline Development
-                </li>
-                <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
-                  Children&apos;s Book Magic
-                </li>
-                <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
-                  AI-Enhanced Human Editing
-                </li>
+                <li className="mil-up" style={{ color: '#000' }}><span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span> Ghostwriting Excellence</li>
+                <li className="mil-up" style={{ color: '#000' }}><span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span> Strategic Plot & Outline Development</li>
+                <li className="mil-up" style={{ color: '#000' }}><span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span> Children&apos;s Book Magic</li>
+                <li className="mil-up" style={{ color: '#000' }}><span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span> AI-Enhanced Human Editing</li>
               </ul>
               <div className="mil-up">
-                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{
-                  backgroundColor: '#7eb947',
-                  borderColor: '#7eb947'
-                }}>
-                  Get Quote
-                </a>
+                <a href="/getquote" className="mil-btn mil-m mil-add-arrow" style={{ backgroundColor: '#7eb947', borderColor: '#7eb947' }}>Get Quote</a>
               </div>
             </div>
             <div className="col-xl-6 mil-mb-80">
@@ -77,19 +65,17 @@ const ServicesPage = () => {
                   <img
                     key={index}
                     src={image}
-                    alt={`Writing Services ${index + 1}`}
+                    alt={`Slide ${index + 1}`}
                     className="mil-scale-img"
-                    data-value-1={1}
-                    data-value-2="1.2"
                     style={{
                       position: index === 0 ? 'relative' : 'absolute',
-                      top: index === 0 ? 'auto' : '0',
-                      left: index === 0 ? 'auto' : '0',
+                      top: 0,
+                      left: 0,
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
                       opacity: currentSlide === index ? 1 : 0,
-                      transition: 'opacity 0.8s ease-in-out'
+                      transition: 'opacity 0.8s ease-in-out',
                     }}
                   />
                 ))}
@@ -319,8 +305,8 @@ const ServicesPage = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="mil-cta mil-up" style={{ backgroundColor: 'white', padding: '120px 0' }}> {/* Increased padding */}
+      {/* CTA */}
+      <div className="mil-cta mil-up" style={{ backgroundColor: 'white', padding: '120px 0' }}>
         <div className="container">
           <div className="mil-out-frame mil-p-160-100">
             <div className="row justify-content-center mil-text-center">
@@ -329,126 +315,46 @@ const ServicesPage = () => {
                   Ready to Transform Your Ideas Into Bestsellers?
                 </h2>
                 <p className="mil-text-m mil-soft mil-mb-30 mil-up" style={{ color: '#666' }}>
-                  Join thousands of successful authors who&apos;ve trusted DoMyEbook with their
-                  publishing journey. Let&apos;s turn your manuscript into a marketplace success story.
+                  Join thousands of successful authors who’ve trusted DoMyEbook...
                 </p>
               </div>
             </div>
-            <div className="row">
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <div className="mil-mb-30 mil-up" style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: '#7eb947',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '24px',
-                    fontWeight: 'bold'
-                  }}>
-                    <img src="/img/service/Services_2,500+_Books_Published.png" alt="icon" style={{ width: '40px', height: '40px' }} />
-                  </div>
-                  <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
-                    2,500+ Books Published
-                  </h5>
-                  <p className="mil-text-m mil-soft mil-up" style={{ color: '#666' }}>
-                    Successfully published thousands of books across all genres with
-                    professional quality and market-ready presentation.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <div className="mil-mb-30 mil-up" style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: '#7eb947',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '24px',
-                    fontWeight: 'bold'
-                  }}>
-                    <img src="/img/service/Services_Client_Satisfaction.png" alt="icon" style={{ width: '40px', height: '40px' }} />
-                  </div>
-                  <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
-                    98% Client Satisfaction
-                  </h5>
-                  <p className="mil-text-m mil-soft mil-up" style={{ color: '#666' }}>
-                    Our commitment to excellence ensures nearly perfect client satisfaction
-                    with every project we complete.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 mil-mb-60">
-                <div className="mil-icon-box">
-                  <div className="mil-mb-30 mil-up" style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: '#7eb947',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '24px',
-                    fontWeight: 'bold'
-                  }}>
-                    <img src="/img/service/Services_Global_Reach.png" alt="icon" style={{ width: '40px', height: '40px' }} />
-                  </div>
-                  <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
-                    Global Reach
-                  </h5>
-                  <p className="mil-text-m mil-soft mil-up" style={{ color: '#666' }}>
-                    Serving authors worldwide with 24/7 support and expertise in
-                    multiple languages and markets.
-                  </p>
+            <div className="row justify-content-center mil-text-center">
+              <div className="col-xl-6 mil-mb-30">
+                <div className="mil-up">
+                  <a
+                    href="/calendly"
+                    className="mil-btn mil-m mil-add-arrow mil-mr-15"
+                    style={{
+                      backgroundColor: '#7eb947',
+                      borderColor: '#7eb947',
+                      marginRight: '15px',
+                      display: 'inline-block',
+                      marginBottom: isMobile ? '10px' : '0px',
+                      justifyContent: 'center',
+                      alignContent: 'center',
+                      textAlign: 'center',
+                    }}
+                  >
+                    Book a Free Consultation
+                  </a>
+                  <a
+                    href="/how-it-works"
+                    className="mil-btn mil-m mil-add-arrow mil-border"
+                    style={{
+                      borderColor: '#7eb947',
+                      color: '#7eb947',
+                      display: 'inline-block',
+                      justifyContent: 'center',
+                      alignContent: 'center',
+                      textAlign: 'center',
+                    }}
+                  >
+                    How It Works
+                  </a>
                 </div>
               </div>
             </div>
-            <div className="row justify-content-center mil-text-center">
-  <div className="col-xl-6 mil-mb-30">
-    <div className="mil-up">
-      <a
-        href="/calendly"
-        className="mil-btn mil-m mil-add-arrow mil-mr-15"
-        style={{
-          backgroundColor: '#7eb947',
-          borderColor: '#7eb947',
-          marginRight: '15px',
-          display: 'inline-block',
-          marginBottom: window.innerWidth <= 768 ? '10px' : '0px',
-          justifyContent: 'center',
-          alignContent: 'center',
-          textAlign: 'center',
-          
-        }}
-      >
-        Book a Free Consultation
-      </a>
-      <a
-        href="/how-it-works"
-        className="mil-btn mil-m mil-add-arrow mil-border"
-        style={{
-          borderColor: '#7eb947',
-          color: '#7eb947',
-          display: 'inline-block',
-          justifyContent: 'center',
-          alignContent: 'center',
-          textAlign: 'center',
-        }}
-      >
-        How It Works
-      </a>
-    </div>
-  </div>
-</div>
-
           </div>
         </div>
       </div>
