@@ -59,7 +59,7 @@ const CustomIllustrationsPage = () => {
                 <div className="mil-image-frame mil-up">
                   <div className="feature-image-placeholder">
                     <img
-                      src="/img/services/custom_illustration.png"
+                      src="/img/services/custom.png"
                       alt="service image"
                     />
                   </div>
