@@ -11,7 +11,7 @@ export const metadata = {
     description: "Review the full Refund and Revision Policy for using DoMyEbook's ebook writing, editing, publishing, and marketing services.",
     type: "website",
     url: "https://domyebook.com/refund-and-revision",
-    images: ["https://domyebook.com/images/legal/terms-banner.png"], // Replace with the actual image path
+    images: ["https://domyebook.com/img/legal/terms-banner.png"], // Replace with the actual image path
   },
 };
 

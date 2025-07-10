@@ -11,7 +11,7 @@ export const metadata = {
     description: "Review the full Terms and Conditions for using DoMyEbook's ebook writing, editing, publishing, and marketing services.",
     type: "website",
     url: "https://domyebook.com/terms",
-    images: ["https://domyebook.com/images/legal/terms-banner.png"], // Replace with the actual image path
+    images: ["https://domyebook.com/img/legal/terms-banner.png"], // Replace with the actual image path
   },
 };
 

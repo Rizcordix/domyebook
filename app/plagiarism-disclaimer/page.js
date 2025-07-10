@@ -11,7 +11,7 @@ export const metadata = {
     description: "Review the full Plagiarism Disclaimer for using DoMyEbook's ebook writing, editing, publishing, and marketing services.",
     type: "website",
     url: "https://domyebook.com/plagiarism-disclaimer",
-    images: ["https://domyebook.com/images/legal/plagiarism-disclaimer-banner.png"], // Replace with the actual image path
+    images: ["https://domyebook.com/img/legal/plagiarism-disclaimer-banner.png"], // Replace with the actual image path
   },
 };
 
