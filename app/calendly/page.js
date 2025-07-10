@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Link from "next/link";
@@ -30,7 +29,7 @@ const Page = () => {
                             </h1>
                             <ul className="mil-breadcrumbs mil-center">
                                 <li>
-                                    <Link href="/">Home</Link>
+                                    <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
                                 </li>
                                 <li>
                                     <Link href="/calendly">BookDemo</Link>

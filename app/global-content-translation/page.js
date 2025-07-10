@@ -32,7 +32,7 @@ const GlobalContentTranslationPage = () => {
                   </p>
                   <ul className="mil-breadcrumbs mil-center">
                     <li>
-                      <Link href="/">Home</Link>
+                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
                     </li>
                     <li>
                       <Link href="/global-content-translation">Translation</Link>
