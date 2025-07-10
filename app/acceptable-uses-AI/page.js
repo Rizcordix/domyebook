@@ -11,7 +11,7 @@ export const metadata = {
     description: "Review the full Acceptable Uses of AI policy for using DoMyEbook's ebook writing, editing, publishing, and marketing services.",
     type: "website",
     url: "https://domyebook.com/acceptable-uses-ai",
-    images: ["https://domyebook.com/images/legal/terms-banner.png"], // Replace with the actual image path
+    images: ["https://domyebook.com/img/legal/terms-banner.png"], // Replace with the actual image path
   },
 };
 

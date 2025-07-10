@@ -13,7 +13,7 @@ export const metadata = {
     description: "Discover premium ebook services from DoMyEbook — including writing, editing, publishing, design, and marketing solutions.",
     type: "website",
     url: "https://domyebook.com/services",
-    images: ["https://domyebook.com/images/services/ebook-services-banner.png"], // Replace if you have a better banner
+    images: ["https://domyebook.com/img/services/ebook-services-banner.png"], // Replace if you have a better banner
   },
 };
 

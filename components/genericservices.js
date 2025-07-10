@@ -9,7 +9,7 @@ const EbookServicesComponent = () => {
   const services = [
     {
       title: "Ghostwriting",
-      icon: "/img/icons/ghostwriting.png", // Example icon path
+      icon: "/img/icons/Ghostwriting-icon.png", // Example icon path
       description: "Transform your ideas into compelling narratives with our professional ghostwriting services. Our experienced writers craft engaging content that captures your unique voice and vision, ensuring your story resonates with readers while maintaining complete confidentiality."
     },
     {

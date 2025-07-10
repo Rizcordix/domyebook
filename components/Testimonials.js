@@ -18,7 +18,7 @@ const Testimonials = () => {
     {
       text: "The team at Do My Ebook truly goes above and beyond. They've helped me transform my manuscript into a professional, polished ebook. Their personalized service and attention to detail are unmatched.",
       name: "Branka Berg",
-      image: "img/avatar1.webp",
+      image: "img/girl1.jpg",
       flag: "img/flags/us.svg",
       rating: 5,
     },
