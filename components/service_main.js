@@ -8,10 +8,10 @@ const ServicesPage = () => {
   const [isMobile, setIsMobile] = useState(undefined); // Initialize to undefined
 
   const slideImages = [
+    'img/services/ghostwriting.png',
+    'img/services/Strategic.png',
     'img/service/Transform-Your-Ideas-Into-Literary-Masterpieces1.png',
-    'img/service/Author-support1.png',
-    'img/service/Visual12.png',
-    'img/service/Marketing _Business2.png'
+    'img/services/AI-Enhanced.png'
   ];
 
   useEffect(() => {
