@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 const EbookServicesComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const sliderRef = useRef(null); // Ref for the slider wrapper to control scroll position
 
   const services = [
@@ -39,13 +40,26 @@ const EbookServicesComponent = () => {
     }
   ];
 
-  // Logic for automatic slide change and controlling visible slides
+  // // Logic for automatic slide change and controlling visible slides
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % services.length);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, [services.length]);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % services.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [services.length]);
+    setMounted(true); // Set mounted to true after the component is mounted
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % services.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [services.length, mounted]);
 
   // Adjust scroll position when currentSlide changes
   useEffect(() => {
@@ -87,6 +101,8 @@ const EbookServicesComponent = () => {
 
   const totalPages = Math.ceil(services.length / getVisibleSlidesCount());
   const currentPage = Math.floor(currentSlide / getVisibleSlidesCount());
+
+  
 
 
   return (
