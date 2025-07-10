@@ -18,7 +18,7 @@ const HowItWorksPage = () => {
       number: "2", 
       title: "Get a Free Quote",
       description: "Ready to turn your ebook idea into a stunning reality? Just tell us a little about your project using the form below. Once we hear from you, a friendly expert from Do My Ebook will personally get in touch to chat about pricing and all the exciting next steps.",
-      icon: "/img/how_it_works/How_It_Work_Get_A_Free_Quote_Icon.png",
+      icon: "/img/how_it_works/Get-a-Free-Quote-icon.png",
       image: "/img/how_it_works/Get-a-Free-Quote-image.png"
     },
     {

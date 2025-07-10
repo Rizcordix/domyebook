@@ -10,7 +10,7 @@ export const metadata = {
     description: "Have questions about ebook writing or publishing? Contact the DoMyEbook team for expert support and guidance.",
     type: "website",
     url: "https://domyebook.com/contact",
-    images: ["https://domyebook.com/images/contact/contact-banner.png"],
+    images: ["https://domyebook.com/img/contact/contact-banner.png"],
   },
 };
 

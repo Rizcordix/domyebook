@@ -11,7 +11,7 @@ export const metadata = {
     description: "Review the full Privacy Policy for using DoMyEbook's ebook writing, editing, publishing, and marketing services.",
     type: "website",
     url: "https://domyebook.com/privacy-policy",
-    images: ["https://domyebook.com/images/legal/privacy-policy-banner.png"], // Replace with the actual image path
+    images: ["https://domyebook.com/img/legal/privacy-policy-banner.png"], // Replace with the actual image path
   },
 };
 
