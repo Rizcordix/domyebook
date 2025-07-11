@@ -106,7 +106,7 @@ const page = () => {
                       {/* Client Avatars */}
                       <div style={{ display: 'flex', marginLeft: '10px' }}>
                         <img
-                          src="img/avatar.webp"
+                          src="img/girl1.jpg"
                           alt="Client 1"
                           style={{
                             width: '40px',
@@ -120,7 +120,7 @@ const page = () => {
                           className="mil-up"
                         />
                         <img
-                          src="img/avatar1.webp"
+                          src="img/girl2.jpg"
                           alt="Client 2"
                           style={{
                             width: '40px',
@@ -134,7 +134,7 @@ const page = () => {
                           className="mil-up"
                         />
                         <img
-                          src="img/avatar2.webp"
+                          src="img/girl3.jpg"
                           alt="Client 3"
                           style={{
                             width: '40px',
@@ -292,7 +292,7 @@ const page = () => {
                     {/* Client Avatars */}
                     <div style={{ display: 'flex', marginLeft: '-10px' }}>
                       <img
-                        src="img/avatar.webp"
+                        src="img/girl1.jpg"
                         alt="Client 1"
                         style={{
                           width: '50px',
@@ -308,7 +308,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/avatar1.webp"
+                        src="img/girl2.jpg"
                         alt="Client 2"
                         style={{
                           width: '50px',
@@ -324,7 +324,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/avatar2.webp"
+                        src="img/girl3.jpg"
                         alt="Client 3"
                         style={{
                           width: '50px',
@@ -340,7 +340,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/avatar3.webp"
+                        src="img/boy1.jpg"
                         alt="Client 4"
                         style={{
                           width: '50px',
@@ -356,7 +356,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/avatar4.webp"
+                        src="img/boy2.jpg"
                         alt="Client 5"
                         style={{
                           width: '50px',
