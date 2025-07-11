@@ -9,6 +9,7 @@ export async function GET() {
              SubHeading1, Paragraph1, Paragraph2, Quote, Author,
              Image1
       FROM Blog3
+      ORDER BY BlogID DESC  -- ✅ Sort blogs by ID in descending order
     `);
 
     const blogs = stmt.all();
@@ -17,10 +18,8 @@ export async function GET() {
       blogs.map(async (blog) => {
         if (blog.Image1) {
           const buffer = Buffer.from(blog.Image1);
-
           const type = await fileTypeFromBuffer(buffer);
-
-          const mime = type?.mime || 'image/jpeg'; // fallback
+          const mime = type?.mime || 'image/jpeg';
           blog.Image1 = `data:${mime};base64,${buffer.toString('base64')}`;
         } else {
           blog.Image1 = null;
