@@ -41,8 +41,8 @@ const BlogPage = () => {
                   <div className="mil-card-cover">
                     {blog.Image1 ? (
                       <Image
-                        width={600}
-                        height={600} // Square image
+                        width={400}
+                        height={400} // Square image
                         src={blog.Image1}
                         alt="cover"
                         className="mil-scale-img"
@@ -75,7 +75,7 @@ const BlogPage = () => {
                     <p className="mil-text-xs mil-accent mil-mb-15">
                       {blog.SubHeading1 || 'No Subheading'}
                     </p>
-                    <h4>{blog.MainTitle}</h4>
+                    <h5>{blog.MainTitle}</h5>
                   </div>
                 </Link>
               </div>
