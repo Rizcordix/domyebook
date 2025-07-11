@@ -36,7 +36,6 @@ const PublicationPage = () => {
           <div className="row justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <div className="mil-text-m mil-mb-20">Blog</div>
                 <h1 className="mil-mb-60">{blog.MainTitle}</h1>
                 <ul className="mil-breadcrumbs mil-pub-info mil-center">
                   <li>{blog.date}</li>
