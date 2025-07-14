@@ -60,19 +60,15 @@ const ServicesPage = () => {
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Ghostwriting Excellence
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Strategic Plot & Outline Development
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Children&apos;s Book Magic
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   AI-Enhanced Human Editing
                 </li>
               </ul>
@@ -131,11 +127,9 @@ const ServicesPage = () => {
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Precision Editing & Proofreading
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Unwavering Quality & Plagiarism Checks
                 </li>
               </ul>
@@ -181,15 +175,12 @@ const ServicesPage = () => {
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Signature eBook Design
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Impactful Cover Artistry
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Custom Illustrations
                 </li>
               </ul>
@@ -235,19 +226,15 @@ const ServicesPage = () => {
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Professional Book Formatting
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Compelling Book Descriptions
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Audio Ebook Production
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Dynamic Video Promos
                 </li>
               </ul>
@@ -293,19 +280,15 @@ const ServicesPage = () => {
               </p>
               <ul className="mil-list-2 mil-type-2 mil-mb-30">
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   End-to-End Project Management
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Global Content Translation
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Book Launch Bundle
                 </li>
                 <li className="mil-up" style={{ color: '#000' }}>
-                  <span style={{ color: '#7eb947', marginRight: '10px' }}>✓</span>
                   Bulk Order Solutions
                 </li>
               </ul>
@@ -413,7 +396,7 @@ const ServicesPage = () => {
                     fontSize: '24px',
                     fontWeight: 'bold'
                   }}>
-                    <img src="/img/service/Services_Global_Reach.png" alt="icon" style={{ width: '40px', height: '40px' }} />
+                    <img src="/img/service/Global-Icon.png" alt="icon" style={{ width: '40px', height: '40px' }} />
                   </div>
                   <h5 className="mil-mb-20 mil-up" style={{ color: '#000' }}>
                     Global Reach

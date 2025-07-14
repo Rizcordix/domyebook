@@ -235,33 +235,150 @@ const page = () => {
                 height: '100%',
                 zIndex: 1
               }}>
-                <span style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  opacity: 0.4,
-                  transform: 'scale(1.1)',
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  animation: 'btn-drop-13 2s ease-out infinite',
-                  pointerEvents: 'none'
-                }} />
-                <span style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  opacity: 0.2,
-                  transform: 'scale(1.1)',
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  animation: 'btn-drop-16 2.1s ease-out infinite',
-                  pointerEvents: 'none'
-                }} />
-              </span>
+
+                We believe your story deserves to be shared with the world. Let us help you turn your manuscript into a stunning ebook, whether it&apos;s formatting, design, or distribution, we&apos;ve got you covered every step of the way.
+              </p>
+              
+              {/* Mobile: Client Section + Play Button Combined */}
+              <div className="d-xl-none">
+                <div className="mil-up" style={{ animationDelay: '0.6s' }}>
+                  <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '20px'
+                  }}>
+                    {/* Client Section */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1', minWidth: '250px' }}>
+                      {/* Client Avatars */}
+                      <div style={{ display: 'flex', marginLeft: '10px' }}>
+                        <img
+                          src="img/girl1.jpg"
+                          alt="Client 1"
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            border: '2px solid white',
+                            objectFit: 'cover',
+                            marginLeft: '-8px',
+                            transition: 'transform 0.3s ease'
+                          }}
+                          className="mil-up"
+                        />
+                        <img
+                          src="img/girl2.jpg"
+                          alt="Client 2"
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            border: '2px solid white',
+                            objectFit: 'cover',
+                            marginLeft: '-8px',
+                            transition: 'transform 0.3s ease'
+                          }}
+                          className="mil-up"
+                        />
+                        <img
+                          src="img/girl3.jpg"
+                          alt="Client 3"
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            border: '2px solid white',
+                            objectFit: 'cover',
+                            marginLeft: '-8px',
+                            transition: 'transform 0.3s ease'
+                          }}
+                          className="mil-up"
+                        />
+                        <img
+                          src="img/avatar3.webp"
+                          alt="Client 4"
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            border: '2px solid white',
+                            objectFit: 'cover',
+                            marginLeft: '-8px',
+                            transition: 'transform 0.3s ease'
+                          }}
+                          className="mil-up"
+                        />
+                        <img
+                          src="img/avatar4.webp"
+                          alt="Client 5"
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            border: '2px solid white',
+                            objectFit: 'cover',
+                            marginLeft: '-8px',
+                            transition: 'transform 0.3s ease'
+                          }}
+                          className="mil-up"
+                        />
+                      </div>
+                      
+                     
+                    </div>
+                     
+                      <div style={{ color: 'white' }}>
+                        <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem', color: '#fff', }}>We have over 4,000 clients</p>
+                      </div>
+                    
+                    {/* Play Button - Mobile */}
+                    <div style={{ animationDelay: '0.8s' }}>
+                      <div 
+                        className="mobile-play-wrapper"
+                        style={{
+                          position: 'relative',
+                          display: 'inline-block',
+                          width: '70px',
+                          height: '70px',
+                        }}
+                      >
+                        {/* Animated rings */}
+                        <span style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          zIndex: 1
+                        }}>
+                          <span style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            opacity: 0.4,
+                            transform: 'scale(1.1)',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '50%',
+                            animation: 'btn-drop-13 2s ease-out infinite',
+                            pointerEvents: 'none'
+                          }} />
+                          <span style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            opacity: 0.2,
+                            transform: 'scale(1.1)',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '50%',
+                            animation: 'btn-drop-16 2.1s ease-out infinite',
+                            pointerEvents: 'none'
+                          }} />
+                        </span>
 
               <button 
                 className="mobile-play-button"
@@ -316,98 +433,101 @@ const page = () => {
               </div>
             </div>
 
-            {/* Desktop: Client Section Only */}
-            <div className="d-none d-xl-block">
-              <div className="mil-up" style={{ animationDelay: '0.6s' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-              {/* Client Avatars */}
-              <div style={{ display: 'flex', marginLeft: '-10px' }}>
-                <img
-              src="img/avatar.webp"
-              alt="Client 1"
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                border: '3px solid white',
-                objectFit: 'cover',
-                marginLeft: '-10px',
-                transition: 'transform 0.3s ease'
-              }}
-              className="mil-up"
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                />
-                <img
-              src="img/avatar1.webp"
-              alt="Client 2"
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                border: '3px solid white',
-                objectFit: 'cover',
-                marginLeft: '-10px',
-                transition: 'transform 0.3s ease'
-              }}
-              className="mil-up"
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                />
-                <img
-              src="img/avatar2.webp"
-              alt="Client 3"
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                border: '3px solid white',
-                objectFit: 'cover',
-                marginLeft: '-10px',
-                transition: 'transform 0.3s ease'
-              }}
-              className="mil-up"
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                />
-                <img
-              src="img/avatar3.webp"
-              alt="Client 4"
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                border: '3px solid white',
-                objectFit: 'cover',
-                marginLeft: '-10px',
-                transition: 'transform 0.3s ease'
-              }}
-              className="mil-up"
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                />
-                <img
-              src="img/avatar4.webp"
-              alt="Client 5"
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                border: '3px solid white',
-                objectFit: 'cover',
-                marginLeft: '-10px',
-                transition: 'transform 0.3s ease'
-              }}
-              className="mil-up"
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                />
-              </div>
-              
-              {/* Client Text */}
-              <div style={{ color: 'white' }}>
-                <p style={{ margin: '0', fontWeight: '600', fontSize: '1rem', color: '#fff', }}>We have over 4,000 clients</p>
-                <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>around the world</p>
+              {/* Desktop: Client Section Only */}
+              <div className="d-none d-xl-block">
+                <div className="mil-up" style={{ animationDelay: '0.6s' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    {/* Client Avatars */}
+                    <div style={{ display: 'flex', marginLeft: '-10px' }}>
+                      <img
+                        src="img/girl1.jpg"
+                        alt="Client 1"
+                        style={{
+                          width: '50px',
+                          height: '50px',
+                          borderRadius: '50%',
+                          border: '3px solid white',
+                          objectFit: 'cover',
+                          marginLeft: '-10px',
+                          transition: 'transform 0.3s ease'
+                        }}
+                        className="mil-up"
+                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                      />
+                      <img
+                        src="img/girl2.jpg"
+                        alt="Client 2"
+                        style={{
+                          width: '50px',
+                          height: '50px',
+                          borderRadius: '50%',
+                          border: '3px solid white',
+                          objectFit: 'cover',
+                          marginLeft: '-10px',
+                          transition: 'transform 0.3s ease'
+                        }}
+                        className="mil-up"
+                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                      />
+                      <img
+                        src="img/girl3.jpg"
+                        alt="Client 3"
+                        style={{
+                          width: '50px',
+                          height: '50px',
+                          borderRadius: '50%',
+                          border: '3px solid white',
+                          objectFit: 'cover',
+                          marginLeft: '-10px',
+                          transition: 'transform 0.3s ease'
+                        }}
+                        className="mil-up"
+                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                      />
+                      <img
+                        src="img/boy1.jpg"
+                        alt="Client 4"
+                        style={{
+                          width: '50px',
+                          height: '50px',
+                          borderRadius: '50%',
+                          border: '3px solid white',
+                          objectFit: 'cover',
+                          marginLeft: '-10px',
+                          transition: 'transform 0.3s ease'
+                        }}
+                        className="mil-up"
+                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                      />
+                      <img
+                        src="img/boy2.jpg"
+                        alt="Client 5"
+                        style={{
+                          width: '50px',
+                          height: '50px',
+                          borderRadius: '50%',
+                          border: '3px solid white',
+                          objectFit: 'cover',
+                          marginLeft: '-10px',
+                          transition: 'transform 0.3s ease'
+                        }}
+                        className="mil-up"
+                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                      />
+                    </div>
+                    
+                    {/* Client Text */}
+                    <div style={{ color: 'white' }}>
+                      <p style={{ margin: '0', fontWeight: '600', fontSize: '1rem', color: '#fff', }}>We have over 4,000 clients</p>
+                      <p style={{ margin: '0', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>around the world</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
               </div>

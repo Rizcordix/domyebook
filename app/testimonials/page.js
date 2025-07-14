@@ -7,29 +7,29 @@ import PlaxLayout from "@/layouts/PlaxLayout";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Rachel Johnson",
     role: "Marketing Director",
     company: "TechCorp Solutions",
     content: "This service exceeded all our expectations. The team was professional, responsive, and delivered outstanding results that helped grow our business significantly. Their attention to detail and commitment to excellence is truly remarkable.",
-    image: "/img/avatar.webp",
+    image: "/img/girl7.jpg",
     rating: 5
   },
   {
     id: 2,
-    name: "Michael Chen",
+    name: "Michael Simon",
     role: "CEO",
     company: "TechStart",
     content: "Working with this team was a game-changer for our company. Their expertise and dedication helped us achieve our goals faster than we thought possible. I highly recommend their services.",
-    image: "/img/avatar1.webp",
+    image: "/img/boy6.jpg",
     rating: 5
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: "Katherine Brandon",
     role: "Product Manager",
     company: "InnovateHub",
     content: "The quality of work and attention to detail is remarkable. They understood our vision perfectly and brought it to life better than we imagined. Outstanding collaboration throughout.",
-    image: "/img/avatar2.webp",
+    image: "/img/girl8.jpg",
     rating: 5
   },
   {
@@ -38,106 +38,106 @@ const testimonials = [
     role: "Founder",
     company: "InnovateCorp",
     content: "Exceptional service from start to finish. The team's professionalism and expertise made the entire process smooth and stress-free. Delivered beyond expectations. I would highly recommend it.",
-    image: "/img/avatar3.webp",
+    image: "/img/boy7.jpg",
     rating: 4
   },
   {
     id: 5,
-    name: "Lisa Wang",
+    name: "Grace Lawrence",
     role: "Operations Director",
     company: "GlobalTech",
     content: "Outstanding results and incredible support throughout the project. I would highly recommend their services to anyone looking for quality work and reliable partnership.",
-    image: "/img/avatar4.webp",
+    image: "/img/girl9.jpg",
     rating: 5
   },
   {
     id: 6,
-    name: "James Wilson",
+    name: "Samuel Raymond",
     role: "Creative Director",
     company: "DesignStudio",
     content: "The creativity and innovation they brought to our project was impressive. They delivered beyond our expectations and on time. Truly professional and expert team.",
-    image: "/img/avatar.webp",
+    image: "/img/boy8.jpg",
     rating: 5
   },
   {
     id: 7,
-    name: "Amanda Foster",
+    name: "Amanda Smith",
     role: "Marketing Manager",
     company: "BrandMax",
     content: "Their strategic approach and creative solutions helped us achieve remarkable growth. The team is incredibly talented and dedicated to client success.",
-    image: "/img/avatar1.webp",
+    image: "/img/girl10.jpg",
     rating: 4
   },
   {
     id: 8,
-    name: "Robert Kim",
+    name: "Henry Bryan",
     role: "CTO",
     company: "DataFlow",
     content: "Technical expertise combined with excellent communication. They solved complex challenges with elegant solutions and maintained high quality throughout the project.",
-    image: "/img/avatar2.webp",
+    image: "/img/boy9.jpg",
     rating: 5
   },
   {
     id: 9,
-    name: "Jennifer Adams",
+    name: "Sophia Carter",
     role: "VP of Sales",
     company: "SalesForce Pro",
     content: "Impressive results that directly impacted our bottom line. Their data-driven approach and strategic insights were exactly what we needed to scale our operations.",
-    image: "/img/avatar3.webp",
+    image: "/img/girl11.jpg",
     rating: 5
   },
   {
     id: 10,
-    name: "Alex Martinez",
+    name: "Justin Gary",
     role: "Project Manager",
     company: "BuildRight",
     content: "Seamless project execution with clear communication at every step. They transformed our ideas into reality with precision, expertise, and creativity.",
-    image: "/img/avatar4.webp",
+    image: "/img/boy10.jpg",
     rating: 4
   },
   {
     id: 11,
-    name: "Rachel Green",
+    name: "Melissa Jason",
     role: "Brand Manager",
     company: "StyleHub",
     content: "Their creative vision and attention to brand consistency was exceptional. They helped us establish a strong market presence with innovative solutions.",
-    image: "/img/avatar.webp",
+    image: "/img/girl12.jpg",
     rating: 5
   },
   {
     id: 12,
-    name: "Kevin Brown",
+    name: "Jonathan Nicholas",
     role: "Operations Manager",
     company: "LogiFlow",
     content: "Streamlined our processes and improved efficiency dramatically. Their systematic approach, precision, and problem-solving skills are top-notch.",
-    image: "/img/avatar1.webp",
+    image: "/img/boy11.jpg",
     rating: 5
   },
   {
     id: 13,
-    name: "Sophie Turner",
+    name: "Shirley Franklin",
     role: "Digital Director",
     company: "MediaWorks",
     content: "Revolutionary approach to digital transformation. They modernized our systems while ensuring zero downtime. Exceptional technical skills.",
-    image: "/img/avatar2.webp",
+    image: "/img/girl13.jpg",
     rating: 4
   },
   {
     id: 14,
-    name: "Daniel Lee",
+    name: "Christian Austin",
     role: "Strategy Consultant",
     company: "GrowthLab",
     content: "Strategic insights that drove measurable results. Their analytical approach and market understanding helped us identify new opportunities.",
-    image: "/img/avatar3.webp",
+    image: "/img/boy12.jpg",
     rating: 5
   },
   {
     id: 15,
-    name: "Maria Gonzalez",
+    name: "Charlotte Dylan",
     role: "Content Manager",
     company: "ContentPro",
     content: "Content strategy that resonated with our audience perfectly. Their understanding of market trends and consumer behavior is outstanding.",
-    image: "/img/avatar4.webp",
+    image: "/img/girl14.jpg",
     rating: 5
   }
 ];
