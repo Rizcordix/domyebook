@@ -155,7 +155,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                 maxWidth: '600px',
                 animationDelay: '0.4s'
               }}>
-                We believe your story deserves to be shared with the world. Let us help you turn your manuscript into a stunning ebook, whether it's formatting, design, or distribution, we’ve got you covered every step of the way.
+                We believe your story deserves to be shared with the world. Let us help you turn your manuscript into a stunning ebook, whether it&apos;s formatting, design, or distribution, we&apos;ve got you covered every step of the way.
               </p>
               
               {/* Mobile: Client Section + Play Button Combined */}
