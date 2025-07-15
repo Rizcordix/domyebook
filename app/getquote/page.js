@@ -55,7 +55,7 @@ const page = () => {
         >
           {/* Banner Image */}
           <img
-            src="/img/banner.jpg"
+            src="/img/banner.webp"
             alt="Form Banner"
             style={{
               width: "100%",

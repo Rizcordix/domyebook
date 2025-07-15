@@ -11,7 +11,7 @@ const testimonials = [
     role: "Marketing Director",
     company: "TechCorp Solutions",
     content: "This service exceeded all our expectations. The team was professional, responsive, and delivered outstanding results that helped grow our business significantly. Their attention to detail and commitment to excellence is truly remarkable.",
-    image: "/img/girl7.jpg",
+    image: "/img/girl7.webp",
     rating: 5
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     role: "CEO",
     company: "TechStart",
     content: "Working with this team was a game-changer for our company. Their expertise and dedication helped us achieve our goals faster than we thought possible. I highly recommend their services.",
-    image: "/img/boy6.jpg",
+    image: "/img/boy6.webp",
     rating: 5
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
     role: "Product Manager",
     company: "InnovateHub",
     content: "The quality of work and attention to detail is remarkable. They understood our vision perfectly and brought it to life better than we imagined. Outstanding collaboration throughout.",
-    image: "/img/girl8.jpg",
+    image: "/img/girl8.webp",
     rating: 5
   },
   {
@@ -38,7 +38,7 @@ const testimonials = [
     role: "Founder",
     company: "InnovateCorp",
     content: "Exceptional service from start to finish. The team's professionalism and expertise made the entire process smooth and stress-free. Delivered beyond expectations. I would highly recommend it.",
-    image: "/img/boy7.jpg",
+    image: "/img/boy7.webp",
     rating: 4
   },
   {
@@ -47,7 +47,7 @@ const testimonials = [
     role: "Operations Director",
     company: "GlobalTech",
     content: "Outstanding results and incredible support throughout the project. I would highly recommend their services to anyone looking for quality work and reliable partnership.",
-    image: "/img/girl9.jpg",
+    image: "/img/girl9.webp",
     rating: 5
   },
   {
@@ -56,7 +56,7 @@ const testimonials = [
     role: "Creative Director",
     company: "DesignStudio",
     content: "The creativity and innovation they brought to our project was impressive. They delivered beyond our expectations and on time. Truly professional and expert team.",
-    image: "/img/boy8.jpg",
+    image: "/img/boy8.webp",
     rating: 5
   },
   {
@@ -65,7 +65,7 @@ const testimonials = [
     role: "Marketing Manager",
     company: "BrandMax",
     content: "Their strategic approach and creative solutions helped us achieve remarkable growth. The team is incredibly talented and dedicated to client success.",
-    image: "/img/girl10.jpg",
+    image: "/img/girl10.webp",
     rating: 4
   },
   {
@@ -74,7 +74,7 @@ const testimonials = [
     role: "CTO",
     company: "DataFlow",
     content: "Technical expertise combined with excellent communication. They solved complex challenges with elegant solutions and maintained high quality throughout the project.",
-    image: "/img/boy9.jpg",
+    image: "/img/boy9.webp",
     rating: 5
   },
   {
@@ -83,7 +83,7 @@ const testimonials = [
     role: "VP of Sales",
     company: "SalesForce Pro",
     content: "Impressive results that directly impacted our bottom line. Their data-driven approach and strategic insights were exactly what we needed to scale our operations.",
-    image: "/img/girl11.jpg",
+    image: "/img/girl11.webp",
     rating: 5
   },
   {
@@ -92,7 +92,7 @@ const testimonials = [
     role: "Project Manager",
     company: "BuildRight",
     content: "Seamless project execution with clear communication at every step. They transformed our ideas into reality with precision, expertise, and creativity.",
-    image: "/img/boy10.jpg",
+    image: "/img/boy10.webp",
     rating: 4
   },
   {
@@ -101,7 +101,7 @@ const testimonials = [
     role: "Brand Manager",
     company: "StyleHub",
     content: "Their creative vision and attention to brand consistency was exceptional. They helped us establish a strong market presence with innovative solutions.",
-    image: "/img/girl12.jpg",
+    image: "/img/girl12.webp",
     rating: 5
   },
   {
@@ -110,7 +110,7 @@ const testimonials = [
     role: "Operations Manager",
     company: "LogiFlow",
     content: "Streamlined our processes and improved efficiency dramatically. Their systematic approach, precision, and problem-solving skills are top-notch.",
-    image: "/img/boy11.jpg",
+    image: "/img/boy11.webp",
     rating: 5
   },
   {
@@ -119,7 +119,7 @@ const testimonials = [
     role: "Digital Director",
     company: "MediaWorks",
     content: "Revolutionary approach to digital transformation. They modernized our systems while ensuring zero downtime. Exceptional technical skills.",
-    image: "/img/girl13.jpg",
+    image: "/img/girl13.webp",
     rating: 4
   },
   {
@@ -128,7 +128,7 @@ const testimonials = [
     role: "Strategy Consultant",
     company: "GrowthLab",
     content: "Strategic insights that drove measurable results. Their analytical approach and market understanding helped us identify new opportunities.",
-    image: "/img/boy12.jpg",
+    image: "/img/boy12.webp",
     rating: 5
   },
   {
@@ -137,7 +137,7 @@ const testimonials = [
     role: "Content Manager",
     company: "ContentPro",
     content: "Content strategy that resonated with our audience perfectly. Their understanding of market trends and consumer behavior is outstanding.",
-    image: "/img/girl14.jpg",
+    image: "/img/girl14.webp",
     rating: 5
   }
 ];

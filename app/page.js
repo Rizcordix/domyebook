@@ -173,7 +173,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                       {/* Client Avatars */}
                       <div style={{ display: 'flex', marginLeft: '10px' }}>
                         <img
-                          src="img/girl1.jpg"
+                          src="img/girl1.webp"
                           alt="Client 1"
                           style={{
                             width: '40px',
@@ -187,7 +187,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                           className="mil-up"
                         />
                         <img
-                          src="img/girl2.jpg"
+                          src="img/girl2.webp"
                           alt="Client 2"
                           style={{
                             width: '40px',
@@ -201,7 +201,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                           className="mil-up"
                         />
                         <img
-                          src="img/girl3.jpg"
+                          src="img/girl3.webp"
                           alt="Client 3"
                           style={{
                             width: '40px',
@@ -215,7 +215,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                           className="mil-up"
                         />
                         <img
-                          src="img/boy1.jpg"
+                          src="img/boy1.webp"
                           alt="Client 4"
                           style={{
                             width: '40px',
@@ -229,7 +229,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                           className="mil-up"
                         />
                         <img
-                          src="img/boy2.jpg"
+                          src="img/boy2.webp"
                           alt="Client 5"
                           style={{
                             width: '40px',
@@ -353,7 +353,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                     {/* Client Avatars */}
                     <div style={{ display: 'flex', marginLeft: '-10px' }}>
                       <img
-                        src="img/girl1.jpg"
+                        src="img/girl1.webp"
                         alt="Client 1"
                         style={{
                           width: '50px',
@@ -369,7 +369,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/girl2.jpg"
+                        src="img/girl2.webp"
                         alt="Client 2"
                         style={{
                           width: '50px',
@@ -385,7 +385,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/girl3.jpg"
+                        src="img/girl3.webp"
                         alt="Client 3"
                         style={{
                           width: '50px',
@@ -401,7 +401,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/boy1.jpg"
+                        src="img/boy1.webp"
                         alt="Client 4"
                         style={{
                           width: '50px',
@@ -417,7 +417,7 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/boy2.jpg"
+                        src="img/boy2.webp"
                         alt="Client 5"
                         style={{
                           width: '50px',
