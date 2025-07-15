@@ -4,7 +4,7 @@ import Image from "next/image";
 export const CallToAction1 = () => {
   return (
     <div
-      className="mil-cta mil-up"
+      className="mil-cta"
       style={{
         minHeight: '100vh',
         display: 'flex',
