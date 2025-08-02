@@ -4,7 +4,7 @@ import Image from "next/image";
 export const CallToAction1 = () => {
   return (
     <div
-      className="mil-cta mil-up"
+      className="mil-cta"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -40,7 +40,7 @@ export const CallToAction1 = () => {
                 </Link>
               </div>
               <div className="mil-illustration-absolute mil-type-2 mil-up">
-                <Image 
+                <img
                   src="/img/home-2/Buy_with_Confidence,_Guaranteed.png" 
                   alt="illustration" 
                   layout="responsive"

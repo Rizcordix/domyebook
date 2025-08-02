@@ -1,4 +1,5 @@
 "use client";
+import { useState, useRef } from 'react'; // Import useState and useRef
 import Banner from "@/components/Banner";
 import { CallToAction1 } from "@/components/CallToAction";
 import Testimonials from "@/components/Testimonials";
@@ -9,7 +10,7 @@ import Portfolio from "@/components/Portfolio";
 import BrandCarousel from "@/components/BrandCarousel";
 import BenefitsSection from "@/components/IconBoxes";
 
-const page = () => {
+const Page = () => { // Renamed 'page' to 'Page' for consistency with component naming conventions
   // CSS for play button animations
   const playButtonStyles = `
     @keyframes btn-drop-13 {
@@ -43,6 +44,24 @@ const page = () => {
     }
   `;
 
+  // State to track if the video is playing
+  const [isPlaying, setIsPlaying] = useState(false); // Video starts paused initially
+
+  // Ref to access the video DOM element
+  const videoRef = useRef(null);
+
+  // Function to toggle play/pause
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <PlaxLayout>
       {/* Add keyframe animations */}
@@ -50,23 +69,71 @@ const page = () => {
       
       {/* banner */}
       <Banner />
-      
+        
       {/* New Animated Hero Section */}
       <div className="mil-banner" style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))`,
+        position: 'relative',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
         minHeight: '70vh',
         maxHeight: '75vh',
-
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        {/* Background Video */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: `url('/img/home-2/3.png') center/cover no-repeat`, // Set the thumbnail as the background
+            zIndex: 0
+          }}
+        >
+          <video
+            ref={videoRef} // Attach ref to video element
+            autoPlay={false} // Do not autoplay the video
+            loop
+            muted
+            playsInline
+            preload="auto" // Preload video to reduce buffer
+            loading="lazy" // Lazy load video when it's about to be played
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: -1
+            }}
+          >
+            <source src="/img/home-2/herosection.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        {/* Overlay for dark effect */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))',
+            zIndex: 1
+          }}
+        />
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="row align-items-center">
             <div className="col-xl-8 col-lg-12">
-              {/* Main Heading exxxx */}
+              {/* Main Heading */}
               <h1 className="mil-mb-30 mil-up" style={{
                 fontSize: 'clamp(2.5rem, 4vw, 4rem)',
                 fontWeight: 'bold',
@@ -76,12 +143,12 @@ const page = () => {
               }}>
                 Your Story,
                 <br />
-                 Our Words,
+                Our Words,
                 <br />
                 Professionally Published.
               </h1>
               
-              {/* Descriptionexx */}
+              {/* Description */}
               <p className="mil-text-m mil-soft mil-mb-60 mil-up" style={{
                 color: 'rgba(255, 255, 255, 0.8)',
                 fontSize: '1.2rem',
@@ -94,9 +161,9 @@ const page = () => {
               {/* Mobile: Client Section + Play Button Combined */}
               <div className="d-xl-none">
                 <div className="mil-up" style={{ animationDelay: '0.6s' }}>
-                  <div style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
                     justifyContent: 'space-between',
                     flexWrap: 'wrap',
                     gap: '20px'
@@ -106,7 +173,7 @@ const page = () => {
                       {/* Client Avatars */}
                       <div style={{ display: 'flex', marginLeft: '10px' }}>
                         <img
-                          src="img/girl1.jpg"
+                          src="img/girl1.webp"
                           alt="Client 1"
                           style={{
                             width: '40px',
@@ -120,7 +187,7 @@ const page = () => {
                           className="mil-up"
                         />
                         <img
-                          src="img/girl2.jpg"
+                          src="img/girl2.webp"
                           alt="Client 2"
                           style={{
                             width: '40px',
@@ -134,7 +201,7 @@ const page = () => {
                           className="mil-up"
                         />
                         <img
-                          src="img/girl3.jpg"
+                          src="img/girl3.webp"
                           alt="Client 3"
                           style={{
                             width: '40px',
@@ -148,7 +215,7 @@ const page = () => {
                           className="mil-up"
                         />
                         <img
-                          src="img/avatar3.webp"
+                          src="img/boy1.webp"
                           alt="Client 4"
                           style={{
                             width: '40px',
@@ -162,7 +229,7 @@ const page = () => {
                           className="mil-up"
                         />
                         <img
-                          src="img/avatar4.webp"
+                          src="img/boy2.webp"
                           alt="Client 5"
                           style={{
                             width: '40px',
@@ -176,15 +243,13 @@ const page = () => {
                           className="mil-up"
                         />
                       </div>
-                      
-                     
                     </div>
-                     
-                      <div style={{ color: 'white' }}>
-                        <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem', color: '#fff', }}>We have over 4,000 clients</p>
-                      </div>
                     
-                    {/* Play Button - Mobile */}
+                    <div style={{ color: 'white' }}>
+                      <p style={{ margin: '0', fontWeight: '600', fontSize: '0.9rem', color: '#fff', }}>We have over 4,000 clients</p>
+                    </div>
+                    
+                    {/* Play Button */}
                     <div style={{ animationDelay: '0.8s' }}>
                       <div 
                         className="mobile-play-wrapper"
@@ -250,7 +315,7 @@ const page = () => {
                             zIndex: 3,
                             overflow: 'hidden'
                           }}
-                          onClick={() => console.log('Play video')}
+                          onClick={togglePlay} // Call togglePlay
                         >
                           <div className="gradient-bg" style={{
                             position: 'absolute',
@@ -265,18 +330,14 @@ const page = () => {
                             zIndex: -1
                           }} />
                           
+                          {/* Play/Pause Icon */}
                           <svg 
                             width="24" 
                             height="24" 
                             fill="white" 
                             viewBox="0 0 20 20"
-                            style={{ 
-                              marginLeft: '3px',
-                              position: 'relative',
-                              zIndex: 1
-                            }}
                           >
-                            <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                            <path d={isPlaying ? "M4.5 4.5h3v11h-3v-11zm8 0h3v11h-3v-11z" : "M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"} />
                           </svg>
                         </button>
                       </div>
@@ -292,7 +353,7 @@ const page = () => {
                     {/* Client Avatars */}
                     <div style={{ display: 'flex', marginLeft: '-10px' }}>
                       <img
-                        src="img/girl1.jpg"
+                        src="img/girl1.webp"
                         alt="Client 1"
                         style={{
                           width: '50px',
@@ -308,7 +369,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/girl2.jpg"
+                        src="img/girl2.webp"
                         alt="Client 2"
                         style={{
                           width: '50px',
@@ -324,7 +385,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/girl3.jpg"
+                        src="img/girl3.webp"
                         alt="Client 3"
                         style={{
                           width: '50px',
@@ -340,7 +401,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/boy1.jpg"
+                        src="img/boy1.webp"
                         alt="Client 4"
                         style={{
                           width: '50px',
@@ -356,7 +417,7 @@ const page = () => {
                         onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                       />
                       <img
-                        src="img/boy2.jpg"
+                        src="img/boy2.webp"
                         alt="Client 5"
                         style={{
                           width: '50px',
@@ -382,7 +443,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Play Button Column - Desktop Only */}
             <div className="col-xl-4 text-right d-none d-xl-block">
               <div className="mil-up" style={{ animationDelay: '0.8s' }}>
@@ -460,19 +521,7 @@ const page = () => {
                       zIndex: 3,
                       overflow: 'hidden'
                     }}
-                    onClick={() => console.log('Play video')}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = 'rgba(255, 255, 255, 0.2)';
-                      // Update gradient opacity on hover
-                      const gradientEl = e.target.querySelector('.gradient-bg');
-                      if (gradientEl) gradientEl.style.opacity = '0.2';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-                      // Reset gradient opacity
-                      const gradientEl = e.target.querySelector('.gradient-bg');
-                      if (gradientEl) gradientEl.style.opacity = '0.15';
-                    }}
+                    onClick={togglePlay} // Call togglePlay
                   >
                     {/* Gradient background */}
                     <div
@@ -491,29 +540,27 @@ const page = () => {
                       }}
                     />
                     
-                    {/* Play icon */}
-                    <Link href="/" style={{
+                    {/* Play/Pause Icon */}
+                    <div style={{
                       position: 'relative',
                       zIndex: 1,
                       color: 'white',
-                      textDecoration: 'none'
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '32px',
+                      height: '32px',
                     }}>
                       <svg 
-                      width="32" 
-                      height="32" 
-                      fill="white" 
-                      viewBox="0 0 20 20"
-                      style={{ 
-                        marginLeft: '4px',
-                        position: 'relative',
-                        zIndex: 1
-                      }}
-                    >
-                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                    </svg>
-                      
-                    </Link>
-                    
+                        width="32" 
+                        height="32" 
+                        fill="white" 
+                        viewBox="0 0 20 20"
+                      >
+                        <path d={isPlaying ? "M4.5 4.5h3v11h-3v-11zm8 0h3v11h-3v-11z" : "M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"} />
+                      </svg>
+                    </div>
                   </button>
                 </div>
               </div>
@@ -534,7 +581,7 @@ const page = () => {
       <BenefitsSection />
       {/* icon boxes end */}
       {/* Portfolio */}
-            <Portfolio />
+      <Portfolio />
       {/* Portfolio end */}
       <div className="mil-testimonials mil-p-80-160">
         <div className="container">
@@ -547,4 +594,4 @@ const page = () => {
     </PlaxLayout>
   );
 };
-export default page;
+export default Page; // Export the renamed component

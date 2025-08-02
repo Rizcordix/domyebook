@@ -258,8 +258,6 @@ const DualPortfolioCarousel = () => {
     return (
       <div
         style={slideStyle}
-        onMouseEnter={() => slideStyle.pointerEvents === 'auto' && onMouseEnter(index)}
-        onMouseLeave={() => slideStyle.pointerEvents === 'auto' && onMouseLeave()}
       >
         <div style={itemStyle}>
           <div style={overlayStyle}>
@@ -285,22 +283,6 @@ const DualPortfolioCarousel = () => {
               </span>
             </div>
 
-            {/* <div>
-              <h3 style={{
-                color: 'white',
-                fontSize: isMobile ? '16px' : '18px',
-                fontWeight: '700',
-                margin: '0',
-                textShadow: '0 2px 10px rgba(0,0,0,0.5)',
-                lineHeight: '1.2',
-              }}>
-                {item.brand_name}
-              </h3>
-            </div> */}
-
-            <div style={viewWorkStyle}>
-              View Work
-            </div>
           </div>
         </div>
       </div>
