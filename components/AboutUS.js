@@ -242,15 +242,15 @@ const Aboutpage = () => {
   return (
    <>
 
-      <div className="mil-banner mil-banner-inner mil-dissolve">
+      <div className="mil-banner2 mil-banner-inner mil-dissolve">
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
                 {/* <div className="mil-text-m mil-mb-20">About Us</div> */}
-                <h1 className="mil-mb-60">
+                <h2 className="mil-mb-60">
                   More than a Platform, Expert eBook Writing Services
-                </h1>
+                </h2>
                 <ul className="mil-breadcrumbs mil-center">
                   <li>
                     <Link href="/">Home</Link>

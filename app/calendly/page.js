@@ -18,28 +18,6 @@ const Page = () => {
 
   return (
     <PlaxLayout bg={false}>
-      <div className="mil-banner mil-banner-inner mil-dissolve">
-            <div className="container">
-                <div className="row align-items-center justify-content-center">
-                    <div className="col-xl-8">
-                        <div className="mil-banner-text mil-text-center">
-                            
-                            <h1 className="mil-mb-60">
-                                Book a Demo
-                            </h1>
-                            <ul className="mil-breadcrumbs mil-center">
-                                <li>
-                                    <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="/calendly">BookDemo</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
       {/* Background bubbles */}
       <div style={{
         position: 'absolute',
