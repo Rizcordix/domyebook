@@ -1370,11 +1370,21 @@ banner
     float: left;
   }
 }
+.mil-banner2 {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  height: 70vh;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
 .mil-banner.mil-banner-inner {
   height: auto;
   background-color: transparent;
-  min-height: 680px;
-  padding-top: 80px;
+  max-height: 680px;
+  padding-top: 0px;
   margin-top: 0;
 }
 .mil-banner.banner-short {

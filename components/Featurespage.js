@@ -60,14 +60,14 @@ const FeaturesPage = () => {
     <>
       <div className="features-page">
         {/* Banner Section */}
-        <div className="mil-banner mil-banner-inner mil-dissolve">
+        <div className="mil-banner2 mil-banner-inner mil-dissolve">
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h1 className="mil-mb-60">
+                  <h2 className="mil-mb-60">
                     Platform Features
-                  </h1>
+                  </h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Discover everything our user-friendly, all in one platform has to offer! We&apos;ve designed it to make your ebook creation journey as smooth and enjoyable as possible.
                   </p>

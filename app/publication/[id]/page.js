@@ -31,12 +31,12 @@ const PublicationPage = () => {
 
   return (
     <PlaxLayout>
-      <div className="mil-banner mil-banner-inner mil-dissolve">
+      <div className="mil-banner2 mil-banner-inner mil-dissolve">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <h1 className="mil-mb-60">{blog.MainTitle}</h1>
+                <h2 className="mil-mb-60">{blog.MainTitle}</h2>
                 <ul className="mil-breadcrumbs mil-pub-info mil-center">
                   <li>{blog.date}</li>
                   <li>{blog.Author}</li>

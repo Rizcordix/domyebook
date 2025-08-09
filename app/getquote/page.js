@@ -6,14 +6,14 @@ const page = () => {
     <PlaxLayout>
       {/* <PageBanner pageName="Get a Quote" title="Get a Quote" /> */}
 
-      <div className="mil-banner mil-banner-inner mil-dissolve">
+      <div className="mil-banner2 mil-banner-inner mil-dissolve">
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <h1 className="mil-mb-60">
+                <h2 className="mil-mb-60">
                   Get a Quote
-                </h1>
+                </h2>
                 <p className="mil-text-m mil-soft mil-mb-40">
                   Fill out the form below to get a personalized quote for your ebook project. Our team will review your requirements and get back to you with a detailed proposal.
                 </p>

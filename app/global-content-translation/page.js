@@ -21,12 +21,12 @@ const GlobalContentTranslationPage = () => {
     <PlaxLayout>
       <div className="features-page">
         {/* Banner Section */}
-        <div className="mil-banner mil-banner-inner mil-dissolve">
+        <div className="mil-banner2 mil-banner-inner mil-dissolve">
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h1 className="mil-mb-60">Global Content Translation</h1>
+                  <h2 className="mil-mb-60">Global Content Translation</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Break language barriers and take your story global.
                   </p>

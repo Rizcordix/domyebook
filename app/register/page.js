@@ -6,7 +6,7 @@ const page = () => {
     <PlaxLayout>
       {/* <PageBanner pageName="Get a Quote" title="Get a Quote" /> */}
 
-      <div className="mil-banner mil-banner-inner mil-dissolve">
+      <div className="mil-banner2 mil-banner-inner mil-dissolve">
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
