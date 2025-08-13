@@ -9,6 +9,8 @@ import Link from "next/link";
 import Portfolio from "@/components/Portfolio";
 import BrandCarousel from "@/components/BrandCarousel";
 import BenefitsSection from "@/components/IconBoxes";
+import PlaxAccordion from '@/components/PlaxAccordion';
+import ProblemSolutionSection from '@/components/ProblemSolution';
 
 const Page = () => { // Renamed 'page' to 'Page' for consistency with component naming conventions
   // CSS for play button animations
@@ -571,6 +573,9 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
       {/* New Hero Section End */}
       {/* brands */}
       <BrandCarousel />
+
+      <ProblemSolutionSection />
+
       <div className="mil-features mil-p-0-80">
         <div className="container">
           <Special />
@@ -583,12 +588,33 @@ const Page = () => { // Renamed 'page' to 'Page' for consistency with component 
       {/* Portfolio */}
       <Portfolio />
       {/* Portfolio end */}
-      <div className="mil-testimonials mil-p-80-160">
+      <div className="mil-testimonials mil-p-80-0">
         <div className="container">
           <Testimonials />
         </div>
       </div>
       {/* testimonials end */}
+
+      <div className="mil-faq mil-p-0-80">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-8">
+              <div className="mil-text-center">
+                <h2 className="mil-mb-30 mil-up faq">
+                  Frequently Asked Questions
+                </h2>
+                <p className="mil-text-m mil-soft mil-mb-30 mil-up">
+                  Find quick and clear answers to the most common <br />
+                  questions about DomyEbook
+                </p>
+              </div>
+              <PlaxAccordion />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       {/* call to action */}
       <CallToAction1 />
     </PlaxLayout>
