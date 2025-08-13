@@ -2,6 +2,7 @@ import Link from "next/link";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Image from "next/image";
 import EbookServicesComponent from "@/components/genericservices";
+import BookCoverCarousel from "@/components/Illustartioncarousel";
 
 export const metadata = {
   title: "Custom Illustrations | DoMyEbook",
@@ -26,18 +27,10 @@ const CustomIllustrationsPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">Custom Illustrations</h2>
+                  <h2 className="mil-mb-10">Custom Illustrations</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Visual storytelling that enhances every page of your ebook.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/custom-illustrations">Custom Illustrations</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -68,7 +61,9 @@ const CustomIllustrationsPage = () => {
             </div>
           </div>
         </div>
+        <BookCoverCarousel />
 
+        {/* Additional Services Section */}
         <EbookServicesComponent />
       </div>
     </PlaxLayout>

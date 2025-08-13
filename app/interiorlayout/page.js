@@ -2,21 +2,22 @@ import Link from "next/link";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Image from "next/image";
 import EbookServicesComponent from "@/components/genericservices";
+import BookCoverCarousel from "@/components/InteriorCarousel";
 
 export const metadata = {
-  title: "Professional Book Formatting | DoMyEbook",
-  description: "Seamless formatting services for digital and print publishing, ensuring readability and platform compatibility.",
-  keywords: "book formatting, ebook formatting, print-ready formatting, publish-ready manuscript, DoMyEbook formatting",
+  title: "Interior Layout | DoMyEbook",
+  description: "Craft magnetic blurbs that spark curiosity and drive reader interest. Perfect for ebook listings and marketing.",
+  keywords: "book descriptions, blurb writing, ebook summary writing, back cover copy, DoMyEbook descriptions",
   openGraph: {
-    title: "Professional Book Formatting | DoMyEbook",
-    description: "Perfectly formatted ebooks and print books for all platforms. We make sure your content is clean, professional, and ready for publication.",
+    title: "Interior Layout | DoMyEbook",
+    description: "Convert browsers into buyers with persuasive, well-written book descriptions that highlight your ebook’s appeal.",
     type: "website",
-    url: "https://domyebook.com/professional-book-formatting",
+    url: "https://domyebook.com/compelling-book-descriptions",
     images: ["https://domyebook.com/img/logo.png"],
   },
 };
 
-const ProfessionalBookFormattingPage = () => {
+const CompellingBookDescriptionsPage = () => {
   return (
     <PlaxLayout>
       <div className="features-page">
@@ -26,9 +27,9 @@ const ProfessionalBookFormattingPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-10">Professional Book Formatting</h2>
+                  <h2 className="mil-mb-10">Interior Layout</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
-                    Ready your manuscript for flawless publication across platforms.
+                    Entice readers with blurbs that sell your story from the start.
                   </p>
                 </div>
               </div>
@@ -41,9 +42,9 @@ const ProfessionalBookFormattingPage = () => {
             <div className="row justify-content-between align-items-center">
               <div className="col-xl-6 mil-mb-80">
                 <div className="feature-content">
-                  <h2 className="mil-mb-30 mil-up">Flawless Formatting</h2>
+                  <h2 className="mil-mb-30 mil-up">Blurbs That Hook</h2>
                   <p className="mil-text-m mil-soft mil-up" style={{ color: '#666' }}>
-                    Our professional formatting ensures that your manuscript is fully compatible with all major ebook and print platforms. From font consistency to spacing, layout, and pagination, we handle every detail so your book looks impeccable on every device or shelf.
+                    A great description is your book’s elevator pitch. Our copywriters specialize in creating attention-grabbing summaries that intrigue readers, highlight key themes, and boost your book’s appeal across sales platforms, back covers, and promotions.
                   </p>
                 </div>
               </div>
@@ -51,7 +52,7 @@ const ProfessionalBookFormattingPage = () => {
                 <div className="mil-image-frame mil-up">
                   <div className="feature-image-placeholder">
                     <img
-                      src="/img/services/Professional.png"
+                      src="/img/services/compelling.png"
                       alt="service image"
                     />
                   </div>
@@ -60,11 +61,11 @@ const ProfessionalBookFormattingPage = () => {
             </div>
           </div>
         </div>
-
+        <BookCoverCarousel />
         <EbookServicesComponent />
       </div>
     </PlaxLayout>
   );
 };
 
-export default ProfessionalBookFormattingPage;
+export default CompellingBookDescriptionsPage;

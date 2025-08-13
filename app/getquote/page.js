@@ -11,20 +11,12 @@ const page = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <h2 className="mil-mb-60">
+                <h2 className="mil-mb-10">
                   Get a Quote
                 </h2>
                 <p className="mil-text-m mil-soft mil-mb-40">
                   Fill out the form below to get a personalized quote for your ebook project. Our team will review your requirements and get back to you with a detailed proposal.
                 </p>
-                <ul className="mil-breadcrumbs mil-center">
-                  <li>
-                    <Link href="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link href="/getquote">Get Quote</Link>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

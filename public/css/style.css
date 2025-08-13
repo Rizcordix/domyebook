@@ -1374,11 +1374,11 @@ banner
   position: relative;
   overflow: hidden;
   background-color: rgb(255, 255, 255);
-  height: 70vh;
-  max-height: 500px;
+  height: 60vh;
+  max-height: 400px;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 180px;
 }
 .mil-banner.mil-banner-inner {
   height: auto;

@@ -28,20 +28,12 @@ const Page = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">
+                  <h2 className="mil-mb-10">
                     AI-Enhanced Human Writing
                   </h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Experience top-notch AI-enhanced human writing services tailored to your needs.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/AI-human-writing">AI-Enhanced Human Writing</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

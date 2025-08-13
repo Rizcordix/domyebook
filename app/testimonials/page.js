@@ -169,17 +169,9 @@ const TestimonialsPage = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                <h2 className="mil-mb-60">
+                <h2 className="mil-mb-10">
                   What Our Clients Say
                 </h2>
-                <ul className="mil-breadcrumbs mil-center">
-                  <li>
-                    <Link href="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link href="testimonials">Testimonials</Link>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

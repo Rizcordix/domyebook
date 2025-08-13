@@ -35,7 +35,7 @@ const Page = () => {
       }} />
       <div
         className="calendly-inline-widget mil-p-160-0"
-        data-url="https://calendly.com/domyebook?primary_color=7eb947"
+        data-url="https://calendly.com/domyebook/schedule-a-30-minute-chat-with-a-book-advisor-clone"
         style={{ minWidth: "320px", height: "900px", position: 'relative',
       background: 'linear-gradient(135deg, #f2fafa 0%, #7eb947 100%)',
       overflow: 'hidden',

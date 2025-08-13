@@ -26,18 +26,10 @@ const DynamicVideoPromosPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">Dynamic Video Promos</h2>
+                  <h2 className="mil-mb-10">Dynamic Video Promos</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Market your ebook with cinematic flair and visual impact.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/dynamic-video-promos">Video Promos</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

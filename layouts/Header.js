@@ -181,6 +181,7 @@ const Header = ({ dark, offsetTop = 0 }) => {
                       <li><Link href="/signature-ebook-design" onClick={handleMobileNavClick}>Signature eBook Design</Link></li>
                       <li><Link href="/impactful-cover" onClick={handleMobileNavClick}>Impactful Cover Artistry</Link></li>
                       <li><Link href="/custom-illustrations" onClick={handleMobileNavClick}>Custom Illustrations</Link></li>
+                      <li><Link href="/interiorlayout" onClick={handleMobileNavClick}>Interior Layout</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("publishing")}`}>
