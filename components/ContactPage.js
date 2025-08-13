@@ -10,17 +10,9 @@ const Contactpage = () => {
                     <div className="col-xl-8">
                         <div className="mil-banner-text mil-text-center">
                             
-                            <h2 className="mil-mb-60">
+                            <h2 className="mil-mb-10">
                                 Contact Us
                             </h2>
-                            <ul className="mil-breadcrumbs mil-center">
-                                <li>
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="/contact">Contact</Link>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

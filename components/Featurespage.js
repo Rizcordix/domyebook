@@ -65,20 +65,12 @@ const FeaturesPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">
+                  <h2 className="mil-mb-10">
                     Platform Features
                   </h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Discover everything our user-friendly, all in one platform has to offer! We&apos;ve designed it to make your ebook creation journey as smooth and enjoyable as possible.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/">Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/features">Features</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

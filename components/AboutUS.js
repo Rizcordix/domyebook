@@ -242,29 +242,20 @@ const Aboutpage = () => {
   return (
    <>
 
-      <div className="mil-banner2 mil-banner-inner mil-dissolve">
+      <div className="mil-banner2 mil-banner-inner mil-dissolve" style={{ paddingTop: '80px'}}>
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
-                {/* <div className="mil-text-m mil-mb-20">About Us</div> */}
-                <h2 className="mil-mb-60">
-                  More than a Platform, Expert eBook Writing Services
-                </h2>
-                <ul className="mil-breadcrumbs mil-center">
-                  <li>
-                    <Link href="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link href="about">About Us</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* banner end */}
+                        <h2 className="mil-mb-10">
+                          Expert eBook Writing Services
+                        </h2>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
+                    {/* banner end */}
 
       {/* features */}
       <div className="mil-features mil-p-0-80">

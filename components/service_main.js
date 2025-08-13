@@ -37,10 +37,19 @@ const ServicesPage = () => {
   return (
     <>
       {/* Page Banner */}
-      <PageBanner
-        pageName="Our Services"
-        title="Extensive eBook Solutions"
-      />
+      <div className="mil-banner2 mil-banner-inner mil-dissolve" style={{ paddingTop: '80px'}}>
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-xl-8">
+              <div className="mil-banner-text mil-text-center">
+                        <h2 className="mil-mb-10">
+                          Extensive eBook Solutions
+                        </h2>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
 
       {/* Writing Services */}
       <div className="mil-features" style={{ backgroundColor: '#f2fafa', padding: '120px 0' }}> {/* Increased padding */}

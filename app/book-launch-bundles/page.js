@@ -26,18 +26,10 @@ const BookLaunchBundlesPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">Book Launch Bundles</h2>
+                  <h2 className="mil-mb-10">Book Launch Bundles</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Get everything you need to publish successfully—at scale or in one go.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/book-launch-bundles">Launch Services</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

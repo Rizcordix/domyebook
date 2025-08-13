@@ -26,18 +26,10 @@ const CompellingBookDescriptionsPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">Compelling Book Descriptions</h2>
+                  <h2 className="mil-mb-10">Compelling Book Descriptions</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Entice readers with blurbs that sell your story from the start.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/compelling-book-descriptions">Book Descriptions</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

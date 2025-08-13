@@ -38,7 +38,7 @@
 //             <div className="col-xl-8">
 //               <div className="mil-banner-text mil-text-center">
 //                 <div className="mil-text-m mil-mb-20">Blog</div>
-//                 <h2 className="mil-mb-60">{blog.MainTitle}</h2>
+//                 <h2 className="mil-mb-10">{blog.MainTitle}</h2>
 //                 <ul className="mil-breadcrumbs mil-pub-info mil-center">
 //                   <li>{blog.date}</li>
 //                   <li>{blog.Author}</li>

@@ -28,20 +28,12 @@ const Page = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">
+                  <h2 className="mil-mb-10">
                     Children&apos;s Book Magic
                   </h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Experience top-notch children&apos;s book writing services tailored to your needs.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/childrens-book">Children&apos;s Book Magic</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

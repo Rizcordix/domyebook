@@ -2,6 +2,7 @@ import Link from "next/link";
 import PlaxLayout from "@/layouts/PlaxLayout";
 import Image from "next/image";
 import EbookServicesComponent from "@/components/genericservices";
+import BookCoverCarousel from "@/components/BookCoverCarousel";
 
 export const metadata = {
   title: "Impactful Cover Artistry | DoMyEbook",
@@ -26,18 +27,10 @@ const ImpactfulCoverArtistryPage = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-xl-8">
                 <div className="mil-banner-text mil-text-center">
-                  <h2 className="mil-mb-60">Impactful Cover Artistry</h2>
+                  <h2 className="mil-mb-10">Impactful Cover Artistry</h2>
                   <p className="mil-text-m mil-soft mil-mb-40">
                     Create a visual identity that draws readers in at first glance.
                   </p>
-                  <ul className="mil-breadcrumbs mil-center">
-                    <li>
-                      <Link href="/" style={{position: 'relative', zIndex: '10'}}>Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/impactful-cover-artistry">Cover Artistry</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -68,7 +61,9 @@ const ImpactfulCoverArtistryPage = () => {
             </div>
           </div>
         </div>
+        <BookCoverCarousel />
 
+        {/* Additional Services Section */}
         <EbookServicesComponent />
       </div>
     </PlaxLayout>
