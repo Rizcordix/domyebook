@@ -153,7 +153,7 @@ const Header = ({ dark, offsetTop = 0 }) => {
                     }}>Writing</Link>
                     <ul className="mil-submenu">
                       <li><Link href="/ghostwriting" onClick={handleMobileNavClick}>Ghostwriting Excellence</Link></li>
-                      <li><Link href="/strategicplot" onClick={handleMobileNavClick}>Strategic Plot & Outline Development</Link></li>
+                      <li><Link href="/strategicplot" onClick={handleMobileNavClick}>Plot & Outline Development</Link></li>
                       <li><Link href="/childrens-book-writing" onClick={handleMobileNavClick}>Children's Book Magic</Link></li>
                       <li><Link href="/AI-to-human-writing" onClick={handleMobileNavClick}>AI-Enhanced Human Editing</Link></li>
                     </ul>
@@ -166,8 +166,8 @@ const Header = ({ dark, offsetTop = 0 }) => {
                       }
                     }}>Editorial</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="/precision-editing" onClick={handleMobileNavClick}>Precision Editing & Proofreading</Link></li>
-                      <li><Link href="/unwavering-quality" onClick={handleMobileNavClick}>Unwavering Quality & Plagiarism Checks</Link></li>
+                      <li><Link href="/precision-editing" onClick={handleMobileNavClick}>Editing & Proofreading</Link></li>
+                      <li><Link href="/unwavering-quality" onClick={handleMobileNavClick}>Quality & Plagiarism Checks</Link></li>
                     </ul>
                   </li>
                   <li className={`mil-has-children ${getSubmenuToggleClass("design")}`}>
@@ -206,7 +206,7 @@ const Header = ({ dark, offsetTop = 0 }) => {
                       }
                     }}>Author Support</Link>
                     <ul className="mil-submenu">
-                      <li><Link href="/end-to-end-project-management" onClick={handleMobileNavClick}>End-to-End Project Management</Link></li>
+                      <li><Link href="/end-to-end-project-management" onClick={handleMobileNavClick}>Project Management</Link></li>
                       <li><Link href="/global-content-translation" onClick={handleMobileNavClick}>Global Content Translation</Link></li>
                       <li><Link href="/book-launch-bundles" onClick={handleMobileNavClick}>Book Launch Bundles</Link></li>
                       <li><Link href="/bulk-order-solutions" onClick={handleMobileNavClick}>Bulk Order Solutions</Link></li>

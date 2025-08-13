@@ -6,29 +6,33 @@ export const CallToAction1 = () => {
     <div
       className="mil-cta"
       style={{
-        minHeight: '100vh',
+        minHeight: '60vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        // paddingBottom: '30px',
       }}
     >
       <div className="container">
         <div
           className="mil-out-frame mil-visible mil-image mil-illustration-fix mil-p-60-0"
           style={{
-            maxHeight: '100vh',
+            maxHeight: '60vh',
+            // paddingBottom: '30px',
+            marginBottom: '30px'
           }}
         >
           <div className="row align-items-end">
             <div className="mil-text-center">
               <h2 className="mil-mb-30 mil-light mil-up">
-                Buy with Confidence, Guaranteed <br />
-                Protection for your purchases
+                Ready to Launch Your<br />
+                 eBook Without Headaches?
               </h2>
               <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up"></p>
               <p className="mil-text-m mil-dark-soft mil-mb-60 mil-up" style={{ color: "#fff" }}>
-                Let&apos;s Make Sure Your Ebook Is Safe. <br />
-                Click below to get started, and we&apos;ll take care of the rest.
+                Free 15-Min Strategy Session
+                <br />
+                We&apos;ll outline your project + give a fixed-price quote.
               </p>
 
               <div className="mil-up mil-mb-60">
@@ -39,7 +43,7 @@ export const CallToAction1 = () => {
                   Get a Quote
                 </Link>
               </div>
-              <div className="mil-illustration-absolute mil-type-2 mil-up">
+              {/* <div className="mil-illustration-absolute mil-type-2 mil-up">
                 <img
                   src="/img/home-2/Buy_with_Confidence,_Guaranteed.png" 
                   alt="illustration" 
@@ -51,7 +55,7 @@ export const CallToAction1 = () => {
                     height: "auto" 
                   }} // Ensures the image scales down on smaller screens
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
