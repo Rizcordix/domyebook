@@ -22,7 +22,7 @@ const ProblemSolutionSection = () => {
         <div className="ebookps-main-heading">
           <h1 className="ebookps-title">
             Lost in the eBook Maze? 
-            <span className="ebookps-highlight"> We're Your Exit.</span>
+            <span className="ebookps-highlight"> We&apos;re Your Exit.</span>
           </h1>
         </div>
 
@@ -38,7 +38,7 @@ const ProblemSolutionSection = () => {
               </div>
               
               <h3 className="ebookps-problem-subtitle">
-                Creating an eBook Shouldn't Feel Like Rocket Science
+                Creating an eBook Shouldn&apos;t Feel Like Rocket Science
               </h3>
               
               <div className="ebookps-problem-list">
@@ -79,7 +79,7 @@ const ProblemSolutionSection = () => {
                 {solutionTaglines.map((tagline, index) => (
                   <div key={index} className="ebookps-solution-tagline">
                     <span className="ebookps-solution-check">✓</span>
-                    <span className="ebookps-solution-text">"{tagline}"</span>
+                    <span className="ebookps-solution-text">&quot;{tagline}&quot;</span>
                   </div>
                 ))}
               </div>
