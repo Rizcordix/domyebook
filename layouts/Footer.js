@@ -163,8 +163,8 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             <h6 className="mil-mb-60">Contact</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-soft mil-mb-15">
-                5900 Balcones Drive STE ,<br />
-                10544 Austin, Texas 78731
+                5539 Casa Martin,<br />
+                Dr Katy, TX 77449
               </li>
               <li className="mil-text-m mil-soft mil-mb-15">
                 +1 (512) 3259725
@@ -335,8 +335,7 @@ const Footer3 = ({ bg = true, margin = 160 }) => {
             <h6 className="mil-mb-60 mil-soft">Help</h6>
             <ul className="mil-footer-list">
               <li className="mil-text-m mil-pale mil-mb-15">
-                5900 Balcones Drive STE 10544 Austin,
-                 Texas 78731
+                5539 Casa Martin Dr Katy, TX 77449
               </li>
               <li className="mil-text-m mil-pale mil-mb-15">
                 +1 (512) 3259725
