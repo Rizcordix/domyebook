@@ -343,8 +343,8 @@ const Contactpage = () => {
                       <div className="mil-mb-30">
                         <h6 style={{ color: 'white', marginBottom: '10px' }}>📍 Address</h6>
                         <p className="mil-text-m" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                          5900 Balcones Drive STE,<br />
-                          10544 Austin Texas 78731
+                          5539 Casa Martin,<br />
+                          Dr Katy, TX 77449
                         </p>
                       </div>
                     </div>
