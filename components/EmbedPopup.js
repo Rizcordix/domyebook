@@ -30,7 +30,7 @@ const EmbedPopup_ = ({ close, videoID }) => {
               <ReactPlayer url={videoID} playing={true} />
             </div>
           </div>
-          <div className="mfp-preloader">Loading...</div>
+          <div className="mfp-preloader">Loading....</div>
         </div>
       </div>
     </Fragment>
