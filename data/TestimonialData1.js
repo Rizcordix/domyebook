@@ -1,14 +1,14 @@
-import testimonial_img_1 from '../public/img/portfolio/2/archive_1.png';
-import testimonial_img_2 from '../public/img/portfolio/2/archive_2.png';
-import testimonial_img_3 from '../public/img/portfolio/2/archive_3.png';
-import testimonial_img_4 from '../public/img/portfolio/2/archive_4.png';
-import testimonial_img_5 from '../public/img/portfolio/2/archive_1.png';
-import testimonial_img_6 from '../public/img/portfolio/2/archive_2.png';
-import testimonial_img_7 from '../public/img/portfolio/2/archive_3.png';
-import testimonial_img_8 from '../public/img/portfolio/2/archive_4.png';
-import testimonial_img_9 from '../public/img/portfolio/2/archive_1.png';
-import testimonial_img_10 from '../public/img/portfolio/2/archive_2.png';
-import testimonial_img_11 from '../public/img/portfolio/2/archive_3.png';
+import testimonial_img_1 from '../public/img/portfolio/2/archive_1.webp';
+import testimonial_img_2 from '../public/img/portfolio/2/archive_2.webp';
+import testimonial_img_3 from '../public/img/portfolio/2/archive_3.webp';
+import testimonial_img_4 from '../public/img/portfolio/2/archive_4.webp';
+import testimonial_img_5 from '../public/img/portfolio/2/archive_1.webp';
+import testimonial_img_6 from '../public/img/portfolio/2/archive_2.webp';
+import testimonial_img_7 from '../public/img/portfolio/2/archive_3.webp';
+import testimonial_img_8 from '../public/img/portfolio/2/archive_4.webp';
+import testimonial_img_9 from '../public/img/portfolio/2/archive_1.webp';
+import testimonial_img_10 from '../public/img/portfolio/2/archive_2.webp';
+import testimonial_img_11 from '../public/img/portfolio/2/archive_3.webp';
 
 const testimonial_data = [
   {
