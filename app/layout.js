@@ -7,7 +7,9 @@ import '@css/plugins/swiper.min.css';
 import '@css/plugins/magnific-popup.css';
 import '@css/style.css';
 import ClientLayout from '@/components/ClientLayout';
+import Script from 'next/script';
 
+// Load font
 const secondary_font = Questrial({
   weight: ['400'],
   style: ['normal'],
@@ -17,37 +19,38 @@ const secondary_font = Questrial({
   adjustFontFallback: false,
 });
 
+// ✅ Metadata API (instead of <title>, <meta> tags inside head)
+export const metadata = {
+  title: "DoMyEbook",
+  description: "DoMyEbook offers professional ebook services...",
+  keywords: "Do my ebook, Ebook, professional ebook services...",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  themeColor: "#7eb947",
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${secondary_font.variable}`}>
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DoMyEbook</title>
-        <meta name="description" content="DoMyEbook offers professional ebook services..." />
-        <meta name="keywords" content="Do my ebook, Ebook, professional ebook services..." />
-        <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
-        <meta name="theme-color" content="#7eb947" />
-        
-        {/* Start of Tawk.to Script */}
-        <script type="text/javascript">
+    <html lang="en" className={secondary_font.variable}>
+      <body>
+        <ClientLayout>{children}</ClientLayout>
+
+        {/* ✅ Tawk.to script with next/script (safe for hydration) */}
+        <Script id="tawkto" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
-              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              var s1=document.createElement("script"),
+                  s0=document.getElementsByTagName("script")[0];
               s1.async=true;
-              s1.src='https://embed.tawk.to/687a342a86520d191450094f/1j0elnk9p';
+              s1.src='https://embed.tawk.to/XXXXXXXX/default';
               s1.charset='UTF-8';
               s1.setAttribute('crossorigin','*');
               s0.parentNode.insertBefore(s1,s0);
             })();
           `}
-        </script>
-        {/* End of Tawk.to Script */}
-        
-      </head>
-      <body>
-        <ClientLayout>{children}</ClientLayout>
+        </Script>
       </body>
     </html>
   );
