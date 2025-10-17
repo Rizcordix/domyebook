@@ -37,6 +37,14 @@ export default function RootLayout({ children }) {
         <ClientLayout>{children}</ClientLayout>
 
         {/* ✅ Tawk.to script with next/script (safe for hydration) */}
+
+        <Script id="trustpilot" strategy="afterInteractive">
+        {`(function(w,d,s,r,n){w.TrustpilotObject=n;w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
+            a=d.createElement(s);a.async=1;a.src=r;a.type='text/java'+s;f=d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(a,f)})(window,document,'script', 'https://invitejs.trustpilot.com/tp.min.js', 'tp');
+            tp('register', 'hpkotXHlg0I5bYCY');`}
+        </Script>
+        
         <Script id="tawkto" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
