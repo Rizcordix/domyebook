@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TrustpilotWidget from "@/common/TrustPilotWidget";
 
 const Footer = ({ bg = true, margin = 160, footer }) => {
   switch (footer) {
@@ -92,50 +93,70 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             <a href="#." className="mil-footer-logo mil-mb-30">
               <img src="/img/logo.png" alt="Plax" width={90} height={32} />
             </a>
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "15px",
-                alignItems: "center",
-                maxWidth: "200px",
-                marginBottom: "60px",
-
-              }}
-            >
-              {socialLinks.map(({ href, icon, hoverShadow }, index) => (
-                <li
-                  key={index}
-                  style={{
-                    transition: "transform 0.3s ease",
-                    flexBasis: "calc(33.33% - 10px)",
-                    marginBottom: "15px",
-                  }}
-                >
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={iconBaseStyle}
-                    onMouseEnter={(e) => {
-                      e.target.style.transform = "translateY(-3px)";
-                      e.target.style.boxShadow = hoverShadow;
-                      e.target.style.backgroundColor = "#f2fafd";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.transform = "translateY(0)";
-                      e.target.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
-                      e.target.style.backgroundColor = "#f2fafa";
+            
+            {/* Social Icons Container */}
+            <div style={{ marginBottom: "30px" }}>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "15px",
+                  alignItems: "center",
+                  maxWidth: "200px",
+                }}
+              >
+                {socialLinks.map(({ href, icon, hoverShadow }, index) => (
+                  <li
+                    key={index}
+                    style={{
+                      transition: "transform 0.3s ease",
+                      flexBasis: "calc(33.33% - 10px)",
+                      marginBottom: "15px",
                     }}
                   >
-                    <i className={icon}></i>
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={iconBaseStyle}
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = "translateY(-3px)";
+                        e.target.style.boxShadow = hoverShadow;
+                        e.target.style.backgroundColor = "#f2fafd";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = "translateY(0)";
+                        e.target.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+                        e.target.style.backgroundColor = "#f2fafa";
+                      }}
+                    >
+                      <i className={icon}></i>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Trustpilot Widget - Aligned with Social Icons */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  marginTop: "0px",
+                  width: "100%",
+                  maxWidth: "255px",
+                  overflow: "hidden",
+                  transform: "translateX(-55px)",
+                }}
+              >
+                <div style={{transformOrigin: "left center" }}>
+                  <TrustpilotWidget />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="col-xl-2 mil-mb-60">
@@ -298,8 +319,6 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
     </footer>
   );
 };
-
-
 
 const Footer3 = ({ bg = true, margin = 160 }) => {
   return (
