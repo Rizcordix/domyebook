@@ -8,6 +8,7 @@ import '@css/plugins/magnific-popup.css';
 import '@css/style.css';
 import ClientLayout from '@/components/ClientLayout';
 import Script from 'next/script';
+import PopupClientWrapper from "@/components/Popupclient";
 
 // Load font
 const secondary_font = Questrial({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={secondary_font.variable}>
       <body>
         <ClientLayout>{children}</ClientLayout>
+        <PopupClientWrapper />
 
         {/* ✅ Tawk.to script with next/script (safe for hydration) */}
 
