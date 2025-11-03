@@ -302,7 +302,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
           <div className="row">
             <div className="col-xl-6">
               <p className="mil-text-s mil-soft">
-                © 2025 DoMyEbook. All Rights Reserved.
+                © 2020 DoMyEbook. All Rights Reserved.
               </p>
             </div>
             <div className="col-xl-6">
