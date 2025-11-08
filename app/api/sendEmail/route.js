@@ -12,7 +12,7 @@ export async function POST(req) {
       port: 465,
       secure: true,
       auth: {
-        user: "k224508@nu.edu.pk",
+        user: "domyebook@gmail.com",
         pass: process.env.EMAIL_PASSWORD,
       },
     });
@@ -22,8 +22,8 @@ export async function POST(req) {
     console.log("SMTP Connection verified ✅");
 
     await transporter.sendMail({
-      from: '"Popup Form" <k224508@nu.edu.pk>',
-      to: "k224508@nu.edu.pk",
+      from: '"Popup Form" <domyebook@gmail.com>',
+      to: "domyebook@gmail.com",
       subject: "Popup Card Filled",
       text: `Popup Card Filled\n\nEmail: ${email}\nPhone: ${phone}`,
     });
