@@ -14,7 +14,7 @@
     "gsap": "^3.12.5",
     "isotope-layout": "^3.0.6",
     "mssql": "^11.0.1",
-    "next": "^15.3.3",
+    "next": "15.3.8",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.10",
     "react": "19.1.0",
