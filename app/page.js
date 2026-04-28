@@ -5,12 +5,12 @@ import { CallToAction1 } from "@/components/CallToAction";
 import Testimonials from "@/components/Testimonials";
 import Special from "@/components/services2";
 import PlaxLayout from "@/layouts/PlaxLayout";
-import Link from "next/link";
+// import Link from "next/link";
 import Portfolio from "@/components/Portfolio";
 import BrandCarousel from "@/components/BrandCarousel";
 import BenefitsSection from "@/components/IconBoxes";
 import PlaxAccordion from '@/components/PlaxAccordion';
-import ProblemSolutionSection from '@/components/ProblemSolution';
+// import ProblemSolutionSection from '@/components/ProblemSolution';
 import HeroSection from '@/components/HeroSection';
 
 const Page = () => {
@@ -30,7 +30,7 @@ const Page = () => {
       {/* brands */}
       <BrandCarousel />
 
-      <ProblemSolutionSection />
+      {/* <ProblemSolutionSection /> */}
 
       <div className="mil-features mil-p-0-80">
         <div className="container">
