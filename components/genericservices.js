@@ -647,7 +647,7 @@ const EbookServicesComponent = () => {
       `}</style>
 
       {/* Section 2: Video Section */}
-      <section className="video-section">
+      {/* <section className="video-section">
         <div className="container">
           <div className="video-content">
             <div className="video-wrapper">
@@ -667,12 +667,11 @@ const EbookServicesComponent = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section 1: Services Slider */}
-      <section className="services-slider-section mil-p-160-0">
+      {/* <section className="services-slider-section mil-p-160-0">
         <div className="container">
-          {/* <h2 className="section-heading">Our Comprehensive Ebook Services</h2> */}
           <div className="slider-container">
             <div className="slider-wrapper" ref={sliderRef}>
               {services.map((service, index) => (
@@ -704,7 +703,7 @@ const EbookServicesComponent = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section 3: Stats Banner */}
         <section className="stats-banner">
