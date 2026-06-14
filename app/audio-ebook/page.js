@@ -1,7 +1,6 @@
-import Link from "next/link";
 import PlaxLayout from "@/layouts/PlaxLayout";
-import Image from "next/image";
 import EbookServicesComponent from "@/components/genericservices";
+import AudioPortfolioSection from "@/components/AudioPortfolioSection";
 
 export const metadata = {
   title: "Audio Ebook Production | DoMyEbook",
@@ -60,6 +59,8 @@ const AudioEbookProductionPage = () => {
             </div>
           </div>
         </div>
+
+        <AudioPortfolioSection />
 
         <EbookServicesComponent />
       </div>

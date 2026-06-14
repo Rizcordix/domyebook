@@ -1,7 +1,6 @@
-import Link from "next/link";
 import PlaxLayout from "@/layouts/PlaxLayout";
-import Image from "next/image";
 import EbookServicesComponent from "@/components/genericservices";
+import VideoPromoSection from "@/components/VideoPromoSection";
 
 export const metadata = {
   title: "Dynamic Video Promos | DoMyEbook",
@@ -60,6 +59,8 @@ const DynamicVideoPromosPage = () => {
             </div>
           </div>
         </div>
+
+        <VideoPromoSection />
 
         <EbookServicesComponent />
       </div>
