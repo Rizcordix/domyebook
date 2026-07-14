@@ -11,48 +11,56 @@ export const plaxUtility = {
     //ScrollTrigger.normalizeScroll(true);
   },
   scrollAnimations() {
-    const appearance = document.querySelectorAll(".mil-up");
+    const els = gsap.utils.toArray(".mil-up");
+    if (els.length) {
+      // Initial hidden state is applied via JS only — so if JS/GSAP fails to run,
+      // content stays visible (see also the CSS fallback in globals.css).
+      gsap.set(els, { opacity: 0, y: 50, scale: 0.98, willChange: "transform, opacity" });
 
-    appearance.forEach((section) => {
-      gsap.fromTo(
-        section,
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.98,
-          ease: "sine",
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          scrollTrigger: {
-            trigger: section,
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
+      // One batched observer for ALL reveal elements instead of one ScrollTrigger each.
+      ScrollTrigger.batch(".mil-up", {
+        start: "top 92%",
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            ease: "sine.out",
+            duration: 0.6,
+            stagger: 0.08,
+            overwrite: true,
+            // Drop the GPU hint once revealed to free compositor memory.
+            onComplete: () => gsap.set(batch, { willChange: "auto" }),
+          }),
+        onLeaveBack: (batch) =>
+          gsap.to(batch, {
+            opacity: 0,
+            y: 50,
+            scale: 0.98,
+            ease: "sine.in",
+            duration: 0.4,
+            overwrite: true,
+          }),
+      });
 
-    const scaleImage = document.querySelectorAll(".mil-scale-img");
+      // Safety net: recompute positions after load so anything already in view reveals.
+      gsap.delayedCall(1.5, () => ScrollTrigger.refresh());
+    }
+
+    const scaleImage = gsap.utils.toArray(".mil-scale-img");
     scaleImage.forEach((section) => {
-      // Use getAttribute to retrieve data attributes
-      var value1 = section.getAttribute("data-value-1");
-      var value2 = section.getAttribute("data-value-2");
-
-      // Use the values as before in GSAP's fromTo method
+      const value1 = parseFloat(section.getAttribute("data-value-1"));
+      const value2 = parseFloat(section.getAttribute("data-value-2"));
       gsap.fromTo(
         section,
+        { scale: value1, willChange: "transform" },
         {
-          ease: "sine",
-          scale: parseFloat(value1), // Ensure the value is treated as a number
-        },
-        {
-          scale: parseFloat(value2), // Ensure the value is treated as a number
+          scale: value2,
+          ease: "none",
           scrollTrigger: {
             trigger: section,
-            scrub: true,
-            toggleActions: "play none none reverse",
+            // Smoothed scrub (was `true`) removes per-frame jerkiness.
+            scrub: 0.5,
           },
         }
       );

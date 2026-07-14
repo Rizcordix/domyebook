@@ -29,7 +29,6 @@ const PromoBanner = ({ onVisibilityChange }) => {
         fontWeight: "600",
         height: `${BANNER_HEIGHT}px`,
         boxShadow: "0 2px 12px rgba(126, 185, 71, 0.3)",
-        backdropFilter: "blur(10px)",
         overflow: "hidden",
       }}
     >
@@ -162,7 +161,6 @@ const PromoBanner = ({ onVisibilityChange }) => {
             alignItems: "center",
             justifyContent: "center",
             transition: "all 0.3s ease",
-            backdropFilter: "blur(10px)",
           }}
           onMouseEnter={(e) => {
             e.target.style.backgroundColor = "rgba(255, 255, 255, 0.25)";

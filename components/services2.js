@@ -384,8 +384,7 @@ return (
 
             .nav_container {
                 position: relative;
-                background: rgba(255, 255, 255, 0.9);
-                backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.95);
                 border-radius: 50px;
                 padding: 6px;
                 display: flex;
