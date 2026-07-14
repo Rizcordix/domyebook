@@ -1,6 +1,17 @@
 /* Questrial is loaded via next/font in app/layout.js (self-hosted, non-blocking).
    The blocking Google Fonts @import was removed for performance. */
 
+/* Scroll-reveal fallback: the hidden state for .mil-up is applied via JS (GSAP),
+   so if JS fails the content stays visible. For users who prefer reduced motion,
+   show everything immediately with no transform/opacity animation. */
+@media (prefers-reduced-motion: reduce) {
+  .mil-up,
+  .mil-scale-img {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 .mil-testimonials-1.swiper,
 .mil-testimonials-2.swiper {
   overflow: visible;

@@ -187,7 +187,6 @@ const styles = {
         zIndex: 10,
         color: 'white',
         transition: 'all 0.3s ease',
-        backdropFilter: 'blur(10px)',
     },
 
     customNext: {
@@ -207,7 +206,6 @@ const styles = {
         zIndex: 10,
         color: 'white',
         transition: 'all 0.3s ease',
-        backdropFilter: 'blur(10px)',
     },
 };
 
