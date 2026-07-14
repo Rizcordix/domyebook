@@ -188,3 +188,6 @@ sketch
 #!! ERROR: vscode is undefined. Use list command to see defined gitignore types !!#
 
 # End of https://www.toptal.com/developers/gitignore/api/node,nextjs,react,vscode
+
+# Local image originals backup (Phase 1 compression)
+/design-assets/

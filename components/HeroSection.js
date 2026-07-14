@@ -1,5 +1,14 @@
 "use client";
 import { useState, useRef } from "react";
+import Image from "next/image";
+
+const CLIENT_AVATARS = [
+  { src: "/img/girl1.webp", alt: "Client 1" },
+  { src: "/img/girl2.webp", alt: "Client 2" },
+  { src: "/img/girl3.webp", alt: "Client 3" },
+  { src: "/img/boy1.webp", alt: "Client 4" },
+  { src: "/img/boy2.webp", alt: "Client 5" },
+];
 
 const HeroSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -70,7 +79,7 @@ const HeroSection = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            background: `url('/img/home-2/3.png') center/cover no-repeat`,
+            background: `url('/img/home-2/hero-poster.jpg') center/cover no-repeat`,
             zIndex: 0,
           }}
         >
@@ -80,8 +89,8 @@ const HeroSection = () => {
             loop
             muted
             playsInline
-            preload="auto"
-            loading="lazy"
+            preload="none"
+            poster="/img/home-2/hero-poster.jpg"
             style={{
               position: "absolute",
               top: 0,
@@ -152,76 +161,25 @@ const HeroSection = () => {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: '1', minWidth: '250px' }}>
                       {/* Client Avatars */}
                       <div style={{ display: 'flex', marginLeft: '10px' }}>
-                        <img
-                          src="img/girl1.webp"
-                          alt="Client 1"
-                          style={{
-                            width: '40px',
-                            height: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid white',
-                            objectFit: 'cover',
-                            marginLeft: '-8px',
-                            transition: 'transform 0.3s ease'
-                          }}
-                          className="mil-up"
-                        />
-                        <img
-                          src="img/girl2.webp"
-                          alt="Client 2"
-                          style={{
-                            width: '40px',
-                            height: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid white',
-                            objectFit: 'cover',
-                            marginLeft: '-8px',
-                            transition: 'transform 0.3s ease'
-                          }}
-                          className="mil-up"
-                        />
-                        <img
-                          src="img/girl3.webp"
-                          alt="Client 3"
-                          style={{
-                            width: '40px',
-                            height: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid white',
-                            objectFit: 'cover',
-                            marginLeft: '-8px',
-                            transition: 'transform 0.3s ease'
-                          }}
-                          className="mil-up"
-                        />
-                        <img
-                          src="img/boy1.webp"
-                          alt="Client 4"
-                          style={{
-                            width: '40px',
-                            height: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid white',
-                            objectFit: 'cover',
-                            marginLeft: '-8px',
-                            transition: 'transform 0.3s ease'
-                          }}
-                          className="mil-up"
-                        />
-                        <img
-                          src="img/boy2.webp"
-                          alt="Client 5"
-                          style={{
-                            width: '40px',
-                            height: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid white',
-                            objectFit: 'cover',
-                            marginLeft: '-8px',
-                            transition: 'transform 0.3s ease'
-                          }}
-                          className="mil-up"
-                        />
+                        {CLIENT_AVATARS.map((a) => (
+                          <Image
+                            key={a.src}
+                            src={a.src}
+                            alt={a.alt}
+                            width={40}
+                            height={40}
+                            className="mil-up"
+                            style={{
+                              width: '40px',
+                              height: '40px',
+                              borderRadius: '50%',
+                              border: '2px solid white',
+                              objectFit: 'cover',
+                              marginLeft: '-8px',
+                              transition: 'transform 0.3s ease'
+                            }}
+                          />
+                        ))}
                       </div>
                     </div>
                     
@@ -332,86 +290,27 @@ const HeroSection = () => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                     {/* Client Avatars */}
                     <div style={{ display: 'flex', marginLeft: '-10px' }}>
-                      <img
-                        src="img/girl1.webp"
-                        alt="Client 1"
-                        style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          border: '3px solid white',
-                          objectFit: 'cover',
-                          marginLeft: '-10px',
-                          transition: 'transform 0.3s ease'
-                        }}
-                        className="mil-up"
-                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                      />
-                      <img
-                        src="img/girl2.webp"
-                        alt="Client 2"
-                        style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          border: '3px solid white',
-                          objectFit: 'cover',
-                          marginLeft: '-10px',
-                          transition: 'transform 0.3s ease'
-                        }}
-                        className="mil-up"
-                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                      />
-                      <img
-                        src="img/girl3.webp"
-                        alt="Client 3"
-                        style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          border: '3px solid white',
-                          objectFit: 'cover',
-                          marginLeft: '-10px',
-                          transition: 'transform 0.3s ease'
-                        }}
-                        className="mil-up"
-                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                      />
-                      <img
-                        src="img/boy1.webp"
-                        alt="Client 4"
-                        style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          border: '3px solid white',
-                          objectFit: 'cover',
-                          marginLeft: '-10px',
-                          transition: 'transform 0.3s ease'
-                        }}
-                        className="mil-up"
-                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                      />
-                      <img
-                        src="img/boy2.webp"
-                        alt="Client 5"
-                        style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          border: '3px solid white',
-                          objectFit: 'cover',
-                          marginLeft: '-10px',
-                          transition: 'transform 0.3s ease'
-                        }}
-                        className="mil-up"
-                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                      />
+                      {CLIENT_AVATARS.map((a) => (
+                        <Image
+                          key={a.src}
+                          src={a.src}
+                          alt={a.alt}
+                          width={50}
+                          height={50}
+                          className="mil-up"
+                          style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '50%',
+                            border: '3px solid white',
+                            objectFit: 'cover',
+                            marginLeft: '-10px',
+                            transition: 'transform 0.3s ease'
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                        />
+                      ))}
                     </div>
                     
                     {/* Client Text */}

@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Questrial");
+/* Questrial is loaded via next/font in app/layout.js (self-hosted, non-blocking).
+   The blocking Google Fonts @import was removed for performance. */
 
 .mil-testimonials-1.swiper,
 .mil-testimonials-2.swiper {

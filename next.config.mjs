@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
   images: {
-    domains: ['www.domyebook.com'], // Optional: Add domains for image optimization
+    // Serve modern formats automatically (from any source image).
+    formats: ['image/avif', 'image/webp'],
+    // Replaces the deprecated `images.domains`.
+    remotePatterns: [
+      { protocol: 'https', hostname: 'www.domyebook.com' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+    ],
   },
-  // Any other Next.js configurations you need
 };
 
 export default nextConfig;
