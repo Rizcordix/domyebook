@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -516,10 +517,12 @@ const Testimonials = () => {
                   <div className="testimonial-text">&quot;{testimonial.text}&quot;</div>
 
                   <div className="testimonial-footer">
-                    <img
-                      src={testimonial.image}
+                    <Image
+                      src={`/${testimonial.image}`}
                       alt={testimonial.name}
                       className="customer-avatar"
+                      width={50}
+                      height={50}
                     />
                     <div className="customer-info">
                       <h6 className="customer-name">{testimonial.name}</h6>

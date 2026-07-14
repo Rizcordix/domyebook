@@ -105,12 +105,11 @@ return (
                                         alt={`${services[activeTab].title} Service`}
                                         // width={450}
                                         // height={450}
-                                        style={{ 
+                                        style={{
                                             objectFit: 'contain',
                                             borderRadius: '12px',
                                             filter: 'drop-shadow(0 4px 20px rgba(126, 185, 71, 0.2))'
                                         }}
-                                        priority
                                     />
                                 </div>
                             </div>

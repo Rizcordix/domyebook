@@ -7,12 +7,19 @@ export default function PopupCard({
   showOnEveryVisit = true,
   delayMs = 600,
 }) {
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [toast, setToast] = useState(null); // 👈 for notification
   const mountedRef = useRef(false);
   const closeBtnRef = useRef(null);
+
+  // Only render the portal after mount so the first client render
+  // matches the server (both render nothing) — avoids hydration mismatch.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -92,7 +99,7 @@ export default function PopupCard({
     }
   };
 
-  if (typeof document === "undefined") return null;
+  if (!mounted || typeof document === "undefined") return null;
 
   return createPortal(
     <>

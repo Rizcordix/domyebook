@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from 'react';
 
 // Enhanced Rotating Vision List Component with True Circular Rolling Effect
@@ -272,12 +273,13 @@ const Aboutpage = () => {
             </div>
             <div className="col-xl-6 mil-mb-80">
               <div className="mil-image-frame mil-up">
-                <img
-                  // width={500}
-                  // height={500}
+                <Image
                   src="/img/about/about_us_1.png"
                   alt="image"
-                  // className="mil-scale-img"
+                  width={1260}
+                  height={1340}
+                  sizes="(max-width: 1200px) 100vw, 50vw"
+                  style={{ width: "100%", height: "auto" }}
                 />
               </div>
             </div>
@@ -379,9 +381,11 @@ const Aboutpage = () => {
           <div className="row">
             <div className="col-xl-4 mil-mb-60">
               <div className="mil-icon-box" style={{ textAlign: 'center' }}>
-            <img
+            <Image
               src="/img/about/About_Us_Expert_Team_of_Writers_Icon.png"
               alt="icon"
+              width={120}
+              height={120}
               className="mil-mb-30 mil-up"
             />
             <h5 className="mil-mb-20 mil-up">Expert Team of Writers</h5>
@@ -392,9 +396,11 @@ const Aboutpage = () => {
             </div>
             <div className="col-xl-4 mil-mb-60">
               <div className="mil-icon-box" style={{ textAlign: 'center' }}>
-            <img
+            <Image
               src="/img/about/About_Us_Comprehensive_Services_Icon.png"
               alt="icon"
+              width={120}
+              height={120}
               className="mil-mb-30 mil-up"
             />
             <h5 className="mil-mb-20 mil-up">Comprehensive Services</h5>
@@ -405,9 +411,11 @@ const Aboutpage = () => {
             </div>
             <div className="col-xl-4 mil-mb-60">
               <div className="mil-icon-box" style={{ textAlign: 'center' }}>
-            <img
+            <Image
               src="/img/about/commitment.png"
               alt="icon"
+              width={120}
+              height={120}
               className="mil-mb-30 mil-up"
             />
             <h5 className="mil-mb-20 mil-up">Commitment to Quality</h5>
@@ -454,10 +462,13 @@ const Aboutpage = () => {
             </div>
             <div className="col-xl-5 mil-mb-80">
               <div className="mil-image-frame mil-up">
-                <img
+                <Image
                   src="/img/about/about-us-2.png"
                   alt="image"
-                  // className="mil-scale-img"
+                  width={1100}
+                  height={1440}
+                  sizes="(max-width: 1200px) 100vw, 42vw"
+                  style={{ width: "100%", height: "auto" }}
                 />
               </div>
             </div>

@@ -752,8 +752,8 @@ space
 }
 
 .mil-p-160-160 {
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 110px;
+  padding-bottom: 110px;
 }
 
 .mil-p-120-0 {
@@ -773,7 +773,7 @@ space
 }
 
 .mil-p-160-0 {
-  padding-top: 160px;
+  padding-top: 110px;
 }
 @media (max-width: 1200px) {
   .mil-p-160-0 {
@@ -782,7 +782,7 @@ space
 }
 
 .mil-p-160-80 {
-  padding-top: 160px;
+  padding-top: 110px;
   padding-bottom: 80px;
 }
 @media (max-width: 1200px) {
@@ -793,7 +793,7 @@ space
 }
 
 .mil-p-0-160 {
-  padding-bottom: 160px;
+  padding-bottom: 110px;
 }
 @media (max-width: 1200px) {
   .mil-p-0-160 {
@@ -816,7 +816,7 @@ space
 
 .mil-p-80-160 {
   padding-top: 80px;
-  padding-bottom: 160px;
+  padding-bottom: 110px;
 }
 @media (max-width: 1200px) {
   .mil-p-80-160 {
@@ -826,7 +826,7 @@ space
 }
 
 .mil-p-0-130 {
-  padding-bottom: 130px;
+  padding-bottom: 100px;
 }
 @media (max-width: 1200px) {
   .mil-p-0-130 {
@@ -835,7 +835,7 @@ space
 }
 
 .mil-p-160-100 {
-  padding-top: 160px;
+  padding-top: 110px;
   padding-bottom: 100px;
 }
 @media (max-width: 1200px) {
@@ -846,8 +846,8 @@ space
 }
 
 .mil-p-160-130 {
-  padding-top: 160px;
-  padding-bottom: 130px;
+  padding-top: 110px;
+  padding-bottom: 100px;
 }
 @media (max-width: 1200px) {
   .mil-p-160-130 {
@@ -1327,11 +1327,10 @@ banner
   position: relative;
   overflow: hidden;
   background-color: rgb(242, 250, 250);
-  height: 100vh;
-  min-height: 900px;
+  min-height: min(90vh, 760px);
   display: flex;
   align-items: center;
-  padding-top: 0px;
+  padding: 90px 0;
 }
 .mil-banner .mil-banner-img {
   width: 100%;
@@ -1382,6 +1381,7 @@ banner
 }
 .mil-banner.mil-banner-inner {
   height: auto;
+  min-height: auto;
   background-color: transparent;
   max-height: 680px;
   padding-top: 0px;

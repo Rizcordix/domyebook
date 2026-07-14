@@ -32,10 +32,15 @@ const Banner = ({
           </div>
           <div className="col-xl-6">
             <div className="mil-banner-img">
-              <img
-                src={img} 
-                alt="banner" 
-                style={style} />
+              <Image
+                src={img}
+                alt="banner"
+                width={1600}
+                height={1419}
+                priority
+                sizes="(max-width: 1200px) 100vw, 50vw"
+                style={{ ...style, width: "100%", height: "auto" }}
+              />
             </div>
           </div>
         </div>
