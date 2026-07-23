@@ -1,6 +1,33 @@
 /* Questrial is loaded via next/font in app/layout.js (self-hosted, non-blocking).
    The blocking Google Fonts @import was removed for performance. */
 
+/* Hero play-button ring animations + mobile hero sizing (moved from HeroSection.js).
+   These keyframes are referenced from inline styles, so they must stay global. */
+@keyframes btn-drop-13 {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1.1); }
+}
+@keyframes btn-drop-16 {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(1.6); }
+  100% { transform: scale(1.1); }
+}
+@media (max-width: 767.98px) {
+  .mil-banner {
+    padding: 80px 0 !important;
+    min-height: 90vh !important;
+  }
+  .mil-banner h1 {
+    font-size: 2.2rem !important;
+    margin-bottom: 20px !important;
+  }
+  .mil-banner p {
+    font-size: 1rem !important;
+    margin-bottom: 30px !important;
+  }
+}
+
 /* Scroll-reveal fallback: the hidden state for .mil-up is applied via JS (GSAP),
    so if JS fails the content stays visible. For users who prefer reduced motion,
    show everything immediately with no transform/opacity animation. */

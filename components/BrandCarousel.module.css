@@ -1,0 +1,58 @@
+/* Pure-CSS continuous logo marquee (replaced react-slick — no JS library needed).
+   The track holds two copies of the logo set; animating to -50% then looping
+   produces a seamless infinite scroll, same as the old linear autoplay. */
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Soft fade at the edges, like most logo marquees */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.item {
+  flex: 0 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    padding: 0 24px;
+  }
+}

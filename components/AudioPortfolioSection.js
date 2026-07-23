@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import styles from "./AudioPortfolioSection.module.css";
 
 const samples = [
   { title: "Before I Cheat", src: "/audio/beforeIcheat.mp3" },
@@ -117,7 +118,7 @@ const AudioPortfolioSection = () => {
   };
 
   return (
-    <section className="mil-audio-portfolio mil-p-80-80">
+    <section className={`mil-audio-portfolio ${styles.milAudioPortfolio} mil-p-80-80`}>
       <div className="container">
         <div className="mil-text-center mil-mb-40">
           <h2 className="mil-up mil-mb-20">Audio Portfolio</h2>
@@ -126,19 +127,19 @@ const AudioPortfolioSection = () => {
           </p>
         </div>
 
-        <div className="audio-grid">
+        <div className={styles.audioGrid}>
           {samples.map((sample, index) => {
             const isCurrent = activeIndex === index;
             const currentAudio = audioRefs.current[index];
             const currentTime = currentAudio ? currentAudio.currentTime : 0;
 
             return (
-              <article className={`audio-card ${isCurrent ? "active" : ""}`} key={sample.src}>
-                <div className="audio-card-head">
+              <article className={`${styles.audioCard} ${isCurrent ? styles.active : ""}`} key={sample.src}>
+                <div className={styles.audioCardHead}>
                   <h3>{sample.title}</h3>
                   <button
                     type="button"
-                    className={`audio-btn ${loadingIndex === index ? "loading" : ""}`}
+                    className={`${styles.audioBtn} ${loadingIndex === index ? styles.loading : ""}`}
                     onClick={() => handlePlayPause(index)}
                     disabled={loadingIndex === index}
                     aria-label={isCurrent && isPlaying ? `Pause ${sample.title}` : `Play ${sample.title}`}
@@ -153,11 +154,11 @@ const AudioPortfolioSection = () => {
                   max="100"
                   value={progress[index] || 0}
                   onChange={(e) => handleSeek(index, e.target.value)}
-                  className="audio-progress"
+                  className={styles.audioProgress}
                   aria-label={`Seek in ${sample.title}`}
                 />
 
-                <div className="audio-time">
+                <div className={styles.audioTime}>
                   <span>{formatTime(currentTime)}</span>
                   <span>{formatTime(durations[index] || 0)}</span>
                 </div>
@@ -166,7 +167,7 @@ const AudioPortfolioSection = () => {
                   ref={(el) => {
                     audioRefs.current[index] = el;
                   }}
-                  className="audio-media"
+                  className={styles.audioMedia}
                   src={sample.src}
                   preload="auto"
                   playsInline
@@ -188,121 +189,6 @@ const AudioPortfolioSection = () => {
           })}
         </div>
       </div>
-
-      <style jsx>{`
-        .mil-audio-portfolio {
-          background: linear-gradient(180deg, #f2fafa 0%, #ffffff 100%);
-        }
-
-        .audio-grid {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
-        }
-
-        .audio-card {
-          z-index: 2;
-          position: relative;
-          isolation: isolate;
-          background: #ffffff;
-          border: 1px solid rgba(126, 185, 71, 0.2);
-          border-radius: 16px;
-          padding: 18px;
-          box-shadow: 0 8px 24px rgba(10, 36, 34, 0.06);
-          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        .audio-card:hover {
-          box-shadow: 0 12px 26px rgba(10, 36, 34, 0.1);
-          border-color: rgba(126, 185, 71, 0.45);
-        }
-
-        .audio-card.active {
-          border-color: #7eb947;
-          box-shadow: 0 12px 28px rgba(126, 185, 71, 0.24);
-        }
-
-        .audio-card-head {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          justify-content: space-between;
-          gap: 12px;
-          align-items: center;
-          margin-bottom: 14px;
-        }
-
-        .audio-card-head h3 {
-          margin: 0;
-          font-size: 18px;
-          line-height: 1.3;
-        }
-
-        .audio-btn {
-          position: relative;
-          z-index: 3;
-          pointer-events: auto;
-          touch-action: manipulation;
-          cursor: pointer;
-          background: #7eb947;
-          color: #fff;
-          border: none;
-          border-radius: 999px;
-          font-size: 13px;
-          font-weight: 700;
-          padding: 8px 16px;
-          min-width: 72px;
-          transition: background 0.2s ease;
-        }
-
-        .audio-btn:hover {
-          background: #6aa23e;
-        }
-
-        .audio-btn:disabled {
-          cursor: wait;
-          opacity: 0.9;
-          background: #94c565;
-        }
-
-        .audio-btn.loading {
-          background: #5f8f35;
-        }
-
-        .audio-progress {
-          width: 100%;
-          accent-color: #7eb947;
-          cursor: pointer;
-        }
-
-        .audio-media {
-          position: absolute;
-          width: 0;
-          height: 0;
-          opacity: 0;
-          pointer-events: none;
-          left: 0;
-          top: 0;
-        }
-
-        .audio-time {
-          display: flex;
-          justify-content: space-between;
-          font-size: 13px;
-          color: #5f6f69;
-          margin-top: 8px;
-        }
-
-        @media (max-width: 991px) {
-          .audio-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .audio-card-head h3 {
-            font-size: 16px;
-          }
-        }
-      `}</style>
     </section>
   );
 };

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import styles from "./Header.module.css";
 
 const Header = ({ dark, offsetTop = 0 }) => {
   const currentPath = usePathname();
@@ -30,69 +31,6 @@ const Header = ({ dark, offsetTop = 0 }) => {
 
   return (
     <>
-      <style jsx>{`
-        .mil-top-menu .mil-submenu {
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-10px);
-          transition: all 0.3s ease-in-out;
-        }
-
-        .mil-top-menu .mil-has-children:hover > .mil-submenu,
-        .mil-top-menu .mil-has-children.mil-active > .mil-submenu {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
-
-        .mil-top-menu .mil-submenu .mil-submenu {
-          transform: translateX(-10px);
-        }
-
-        .mil-top-menu .mil-submenu .mil-has-children:hover > .mil-submenu,
-        .mil-top-menu .mil-submenu .mil-has-children.mil-active > .mil-submenu {
-          transform: translateX(0);
-        }
-
-        .mil-top-menu .mil-submenu li {
-          transition: all 0.2s ease-in-out;
-        }
-
-        .mil-top-menu .mil-submenu li:hover {
-          transform: translateX(5px);
-        }
-
-        .mil-top-menu ul li a,
-        .mil-top-menu .mil-submenu li a,
-        .mil-top-menu .mil-submenu .mil-submenu li a,
-        .mil-top-menu .mil-active > a,
-        .mil-top-menu .mil-submenu .mil-active > a {
-          font-family: inherit;
-          color: #333;
-        }
-
-        @media (max-width: 991px) {
-          .mil-top-menu .mil-submenu {
-            max-height: 0;
-            overflow: hidden;
-            transform: none;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-          }
-
-          .mil-top-menu .mil-has-children.mil-active > .mil-submenu {
-            max-height: 500px;
-            transform: none;
-          }
-
-          .mil-top-menu .mil-submenu li:hover {
-            transform: none;
-          }
-
-          .mil-top-menu .mil-submenu .mil-submenu {
-            transform: none;
-          }
-        }
-      `}</style>
       <div
         className={`mil-top-panel ${dark ? "mil-dark-2" : ""}`}
         style={{
@@ -113,7 +51,7 @@ const Header = ({ dark, offsetTop = 0 }) => {
               height={64}
             />
           </Link>
-          <nav className={`mil-top-menu ${toggle ? "mil-active" : ""}`}>
+          <nav className={`mil-top-menu ${styles.milTopMenu} ${toggle ? "mil-active" : ""}`}>
             <ul>
               <li className={`${activeMenuFuntion(["home"])}`}>
                 <Link href="/" onClick={handleMobileNavClick}>Home</Link>

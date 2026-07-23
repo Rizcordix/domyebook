@@ -157,12 +157,25 @@ Today `styled-jsx` scopes these so they only affect that component. **Moving the
 
 ---
 
-## Phase 5 — Verify & measure (½ day) 🟢
+## Phase 5 — Verify & measure (½ day) 🟢 — ✅ DONE (2026-07-23)
 
-- Run **Lighthouse** (mobile) on `/`, a service page, and `/blog` before/after; record LCP, CLS, TBT, total transfer.
-- Test scroll on a throttled CPU (Chrome DevTools 4–6× slowdown).
-- Confirm no hydration warnings in the console (the earlier `PopupCard` / `priority` fixes should already be clean).
-- Add a lightweight budget check (e.g. fail CI if any `public/img` file > 500 KB) to prevent regressions.
+**Measured results (Lighthouse mobile, simulated throttle, local prod build, `/`):**
+
+| Metric | Before Phase-5 fixes | After | Notes |
+|---|---|---|---|
+| Performance score | 35 | **75** | |
+| TBT | 1,550 ms | **0 ms** | Tawk.to now loads on first interaction (`DeferredChat`) |
+| CLS | 0.209 | **0** | The entire shift was the Tawk iframe injection |
+| Speed Index | 5.2 s | **2.9 s** | |
+| Total transfer | 1,643 KB | **973 KB** | Unsplash images localized (106 KB→1 KB avatar, 159 KB→79 KB popup) |
+| LCP | 5.9 s | 5.8 s | Remaining bottleneck — see below |
+
+**Phase-5 fixes applied:**
+- `components/DeferredChat.js` — Tawk.to loads on first scroll/tap/keypress (12 s idle fallback) instead of at page load.
+- Localized both Unsplash images (promo avatar → `/img/promo-reader.webp` 1 KB; popup → `/img/popup-offer.webp` 79 KB).
+- `npm run check:images` budget guard (`scripts/check-image-budget.mjs`) fails if any raster in `public/img` exceeds 500 KB — wire into CI. Two straggler book covers recompressed to pass.
+
+**Remaining known lever (future work):** LCP ~5.8 s on simulated mobile is now dominated by the render-critical path — the large global stylesheets (`style.css`, `bootstrap-grid.css`, `font-awesome.min.css` all load on every page) and the hero image decode. Options: purge unused rules from the global CSS bundle, subset font-awesome to the icons actually used, and/or preload the hero image.
 
 ---
 

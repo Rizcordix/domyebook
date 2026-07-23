@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createPortal } from "react-dom";
+import styles from "./PopupCard.module.css";
 
 const STORAGE_KEY = "popup_seen_v1";
 
@@ -106,299 +107,17 @@ export default function PopupCard({
       {/* ✅ Toast Notification */}
       {toast && (
         <div
-          className={`popup-toast ${
-            toast.type === "success" ? "toast-success" : "toast-error"
+          className={`${styles.popupToast} ${
+            toast.type === "success" ? styles.toastSuccess : styles.toastError
           }`}
         >
           {toast.message}
         </div>
       )}
 
-      {/* ✅ Styles */}
-      <style>{`
-        .popup-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            padding: 16px;
-            animation: fadeIn 0.3s ease-out;
-          }
-
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-
-          @keyframes slideUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          .popup-card {
-            background: white;
-            border-radius: 16px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            animation: slideUp 0.4s ease-out;
-          }
-
-          .popup-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: #666;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          }
-
-          .popup-close:hover {
-            background: white;
-            color: #000;
-            transform: rotate(90deg);
-          }
-
-          .popup-image {
-            position: relative;
-            overflow: hidden;
-          }
-
-          .popup-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-
-          .popup-content {
-            padding: 48px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-          }
-
-          .popup-heading {
-            font-size: 32px;
-            font-weight: 700;
-            color: #000;
-            margin-bottom: 16px;
-            line-height: 1.2;
-          }
-
-          .popup-offer {
-            font-size: 17px;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 500;
-            line-height: 1.5;
-          }
-
-          .popup-bonus {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 28px;
-            line-height: 1.5;
-          }
-
-          .popup-options {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-          }
-
-          .popup-input-wrapper {
-            flex: 1;
-          }
-
-          .popup-form-section {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-          }
-
-          .popup-input {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #d0d0d0;
-            border-radius: 8px;
-            font-size: 15px;
-            transition: all 0.2s;
-            font-family: inherit;
-            box-sizing: border-box;
-          }
-
-          .popup-input:focus {
-            outline: none;
-            border-color: #7eb947;
-            box-shadow: 0 0 0 3px rgba(126, 185, 71, 0.1);
-          }
-
-          .popup-terms {
-            font-size: 13px;
-            color: #666;
-            margin-top: -8px;
-            margin-bottom: 20px;
-          }
-
-          .popup-terms a {
-            color: #7eb947;
-            text-decoration: none;
-            font-weight: 500;
-          }
-
-          .popup-terms a:hover {
-            text-decoration: underline;
-          }
-
-          .popup-submit {
-            width: 100%;
-            padding: 16px;
-            background: #000;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-          }
-
-          .popup-submit:hover {
-            background: #7eb947;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(126, 185, 71, 0.4);
-          }
-
-          .popup-submit:active {
-            transform: translateY(0);
-          }
-
-          @media (max-width: 768px) {
-            .popup-card {
-              grid-template-columns: 1fr;
-              max-width: 500px;
-            }
-
-            .popup-image {
-              max-height: 220px;
-            }
-
-            .popup-content {
-              padding: 32px 24px;
-            }
-
-            .popup-heading {
-              font-size: 26px;
-            }
-
-            .popup-subheading {
-              font-size: 22px;
-            }
-
-            .popup-close {
-              top: 12px;
-              right: 12px;
-              background: rgba(255, 255, 255, 0.95);
-            }
-          }
-
-          @media (max-width: 480px) {
-            .popup-backdrop {
-              padding: 8px;
-            }
-
-            .popup-content {
-              padding: 24px 20px;
-            }
-
-            .popup-heading {
-              font-size: 22px;
-            }
-
-            .popup-subheading {
-              font-size: 20px;
-            }
-
-            .popup-offer {
-              font-size: 14px;
-            }
-          }
-
-
-        .popup-toast {
-          position: fixed;
-          top: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          padding: 14px 22px;
-          border-radius: 8px;
-          color: #000;
-          font-weight: 600;
-          background: #d4edda;
-          border: 1px solid #c3e6cb;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          z-index: 10000;
-          animation: slideDown 0.4s ease, fadeOut 0.4s ease 3s forwards;
-          font-family: system-ui, sans-serif;
-        }
-
-        .toast-success {
-          background: #d9fdd3;
-          border: 1px solid #b7e6b2;
-          color: #0f5132;
-        }
-
-        .toast-error {
-          background: #f8d7da;
-          border: 1px solid #f5c2c7;
-          color: #842029;
-        }
-
-        @keyframes slideDown {
-          from { opacity: 0; transform: translate(-50%, -20px); }
-          to { opacity: 1; transform: translate(-50%, 0); }
-        }
-
-        @keyframes fadeOut {
-          to { opacity: 0; transform: translate(-50%, -10px); }
-        }
-      `}</style>
-
       {isOpen && (
         <div
-          className="popup-backdrop"
+          className={styles.popupBackdrop}
           role="dialog"
           aria-modal="true"
           aria-labelledby="popup-heading"
@@ -406,48 +125,48 @@ export default function PopupCard({
             if (e.target === e.currentTarget) setIsOpen(false);
           }}
         >
-          <div className="popup-card" role="document">
+          <div className={styles.popupCard} role="document">
             <button
               aria-label="Close"
-              className="popup-close"
+              className={styles.popupClose}
               onClick={() => setIsOpen(false)}
               ref={closeBtnRef}
             >
               ✕
             </button>
 
-            <div className="popup-image">
+            <div className={styles.popupImage}>
               <img
-                src="https://images.unsplash.com/photo-1505063366573-38928ae5567e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+                src="/img/popup-offer.webp"
                 alt="Beautiful woman with natural makeup"
               />
             </div>
 
-            <div className="popup-content">
-              <h2 id="popup-heading" className="popup-heading">
+            <div className={styles.popupContent}>
+              <h2 id="popup-heading" className={styles.popupHeading}>
                 Limited-Time Offer
               </h2>
 
-              <p className="popup-offer">30% Discount on any package</p>
-              <p className="popup-bonus">
+              <p className={styles.popupOffer}>30% Discount on any package</p>
+              <p className={styles.popupBonus}>
                 and first 1,000 FREE Words of ghostwriting or editing
               </p>
 
-              <div className="popup-form-section">
-                <div className="popup-options">
-                  <div className="popup-input-wrapper">
+              <div className={styles.popupFormSection}>
+                <div className={styles.popupOptions}>
+                  <div className={styles.popupInputWrapper}>
                     <input
                       type="email"
-                      className="popup-input"
+                      className={styles.popupInput}
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
-                  <div className="popup-input-wrapper">
+                  <div className={styles.popupInputWrapper}>
                     <input
                       type="tel"
-                      className="popup-input"
+                      className={styles.popupInput}
                       placeholder="Phone"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
@@ -455,7 +174,7 @@ export default function PopupCard({
                   </div>
                 </div>
 
-                <button className="popup-submit" onClick={handleSubmit}>
+                <button className={styles.popupSubmit} onClick={handleSubmit}>
                   Submit
                 </button>
               </div>

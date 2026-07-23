@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import styles from "./PromoBanner.module.css";
 
 const BANNER_HEIGHT = 60;
 
@@ -32,22 +33,8 @@ const PromoBanner = ({ onVisibilityChange }) => {
         overflow: "hidden",
       }}
     >
-      <style>{`
-        @media (max-width: 600px) {
-          .promo-cta-button {
-            display: none !important;
-          }
-          .promo-banner-content {
-            transform: none !important;
-            left: 0 !important;
-            position: relative !important;
-            justify-content: flex-start;
-          }
-        }
-      `}</style>
-
       <div
-        className="promo-banner-content"
+        className={styles.promoBannerContent}
         style={{
           display: "flex",
           alignItems: "center",
@@ -58,7 +45,7 @@ const PromoBanner = ({ onVisibilityChange }) => {
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1714146997042-352ffcbc2631?q=80&w=780&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/img/promo-reader.webp"
           alt="Person reading book"
           style={{
             width: "36px",
@@ -118,7 +105,7 @@ const PromoBanner = ({ onVisibilityChange }) => {
       <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
         <a
           href="getquote"
-          className="promo-cta-button"
+          className={styles.promoCtaButton}
           style={{
             background: "linear-gradient(135deg, #f2fafa 0%, #ffffff 100%)",
             color: "#333333",

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
+import styles from "./HowitWorks.module.css";
 
 const HowItWorksPage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -86,7 +87,7 @@ const HowItWorksPage = () => {
 
   return (
     <>
-    <div className="how-it-works-page">
+    <div className={styles.howItWorksPage}>
       {/* Banner Section */}
       <div className="mil-banner2 mil-banner-inner mil-dissolve">
         <div className="container">
@@ -120,8 +121,8 @@ const HowItWorksPage = () => {
                 It&apos;s the perfect way to get comfortable before getting started, no rush, just helpful insights.
               </p>
               <div className="mil-up">
-                <button 
-                  className="demo-btn"
+                <button
+                  className={styles.demoBtn}
                   onClick={() => setShowVideo(!showVideo)}
                 >
                   📹 Watch Demo Video
@@ -129,19 +130,19 @@ const HowItWorksPage = () => {
               </div>
             </div>
             <div className="col-xl-5 mil-mb-80">
-              <div className="mil-image-frame mil-up demo-placeholder">
+              <div className={`mil-image-frame mil-up ${styles.demoPlaceholder}`}>
                 {showVideo ? (
-                  <div className="video-placeholder">
-                    <div className="play-icon">▶️</div>
+                  <div className={styles.videoPlaceholder}>
+                    <div className={styles.playIcon}>▶️</div>
                     <p>Demo Video Player</p>
                     <small>Your demo video would appear here</small>
                   </div>
                 ) : (
-                  <div className="video-thumbnail">
-                    <div className="play-overlay">
-                      <div className="play-button">▶️</div>
+                  <div className={styles.videoThumbnail}>
+                    <div className={styles.playOverlay}>
+                      <div className={styles.playButton}>▶️</div>
                     </div>
-                    <div className="thumbnail-content">
+                    <div className={styles.thumbnailContent}>
                       <h4>Platform Demo</h4>
                       <p>See how our platform works</p>
                     </div>
@@ -168,9 +169,9 @@ const HowItWorksPage = () => {
           {processSteps.map((step, index) => (
             <div key={step.number} className={`row ${index % 2 === 1 ? 'flex-sm-row-reverse' : ''} justify-content-between align-items-center mil-mb-100`}>
               <div className="col-xl-6 mil-mb-60">
-                <div className="step-content">
-                  <div className="step-header mil-mb-30 mil-up">
-                    <div className="step-icon">
+                <div className={styles.stepContent}>
+                  <div className={`${styles.stepHeader} mil-mb-30 mil-up`}>
+                    <div className={styles.stepIcon}>
                     <img
                         src={step.icon}
                         alt="Satisfied Authors Icon"
@@ -210,9 +211,9 @@ const HowItWorksPage = () => {
             <div className="row">
               {controlFeatures.map((feature, index) => (
                 <div key={index} className="col-xl-4 mil-mb-60">
-                  <div className="mil-icon-box control-feature">
+                  <div className={`mil-icon-box ${styles.controlFeature}`}>
                     <div className="feature-icon mil-mb-30 mil-up">
-                      <span className="control-icon"><img src={feature.image} alt={`Feature ${index + 1}`} width={50} height={50}/></span>
+                      <span className={styles.controlIcon}><img src={feature.image} alt={`Feature ${index + 1}`} width={50} height={50}/></span>
                     </div>
                     <h5 className="mil-mb-20 mil-up">{feature.title}</h5>
                     <p className="mil-text-m mil-soft mil-up">
@@ -237,14 +238,14 @@ const HowItWorksPage = () => {
               <p className="mil-text-m mil-soft mil-mb-60 mil-up">
                 Join thousands of satisfied authors who have brought their ebook dreams to life with our expert team.
               </p>
-              <div className="cta-buttons mil-up">
+              <div className={`${styles.ctaButtons} mil-up`}>
               <div className="mil-btn mil-button-transform mil-md mil-add-arrow">
-                <Link href="/calendly" className="cta-btn primary">
+                <Link href="/calendly" className={`${styles.ctaBtn} ${styles.primary}`}>
                   Book a Demo
                 </Link>
                 </div>
                 <div className="mil-btn mil-button-transform mil-md mil-add-arrow">
-                  <Link href="/getquote" className="cta-btn secondary">
+                  <Link href="/getquote" className={`${styles.ctaBtn} ${styles.secondary}`}>
                     Get Free Quote
                   </Link>
                 </div>
@@ -253,322 +254,6 @@ const HowItWorksPage = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .how-it-works-page {
-          font-family: inherit;
-        }
-
-        .cta-buttons {
-          display: flex;
-          gap: 20px;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .demo-btn {
-          background: #7eb947;
-          color: white;
-          border: none;
-          padding: 15px 30px;
-          border-radius: 8px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .demo-btn:hover {
-          background: #6ba339;
-          transform: translateY(-2px);
-        }
-
-        .demo-placeholder {
-          position: relative;
-          min-height: 300px;
-        }
-
-        .video-placeholder {
-          background: #f8f9fa;
-          border: 2px dashed #dee2e6;
-          border-radius: 12px;
-          padding: 60px 20px;
-          text-align: center;
-          min-height: 300px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .video-placeholder .play-icon {
-          font-size: 48px;
-          margin-bottom: 20px;
-        }
-
-        .video-thumbnail {
-          background: linear-gradient(135deg, #7eb947 0%, #6ba339 100%);
-          border-radius: 12px;
-          min-height: 300px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          cursor: pointer;
-          transition: transform 0.3s ease;
-          color: white;
-        }
-
-        .video-thumbnail:hover {
-          transform: scale(1.02);
-        }
-
-        .play-overlay {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-
-        .play-button {
-          width: 80px;
-          height: 80px;
-          background: rgba(255, 255, 255, 0.9);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 32px;
-          color: #7eb947;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .thumbnail-content {
-          text-align: center;
-          z-index: 2;
-          position: relative;
-          margin-top: 100px;
-        }
-
-        .step-content {
-          padding: 20px 0;
-        }
-
-        .step-header {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-        }
-
-        .step-icon {
-          margin-bottom: 15px; /* Reduced margin */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 50px;
-          height: 50px;
-          background: #7eb947;
-          border-radius: 50%;
-          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.3);
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .step-icon img {
-          width: 30px; /* Smaller icons */
-          height: 30px;
-          object-fit: contain;
-          color: black; /* Ensure icons are visible */
-        }
-
-        .step-number {
-          font-size: 24px;
-          font-weight: bold;
-          color: #7eb947;
-          background: #f2fafa;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .step-illustration {
-          background: linear-gradient(135deg, #f2fafa 0%, #e8f5e8 100%);
-          border-radius: 12px;
-          min-height: 250px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 2px solid #7eb947;
-        }
-
-        .illustration-content {
-          text-align: center;
-          color: #333;
-        }
-
-        .step-visual {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-        }
-
-        .large-icon {
-          font-size: 48px;
-          background: #7eb947;
-          color: white;
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .control-feature {
-          text-align: center;
-          padding: 30px 20px;
-          background: white;
-          border-radius: 12px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .control-feature:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .control-icon {
-          font-size: 32px;
-          background: #7eb947;
-          color: white;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto;
-        }
-        
-        .control-icon img {
-          width: 40px; /* Smaller icons */
-          height: 40px;
-          object-fit: contain;
-          color: black; /* Ensure icons are visible */
-        }
-
-        .cta-buttons {
-          display: flex;
-          gap: 20px;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .cta-btn {
-          padding: 15px 30px;
-          border-radius: 8px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          display: inline-block;
-        }
-
-        .cta-btn.primary {
-          background: #7eb947;
-          color: white;
-        }
-
-        .cta-btn.primary:hover {
-          background: #6ba339;
-          transform: translateY(-2px);
-          color: white;
-        }
-
-        .cta-btn.secondary {
-          background: transparent;
-          color: #7eb947;
-          border: 2px solid #7eb947;
-        }
-
-        .cta-btn.secondary:hover {
-          background: #7eb947;
-          color: white;
-          transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-          .step-header {
-            flex-direction: column;
-            text-align: center;
-            gap: 10px;
-          }
-
-          .cta-buttons {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .cta-btn {
-            width: 100%;
-            max-width: 250px;
-            text-align: center;
-          }
-
-          .demo-btn {
-            width: 100%;
-            justify-content: center;
-          }
-          .mil-features .step-content {
-            text-align: center;
-            display: block;
-          }
-
-          .mil-features .step-header {
-            justify-content: center;
-            text-align: center;
-          }
-
-          /* Optional: Adjust the images to fit better on small screens */
-          .mil-features .step-content img {
-            max-width: 80%; /* Scale down images */
-            margin: 0 auto;
-          }
-
-          /* Optional: Adjusting the step text and icon */
-          .mil-features .step-header .step-icon {
-            margin: 0 auto;
-          }
-        }
-
-        /* Animation enhancements */
-        .mil-up {
-          opacity: 0;
-          transform: translateY(30px);
-          animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .mil-up:nth-child(1) { animation-delay: 0.1s; }
-        .mil-up:nth-child(2) { animation-delay: 0.2s; }
-        .mil-up:nth-child(3) { animation-delay: 0.3s; }
-        .mil-up:nth-child(4) { animation-delay: 0.4s; }
-      `}</style>
     </div>
     </>
   );

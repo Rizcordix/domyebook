@@ -9,6 +9,7 @@ import '@css/style.css';
 import ClientLayout from '@/components/ClientLayout';
 import Script from 'next/script';
 import PopupClientWrapper from "@/components/Popupclient";
+import DeferredChat from "@/components/DeferredChat";
 
 // Load font
 const secondary_font = Questrial({
@@ -34,33 +35,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={secondary_font.variable}>
-      <body>
+      {/* suppressHydrationWarning: browser extensions (Grammarly, dark-mode, etc.)
+          inject a style attribute on <body> before React hydrates, causing a
+          false-positive mismatch. This only ignores ATTRIBUTE diffs on body itself —
+          all children are still fully hydration-checked. */}
+      <body suppressHydrationWarning>
         <ClientLayout>{children}</ClientLayout>
         <PopupClientWrapper />
 
         {/* ✅ Tawk.to script with next/script (safe for hydration) */}
 
-        <Script id="trustpilot" strategy="afterInteractive">
+        <Script id="trustpilot" strategy="lazyOnload">
         {`(function(w,d,s,r,n){w.TrustpilotObject=n;w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
             a=d.createElement(s);a.async=1;a.src=r;a.type='text/java'+s;f=d.getElementsByTagName(s)[0];
             f.parentNode.insertBefore(a,f)})(window,document,'script', 'https://invitejs.trustpilot.com/tp.min.js', 'tp');
             tp('register', 'hpkotXHlg0I5bYCY');`}
         </Script>
         
-        <Script id="tawkto" strategy="afterInteractive">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-              var s1=document.createElement("script"),
-                  s0=document.getElementsByTagName("script")[0];
-              s1.async=true;
-              s1.src='https://embed.tawk.to/687a342a86520d191450094f/1j0elnk9p';
-              s1.charset='UTF-8';
-              s1.setAttribute('crossorigin','*');
-              s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}
-        </Script>
+        {/* Tawk.to loads on first user interaction (see DeferredChat) — keeps its
+            heavy JS + layout-shifting iframe out of the critical rendering window. */}
+        <DeferredChat />
       </body>
     </html>
   );

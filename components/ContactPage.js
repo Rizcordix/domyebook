@@ -434,19 +434,9 @@ const Contactpage = () => {
       </div>
       {/* contact end */}
       
-      <style jsx>{`
-        @keyframes pulse {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      `}</style>
+      {/* The pulsing dot uses the global `pulse` keyframes from public/css/style.css
+          (the styled-jsx copy that used to live here was scoped/renamed by styled-jsx,
+          so the inline animation reference never actually used it — dead code removed). */}
     </>
   );
 };

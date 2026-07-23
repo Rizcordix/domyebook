@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import styles from './genericservices.module.css';
 
 const EbookServicesComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -106,546 +107,7 @@ const EbookServicesComponent = () => {
 
 
   return (
-    <div className="ebook-services-container">
-      <style jsx>{`
-        .ebook-services-container {
-          font-family: "Wagen", sans-serif;
-          line-height: 1.6;
-          color: #333;
-        }
-
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-
-        /* Section 1: Services Slider */
-        .services-slider-section {
-          background: #f8fcfd; /* Lighter, professional background */
-          padding: 80px 0;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .section-heading {
-          text-align: center;
-          font-size: 3rem;
-          font-weight: 700;
-          color: #222;
-          margin-bottom: 60px;
-          position: relative;
-        }
-
-        .section-heading::after {
-          content: '';
-          position: absolute;
-          bottom: -15px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 5px;
-          background: linear-gradient(90deg, #7eb947, #a8d96e);
-          border-radius: 5px;
-        }
-
-        .slider-container {
-          position: relative;
-          background: white;
-          border-radius: 20px;
-          box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* More refined shadow */
-          overflow: hidden;
-        }
-
-        .slider-wrapper {
-          display: flex;
-          scroll-behavior: smooth;
-          overflow-x: hidden; /* Hide scrollbar for smooth visual */
-          scroll-snap-type: x mandatory;
-          gap: 30px; /* Gap between slides */
-          padding: 40px; /* Padding inside the slider container */
-        }
-
-        .slide {
-          min-width: calc((100% / var(--items-per-view)) - (var(--gap) * (var(--items-per-view) - 1) / var(--items-per-view)));
-          flex-shrink: 0;
-          background: #ffffff;
-          border-radius: 15px;
-          padding: 30px;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          scroll-snap-align: start;
-        }
-
-        .slide:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .slide-icon {
-          width: 70px;
-          height: 70px;
-          background: linear-gradient(135deg, #7eb947 0%, #90c955 100%);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 25px;
-          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.3);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .slide-icon img {
-          width: 45px;
-          height: 45px;
-          object-fit: contain;
-          filter: brightness(0) invert(1); /* Makes SVG icons white */
-        }
-
-        .slide-icon::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-          transform: rotate(45deg);
-          animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-          0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-          100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .slide h3 {
-          font-size: 1.8rem;
-          font-weight: 700;
-          color: #333;
-          margin-bottom: 15px;
-          line-height: 1.3;
-        }
-
-        .slide p {
-          font-size: 0.95rem;
-          color: #666;
-          margin-bottom: 0;
-          max-width: 300px;
-        }
-
-        .slider-controls {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: white;
-          border: none;
-          width: 45px;
-          height: 45px;
-          border-radius: 50%;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.5rem;
-          color: #7eb947;
-          transition: all 0.3s ease;
-          z-index: 10;
-        }
-
-        .slider-controls:hover {
-          background: linear-gradient(135deg, #7eb947 0%, #90c955 100%);
-          color: white;
-          transform: translateY(-50%) scale(1.08);
-          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.4);
-        }
-
-        .prev-btn {
-          left: 20px;
-        }
-
-        .next-btn {
-          right: 20px;
-        }
-
-        .slider-pagination {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-          margin-top: 40px;
-        }
-
-        .pagination-dot {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: #ddd;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .pagination-dot.active {
-          background: linear-gradient(135deg, #7eb947 0%, #90c955 100%);
-          transform: scale(1.2);
-          box-shadow: 0 0 8px rgba(126, 185, 71, 0.4);
-        }
-
-        /* Section 2: Video Section */
-        .video-section {
-          background: #ffffff;
-          padding: 100px 0;
-        }
-
-        .video-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
-          align-items: center;
-        }
-
-        .video-wrapper {
-          position: relative;
-          background: #f2fafa;
-          border-radius: 20px;
-          overflow: hidden;
-          aspect-ratio: 16/9;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .video-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        .play-button {
-          width: 80px;
-          height: 80px;
-          background: linear-gradient(135deg, #7eb947 0%, #90c955 50%, #6aa838 100%);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          border: none;
-          font-size: 2rem;
-          color: white;
-          box-shadow: 0 10px 30px rgba(126, 185, 71, 0.4);
-          position: relative;
-          overflow: hidden;
-          z-index: 2;
-        }
-
-        .play-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-          border-radius: 50%;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .play-button:hover::before {
-          opacity: 1;
-        }
-
-        .play-button:hover {
-          transform: scale(1.15);
-          background: linear-gradient(135deg, #90c955 0%, #7eb947 50%, #5a9630 100%);
-          box-shadow: 0 15px 40px rgba(126, 185, 71, 0.5);
-        }
-
-        .video-text h2 {
-          font-size: 3rem;
-          font-weight: 700;
-          color: #333;
-          margin-bottom: 30px;
-          line-height: 1.2;
-        }
-
-        .video-text p {
-          font-size: 1.1rem;
-          color: #666;
-          margin-bottom: 20px;
-        }
-
-        /* Section 3: Stats Banner */
-        .stats-banner {
-          background: linear-gradient(45deg, #7eb947, #90c955, #a8d96e, #7eb947); /* More varied gradient */
-          background-size: 300% 300%;
-          animation: gradientMovement 10s ease infinite alternate; /* Slower, smoother movement */
-          padding: 60px 0; /* Significantly decreased height */
-          color: white;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-        }
-
-        @keyframes gradientMovement {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        .stats-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 10% 10%, rgba(255,255,255,0.08) 0%, transparent 30%),
-                radial-gradient(circle at 90% 90%, rgba(255,255,255,0.08) 0%, transparent 30%),
-                radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05) 0%, transparent 50%),
-                radial-gradient(circle at 50% 100%, rgba(255,255,255,0.05) 0%, transparent 50%);
-            pointer-events: none;
-            opacity: 0.8;
-        }
-
-        .stats-title {
-          font-size: 3.2rem;
-          font-weight: 700;
-          margin-bottom: 40px;
-          text-shadow: 0 3px 6px rgba(0,0,0,0.2);
-          letter-spacing: -0.02em;
-        }
-
-        .stats-grid {
-          display: flex; /* Use flexbox for non-card layout */
-          justify-content: space-around; /* Distribute items evenly */
-          align-items: flex-start; /* Align items to the top */
-          gap: 30px; /* Space between stat items */
-          max-width: 1100px;
-          margin: 0 auto;
-        }
-
-        .stat-item {
-          flex: 1; /* Allows items to grow and shrink */
-          padding: 20px; /* Reduced padding */
-          border-radius: 15px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          color: white;
-          position: relative;
-          overflow: hidden;
-          background: rgba(255,255,255,0.1); /* Subtle background */
-          backdrop-filter: blur(5px);
-          border: 1px solid rgba(255,255,255,0.2);
-          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-          transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-            background: rgba(255,255,255,0.2);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            transform: translateY(-3px);
-        }
-
-        .stat-icon {
-          margin-bottom: 15px; /* Reduced margin */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 50px;
-          height: 50px;
-          background: linear-gradient(135deg, #7eb947 0%, #90c955 100%);
-          border-radius: 50%;
-          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.3);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .stat-icon img {
-          width: 35px; /* Smaller icons */
-          height: 35px;
-          object-fit: contain;
-          color: black; /* Ensure icons are visible */
-        }
-
-        .stat-number {
-          font-size: 2.5rem; /* Slightly smaller number */
-          font-weight: 700;
-          margin-bottom: 5px;
-          display: block;
-          text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .stat-label {
-          font-size: 1rem; /* Smaller label */
-          opacity: 0.95;
-          margin-bottom: 10px;
-          font-weight: 600;
-        }
-
-        .stat-description {
-          font-size: 0.85rem; /* Smaller description */
-          opacity: 0.85;
-          line-height: 1.3;
-          text-align: center;
-        }
-
-        /* Section 4: Testimonials CTA */
-        .testimonials-cta {
-          background: #f8fcfd;
-          padding: 100px 0;
-          text-align: center;
-        }
-
-        .cta-icon {
-          display: flex;
-          justify-content: center;
-          height: 100px;
-        }
-
-
-        .cta-icon::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.15), transparent);
-          animation: rotate 4s linear infinite;
-        }
-
-        @keyframes rotate {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
-        .cta-title {
-          font-size: 3rem;
-          font-weight: 700;
-          color: #333;
-          margin-bottom: 25px;
-          line-height: 1.2;
-        }
-
-        .cta-description {
-          font-size: 1.1rem;
-          color: #666;
-          max-width: 650px;
-          margin: 0 auto 35px;
-          line-height: 1.6;
-        }
-
-        .cta-button {
-          background: #7eb947;
-          color: white;
-          padding: 16px 35px;
-          border: none;
-          border-radius: 50px;
-          font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          display: inline-block;
-          box-shadow: 0 5px 15px rgba(126, 185, 71, 0.2);
-        }
-
-        .cta-button:hover {
-          background: #6aa838;
-          transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(126, 185, 71, 0.3);
-        }
-
-        /* Responsive Design */
-        @media (min-width: 1024px) {
-          .slider-wrapper {
-            --items-per-view: 3;
-            --gap: 30px;
-            padding: 40px;
-          }
-        }
-
-        @media (min-width: 768px) and (max-width: 1023px) {
-          .slider-wrapper {
-            --items-per-view: 2;
-            --gap: 20px;
-            padding: 30px;
-          }
-          .slide h3 { font-size: 1.6rem; }
-          .slide p { font-size: 0.9rem; }
-          .stats-grid { gap: 20px; }
-          .stat-number { font-size: 2.2rem; }
-          .stat-label { font-size: 0.9rem; }
-          .stat-description { font-size: 0.8rem; }
-          .stats-title { font-size: 2.8rem; }
-          .video-text h2, .cta-title { font-size: 2.8rem; }
-        }
-
-        @media (max-width: 767px) {
-          .services-slider-section,
-          .video-section,
-          .stats-banner,
-          .testimonials-cta {
-            padding: 60px 0;
-          }
-
-          .section-heading { font-size: 2.5rem; margin-bottom: 40px; }
-
-          .slider-wrapper {
-            --items-per-view: 1;
-            --gap: 0px;
-            padding: 20px;
-            flex-direction: column; /* Stack slides vertically on small screens */
-            align-items: center;
-          }
-          .slide { min-width: 90%; padding: 25px; }
-          .slide h3 { font-size: 1.5rem; }
-          .slide p { font-size: 0.85rem; }
-
-          .slider-controls { display: none; } /* Hide controls on very small screens if not needed */
-          .slider-pagination { margin-top: 20px; }
-
-          .video-content {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
-          .video-text h2 { font-size: 2.2rem; }
-          .video-text p { font-size: 1rem; }
-
-          .stats-title { font-size: 2.2rem; margin-bottom: 30px; }
-          .stats-grid {
-            flex-direction: column; /* Stack stats vertically */
-            align-items: center;
-            gap: 25px;
-          }
-          .stat-item {
-            width: 90%; /* Take up more width */
-            padding: 25px;
-          }
-          .stat-number { font-size: 2.2rem; }
-          .stat-label { font-size: 0.95rem; }
-          .stat-description { font-size: 0.8rem; }
-
-          .cta-title { font-size: 2.2rem; }
-          .cta-description { font-size: 1rem; }
-          .cta-button { padding: 14px 30px; font-size: 0.95rem; }
-        }
-      `}</style>
-
+    <div className={styles.ebookServicesContainer}>
       {/* Section 2: Video Section */}
       {/* <section className="video-section">
         <div className="container">
@@ -706,40 +168,40 @@ const EbookServicesComponent = () => {
       </section> */}
 
       {/* Section 3: Stats Banner */}
-        <section className="stats-banner">
-          <div className="container">
-            <h2 className="stats-title">What We Have Accomplished So Far</h2>
-            <div className="stats-grid">
-          <div className="stat-item">
-            <div className="stat-icon">
+        <section className={styles.statsBanner}>
+          <div className={`container ${styles.container}`}>
+            <h2 className={styles.statsTitle}>What We Have Accomplished So Far</h2>
+            <div className={styles.statsGrid}>
+          <div className={styles.statItem}>
+            <div className={styles.statIcon}>
               <img
             src="/img/icons/customer-11.png"
             alt="Satisfied Authors Icon"
               />
               </div>
-              <span className="stat-number">Over 120</span>
-              <div className="stat-label">Satisfied Customers</div>
-              <div className="stat-description">
+              <span className={styles.statNumber}>Over 120</span>
+              <div className={styles.statLabel}>Satisfied Customers</div>
+              <div className={styles.statDescription}>
                 Trusting us with their projects, satisfied with our quality and dedication.
               </div>
             </div>
-            <div className="stat-item">
-              <div className="stat-icon">
+            <div className={styles.statItem}>
+              <div className={styles.statIcon}>
                 <img src="/img/icons/editor-11.png" alt="Words Written Icon" /> {/* Placeholder icon */}
               </div>
-              <span className="stat-number">Over 1 Million</span>
-              <div className="stat-label">Words Written and Edited</div>
-              <div className="stat-description">
+              <span className={styles.statNumber}>Over 1 Million</span>
+              <div className={styles.statLabel}>Words Written and Edited</div>
+              <div className={styles.statDescription}>
                 Professional content created and refined by our amazing freelancers.
               </div>
             </div>
-            <div className="stat-item">
-              <div className="stat-icon">
+            <div className={styles.statItem}>
+              <div className={styles.statIcon}>
                 <img src="/img/icons/content-11.png" alt="Content Creators Icon" /> {/* Placeholder icon */}
               </div>
-              <span className="stat-number">Over 50+</span>
-              <div className="stat-label">Exceptional Content Creators</div>
-              <div className="stat-description">
+              <span className={styles.statNumber}>Over 50+</span>
+              <div className={styles.statLabel}>Exceptional Content Creators</div>
+              <div className={styles.statDescription}>
                 Writers, Editors, Designers, Illustrators, Formatters, Narrators.
               </div>
             </div>
@@ -748,13 +210,13 @@ const EbookServicesComponent = () => {
       </section>
 
       {/* Section 4: Testimonials CTA */}
-      <section className="testimonials-cta">
-        <div className="container">
-          <div className="cta-icon">
+      <section className={styles.testimonialsCta}>
+        <div className={`container ${styles.container}`}>
+          <div className={styles.ctaIcon}>
             <img src="/img/inner-pages/testimonial_icon.webp" alt="Testimonials Icon" />
           </div>
-          <h2 className="cta-title">What Our Authors Are Saying</h2>
-          <p className="cta-description">
+          <h2 className={styles.ctaTitle}>What Our Authors Are Saying</h2>
+          <p className={styles.ctaDescription}>
             Transparency and genuine feedback are important to us. Here&apos;s what some of our authors have to say about their experiences working with DomyEbook - The Premier Ebook Writing Service.
           </p>
           <div className="mil-up mil-mb-60">
