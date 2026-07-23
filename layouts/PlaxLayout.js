@@ -1,22 +1,17 @@
-"use client";
+// Server component: static wrapper markup renders with zero hydration cost.
+// Client behavior lives in small islands: PlaxEffects (GSAP scroll effects)
+// and EmbedPopup (video popup). Pages that are themselves client components
+// can still import this — it simply renders as part of their client tree.
 import EmbedPopup from "@/components/EmbedPopup";
-import { plaxUtility } from "@/utility";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import Footer from "./Footer";
-import Header from "./Header";
+import PlaxEffects from "./PlaxEffects";
 import ScrollProgress from "./ScrollProgress";
 
 const PlaxLayout = ({ children, bg, margin, noFooter, dark, footer }) => {
-  useEffect(() => {
-    plaxUtility.scrollAnimations();
-    plaxUtility.smoothScroll();
-    plaxUtility.counters();
-    plaxUtility.stickMenu();
-    plaxUtility.backToTop();
-  }, []);
-
   return (
     <Fragment>
+      <PlaxEffects />
       <EmbedPopup />
       <div id="smooth-wrapper" className="mil-wrapper">
         {/* scroll progress */}
@@ -24,8 +19,6 @@ const PlaxLayout = ({ children, bg, margin, noFooter, dark, footer }) => {
         {/* scroll progress end */}
         {/* back to top */}
         <a href="#" className="progress-wrap active-progress" />
-        {/* top panel end */}
-        {/* <Header dark={dark} /> */}
         {/* top panel end */}
         {/* content */}
         <div id="smooth-content">

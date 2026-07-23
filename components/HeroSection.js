@@ -53,10 +53,28 @@ const HeroSection = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            background: `url('/img/home-2/hero-poster.jpg') center/cover no-repeat`,
             zIndex: 0,
           }}
         >
+          {/* Poster as a lazy <img> instead of a CSS background — CSS backgrounds
+              download eagerly even below the fold; loading="lazy" defers this 98KB
+              until the section approaches the viewport. */}
+          <img
+            src="/img/home-2/hero-poster.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: -2, // below the video (zIndex -1) so playback stays visible
+            }}
+          />
           <video
             ref={videoRef}
             autoPlay={false}

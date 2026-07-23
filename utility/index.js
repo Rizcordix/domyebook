@@ -11,14 +11,19 @@ export const plaxUtility = {
     //ScrollTrigger.normalizeScroll(true);
   },
   scrollAnimations() {
-    const els = gsap.utils.toArray(".mil-up");
+    const all = gsap.utils.toArray(".mil-up");
+    // Only animate elements BELOW the current viewport. Elements already
+    // visible stay visible — hiding them just to re-reveal them causes a
+    // flash, extra style/layout work, and delays LCP paint.
+    const vh = window.innerHeight;
+    const els = all.filter((el) => el.getBoundingClientRect().top > vh);
     if (els.length) {
       // Initial hidden state is applied via JS only — so if JS/GSAP fails to run,
       // content stays visible (see also the CSS fallback in globals.css).
       gsap.set(els, { opacity: 0, y: 50, scale: 0.98, willChange: "transform, opacity" });
 
       // One batched observer for ALL reveal elements instead of one ScrollTrigger each.
-      ScrollTrigger.batch(".mil-up", {
+      ScrollTrigger.batch(els, {
         start: "top 92%",
         onEnter: (batch) =>
           gsap.to(batch, {
@@ -43,8 +48,11 @@ export const plaxUtility = {
           }),
       });
 
-      // Safety net: recompute positions after load so anything already in view reveals.
-      gsap.delayedCall(1.5, () => ScrollTrigger.refresh());
+      // Safety net: recompute trigger positions once all images have loaded
+      // (image loads shift layout, which would leave triggers mis-placed).
+      if (document.readyState !== "complete") {
+        window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+      }
     }
 
     const scaleImage = gsap.utils.toArray(".mil-scale-img");

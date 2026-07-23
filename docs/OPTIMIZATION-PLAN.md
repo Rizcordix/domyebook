@@ -175,7 +175,19 @@ Today `styled-jsx` scopes these so they only affect that component. **Moving the
 - Localized both Unsplash images (promo avatar → `/img/promo-reader.webp` 1 KB; popup → `/img/popup-offer.webp` 79 KB).
 - `npm run check:images` budget guard (`scripts/check-image-budget.mjs`) fails if any raster in `public/img` exceeds 500 KB — wire into CI. Two straggler book covers recompressed to pass.
 
-**Remaining known lever (future work):** LCP ~5.8 s on simulated mobile is now dominated by the render-critical path — the large global stylesheets (`style.css`, `bootstrap-grid.css`, `font-awesome.min.css` all load on every page) and the hero image decode. Options: purge unused rules from the global CSS bundle, subset font-awesome to the icons actually used, and/or preload the hero image.
+**LCP deep-dive (done 2026-07-23, follow-up session):**
+
+Measurement disproved the CSS hypothesis — Next bundles all global CSS to ~43 KB gzipped with only 13 KB unused, and zero render-blocking resources were flagged. The LCP element is the **Banner hero image**, which downloads in <100 ms but suffered **~1.2 s of element render delay**. Root causes found and fixed:
+
+1. **Below-fold bandwidth competition** in the LCP window — fixed with `loading="lazy"` on the HeroSection poster (now an `<img>` instead of an eager CSS background), services2 tab image, footer payment logos (one "SVG" is 60 KB), and IconBoxes icons. Plus `fetchPriority="high"` on the Banner image.
+2. **Popup fired at 600 ms** — inside the LCP window, forcing full-page style recalc; delay raised to 6 s (also better conversion UX).
+3. **Total transfer: 973 KB → ~784 KB**; LCP 5.9 s → **5.2 s**; score stable ~70 (mobile, 4× CPU simulated).
+
+**Islands refactor (done 2026-07-23, same session):** `PlaxLayout` and `app/page.js` are now **server components**; GSAP effects moved to a `PlaxEffects` client island that initializes on **browser idle** (paint first, animate after); reveal animations now **skip elements already in the viewport** (no hide-then-show flash, less style/layout work); `Footer` became an explicit below-fold client island; static sections (Banner/LCP, IconBoxes, CTA, BrandCarousel) render with zero hydration cost. Verified across all 48 pages.
+
+**Post-refactor conclusion (measured):** simulated-mobile LCP settled at ~5.2 s (score ~70). Profiling shows the remaining ~1 s element render delay persists even unthrottled and is **browser layout/paint cost of the page itself** — a very large DOM (two stacked heroes, many sections) with paint-expensive effects (gradient-clipped text, layered radial gradients) — not hydration, not GSAP, not resource loading (the LCP image loads in <400 ms). Observed local LCP is ~1.4 s; real devices will sit between that and the harsh 4×-CPU/1.6 Mbps simulation. Getting the simulated score into the 90s would require *design-level* slimming of the home page (fewer stacked sections above the fold, simpler text effects) — a product decision, not an engineering fix. Secondary lever: font-awesome subsetting (73 KB, needs `fonttools`).
+
+Note: measurements require the Turbopack dev server (`npm run dev`) to be **stopped** — it writes dev artifacts into `.next` and corrupts/poisons production builds and results.
 
 ---
 

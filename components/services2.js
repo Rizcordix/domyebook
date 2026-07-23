@@ -104,6 +104,8 @@ return (
                                     <img
                                         src={services[activeTab].image}
                                         alt={`${services[activeTab].title} Service`}
+                                        loading="lazy"
+                                        decoding="async"
                                         style={{
                                             objectFit: 'contain',
                                             borderRadius: '12px',
