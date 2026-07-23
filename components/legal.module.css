@@ -1,0 +1,156 @@
+/* Shared legal-page styles, migrated from the <style jsx> blocks in
+   Refund.js, TermsofService.js, PrivacyPolicy.js and Plagiarism.js.
+   The four blocks were identical except for two Refund-specific tweaks,
+   provided here as modifier classes (.serviceItemStart, .serviceBulletTall)
+   applied IN ADDITION to the base classes in Refund.js.
+   NOTE: .container in the JSX is the global Bootstrap class only — the
+   original styled-jsx blocks never styled it, so it is not redefined here. */
+
+.termsContent {
+  padding: 80px 0 100px;
+  background: #fafafa;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.termsWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 60px;
+}
+
+.termsSection {
+  margin-bottom: 50px;
+}
+
+.termsSection:last-child {
+  margin-bottom: 0;
+}
+
+.termsHeading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #7eb947;
+  position: relative;
+}
+
+.termsHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #7eb947 0%,rgb(174, 215, 193) 100%);
+  border-radius: 2px;
+}
+
+.termsText {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.termsText p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.termsText p:last-child {
+  margin-bottom: 0;
+}
+
+.servicesList {
+  margin: 24px 0;
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 24px;
+  border-left: 4px solid #7eb947;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #2d3748;
+}
+
+/* Refund.js variant: align items to the top for multi-line content */
+.serviceItemStart {
+  align-items: flex-start;
+}
+
+.serviceItem:last-child {
+  margin-bottom: 0;
+}
+
+.serviceBullet {
+  color: #7eb947;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+/* Refund.js variant: match line height of text for better alignment */
+.serviceBulletTall {
+  line-height: 1.8;
+}
+
+.contactEmail {
+  color: #7eb947;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contactEmail:hover {
+  color:rgb(125, 154, 98);
+  border-bottom-color: #7eb947;
+}
+
+@media (max-width: 768px) {
+  .termsContent {
+    padding: 50px 0 60px;
+  }
+
+  .termsWrapper {
+    margin: 0 20px;
+    padding: 40px 30px;
+  }
+
+  .termsHeading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .termsText {
+    font-size: 15px;
+  }
+
+  .servicesList {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .termsWrapper {
+    margin: 0 15px;
+    padding: 30px 20px;
+  }
+
+  .termsHeading {
+    font-size: 20px;
+  }
+
+  .termsText {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}

@@ -1,0 +1,193 @@
+/* Migrated from the <style jsx> block in app/testimonials/page.js.
+   CSS Modules scope every class, matching the old styled-jsx scoping.
+   NOTE: .container is a LOCAL override applied IN ADDITION to the
+   global Bootstrap class (the JSX keeps both class names). */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.customerAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7eb947;
+  box-shadow: 0 4px 12px rgba(126, 185, 71, 0.2);
+}
+
+.testimonialsSection {
+  background: #f2fafa;
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #7eb947;
+}
+
+.sectionSubtitle {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.testimonialCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1; /* Keeps it square */
+  height: auto;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-10px);
+  border-color: #7eb94780;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quoteIcon {
+  opacity: 0.7;
+}
+
+.ratingStars {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover .ratingStars {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.star {
+  font-size: 16px;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #ddd;
+}
+
+.cardBody {
+  margin: 20px 0;
+  flex-grow: 1; /* Fills empty space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonialText {
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 96px; /* Ensures consistent height */
+}
+
+.testimonialText.expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.readMore {
+  background: none;
+  color: #7eb947;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.authorName {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.authorPosition {
+  font-size: 13px;
+  color: #7eb947;
+}
+
+.authorCompany {
+  font-size: 12px;
+  color: #888;
+}
+
+.loadMoreSection {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  background: linear-gradient(135deg, #7eb947, #6ba83a);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.loadMoreButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(126, 185, 71, 0.4);
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonialCard {
+    padding: 20px;
+  }
+}

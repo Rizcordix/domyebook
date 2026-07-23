@@ -38,6 +38,7 @@ const Banner = ({
                 width={1600}
                 height={1419}
                 priority
+                fetchPriority="high"
                 sizes="(max-width: 1200px) 100vw, 50vw"
                 style={{ ...style, width: "100%", height: "auto" }}
               />

@@ -1,0 +1,161 @@
+/* Migrated from the <style jsx> block in AboutUS.js (RotatingVisionList).
+   CSS Modules scope every class, matching the old styled-jsx scoping.
+   The mil-* utility classes used in the JSX are global and untouched here. */
+
+.rollingContainer {
+  position: relative;
+  min-height: 140px;
+  overflow: hidden;
+  perspective: 1500px;
+  perspective-origin: center center;
+}
+
+.rollingItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+             opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* Default visible state */
+.rollingItem.current {
+  transform: translateY(0%) rotateX(0deg);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Rolling out animation */
+.rollingItem.rollingOut {
+  transform: translateY(-100%) rotateX(90deg);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Rolling in animation */
+.rollingItem.rollingIn {
+  transform: translateY(0%) rotateX(0deg);
+  opacity: 1;
+  z-index: 3;
+  animation: rollInFromBottom 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes rollInFromBottom {
+  0% {
+    transform: translateY(100%) rotateX(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* Text elements with 3D depth */
+.rollingItem h5 {
+  transform: translateZ(20px);
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+             opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.rollingItem p {
+  transform: translateZ(15px);
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.05s,
+             opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.05s;
+  backface-visibility: hidden;
+}
+
+/* Text animation during transitions */
+.rollingOut h5 {
+  transform: translateZ(-20px) rotateX(30deg);
+  opacity: 0;
+}
+
+.rollingOut p {
+  transform: translateZ(-15px) rotateX(30deg);
+  opacity: 0;
+}
+
+/* Visual effects */
+.rollingItem {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.rollingIn {
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
+}
+
+.rollingOut {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .rollingContainer {
+    min-height: 160px;
+    perspective: 1200px;
+  }
+
+  .rollingItem {
+    transition-duration: 0.7s;
+  }
+
+  .rollingItem h5,
+  .rollingItem p {
+    transition-duration: 0.7s;
+  }
+
+  .rollingIn {
+    animation-duration: 0.7s;
+  }
+}
+
+@media (max-width: 480px) {
+  .rollingContainer {
+    min-height: 180px;
+    perspective: 1000px;
+  }
+
+  .rollingItem {
+    transition-duration: 0.6s;
+  }
+
+  .rollingItem h5,
+  .rollingItem p {
+    transition-duration: 0.6s;
+  }
+
+  .rollingIn {
+    animation-duration: 0.6s;
+  }
+}
+
+/* Initial page load animation */
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-30deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%) rotateX(0deg);
+  }
+}
+
+.rollingContainer {
+  animation: rollIn 1.2s ease-out;
+}
+
+/* Hardware acceleration optimization */
+.rollingItem,
+.rollingItem h5,
+.rollingItem p {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}

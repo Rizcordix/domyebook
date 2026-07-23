@@ -25,37 +25,11 @@ const HeroSection = () => {
     }
   };
 
-  // Keyframe animations + responsive fixes
-  const playButtonStyles = `
-    @keyframes btn-drop-13 {
-      0% { transform: scale(1.1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1.1); }
-    }
-    @keyframes btn-drop-16 {
-      0% { transform: scale(1.1); }
-      50% { transform: scale(1.6); }
-      100% { transform: scale(1.1); }
-    }
-    @media (max-width: 767.98px) {
-      .mil-banner {
-        padding: 80px 0 !important;
-        min-height: 90vh !important;
-      }
-      .mil-banner h1 {
-        font-size: 2.2rem !important;
-        margin-bottom: 20px !important;
-      }
-      .mil-banner p {
-        font-size: 1rem !important;
-        margin-bottom: 30px !important;
-      }
-    }
-  `;
+  // Keyframes + mobile hero sizing now live in app/globals.css
+  // (they reference global .mil-banner and are used from inline styles).
 
   return (
     <>
-      <style>{playButtonStyles}</style>
       <div
         className="mil-banner"
         style={{
@@ -79,10 +53,28 @@ const HeroSection = () => {
             left: 0,
             width: "100%",
             height: "100%",
-            background: `url('/img/home-2/hero-poster.jpg') center/cover no-repeat`,
             zIndex: 0,
           }}
         >
+          {/* Poster as a lazy <img> instead of a CSS background — CSS backgrounds
+              download eagerly even below the fold; loading="lazy" defers this 98KB
+              until the section approaches the viewport. */}
+          <img
+            src="/img/home-2/hero-poster.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: -2, // below the video (zIndex -1) so playback stays visible
+            }}
+          />
           <video
             ref={videoRef}
             autoPlay={false}

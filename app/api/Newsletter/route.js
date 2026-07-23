@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server';
-import { poolPromise } from '@/lib/db'; // Adjust path if needed
+import db from '@/lib/db'; // better-sqlite3 instance (lib/db.js has only a default export)
+
+// Ensure the table exists (no-op after first run)
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS NewsletterSubscribers (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    EmailAddress TEXT NOT NULL UNIQUE,
+    SubscribedAt TEXT DEFAULT CURRENT_TIMESTAMP
+  )
+`).run();
 
 export async function POST(req) {
   try {
@@ -10,14 +19,7 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
     }
 
-    const pool = await poolPromise;
-
-    await pool.request()
-      .input('EmailAddress', email)
-      .query(`
-        INSERT INTO NewsletterSubscribers (EmailAddress)
-        VALUES (@EmailAddress)
-      `);
+    db.prepare('INSERT INTO NewsletterSubscribers (EmailAddress) VALUES (?)').run(email);
 
     return NextResponse.json({ message: 'Subscription successful' });
   } catch (error) {

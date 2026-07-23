@@ -1,0 +1,128 @@
+/* Migrated from the <style jsx> block in Featurespage.js.
+   CSS Modules scope every class, matching the old styled-jsx scoping.
+   Globally-managed classes (.mil-up, .mil-features, .mil-accent-text — the
+   last one injected via dangerouslySetInnerHTML) are wrapped in :global(...)
+   and nested under .featuresPage to keep them scoped to this component. */
+
+.featuresPage {
+  font-family: inherit;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.featureContent {
+  padding: 20px 0;
+}
+
+.featureImagePlaceholder {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureImagePlaceholder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.featuresPage :global(.mil-accent-text) {
+  color: #7eb947;
+  font-weight: 600;
+}
+
+.ctaBtn {
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.ctaBtn.primary {
+  background: #7eb947;
+  color: white;
+  border: 2px solid #7eb947;
+}
+
+.ctaBtn.primary:hover {
+  background: #6ba339;
+  border-color: #6ba339;
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+.ctaBtn.secondary {
+  background: transparent;
+  color: #7eb947;
+  border: 2px solid #7eb947;
+}
+
+.ctaBtn.secondary:hover {
+  background: #7eb947;
+  color: white;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Enhanced animations */
+.featuresPage :global(.mil-up) {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.featuresPage :global(.mil-up:nth-child(1)) { animation-delay: 0.1s; }
+.featuresPage :global(.mil-up:nth-child(2)) { animation-delay: 0.2s; }
+.featuresPage :global(.mil-up:nth-child(3)) { animation-delay: 0.3s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaBtn {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureContent {
+    text-align: center;
+  }
+}
+
+/* Professional styling enhancements */
+.featuresPage :global(.mil-features:nth-child(even)) {
+  background: #f2fafa;
+}
+
+.featureContent h2 {
+  color: #333;
+  font-weight: 700;
+}
+
+.featureContent p {
+  line-height: 1.7;
+  font-size: 17px;
+}

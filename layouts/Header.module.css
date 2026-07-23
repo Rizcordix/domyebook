@@ -1,0 +1,73 @@
+/* Migrated from the <style jsx> block in Header.js.
+   The nav KEEPS the global "mil-top-menu" class (public/css/style.css and the
+   GSAP stickMenu logic in utility/index.js depend on the global mil-* classes)
+   and ADDITIONALLY gets the local .milTopMenu class as the module hook.
+   Every selector is written as `.milTopMenu:global(.mil-top-menu) ...` so the
+   compound keeps one class of extra specificity over style.css's own
+   `.mil-top-menu ...` rules — the same override strength the styled-jsx
+   .jsx-hash class used to provide.
+   .mil-submenu / .mil-has-children / .mil-active stay :global — they are
+   theme classes styled by style.css and toggled at runtime (mil-active is
+   applied by component state here and by GSAP elsewhere). */
+
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu) {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.milTopMenu:global(.mil-top-menu) :global(.mil-has-children):hover > :global(.mil-submenu),
+.milTopMenu:global(.mil-top-menu) :global(.mil-has-children.mil-active) > :global(.mil-submenu) {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu .mil-submenu) {
+  transform: translateX(-10px);
+}
+
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu .mil-has-children):hover > :global(.mil-submenu),
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu .mil-has-children.mil-active) > :global(.mil-submenu) {
+  transform: translateX(0);
+}
+
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu) li {
+  transition: all 0.2s ease-in-out;
+}
+
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu) li:hover {
+  transform: translateX(5px);
+}
+
+.milTopMenu:global(.mil-top-menu) ul li a,
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu) li a,
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu .mil-submenu) li a,
+.milTopMenu:global(.mil-top-menu) :global(.mil-active) > a,
+.milTopMenu:global(.mil-top-menu) :global(.mil-submenu .mil-active) > a {
+  font-family: inherit;
+  color: #333;
+}
+
+@media (max-width: 991px) {
+  .milTopMenu:global(.mil-top-menu) :global(.mil-submenu) {
+    max-height: 0;
+    overflow: hidden;
+    transform: none;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .milTopMenu:global(.mil-top-menu) :global(.mil-has-children.mil-active) > :global(.mil-submenu) {
+    max-height: 500px;
+    transform: none;
+  }
+
+  .milTopMenu:global(.mil-top-menu) :global(.mil-submenu) li:hover {
+    transform: none;
+  }
+
+  .milTopMenu:global(.mil-top-menu) :global(.mil-submenu .mil-submenu) {
+    transform: none;
+  }
+}

@@ -1,0 +1,14 @@
+/* Responsive overrides for the promo banner (moved from an inline <style> tag).
+   !important is required because the base styles are inline style={{}} props. */
+
+@media (max-width: 600px) {
+  .promoCtaButton {
+    display: none !important;
+  }
+  .promoBannerContent {
+    transform: none !important;
+    left: 0 !important;
+    position: relative !important;
+    justify-content: flex-start;
+  }
+}

@@ -157,12 +157,37 @@ Today `styled-jsx` scopes these so they only affect that component. **Moving the
 
 ---
 
-## Phase 5 — Verify & measure (½ day) 🟢
+## Phase 5 — Verify & measure (½ day) 🟢 — ✅ DONE (2026-07-23)
 
-- Run **Lighthouse** (mobile) on `/`, a service page, and `/blog` before/after; record LCP, CLS, TBT, total transfer.
-- Test scroll on a throttled CPU (Chrome DevTools 4–6× slowdown).
-- Confirm no hydration warnings in the console (the earlier `PopupCard` / `priority` fixes should already be clean).
-- Add a lightweight budget check (e.g. fail CI if any `public/img` file > 500 KB) to prevent regressions.
+**Measured results (Lighthouse mobile, simulated throttle, local prod build, `/`):**
+
+| Metric | Before Phase-5 fixes | After | Notes |
+|---|---|---|---|
+| Performance score | 35 | **75** | |
+| TBT | 1,550 ms | **0 ms** | Tawk.to now loads on first interaction (`DeferredChat`) |
+| CLS | 0.209 | **0** | The entire shift was the Tawk iframe injection |
+| Speed Index | 5.2 s | **2.9 s** | |
+| Total transfer | 1,643 KB | **973 KB** | Unsplash images localized (106 KB→1 KB avatar, 159 KB→79 KB popup) |
+| LCP | 5.9 s | 5.8 s | Remaining bottleneck — see below |
+
+**Phase-5 fixes applied:**
+- `components/DeferredChat.js` — Tawk.to loads on first scroll/tap/keypress (12 s idle fallback) instead of at page load.
+- Localized both Unsplash images (promo avatar → `/img/promo-reader.webp` 1 KB; popup → `/img/popup-offer.webp` 79 KB).
+- `npm run check:images` budget guard (`scripts/check-image-budget.mjs`) fails if any raster in `public/img` exceeds 500 KB — wire into CI. Two straggler book covers recompressed to pass.
+
+**LCP deep-dive (done 2026-07-23, follow-up session):**
+
+Measurement disproved the CSS hypothesis — Next bundles all global CSS to ~43 KB gzipped with only 13 KB unused, and zero render-blocking resources were flagged. The LCP element is the **Banner hero image**, which downloads in <100 ms but suffered **~1.2 s of element render delay**. Root causes found and fixed:
+
+1. **Below-fold bandwidth competition** in the LCP window — fixed with `loading="lazy"` on the HeroSection poster (now an `<img>` instead of an eager CSS background), services2 tab image, footer payment logos (one "SVG" is 60 KB), and IconBoxes icons. Plus `fetchPriority="high"` on the Banner image.
+2. **Popup fired at 600 ms** — inside the LCP window, forcing full-page style recalc; delay raised to 6 s (also better conversion UX).
+3. **Total transfer: 973 KB → ~784 KB**; LCP 5.9 s → **5.2 s**; score stable ~70 (mobile, 4× CPU simulated).
+
+**Islands refactor (done 2026-07-23, same session):** `PlaxLayout` and `app/page.js` are now **server components**; GSAP effects moved to a `PlaxEffects` client island that initializes on **browser idle** (paint first, animate after); reveal animations now **skip elements already in the viewport** (no hide-then-show flash, less style/layout work); `Footer` became an explicit below-fold client island; static sections (Banner/LCP, IconBoxes, CTA, BrandCarousel) render with zero hydration cost. Verified across all 48 pages.
+
+**Post-refactor conclusion (measured):** simulated-mobile LCP settled at ~5.2 s (score ~70). Profiling shows the remaining ~1 s element render delay persists even unthrottled and is **browser layout/paint cost of the page itself** — a very large DOM (two stacked heroes, many sections) with paint-expensive effects (gradient-clipped text, layered radial gradients) — not hydration, not GSAP, not resource loading (the LCP image loads in <400 ms). Observed local LCP is ~1.4 s; real devices will sit between that and the harsh 4×-CPU/1.6 Mbps simulation. Getting the simulated score into the 90s would require *design-level* slimming of the home page (fewer stacked sections above the fold, simpler text effects) — a product decision, not an engineering fix. Secondary lever: font-awesome subsetting (73 KB, needs `fonttools`).
+
+Note: measurements require the Turbopack dev server (`npm run dev`) to be **stopped** — it writes dev artifacts into `.next` and corrupts/poisons production builds and results.
 
 ---
 

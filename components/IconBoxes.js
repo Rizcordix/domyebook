@@ -13,6 +13,8 @@ const BenefitsSection = () => {
                   src="img/icons/stress-free-purchase.svg"
                   alt="icon"
                   className="mil-icon-img"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h5 className="mil-mb-20 mil-up mil-title">Stress-Free Purchase</h5>
@@ -34,6 +36,8 @@ const BenefitsSection = () => {
                   src="img/icons/rewards.svg"
                   alt="icon"
                   className="mil-icon-img"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h5 className="mil-mb-20 mil-up mil-title">Earn Rewards That Matter</h5>
@@ -54,6 +58,8 @@ const BenefitsSection = () => {
                   src="img/icons/transactions.svg"
                   alt="icon"
                   className="mil-icon-img"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h5 className="mil-mb-20 mil-up mil-title">More With Every Transaction</h5>

@@ -6,24 +6,20 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:images": "node scripts/check-image-budget.mjs"
   },
   "dependencies": {
     "better-sqlite3": "^12.1.1",
     "file-type": "^21.0.0",
     "gsap": "^3.12.5",
-    "isotope-layout": "^3.0.6",
-    "mssql": "^11.0.1",
-    "next": "15.3.8",
+    "next": "^15.3.8",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.10",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-player": "^2.16.0",
-    "react-slick": "^0.30.3",
     "sass": "^1.89.2",
-    "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.19",
     "swiper": "^11.2.8"
   },
   "devDependencies": {

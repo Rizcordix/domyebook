@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PlaxLayout from "@/layouts/PlaxLayout";
+import styles from "./testimonials.module.css";
 
 const testimonials = [
   {
@@ -165,7 +166,7 @@ const TestimonialsPage = () => {
     <div>
       {/* banner */}
       <div className="mil-banner2 mil-banner-inner mil-dissolve">
-        <div className="container">
+        <div className={`container ${styles.container}`}>
           <div className="row align-items-center justify-content-center">
             <div className="col-xl-8">
               <div className="mil-banner-text mil-text-center">
@@ -180,60 +181,60 @@ const TestimonialsPage = () => {
       {/* banner end */}
 
       {/* Testimonials Section */}
-      <div className="testimonials-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title highlight">
+      <div className={styles.testimonialsSection}>
+        <div className={`container ${styles.container}`}>
+          <div className={styles.sectionHeader}>
+            <h2 className={`${styles.sectionTitle} ${styles.highlight}`}>
               Recommended by leading experts in <br />
-              <span className="highlight">Writing and SEO</span>
+              <span className={styles.highlight}>Writing and SEO</span>
             </h2>
-            <p className="section-subtitle">
+            <p className={styles.sectionSubtitle}>
               Discover what our clients have to say about their experience working with us
             </p>
           </div>
 
-          <div className="testimonials-grid">
+          <div className={styles.testimonialsGrid}>
             {visibleTestimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="testimonial-card"
+                className={styles.testimonialCard}
                 onMouseEnter={() => setHoveredCard(testimonial.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="card-header">
-                  <div className="quote-icon">
+                <div className={styles.cardHeader}>
+                  <div className={styles.quoteIcon}>
                     <svg width="32" height="24" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M0 18V6.857C0 3.048 1.792 0 5.333 0v3.429c-1.419 0-2.666 1.372-2.666 3.428v.571H8V18H0zm13.333 0V6.857C13.333 3.048 15.125 0 18.667 0v3.429c-1.42 0-2.667 1.372-2.667 3.428v.571H21.33V18h-8z" fill="#7eb947" />
                     </svg>
                   </div>
-                  <div className={`rating-stars ${hoveredCard === testimonial.id ? 'show-rating' : ''}`}>
+                  <div className={`${styles.ratingStars} ${hoveredCard === testimonial.id ? 'show-rating' : ''}`}>
                     {[...Array(5)].map((_, index) => (
-                      <span key={index} className={`star ${index < testimonial.rating ? 'filled' : 'empty'}`}>★</span>
+                      <span key={index} className={`${styles.star} ${index < testimonial.rating ? styles.filled : styles.empty}`}>★</span>
                     ))}
                   </div>
                 </div>
 
-                <div className="card-body">
-                  <p className={`testimonial-text ${expandedIds.includes(testimonial.id) ? 'expanded' : ''}`}>
+                <div className={styles.cardBody}>
+                  <p className={`${styles.testimonialText} ${expandedIds.includes(testimonial.id) ? styles.expanded : ''}`}>
                     &quot;{testimonial.content}&quot;
                   </p>
                   {testimonial.content.length > 180 && (
-                    <button className="read-more" onClick={() => toggleReadMore(testimonial.id)}>
+                    <button className={styles.readMore} onClick={() => toggleReadMore(testimonial.id)}>
                       {expandedIds.includes(testimonial.id) ? 'Read Less' : 'Read More'}
                     </button>
                   )}
                 </div>
 
-                <div className="card-footer">
+                <div className={styles.cardFooter}>
                   <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="customer-avatar"
+                      className={styles.customerAvatar}
                     />
                   <div className="author-details">
-                    <h4 className="author-name">{testimonial.name}</h4>
-                    <p className="author-position">{testimonial.role}</p>
-                    <p className="author-company">{testimonial.company}</p>
+                    <h4 className={styles.authorName}>{testimonial.name}</h4>
+                    <p className={styles.authorPosition}>{testimonial.role}</p>
+                    <p className={styles.authorCompany}>{testimonial.company}</p>
                   </div>
                 </div>
               </div>
@@ -241,8 +242,8 @@ const TestimonialsPage = () => {
           </div>
 
           {hasMore && (
-            <div className="load-more-section">
-              <button onClick={loadMore} className="load-more-button">
+            <div className={styles.loadMoreSection}>
+              <button onClick={loadMore} className={styles.loadMoreButton}>
                 Load More ...
               </button>
             </div>
@@ -250,240 +251,6 @@ const TestimonialsPage = () => {
         </div>
       </div>
 
-      {/* Styles */}
-      <style jsx>{`
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 15px;
-        }
-        
-        .customer-avatar {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 3px solid #7eb947;
-          box-shadow: 0 4px 12px rgba(126, 185, 71, 0.2);
-        }
-        .banner {
-          background: linear-gradient(135deg, #ffffff 0%, #f2fafa 100%);
-          padding: 100px 0 60px;
-          text-align: center;
-        }
-
-        .banner-title {
-          font-size: 48px;
-          font-weight: 700;
-          color: #000;
-        }
-
-        .breadcrumbs {
-          margin-top: 20px;
-          font-size: 14px;
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-        }
-
-        .breadcrumb-link {
-          color: #7eb947;
-          text-decoration: none;
-        }
-
-        .breadcrumb-current {
-          color: #000;
-        }
-
-        .testimonials-section {
-          background: #f2fafa;
-          padding: 80px 0;
-        }
-
-        .section-header {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-
-        .section-title {
-          font-size: 36px;
-          font-weight: 700;
-        }
-
-        .highlight {
-          color: #7eb947;
-        }
-
-        .section-subtitle {
-          font-size: 16px;
-          color: #555;
-          max-width: 600px;
-          margin: 0 auto;
-        }
-
-        .testimonials-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-          gap: 30px;
-        }
-
-        .testimonial-card {
-          background: #fff;
-          border-radius: 20px;
-          padding: 25px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-          border: 2px solid transparent;
-          transition: all 0.3s ease;
-          aspect-ratio: 1 / 1; /* Keeps it square */
-          height: auto;
-        }
-
-        .testimonial-card:hover {
-          transform: translateY(-10px);
-          border-color: #7eb94780;
-        }
-
-        .card-header {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .quote-icon {
-          opacity: 0.7;
-        }
-
-        .rating-stars {
-          display: flex;
-          gap: 4px;
-          opacity: 0;
-          transform: translateY(-8px);
-          transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover .rating-stars {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .star {
-          font-size: 16px;
-        }
-
-        .star.filled {
-          color: #ffc107;
-        }
-
-        .star.empty {
-          color: #ddd;
-        }
-
-        .card-body {
-          margin: 20px 0;
-          flex-grow: 1; /* Fills empty space */
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-
-
-        .testimonial-text {
-          font-style: italic;
-          font-size: 15px;
-          line-height: 1.6;
-          color: #333;
-          display: -webkit-box;
-          -webkit-line-clamp: 6;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          min-height: 96px; /* Ensures consistent height */
-        }
-
-        .testimonial-text.expanded {
-          -webkit-line-clamp: unset;
-          overflow: visible;
-        }
-
-
-        .read-more {
-          background: none;
-          color: #7eb947;
-          border: none;
-          cursor: pointer;
-          margin-top: 8px;
-          font-weight: 500;
-        }
-
-        .card-footer {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          border-top: 1px solid #eee;
-          padding-top: 15px;
-        }
-
-        .avatar-img {
-          border-radius: 50% !important;
-          border: 3px solid #f2fafa;
-          object-fit: cover;
-        }
-
-
-        .author-name {
-          font-size: 16px;
-          font-weight: 600;
-        }
-
-        .author-position {
-          font-size: 13px;
-          color: #7eb947;
-        }
-
-        .author-company {
-          font-size: 12px;
-          color: #888;
-        }
-
-        .load-more-section {
-          text-align: center;
-          margin-top: 40px;
-        }
-
-        .load-more-button {
-          background: linear-gradient(135deg, #7eb947, #6ba83a);
-          color: #fff;
-          padding: 12px 30px;
-          border-radius: 30px;
-          border: none;
-          cursor: pointer;
-          font-weight: 600;
-        }
-
-        .load-more-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(126, 185, 71, 0.4);
-        }
-
-        @media (max-width: 768px) {
-          .banner-title {
-            font-size: 36px;
-          }
-          .section-title {
-            font-size: 28px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .banner-title {
-            font-size: 28px;
-          }
-          .testimonial-card {
-            padding: 20px;
-          }
-        }
-      `}</style>
     </div>
       </PlaxLayout>
   );

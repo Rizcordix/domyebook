@@ -1,5 +1,7 @@
-"use client";
-import { useState, useRef } from 'react'; // Import useState and useRef
+// Server component: the page shell and static sections (Banner = the LCP
+// element, IconBoxes, CTA, FAQ text) render with zero hydration cost.
+// Interactive sections (HeroSection, services tabs, Portfolio, Testimonials,
+// Accordion) are client islands that hydrate independently.
 import Banner from "@/components/Banner";
 import { CallToAction1 } from "@/components/CallToAction";
 import Testimonials from "@/components/Testimonials";

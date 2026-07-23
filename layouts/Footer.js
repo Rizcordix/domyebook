@@ -1,3 +1,4 @@
+"use client"; // newsletter form state — below-fold client island
 import { useState } from "react";
 import Link from "next/link";
 
@@ -532,7 +533,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
           <div style={s.payRow}>
             {paymentIcons.map(({ label, src }) => (
               <span key={label} style={s.payIconWrap} title={label}>
-                <img src={src} alt={label} style={s.payIcon} />
+                <img src={src} alt={label} style={s.payIcon} loading="lazy" decoding="async" />
               </span>
             ))}
           </div>
