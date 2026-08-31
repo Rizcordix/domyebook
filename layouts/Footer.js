@@ -427,7 +427,7 @@ const Footer1 = ({ bg = true, margin = 160 }) => {
             </div>
             <div style={s.addrCard}>
               <div style={s.addrFlag}>🇬🇧</div>
-              <div style={s.addrText}>Suite C141, 4-6 Greatorex St, London E1 5NF</div>
+              <div style={s.addrText}>182-184 High Street North, East Ham, London E6 2JA</div>
             </div>
           </div>
 
